@@ -172,5 +172,5 @@ sensor.worldwide_fm_live:
   icon: mdi:radio
 sensor.bbc_radio_1_live:
   icon: mdi:radio
-scene.focus_mode
+scene.focus_mode:
   icon: mdi:bullseye
