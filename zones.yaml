@@ -1,0 +1,30 @@
+- name: "Werk Papa"
+  latitude: 51.225563
+  longitude: 3.194655
+  radius: 100
+  icon: mdi:car
+- name: "Werk Mama"
+  latitude: 51.210169
+  longitude: 3.247346
+  radius: 100
+  icon: mdi:pharmacy
+- name: "Werk Thib"
+  latitude: 51.067562
+  longitude: 3.732851
+  radius: 100
+  icon: mdi:code-tags
+- name: "School Jassie"
+  latitude: 51.186807
+  longitude: 3.203052
+  radius: 250
+  icon: mdi:school
+- name: "Gent Dampoort"
+  latitude: 51.056036
+  longitude: 3.740706
+  radius: 100
+  icon: mdi:train
+- name: "Brugge Station"
+  latitude: 51.197718
+  longitude: 3.217841
+  radius: 100
+  icon: mdi:train

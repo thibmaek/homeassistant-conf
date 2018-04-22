@@ -1,0 +1,23 @@
+- platform: darksky
+  name: 'Dark Sky weather'
+  api_key: !secret dark_sky_api_key
+  language: 'nl'
+  forecast:
+    - 1
+  monitored_conditions:
+    - summary
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - wind_speed
+    - cloud_cover
+    - minutely_summary
+    - hourly_summary
+    - daily_summary
+    - temperature_max
+    - temperature_min
+    - precip_intensity_max
+  update_interval:
+    minutes: 10

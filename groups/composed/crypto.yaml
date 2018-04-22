@@ -1,0 +1,7 @@
+crypto:
+  name: 'Cryptocurrency'
+  view: no
+  entities:
+    - sensor.exchange_rate_1_btc
+    - sensor.trade_volume
+    - sensor.eth_balance

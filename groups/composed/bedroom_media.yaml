@@ -1,0 +1,7 @@
+bedroom_media:
+  name: Media
+  view: no
+  entities:
+    - sensor.discogs
+    - sensor.panorama_plex
+  

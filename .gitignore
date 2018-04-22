@@ -1,0 +1,30 @@
+# Clutter
+._.*
+.DS_Store
+*.db
+*.db-*
+*.log
+deps/
+__pycache__
+
+# Secrets
+*token*
+secrets.yaml
+.uuid
+html5_push_registrations.conf
+known_devices.yaml
+entity_registry.yaml
+.cloud/
+.stfolder/
+
+# Vendor
+.ios.conf
+.tradfri_psk.conf
+feedreader.pickle
+plex.conf
+google_calendars.yaml
+tts/
+dasher/
+
+# Development
+.vscode

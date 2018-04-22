@@ -1,0 +1,17 @@
+upstairs:
+  view: yes
+  name: 'Slaapkamer'
+  icon: mdi:hotel
+  entities:
+    - media_player.thibault_s_macbook_pro
+    - media_player.macbookitpthibault
+    - scene.watching_something_in_bed
+    - scene.working_at_my_desk
+    - scene.focus_mode
+    - media_player.volumio_slaapkamer_thib
+    - light.bedroom_lights
+    - group.bedroom_lights
+    - group.bedroom_media
+    - group.plant_monstera
+    - group.plant_calathea
+    - camera.bedroom_camera

@@ -1,0 +1,7 @@
+radio_stations:
+  name: 'Radio Stations'
+  view: no
+  entities:
+    - sensor.worldwide_fm_live
+    - sensor.studio_brussel_live
+    - sensor.bbc_radio_1_live

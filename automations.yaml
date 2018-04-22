@@ -1,0 +1,99 @@
+- alias: Set TV Volume level
+  id: '1503343831529'
+  trigger:
+  - entity_id: input_select.tv_volume_level
+    platform: state
+  action:
+  - service: media_player.volume_set
+    data_template:
+      entity_id: media_player.panasonic_viera
+      volume_level: '{% if is_state("input_select.tv_volume_level", "low") %} 0.05
+        {% elif is_state("input_select.tv_volume_level", "medium") %} 0.10 {% elif
+        is_state("input_select.tv_volume_level", "normal") %} 0.15 {% elif is_state("input_select.tv_volume_level",
+        "high") %} 0.20 {% endif %}'
+- action:
+  - data:
+      entity_id: light.bed_lights
+    service: light.turn_on
+  alias: Turn on soft lights when watching Plex in bed
+  condition:
+  - after: '21:00'
+    before: 01:00
+    condition: time
+  id: '1514064015982'
+  trigger:
+  - entity_id: media_player.thibault_s_macbook_pro
+    from: idle
+    platform: state
+    to: playing
+  - entity_id: media_player.macbookitpthibault
+    from: idle
+    platform: state
+    to: playing
+- action:
+  - data:
+      entity_id: light.bed_lights
+    service: light.turn_off
+  alias: Turn off soft lights after watching something in bed
+  condition:
+  - after: '21:00'
+    before: 03:00
+    condition: time
+  id: '1514064101875'
+  trigger:
+  - entity_id: media_player.thibault_s_macbook_pro
+    from: playing
+    platform: state
+    to: idle
+  - entity_id: media_player.thibault_s_macbook_pro
+    from: paused
+    platform: state
+    to: idle
+  - entity_id: media_player.macbookitpthibault
+    from: playing
+    platform: state
+    to: idle
+  - entity_id: media_player.macbookitpthibault
+    from: paused
+    platform: state
+    to: idle
+- action:
+  - service: frontend.set_theme
+    data_template:
+      name: '{% if states.sun.sun.state == "above_horizon" %} gable_green {% else
+        %} midnight {% endif %}
+
+        '
+  alias: Automatic Theme Change
+  condition: []
+  id: '1516133180685'
+  trigger:
+  - event: start
+    platform: homeassistant
+  - entity_id: sun.sun
+    platform: state
+    to: above_horizon
+  - entity_id: sun.sun
+    platform: state
+    to: below_horizon
+- action:
+  - data:
+      message: Some plant's moisture level has dipped below 14%
+      title: "\U0001F4A7 A plant needs watering"
+    service: persistent_notification.create
+  - data:
+      message: "\U0001F4A7 A plant needs watering"
+    service: notify.pushbullet
+  - data:
+      message: "\U0001F4A7 A plant needs watering"
+    service: notify.ios_thibaults_iphone
+  alias: Alarm me if my plants need watering
+  condition: []
+  id: '1516134433603'
+  trigger:
+  - below: '15'
+    entity_id: sensor.monstera_deliciosa_moisture
+    platform: numeric_state
+  - below: '15'
+    entity_id: sensor.calathea_zebrina_moisture
+    platform: numeric_state

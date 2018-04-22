@@ -1,0 +1,28 @@
+- platform: mqtt
+  name: 'Bedroom Stringlights'
+  command_topic: !secret mqtt_topic_bedroom_stringlights
+
+- platform: mqtt
+  name: 'Desk spots'
+  command_topic: !secret mqtt_topic_desk_spots
+
+- platform: mqtt
+  name: 'Server Ledstrips'
+  command_topic: !secret mqtt_topic_server_ledstrips
+
+- platform: mqtt
+  name: 'Bed Lights'
+  command_topic: !secret mqtt_topic_bed_lights
+
+- platform: mqtt
+  name: 'Desk light'
+  command_topic: !secret mqtt_topic_desk_light
+
+- platform: group
+  name: 'Bedroom Lights'
+  entities:
+    - light.bedroom_stringlights
+    - light.desk_spots
+    - light.bed_lights
+    - light.tradfri_bulb_e27_opal_1000lm
+    - light.desk_light

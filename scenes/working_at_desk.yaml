@@ -1,0 +1,4 @@
+- name: 'Working at my desk'
+  entities:
+    light.desk_tracklight: on
+    light.desk_spots: on

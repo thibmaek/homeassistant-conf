@@ -1,0 +1,4 @@
+- platform: apple_tv
+  name: 'Woonkamer Apple TV'
+  host: 'Woonkamer-AppleTV.local'
+  login_id: !secret apple_tv_login_id

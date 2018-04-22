@@ -1,0 +1,8 @@
+- platform: bitcoin
+  currency: 'EUR'
+  display_options:
+    - exchangerate
+    - trade_volume_btc
+
+- platform: etherscan
+  address: '0x5dD1BfFBAc19F1B6c3ff879200961Fe33330390f'

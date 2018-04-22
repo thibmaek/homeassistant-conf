@@ -1,0 +1,3 @@
+- platform: mqtt
+  name: 'Bridge'
+  command_topic: !secret mqtt_topic_bridge

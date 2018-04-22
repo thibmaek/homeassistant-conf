@@ -1,0 +1,12 @@
+today:
+  name: 'Vandaag'
+  entities:
+    - sensor.time
+    - sensor.date
+    - sensor.dark_sky_weather_apparent_temperature
+    - sensor.dark_sky_weather_precip_probability
+    - sun.sun
+    - sensor.moon
+    - sensor.season
+    - sensor.flights_home
+    - sensor.waze_work_travel_time

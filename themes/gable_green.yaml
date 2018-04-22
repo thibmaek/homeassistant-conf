@@ -1,0 +1,7 @@
+gable_green:
+  primary-color: '#294143'
+
+  # Labels
+  label-badge-red: 'var(--primary-color)' # References the brand colour label badge border
+  # label-badge-text-color: 'var(--primary-text-color)' # Now same as label badge border but that's a matter of taste
+  # label-badge-background-color: '#2E333A' # Same, but can also be set to transparent here

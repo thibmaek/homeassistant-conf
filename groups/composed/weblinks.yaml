@@ -1,0 +1,9 @@
+weblinks:
+  name: 'Weblinks'
+  view: no
+  entities:
+    - weblink.home_assistant_components
+    - weblink.mijn_telenet
+    - weblink.sickrage
+    - weblink.transmission
+    - weblink.panorama_plex

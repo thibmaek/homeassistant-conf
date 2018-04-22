@@ -1,0 +1,2 @@
+- platform: discogs
+  token: !secret discogs_token

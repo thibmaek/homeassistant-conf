@@ -1,0 +1,33 @@
+spotify_music:
+  alias: 'Play selected spotify playlist'
+  sequence:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.spotify
+        volume_level: '1.0'
+    - service: media_player.select_source
+      data_template:
+        entity_id: media_player.spotify
+        source: >
+          {% if is_state("input_select.spotify_source", "Volumio Woonkamer") %} Volumio
+          {% elif is_state("input_select.spotify_source", "Volumio Slaapkamer Thib") %} Volumio-slaapkamer-thib
+          {% endif %}
+    - service: media_player.shuffle_set
+      data:
+        entity_id: media.player.spotify
+        shuffle: true
+    - service: media_player.play_media
+      data_template:
+        entity_id: media_player.spotify
+        media_content_type: playlist
+        media_content_id: >
+          {% if is_state("input_select.spotify_playlist", "Diner | Feestje | Aperitief") %} spotify:user:thibault.maekelbergh:playlist:5HDQmC0jdxsu5XeVuQzvwy
+          {% elif is_state("input_select.spotify_playlist", "The Blue Note Monthly") %} spotify:user:bluenoterecords:playlist:4d6wvpHsCFr9alknIx25DX
+          {% elif is_state("input_select.spotify_playlist", "Dille & Kamille") %} spotify:user:dilleenkamille:playlist:6CeNWSlddov6JRK6MZYr1F
+          {% elif is_state("input_select.spotify_playlist", "Majestic Casual") %} spotify:user:majesticcasualofficial:playlist:6wjCvkAFovrVIRM8VfZLZG
+          {% elif is_state("input_select.spotify_playlist", "Panorama Bar Music") %} spotify:user:1110774884:playlist:6bX3oIF6x9YI9a9rbVLHdP
+          {% elif is_state("input_select.spotify_playlist", "Berghain Music") %} spotify:user:1110774884:playlist:2hqbSYinuSlYwgQBOX81Yo
+          {% elif is_state("input_select.spotify_playlist", "Melodic Techno | Afterlife") %} spotify:user:1114432656:playlist:2IbnXxWTFc6Ml8szpXIwUU
+          {% elif is_state("input_select.spotify_playlist", "HOTEL COSTES") %} spotify:user:ltwee:playlist:5huIma0YU4iusLcT2reVEU
+          {% elif is_state("input_select.spotify_playlist", "Masala Snobify") %} spotify:user:116409485:playlist:4bMFUowpdjUeaEM270UwyD
+          {% endif %}

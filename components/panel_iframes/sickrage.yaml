@@ -1,0 +1,4 @@
+sickrage:
+  title: 'SickRage'
+  icon: 'mdi:fish'
+  url: !secret sickrage_url

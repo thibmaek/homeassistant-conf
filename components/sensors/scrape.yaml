@@ -1,0 +1,17 @@
+- platform: scrape
+  name: 'Transmission transfers'
+  resource: !secret transmission_url
+  select: '#filter-count'
+  authentication: 'basic'
+  username: !secret transmission_user
+  password: !secret transmission_pass
+
+- platform: scrape
+  name: 'Worldwide FM LIVE'
+  resource: 'https://worldwidefm.net/'
+  select: '.radio-player-song-name'
+
+- platform: scrape
+  name: 'BBC Radio 1 LIVE'
+  resource: 'https://www.bbc.co.uk/radio1'
+  select: '.on-air__episode-title'

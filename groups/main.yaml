@@ -1,0 +1,14 @@
+default_view:
+  view: yes
+  name: 'Maekelberghain'
+  icon: mdi:home
+  entities:
+    - sensor.dark_sky_weather_daily_summary
+    - group.personal_cal
+    - group.buienradar
+    - media_player.spotify
+    - group.today
+    - group.radio_stations
+    - group.darksky_weather_tomorrow
+    - weather.yahoo_weather
+    - camera.garage_camera

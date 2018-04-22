@@ -1,0 +1,16 @@
+downstairs:
+  view: yes
+  name: 'Beneden'
+  icon: mdi:sofa
+  entities:
+    - group.chromecast_radio
+    - group.music_spotify
+    - media_player.volumio
+    - input_select.tv_volume_level
+    - media_player.panasonic_viera
+    - media_player.playstation_4
+    - media_player.rasplex
+    - media_player.volumio_woonkamer
+    - media_player.woonkamer_apple_tv
+    - media_player.woonkamer_chromecast
+    - switch.turn_on_tv

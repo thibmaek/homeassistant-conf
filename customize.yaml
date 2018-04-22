@@ -1,0 +1,172 @@
+group.downstairs:
+  order: 1
+group.garage:
+  order: 3
+group.upstairs:
+  order: 2
+switch.turn_on_tv:
+  friendly_name: TV Power
+  icon: mdi:television-classic
+switch.desk_hanglight:
+  friendly_name: Desk hanglight
+  icon: mdi:track-light
+sensor.gdp__brugge:
+  icon: mdi:train
+sensor.br_condition:
+  friendly_name: Voorspelling
+sensor.br_temperature:
+  friendly_name: Temperatuur
+sensor.br_symbol:
+  friendly_name: Icoon
+sensor.br_precipitation:
+  friendly_name: Regenval
+sensor.br_stationname:
+  friendly_name: Weerstation
+sensor.br_condition_code:
+  friendly_name: Toestandscode
+script.spotify_music:
+  friendly_name: Start playing playlist
+  icon: mdi:play
+script.chromecast_radio:
+  icon: mdi:play
+sensor.myipopendnscom:
+  friendly_name: Public IP
+  icon: mdi:dns
+sensor.current_version:
+  icon: mdi:package-variant
+sensor.uptime:
+  icon: mdi:heart-pulse
+sensor.calendar_agenda:
+  alexa_hidden: 'true'
+  icon: mdi:calendar
+sensor.calendar_events:
+  icon: mdi:calendar-question
+sensor.calendar_facebook:
+  icon: mdi:facebook-box
+sensor.calendar_lotte__thib:
+  icon: mdi:calendar-multiple
+sensor.calendar_tasks:
+  icon: mdi:calendar-check
+switch.outdoor_christmas_stringlight:
+  friendly_name: Outdoor Christmas Lights
+  icon: mdi:lightbulb-on-outline
+switch.bed_stringlights:
+  friendly_name: Bed Stringlights
+  icon: mdi:lightbulb-on-outline
+light.slingerlicht:
+  icon: mdi:lightbulb-on-outline
+light.bureaulamp:
+  icon: mdi:lamp
+light.kerstboom:
+  icon: mdi:pine-tree
+scene.watching_something_in_bed:
+  icon: mdi:laptop-mac
+scene.working_at_my_desk:
+  icon: mdi:lead-pencil
+light.bedroom_stringlight:
+  icon: mdi:lightbulb-outline
+light.desk_spots:
+  icon: mdi:spotlight
+switch.desk_light:
+  friendly_name: Desk light
+  icon: mdi:lamp
+calendar.agenda:
+  alexa_hidden: 'true'
+light.christmas_tree:
+  icon: mdi:pine-tree
+light.server_ledstrips:
+  icon: mdi:led-strip
+sensor.monstera_deliciosa_battery:
+  icon: mdi:battery-charging
+sensor.monstera_deliciosa_conductivity:
+  icon: mdi:leaf
+sensor.monstera_deliciosa_light_intensity:
+  icon: mdi:white-balance-sunny
+sensor.monstera_deliciosa_moisture:
+  icon: mdi:water-percent
+sensor.monstera_deliciosa_temperature:
+  icon: mdi:thermometer
+sensor.calathea_zebrina_battery:
+  icon: mdi:battery-charging
+sensor.calathea_zebrina_conductivity:
+  icon: mdi:leaf
+sensor.calathea_zebrina_intensity:
+  icon: mdi:white-balance-sunny
+sensor.calathea_zebrina_moisture:
+  icon: mdi:water-percent
+sensor.calathea_zebrina_temperature:
+  icon: mdi:thermometer
+sensor.panorama_plex:
+  icon: mdi:plex
+sensor.studio_brussel_live:
+  homebridge_hidden: true
+  icon: mdi:radio
+light.bed_lights:
+  icon: mdi:lightbulb-on-outline
+light.desk_light:
+  icon: mdi:lamp
+light.desk_spotlight:
+  icon: mdi:track-light
+light.bedroom_stringlights:
+  icon: mdi:lightbulb-on
+light.desk_tracklight:
+  icon: mdi:track-light
+script.ha_reload_automations:
+  icon: mdi:rotate-right
+script.ha_reload_core:
+  icon: mdi:hexagon
+script.ha_reload_groups:
+  icon: mdi:account-group
+script.ha_reload_scripts:
+  icon: mdi:script
+script.ha_check_config:
+  icon: mdi:code-tags-check
+sensor.dark_sky_weather_apparent_temperature:
+  friendly_name: Apparent temperature
+sensor.dark_sky_weather_cloud_coverage:
+  friendly_name: Cloud coverage
+sensor.dark_sky_weather_cloud_coverage_1:
+  friendly_name: Cloud coverage (Tomorrow)
+sensor.dark_sky_weather_daily_high_temperature:
+  friendly_name: Temp. max
+sensor.dark_sky_weather_daily_high_temperature_1:
+  friendly_name: Temp. max (Tomorrow)
+sensor.dark_sky_weather_daily_low_temperature:
+  friendly_name: Temp. min
+sensor.dark_sky_weather_daily_low_temperature_1:
+  friendly_name: Temp. min (Tomorrow)
+sensor.dark_sky_weather_daily_max_precip_intensity:
+  friendly_name: Max precip intensity
+sensor.dark_sky_weather_daily_max_precip_intensity_1:
+  friendly_name: Max precip intensity (Tomorrow)
+sensor.dark_sky_weather_daily_summary:
+  friendly_name: Daily summary
+sensor.dark_sky_weather_gourly_summary:
+  friendly_name: Hourly summary
+sensor.dark_sky_weather_minutely_summary:
+  friendly_name: Minutely summary
+sensor.dark_sky_weather_precip:
+  friendly_name: Precip
+sensor.dark_sky_weather_precip_1:
+  friendly_name: Precip (Tomorrow)
+sensor.dark_sky_weather_precip_intensity:
+  friendly_name: Precip intensity
+sensor.dark_sky_weather_precip_intensity_1:
+  friendly_name: Precip intensity (Tomorrow)
+sensor.dark_sky_weather_precip_probability:
+  friendly_name: Precip probability
+sensor.dark_sky_weather_precip_probability_1:
+  friendly_name: Precip probability (Tomorrow)
+sensor.dark_sky_weather_summary:
+  friendly_name: Weather summary
+sensor.dark_sky_weather_temperature:
+  friendly_name: Temperature
+sensor.dark_sky_weather_wind_speed:
+  friendly_name: Wind speed
+sensor.dark_sky_weather_wind_speed_1:
+  friendly_name: Wind speed (Tomorrow)
+light.tradfri_bulb_e27_opal_1000lm:
+  friendly_name: Desk Tracklight
+  icon: mdi:track-light
+sensor.worldwide_fm_live:
+  icon: mdi:radio

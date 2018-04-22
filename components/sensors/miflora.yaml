@@ -1,0 +1,23 @@
+- platform: miflora
+  mac: !secret miflora_mac_monstera
+  name: 'Monstera Deliciosa'
+  median: 3
+  adapter: 'hci0'
+  monitored_conditions:
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery
+
+- platform: miflora
+  mac: !secret miflora_mac_calathea
+  name: 'Calathea Zebrina'
+  median: 3
+  adapter: 'hci0'
+  monitored_conditions:
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery

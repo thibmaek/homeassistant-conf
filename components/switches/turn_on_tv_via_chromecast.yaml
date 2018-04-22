@@ -1,0 +1,12 @@
+- platform: template
+  switches:
+    turn_on_tv:
+      value_template: "{{ is_state('media_player.panasonic_viera', 'on') }}"
+      turn_on:
+        service: media_player.turn_on
+        data:
+          entity_id: media_player.woonkamer_chromecast
+      turn_off:
+        service: media_player.turn_off
+        data:
+          entity_id: media_player.panasonic_viera

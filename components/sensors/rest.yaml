@@ -1,0 +1,5 @@
+# Current Studio Brussel track
+- platform: rest
+  name: 'Studio Brussel LIVE'
+  resource: !secret stubru_live_lambda
+  value_template: '{{ value_json.current.trackName }}'

@@ -1,0 +1,3 @@
+- name: 'Panorama Plex'
+  url: !secret plex_url
+  icon: 'mdi:plex'

@@ -1,0 +1,33 @@
+server_network:
+  name: 'Network'
+  view: no
+  entities:
+    - sensor.myipopendnscom
+    - weblink.speedtest
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+server_internals:
+  name: 'Server Internals'
+  view: no
+  entities:
+    - updater.updater
+    - sensor.current_version
+    - sensor.uptime
+    - sensor.processor_use
+    - sensor.memory_use
+    - sensor.memory_free
+    - sensor.disk_used_
+    - sensor.disk_free_
+    - light.server_ledstrips
+
+server_actions:
+  name: 'Server Actions'
+  view: no
+  entities:
+    - script.ha_reload_groups
+    - script.ha_reload_core
+    - script.ha_reload_automations
+    - script.ha_reload_scripts
+    - script.ha_check_config

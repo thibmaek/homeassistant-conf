@@ -1,0 +1,9 @@
+plant_calathea:
+  name: 'Calathea Zebrina'
+  view: no
+  entities:
+    - sensor.calathea_zebrina_battery
+    - sensor.calathea_zebrina_conductivity
+    - sensor.calathea_zebrina_light_intensity
+    - sensor.calathea_zebrina_moisture
+    - sensor.calathea_zebrina_temperature

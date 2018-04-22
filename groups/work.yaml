@@ -1,0 +1,14 @@
+work:
+  view: yes
+  name: 'Work (In The Pocket)'
+  icon: mdi:briefcase
+  entities:
+    - group.work_
+
+work_:
+  view: no
+  name: 'Work (In The Pocket)'
+  entities:
+    - binary_sensor.workday_sensor
+    - sensor.flights_work
+    - sensor.waze_home_travel_time

@@ -1,0 +1,10 @@
+personal_cal:
+  name: "Today's Calendar"
+  view: no
+  entities:
+    - sensor.time__date
+    - sensor.calendar_agenda
+    - sensor.calendar_tasks
+    - sensor.calendar_lotte__thib
+    - sensor.calendar_events
+    - sensor.calendar_facebook

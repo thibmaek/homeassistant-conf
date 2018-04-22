@@ -1,0 +1,24 @@
+ha_reload_groups:
+  alias: 'Quick reload groups'
+  sequence:
+    - service: group.reload
+
+ha_reload_core:
+  alias: 'Quick reload core'
+  sequence:
+    - service: homeassistant.reload_core_config
+
+ha_reload_automations:
+  alias: 'Quick reload automations'
+  sequence:
+    - service: automation.reload
+
+ha_reload_scripts:
+  alias: 'Quick reload scripts'
+  sequence:
+    - service: script.reload
+
+ha_check_config:
+  alias: 'Check configuration'
+  sequence:
+    - service: homeassistant.check_config

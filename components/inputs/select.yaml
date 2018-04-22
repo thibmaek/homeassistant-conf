@@ -1,0 +1,46 @@
+tv_volume_level:
+  name: 'TV Volume Level'
+  options:
+    - 'low'
+    - 'medium'
+    - 'normal'
+    - 'high'
+  icon: 'mdi:volume-high'
+
+spotify_playlist:
+  name: 'Playlist:'
+  options:
+    - 'Diner | Feestje | Aperitief'
+    - 'The Blue Note Monthly'
+    - 'Dille & Kamille'
+    - 'Majestic Casual'
+    - 'Panorama Bar Music'
+    - 'Berghain Music'
+    - 'Melodic Techno | Afterlife'
+    - 'HOTEL COSTES'
+    - 'Masala Snobify'
+  icon: 'mdi:spotify'
+
+spotify_source:
+  name: 'Source:'
+  options:
+    - 'Volumio Woonkamer'
+    - 'Volumio Slaapkamer Thib'
+  initial: 'Volumio Woonkamer'
+  icon: 'mdi:speaker-wireless'
+
+cc_radio_source:
+  name: 'Source:'
+  options:
+    - 'Woonkamer'
+  initial: 'Woonkamer'
+  icon: 'mdi:cast'
+
+cc_radio_channel:
+  name: 'Channel:'
+  options:
+    - 'Studio Brussel'
+    - 'Klara'
+    - 'Worldwide FM'
+  initial: 'Studio Brussel'
+  icon: 'mdi:radio-tower'
