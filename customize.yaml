@@ -170,3 +170,5 @@ light.tradfri_bulb_e27_opal_1000lm:
   icon: mdi:track-light
 sensor.worldwide_fm_live:
   icon: mdi:radio
+sensor.bbc_radio_1_live:
+  icon: mdi:radio
