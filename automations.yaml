@@ -83,9 +83,6 @@
     service: persistent_notification.create
   - data:
       message: "\U0001F4A7 A plant needs watering"
-    service: notify.pushbullet
-  - data:
-      message: "\U0001F4A7 A plant needs watering"
     service: notify.ios_thibaults_iphone
   alias: Alarm me if my plants need watering
   condition: []
