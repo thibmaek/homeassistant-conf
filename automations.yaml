@@ -92,5 +92,5 @@
     entity_id: sensor.monstera_deliciosa_moisture
     platform: numeric_state
   - below: '15'
-    entity_id: sensor.calathea_zebrina_moisture
+    entity_id: sensor.ficus_elastica_moisture
     platform: numeric_state

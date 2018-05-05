@@ -1,9 +1,9 @@
-plant_calathea:
-  name: 'Calathea Zebrina'
+plant_ficus:
+  name: 'Ficus Elastica'
   view: no
   entities:
-    - sensor.calathea_zebrina_battery
-    - sensor.calathea_zebrina_conductivity
-    - sensor.calathea_zebrina_light_intensity
-    - sensor.calathea_zebrina_moisture
-    - sensor.calathea_zebrina_temperature
+    - sensor.ficus_elastica_battery
+    - sensor.ficus_elastica_conductivity
+    - sensor.ficus_elastica_light_intensity
+    - sensor.ficus_elastica_moisture
+    - sensor.ficus_elastica_temperature

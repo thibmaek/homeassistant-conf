@@ -86,15 +86,15 @@ sensor.monstera_deliciosa_moisture:
   icon: mdi:water-percent
 sensor.monstera_deliciosa_temperature:
   icon: mdi:thermometer
-sensor.calathea_zebrina_battery:
+sensor.ficus_elastica_battery:
   icon: mdi:battery-charging
-sensor.calathea_zebrina_conductivity:
+sensor.ficus_elastica_conductivity:
   icon: mdi:leaf
-sensor.calathea_zebrina_intensity:
+sensor.ficus_elastica_intensity:
   icon: mdi:white-balance-sunny
-sensor.calathea_zebrina_moisture:
+sensor.ficus_elastica_moisture:
   icon: mdi:water-percent
-sensor.calathea_zebrina_temperature:
+sensor.ficus_elastica_temperature:
   icon: mdi:thermometer
 sensor.panorama_plex:
   icon: mdi:plex

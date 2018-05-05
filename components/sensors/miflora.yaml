@@ -11,8 +11,8 @@
     - battery
 
 - platform: miflora
-  mac: !secret miflora_mac_calathea
-  name: 'Calathea Zebrina'
+  mac: !secret miflora_mac_ficus
+  name: 'Ficus Elastica'
   median: 3
   adapter: 'hci0'
   monitored_conditions:

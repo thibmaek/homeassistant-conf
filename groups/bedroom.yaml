@@ -13,5 +13,5 @@ upstairs:
     - group.bedroom_lights
     - group.bedroom_media
     - group.plant_monstera
-    - group.plant_calathea
+    - group.plant_ficus
     - camera.bedroom_camera
