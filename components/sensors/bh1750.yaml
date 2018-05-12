@@ -1,0 +1,2 @@
+- platform: bh1750
+  name: 'Server Light Intensity'
