@@ -11,7 +11,7 @@ alexa:
       - light.tradfri_bulb_e27_opal_1000lm
   entity_config:
     switch.turn_on_tv:
-      - name: 'Panasonic Viera'
-      - display_categories: 'TV'
+      name: 'Panasonic Viera'
+      display_categories: 'TV'
     light.tradfri_bulb_e27_opal_1000lm:
-      - name: 'Desk Tracklight'
+      name: 'Desk Tracklight'
