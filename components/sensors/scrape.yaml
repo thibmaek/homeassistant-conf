@@ -15,3 +15,8 @@
   name: 'BBC Radio 1 LIVE'
   resource: 'https://www.bbc.co.uk/radio1'
   select: '.on-air__episode-title'
+  
+- platform: scrape
+  name: 'Stubru LIVE'
+  resource: 'https://stubru.be/'
+  select: '.programma'
