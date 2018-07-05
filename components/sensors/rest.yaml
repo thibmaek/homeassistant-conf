@@ -1,5 +1,13 @@
 # Current Studio Brussel track
+# Disabled for now until I fix this lambda
+# - platform: rest
+#   name: 'Studio Brussel LIVE'
+#   resource: !secret stubru_live_lambda
+#   value_template: '{{ value_json.current.trackName }}'
+
 - platform: rest
-  name: 'Studio Brussel LIVE'
-  resource: !secret stubru_live_lambda
-  value_template: '{{ value_json.current.trackName }}'
+  name: 'Bedroom DHT'
+  resource: 'http://raspberrypi.local:3000/sensor/dht'
+  json_attributes:
+    - temperature
+    - humidity
