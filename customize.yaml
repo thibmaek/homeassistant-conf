@@ -174,3 +174,5 @@ sensor.bbc_radio_1_live:
   icon: mdi:radio
 scene.focus_mode:
   icon: mdi:bullseye
+sensor.bedroom_humidity:
+  icon: mdi:water-percent
