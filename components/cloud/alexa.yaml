@@ -9,6 +9,8 @@ alexa:
       - light.desk_spots
       - light.server_ledstrips
       - light.tradfri_bulb_e27_opal_1000lm
+      - sensor.bedroom_temperature
+      - sensor.bedroom_humidity
   entity_config:
     switch.turn_on_tv:
       name: 'Panasonic Viera'
