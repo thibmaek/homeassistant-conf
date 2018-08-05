@@ -1,0 +1,4 @@
+- platform: untappd
+  key: !secret untappd_client_id
+  secret: !secret untappd_client_secret
+  username: thibmaek
