@@ -12,6 +12,11 @@ frontend:
 
 cloud: !include_dir_merge_named components/cloud
 
+logger:
+  default: warn
+  logs:
+    custom_components.custom_updater: debug
+
 config:
 discovery:
 media_extractor:
@@ -57,6 +62,8 @@ twilio:
   account_sid: !secret twilio_account_sid
   auth_token: !secret twilio_auth_token
 
+# github.com/custom-components
+custom_updater:
 sickrage:
   host: !secret sickrage_url_api
   api_key: !secret sickrage_api_key
