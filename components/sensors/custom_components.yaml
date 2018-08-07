@@ -1,4 +1,7 @@
-- platform: untappd
-  key: !secret untappd_client_id
-  secret: !secret untappd_client_secret
-  username: thibmaek
+# Commented out for instability
+# - platform: untappd
+#   key: !secret untappd_client_id
+#   secret: !secret untappd_client_secret
+#   username: thibmaek
+
+# - platform: rpi_power
