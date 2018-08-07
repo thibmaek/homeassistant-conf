@@ -14,8 +14,8 @@ cloud: !include_dir_merge_named components/cloud
 
 logger:
   default: warn
-  logs:
-    custom_components.custom_updater: debug
+  # logs:
+  #   custom_components.custom_updater: debug
 
 config:
 discovery:
