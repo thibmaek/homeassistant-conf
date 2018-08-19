@@ -3,7 +3,6 @@ downstairs:
   name: 'Beneden'
   icon: mdi:sofa
   entities:
-    - group.chromecast_radio
     - group.music_spotify
     - media_player.volumio
     - input_select.tv_volume_level

@@ -1,12 +1,4 @@
 - platform: scrape
-  name: 'Transmission transfers'
-  resource: !secret transmission_url
-  select: '#filter-count'
-  authentication: 'basic'
-  username: !secret transmission_user
-  password: !secret transmission_pass
-
-- platform: scrape
   name: 'Worldwide FM LIVE'
   resource: 'https://worldwidefm.net/'
   select: '.radio-player-song-name'

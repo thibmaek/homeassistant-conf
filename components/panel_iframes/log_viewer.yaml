@@ -1,0 +1,4 @@
+log_viewer:
+  title: 'Log Viewer'
+  icon: mdi:ballot
+  url: 'http://hassio.local:4277'

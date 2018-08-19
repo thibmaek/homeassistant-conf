@@ -28,19 +28,3 @@ spotify_source:
     - 'Volumio Slaapkamer Thib'
   initial: 'Volumio Woonkamer'
   icon: 'mdi:speaker-wireless'
-
-cc_radio_source:
-  name: 'Source:'
-  options:
-    - 'Woonkamer'
-  initial: 'Woonkamer'
-  icon: 'mdi:cast'
-
-cc_radio_channel:
-  name: 'Channel:'
-  options:
-    - 'Studio Brussel'
-    - 'Klara'
-    - 'Worldwide FM'
-  initial: 'Studio Brussel'
-  icon: 'mdi:radio-tower'
