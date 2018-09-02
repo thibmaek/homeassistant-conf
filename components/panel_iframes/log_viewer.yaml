@@ -1,4 +1,4 @@
 log_viewer:
   title: 'Log Viewer'
-  icon: mdi:ballot
+  icon: mdi:playlist-edit
   url: 'http://hassio.local:4277'
