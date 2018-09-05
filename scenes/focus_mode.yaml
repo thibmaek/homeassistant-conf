@@ -1,5 +1,0 @@
-- name: 'Focus Mode'
-  entities:
-    light.desk_light: on
-    light.desk_tracklight: on
-    light.desk_spots: on

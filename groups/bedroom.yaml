@@ -5,9 +5,8 @@ upstairs:
   entities:
     - media_player.thibault_s_macbook_pro
     - media_player.macbookitpthibault
-    - scene.watching_something_in_bed
     - scene.working_at_my_desk
-    - scene.focus_mode
+    - scene.late_night_working
     - media_player.volumio_slaapkamer_thib
     - light.bedroom_lights
     - group.bedroom_lights

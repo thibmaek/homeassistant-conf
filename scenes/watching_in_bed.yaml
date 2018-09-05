@@ -1,3 +1,0 @@
-- name: 'Watching something in bed'
-  entities:
-    light.bed_lights: on

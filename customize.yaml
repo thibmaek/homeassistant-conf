@@ -59,10 +59,10 @@ light.bureaulamp:
   icon: mdi:lamp
 light.kerstboom:
   icon: mdi:pine-tree
-scene.watching_something_in_bed:
-  icon: mdi:laptop-mac
 scene.working_at_my_desk:
   icon: mdi:lead-pencil
+scene.late_night_working:
+  icon: mdi:weather-night
 light.bedroom_stringlight:
   icon: mdi:lightbulb-outline
 light.desk_spots:
