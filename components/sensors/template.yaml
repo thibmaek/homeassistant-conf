@@ -10,3 +10,18 @@
       value_template: '{{ states.sensor.bedroom_dht.attributes["humidity"] }}'
       entity_id: sensor.bedroom_dht
       unit_of_measurement: '%'
+
+    telenet_off_peak:
+      friendly_name: 'Telenet Off Peak'
+      value_template: >-
+        {% if now().hour >= 0 and now().hour < 12 %}
+          Off Peak
+        {% else %}
+          Peak Hour
+        {% endif %}
+      icon_template: >-
+        {% if now().hour >= 0 and now().hour < 12 %}
+          mdi:arrow-bottom-right-thick
+        {% else %}
+          mdi:arrow-top-right-thick
+        {% endif %}

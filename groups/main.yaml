@@ -12,3 +12,4 @@ default_view:
     - group.darksky_weather_tomorrow
     - weather.yahoo_weather
     - camera.garage_camera
+    - sensor.telenet_off_peak
