@@ -13,3 +13,4 @@ default_view:
     - weather.yahoo_weather
     - camera.garage_camera
     - sensor.telenet_off_peak
+    - camera.buienradar_radarmap
