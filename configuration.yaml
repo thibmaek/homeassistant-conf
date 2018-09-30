@@ -27,10 +27,10 @@ http:
   api_password: !secret http_password
 
 mqtt:
-  broker: !secret cloudmqtt_broker
-  port: !secret cloudmqtt_port
-  username: !secret cloudmqtt_user
-  password: !secret cloudmqtt_pass
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  username: !secret mqtt_user
+  password: !secret mqtt_password
 
 downloader:
   download_dir: '/share'
