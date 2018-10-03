@@ -1,5 +1,4 @@
-panel_iframe:
-  mqtt:
-    title: MQTT
-    icon: mdi:satellite-uplink
-    url: https://hassio.local:5713
+mqtt:
+  title: MQTT
+  icon: mdi:satellite-uplink
+  url: https://hassio.local:5713
