@@ -1,9 +1,0 @@
-plant_ficus:
-  name: 'Ficus Elastica'
-  view: no
-  entities:
-    - sensor.ficus_elastica_battery
-    - sensor.ficus_elastica_conductivity
-    - sensor.ficus_elastica_light_intensity
-    - sensor.ficus_elastica_moisture
-    - sensor.ficus_elastica_temperature

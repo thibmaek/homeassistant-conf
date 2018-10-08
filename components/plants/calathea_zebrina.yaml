@@ -1,0 +1,12 @@
+calathea_leopardina:
+  sensors:
+    battery: sensor.calathea_leopardina_battery
+    brightness: sensor.calathea_leopardina_brightness
+    conductivity: sensor.calathea_leopardina_conductivity
+    moisture: sensor.calathea_leopardina_moisture
+    temperature: sensor.calathea_leopardina_temperature
+  min_moisture: 14
+  max_moisture: 30
+  min_battery: 17
+  min_conductivity: 500
+  min_temperature: 15

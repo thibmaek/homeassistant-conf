@@ -76,21 +76,3 @@
   - entity_id: sun.sun
     platform: state
     to: below_horizon
-- action:
-  - data:
-      message: Some plant's moisture level has dipped below 14%
-      title: "\U0001F4A7 A plant needs watering"
-    service: persistent_notification.create
-  - data:
-      message: "\U0001F4A7 A plant needs watering"
-    service: notify.ios_thibaults_iphone
-  alias: Alarm me if my plants need watering
-  condition: []
-  id: '1516134433603'
-  trigger:
-  - below: '15'
-    entity_id: sensor.monstera_deliciosa_moisture
-    platform: numeric_state
-  - below: '15'
-    entity_id: sensor.ficus_elastica_moisture
-    platform: numeric_state

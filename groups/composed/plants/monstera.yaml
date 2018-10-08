@@ -1,9 +1,0 @@
-plant_monstera:
-  name: 'Monstera Deliciosa'
-  view: no
-  entities:
-    - sensor.monstera_deliciosa_battery
-    - sensor.monstera_deliciosa_conductivity
-    - sensor.monstera_deliciosa_light_intensity
-    - sensor.monstera_deliciosa_moisture
-    - sensor.monstera_deliciosa_temperature

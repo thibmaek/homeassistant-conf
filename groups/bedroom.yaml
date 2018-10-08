@@ -11,7 +11,5 @@ upstairs:
     - light.bedroom_lights
     - group.bedroom_lights
     - group.bedroom_media
-    - group.plant_monstera
-    - group.plant_ficus
     - group.bedroom_sensors
     - camera.bedroom_camera
