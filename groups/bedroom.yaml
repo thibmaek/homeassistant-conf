@@ -1,15 +1,18 @@
 upstairs:
   view: yes
   name: 'Slaapkamer'
-  icon: mdi:hotel
+  icon: mdi:bed-empty
   entities:
-    - media_player.thibault_s_macbook_pro
-    - media_player.macbookitpthibault
-    - scene.working_at_my_desk
-    - scene.late_night_working
-    - media_player.volumio_slaapkamer_thib
-    - light.bedroom_lights
+    - camera.bedroom_camera
+    - group.all_plants
     - group.bedroom_lights
     - group.bedroom_media
     - group.bedroom_sensors
-    - camera.bedroom_camera
+    - light.bedroom_lights
+    - media_player.macbookitpthibault
+    - media_player.thibault_s_macbook_pro
+    - media_player.volumio_slaapkamer_thib
+    - plant.calathea_leopardina
+    - plant.monstera_deliciosa
+    - scene.late_night_working
+    - scene.working_at_my_desk
