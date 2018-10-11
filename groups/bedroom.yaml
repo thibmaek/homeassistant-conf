@@ -4,7 +4,6 @@ upstairs:
   icon: mdi:bed-empty
   entities:
     - camera.bedroom_camera
-    - group.all_plants
     - group.bedroom_lights
     - group.bedroom_media
     - group.bedroom_sensors
