@@ -1,4 +1,4 @@
 mqtt:
   title: MQTT
   icon: mdi:satellite-uplink
-  url: !secret hassio_mqtt
+  url: !secret hassio_hivemqtt
