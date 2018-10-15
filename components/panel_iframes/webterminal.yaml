@@ -1,4 +1,4 @@
 web_terminal:
   title: 'Web Terminal'
   icon: 'mdi:console-line'
-  url: 'https://hassio.local:7681'
+  url: !secret hassio_webterminal

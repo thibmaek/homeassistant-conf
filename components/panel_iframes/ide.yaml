@@ -1,4 +1,4 @@
 ide:
   title: 'IDE'
   icon: 'mdi:code-braces'
-  url: 'http://hassio.local:8321'
+  url: !secret hassio_ide

@@ -1,9 +1,9 @@
 grafana:
   title: 'Grafana'
   icon: mdi:chart-donut-variant
-  url: 'http://hassio.local:3000'
+  url: !secret hassio_grafana
 
 influxdb:
   title: 'InfluxDB'
   icon: mdi:chart-areaspline
-  url: 'http://hassio.local:8888'
+  url: !secret hassio_influxdb
