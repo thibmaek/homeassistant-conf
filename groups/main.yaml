@@ -14,3 +14,4 @@ default_view:
     - camera.garage_camera
     - sensor.telenet_off_peak
     - camera.buienradar_radarmap
+    - camera.motioneye_push
