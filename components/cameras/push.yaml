@@ -1,0 +1,4 @@
+- platform: push
+  name: motionEye Push
+  timeout: 5
+  token: !secret http_password
