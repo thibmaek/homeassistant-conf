@@ -1,16 +1,5 @@
 - platform: template
   sensors:
-    bedroom_temperature:
-      friendly_name: 'Bedroom Temperature'
-      value_template: '{{ states.sensor.bedroom_dht.attributes["temperature"] }}'
-      entity_id: sensor.bedroom_dht
-      unit_of_measurement: '°C'
-    bedroom_humidity:
-      friendly_name: 'Bedroom Humidity'
-      value_template: '{{ states.sensor.bedroom_dht.attributes["humidity"] }}'
-      entity_id: sensor.bedroom_dht
-      unit_of_measurement: '%'
-
     telenet_off_peak:
       friendly_name: 'Telenet Off Peak'
       value_template: >-

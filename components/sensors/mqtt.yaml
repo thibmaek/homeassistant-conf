@@ -1,3 +1,12 @@
+- platform: mqtt
+  name: bedroom_temperature
+  state_topic: homeassistant/rpi-zero-w-sensors/dht/temperature
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: bedroom_humidity
+  state_topic: homeassistant/rpi-zero-w-sensors/dht/humidity
+  unit_of_measurement: '%'
+
 # Monstera Deliciosa
 - platform: mqtt
   name: monstera_deliciosa_moisture
