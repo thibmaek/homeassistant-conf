@@ -11,7 +11,7 @@ upstairs:
     - media_player.macbookitpthibault
     - media_player.thibault_s_macbook_pro
     - media_player.volumio_slaapkamer_thib
-    - plant.calathea_leopardina
     - plant.monstera_deliciosa
+    - plant.monstera_monkey_mask
     - scene.late_night_working
     - scene.working_at_my_desk
