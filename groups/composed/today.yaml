@@ -1,8 +1,6 @@
 today:
   name: 'Vandaag'
   entities:
-    - sensor.time
-    - sensor.date
     - sensor.dark_sky_weather_apparent_temperature
     - sensor.dark_sky_weather_precip_probability
     - sun.sun

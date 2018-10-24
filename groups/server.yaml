@@ -3,8 +3,8 @@ server:
   name: 'Server'
   icon: mdi:raspberrypi
   entities:
+    - group.crypto
+    - group.server_actions
     - group.server_internals
     - group.server_network
-    - group.server_actions
-    - group.crypto
     - group.weblinks

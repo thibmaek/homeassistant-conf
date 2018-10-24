@@ -2,9 +2,11 @@ bedroom_lights:
   name: 'Bedroom Lights'
   view: no
   entities:
-    - sensor.tradfri_wireless_dimmer
-    - light.tradfri_bulb_e27_opal_1000lm
-    - light.desk_light
     - light.bed_lights
     - light.bedroom_stringlights
+    - light.desk_light
     - light.desk_spots
+    - light.tradfri_bulb_e27_cws_opal_600lm
+    - light.tradfri_bulb_e27_opal_1000lm
+    - sensor.tradfri_remote_control
+    - sensor.tradfri_wireless_dimmer

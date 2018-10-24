@@ -3,31 +3,31 @@ server_network:
   view: no
   entities:
     - sensor.myipopendnscom
-    - weblink.speedtest
     - sensor.speedtest_download
-    - sensor.speedtest_upload
     - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - weblink.speedtest
 
 server_internals:
   name: 'Server Internals'
   view: no
   entities:
-    - updater.updater
-    - sensor.current_version
-    - sensor.uptime
-    - sensor.processor_use
-    - sensor.memory_use
-    - sensor.memory_free
-    - sensor.disk_used_
-    - sensor.disk_free_
     - light.server_ledstrips
+    - sensor.current_version
+    - sensor.disk_free_
+    - sensor.disk_used_
+    - sensor.memory_free
+    - sensor.memory_use
+    - sensor.processor_use
+    - sensor.uptime
+    - updater.updater
 
 server_actions:
   name: 'Server Actions'
   view: no
   entities:
-    - script.ha_reload_groups
-    - script.ha_reload_core
-    - script.ha_reload_automations
-    - script.ha_reload_scripts
     - script.ha_check_config
+    - script.ha_reload_automations
+    - script.ha_reload_core
+    - script.ha_reload_groups
+    - script.ha_reload_scripts

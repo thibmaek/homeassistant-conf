@@ -4,7 +4,7 @@ personal_cal:
   entities:
     - sensor.time__date
     - sensor.calendar_agenda
-    - sensor.calendar_tasks
-    - sensor.calendar_lotte__thib
     - sensor.calendar_events
     - sensor.calendar_facebook
+    - sensor.calendar_lotte__thib
+    - sensor.calendar_tasks

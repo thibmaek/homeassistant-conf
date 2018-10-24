@@ -2,5 +2,5 @@ bedroom_sensors:
   name: Sensors
   view: no
   entities:
-    - sensor.bedroom_temperature
     - sensor.bedroom_humidity
+    - sensor.bedroom_temperature
