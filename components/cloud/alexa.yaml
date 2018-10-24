@@ -13,7 +13,9 @@ alexa:
       - sensor.bedroom_humidity
   entity_config:
     switch.turn_on_tv:
-      name: 'Panasonic Viera'
+      name: 'TV'
       display_categories: 'TV'
     light.tradfri_bulb_e27_opal_1000lm:
+      name: 'White Warm Light'
+    light.tradfri_bulb_e27_cws_opal_600lm:
       name: 'Desk Tracklight'

@@ -165,7 +165,7 @@ sensor.dark_sky_weather_wind_speed:
   friendly_name: Wind speed
 sensor.dark_sky_weather_wind_speed_1:
   friendly_name: Wind speed (Tomorrow)
-light.tradfri_bulb_e27_opal_1000lm:
+light.tradfri_bulb_e27_cws_opal_600lm:
   friendly_name: Desk Tracklight
   icon: mdi:track-light
 sensor.worldwide_fm_live:
