@@ -1,0 +1,48 @@
+- name: "Working at my desk"
+  entities:
+    lights.tradfri_bulb_e27_cws_opal_600lm:
+      state: on
+      brightness: 250
+      hs_color:
+        - 360
+        - 0
+      rgb_color:
+        - 255
+        - 255
+        - 255
+      xy_color:
+        - 0.323
+        - 0.329
+
+- name: "Late night working"
+  entities:
+    lights.bedroom_lights: off
+    lights.tradfri_bulb_e27_cws_opal_600lm:
+      state: on
+      brightness: 58
+      hs_color:
+        - 29.999
+        - 57.142
+      rgb_color:
+        - 255
+        - 182
+        - 109
+      xy_color:
+        - 0.491
+        - 0.39
+
+- name: "Sexy Mode"
+  entities:
+    lights.tradfri_bulb_e27_cws_opal_600lm:
+      state: on
+      brightness: 10
+      hs_color:
+        - 344.998
+        - 100
+      rgb_color:
+        - 255
+        - 0
+        - 63
+      xy_color:
+        - 0.667
+        - 0.284
