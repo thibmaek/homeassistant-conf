@@ -176,3 +176,5 @@ scene.focus_mode:
   icon: mdi:bullseye
 sensor.bedroom_humidity:
   icon: mdi:water-percent
+scene.sexy_mode:
+  icon: mdi:heart-multiple
