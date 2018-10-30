@@ -1,8 +1,6 @@
-group.downstairs:
+group.living_room:
   order: 1
-group.garage:
-  order: 3
-group.upstairs:
+group.bedroom:
   order: 2
 switch.turn_on_tv:
   friendly_name: TV Power

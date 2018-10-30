@@ -1,6 +1,6 @@
-upstairs:
+bedroom:
   view: yes
-  name: 'Slaapkamer'
+  name: "Slaapkamer"
   icon: mdi:bed-empty
   entities:
     - camera.bedroom_camera
