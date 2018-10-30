@@ -1,9 +1,5 @@
 - platform: volumio
   name: 'Volumio Woonkamer'
-  host: !secret volumio_woonkamer
+  host: !secret host_volumio_woonkamer
   port: 3000
 
-- platform: volumio
-  name: 'Volumio Slaapkamer Thib'
-  host: !secret volumio_slaapkamer_thib
-  port: 3000

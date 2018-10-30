@@ -10,7 +10,6 @@ bedroom:
     - light.bedroom_lights
     - media_player.macbookitpthibault
     - media_player.thibault_s_macbook_pro
-    - media_player.volumio_slaapkamer_thib
     - plant.monstera_deliciosa
     - plant.monstera_monkey_mask
     - scene.late_night_working

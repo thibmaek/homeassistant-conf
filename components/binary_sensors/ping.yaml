@@ -1,14 +1,29 @@
 - platform: ping
   name: "Panorama Host"
-  host: !secret plex_host
+  host: !secret host_panorama
+  scan_interval: 1800
+
+- platform: ping
+  name: "Tresor Host"
+  host: !secret host_tresor
+  scan_interval: 1800
+
+- platform: ping
+  name: "NextcloudPi Host"
+  host: !secret host_nextcloudpi
+  scan_interval: 1800
+
+- platform: ping
+  name: "Rasplex Host"
+  host: !secret host_rasplex
   scan_interval: 1800
 
 - platform: ping
   name: "Volumio Woonkamer Host"
-  host: !secret volumio_woonkamer
+  host: !secret host_volumio_woonkamer
   scan_interval: 1800
 
 - platform: ping
   name: "PS4 Host"
-  host: !secret ps4_ip
+  host: !secret host_ps4
   scan_interval: 1800

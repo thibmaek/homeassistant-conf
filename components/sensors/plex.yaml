@@ -1,6 +1,6 @@
  - platform: plex
    name: 'Panorama Plex'
-   host: !secret plex_host
+   host: !secret host_panorama
    username: !secret plex_user
    password: !secret plex_pass
    token: !secret plex_token

@@ -1,4 +1,4 @@
 - platform: panasonic_viera
   name: 'Panasonic Viera'
-  host: !secret panasonic_viera_ip
+  host: !secret host_panasonic_viera
   mac: !secret panasonic_viera_mac
