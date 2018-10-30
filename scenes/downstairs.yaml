@@ -1,11 +1,11 @@
 - name: "Watching a movie"
   entities:
-    light.tradfri_bulb_e27_cws_opal_600lm:
+    light.tradfri_bulb_e27_opal_1000lm:
       state: on
       brightness_pct: 35
 
 - name: "Having dinner"
   entities:
-    light.tradfri_bulb_e27_cws_opal_600lm:
+    light.tradfri_bulb_e27_opal_1000lm:
       state: on
       brightness_pct: 80
