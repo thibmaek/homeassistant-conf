@@ -1,0 +1,13 @@
+- platform: group
+  name: "Bedroom Lights"
+  entities:
+    - light.bedroom_stringlights
+    - light.desk_spots
+    - light.bed_lights
+    - light.tradfri_bulb_e27_cws_opal_600lm
+    - light.desk_light
+
+- platform: "group"
+  name: "Living Room Lights"
+  entities:
+    - light.tradfri_bulb_e27_opal_1000lm
