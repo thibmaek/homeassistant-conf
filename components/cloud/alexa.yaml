@@ -1,21 +1,23 @@
 alexa:
   filter:
     include_entities:
-      - switch.turn_on_tv
       - light.bed_lights
       - light.bedroom_lights
       - light.bedroom_stringlights
       - light.desk_light
       - light.desk_spots
+      - light.living_room_lights
       - light.server_ledstrips
+      - light.tradfri_bulb_e27_cws_opal_600lm
       - light.tradfri_bulb_e27_opal_1000lm
-      - sensor.bedroom_temperature
       - sensor.bedroom_humidity
+      - sensor.bedroom_temperature
+      - switch.turn_on_tv
   entity_config:
     switch.turn_on_tv:
       name: 'TV'
       display_categories: 'TV'
     light.tradfri_bulb_e27_opal_1000lm:
-      name: 'White Warm Light'
+      name: 'Living Room Light'
     light.tradfri_bulb_e27_cws_opal_600lm:
       name: 'Desk Tracklight'

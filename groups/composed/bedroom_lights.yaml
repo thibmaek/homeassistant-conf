@@ -7,6 +7,4 @@ bedroom_lights:
     - light.desk_light
     - light.desk_spots
     - light.tradfri_bulb_e27_cws_opal_600lm
-    - light.tradfri_bulb_e27_opal_1000lm
     - sensor.tradfri_remote_control
-    - sensor.tradfri_wireless_dimmer

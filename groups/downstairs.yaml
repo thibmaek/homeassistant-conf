@@ -3,8 +3,10 @@ living_room:
   name: 'Beneden'
   icon: mdi:sofa
   entities:
+    - group.living_room_lights
     - group.music_spotify
     - input_select.tv_volume_level
+    - light.living_room_lights
     - media_player.panasonic_viera
     - media_player.playstation_4
     - media_player.rasplex
@@ -12,4 +14,13 @@ living_room:
     - media_player.volumio_woonkamer
     - media_player.woonkamer_apple_tv
     - media_player.woonkamer_chromecast
+    - scene.having_dinner
+    - scene.watching_a_movie
     - switch.turn_on_tv
+
+living_room_lights:
+  name: "Living Room Lights"
+  view: no
+  entities:
+    - light.tradfri_bulb_e27_opal_1000lm
+    - sensor.tradfri_wireless_dimmer
