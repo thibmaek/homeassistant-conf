@@ -176,3 +176,7 @@ sensor.bedroom_humidity:
   icon: mdi:water-percent
 scene.sexy_mode:
   icon: mdi:heart-multiple
+scene.having_dinner:
+  icon: mdi:silverware-fork-knife
+scene.watching_a_movie:
+  icon: mdi:theater
