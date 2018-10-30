@@ -13,6 +13,9 @@ server_network_hosts:
   view: no
   entities:
     - binary_sensor.panorama_host
+    - binary_sensor.tresor_host
+    - binary_sensor.nextcloudpi_host
+    - binary_sensor.rasplex_host
     - binary_sensor.ps4_host
     - binary_sensor.volumio_woonkamer_host
 
