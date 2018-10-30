@@ -1,0 +1,14 @@
+- platform: ping
+  name: "Plex Host"
+  host: !secret plex_host
+  scan_interval: 1800
+
+- platform: ping
+  name: "Volumio Woonkamer Host"
+  host: !secret volumio_woonkamer
+  scan_interval: 1800
+
+- platform: ping
+  name: "PS4 Host"
+  host: !secret ps4_ip
+  scan_interval: 1800
