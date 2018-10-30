@@ -1,5 +1,5 @@
 - platform: ping
-  name: "Plex Host"
+  name: "Panorama Host"
   host: !secret plex_host
   scan_interval: 1800
 

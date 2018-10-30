@@ -8,6 +8,14 @@ server_network:
     - sensor.speedtest_upload
     - weblink.speedtest
 
+server_network_hosts:
+  name: 'Network Hosts'
+  view: no
+  entities:
+    - binary_sensor.panorama_host
+    - binary_sensor.ps4_host
+    - binary_sensor.volumio_woonkamer_host
+
 server_internals:
   name: 'Server Internals'
   view: no

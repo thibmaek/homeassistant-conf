@@ -1,10 +1,11 @@
 server:
   view: yes
-  name: 'Server'
+  name: "Server"
   icon: mdi:raspberrypi
   entities:
     - group.crypto
     - group.server_actions
     - group.server_internals
     - group.server_network
+    - group.server_network_hosts
     - group.weblinks
