@@ -188,4 +188,5 @@ sensor.tradfri_remote_control:
 sensor.tradfri_wireless_dimmer:
   icon: mdi:checkbox-blank-circle
 sensor.myip:
+  friendly_name: "Public IP"
   icon: mdi:ip
