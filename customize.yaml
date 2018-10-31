@@ -171,6 +171,8 @@ sensor.worldwide_fm_live:
   icon: mdi:radio
 sensor.bbc_radio_1_live:
   icon: mdi:radio
+sensor.stubru_live:
+  icon: mdi:radio
 scene.focus_mode:
   icon: mdi:bullseye
 sensor.bedroom_humidity:
@@ -185,3 +187,5 @@ sensor.tradfri_remote_control:
   icon: mdi:remote
 sensor.tradfri_wireless_dimmer:
   icon: mdi:checkbox-blank-circle
+sensor.myip:
+  icon: mdi:ip

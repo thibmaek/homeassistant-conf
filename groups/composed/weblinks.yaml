@@ -4,6 +4,7 @@ weblinks:
   entities:
     - weblink.home_assistant_components
     - weblink.mijn_telenet
+    - weblink.nextcloud
     - weblink.panorama_plex
     - weblink.sickrage
     - weblink.transmission

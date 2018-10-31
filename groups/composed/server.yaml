@@ -3,6 +3,7 @@ server_network:
   view: no
   entities:
     - sensor.myipopendnscom
+    - sensor.myip
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
@@ -26,7 +27,7 @@ server_internals:
     - light.server_ledstrips
     - sensor.current_version
     - sensor.disk_free_
-    - sensor.disk_used_
+    - sensor.disk_use_
     - sensor.memory_free
     - sensor.memory_use
     - sensor.processor_use

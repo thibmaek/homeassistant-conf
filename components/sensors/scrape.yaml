@@ -11,4 +11,4 @@
 - platform: scrape
   name: 'Stubru LIVE'
   resource: 'https://stubru.be'
-  select: '.programma'
+  select: '.programma.ng-binding'

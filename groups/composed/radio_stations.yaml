@@ -3,5 +3,5 @@ radio_stations:
   view: no
   entities:
     - sensor.bbc_radio_1_live
-    - sensor.studio_brussel_live
+    - sensor.stubru_live
     - sensor.worldwide_fm_live

@@ -11,6 +11,7 @@ default_view:
     - group.personal_cal
     - group.radio_stations
     - group.today
+    - input_boolean.vacation_mode
     - media_player.spotify
     - sensor.dark_sky_weather_daily_summary
     - sensor.date
