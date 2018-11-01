@@ -10,6 +10,11 @@ alexa:
       - light.server_ledstrips
       - light.tradfri_bulb_e27_cws_opal_600lm
       - light.tradfri_bulb_e27_opal_1000lm
+      - scene.having_dinner
+      - scene.late_night_working
+      - scene.sexy_mode
+      - scene.watching_a_movie
+      - scene.working_at_my_desk
       - sensor.bedroom_humidity
       - sensor.bedroom_temperature
       - switch.turn_on_tv
