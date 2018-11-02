@@ -23,6 +23,7 @@ media_extractor:
 updater:
 history:
 logbook:
+recorder:
 http:
   api_password: !secret http_password
 
