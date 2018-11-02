@@ -1,0 +1,8 @@
+printer_ink_levels:
+  name: "HP Printer ink levels"
+  view: no
+  entities:
+    - sensor.printer_ink_level_cyan
+    - sensor.printer_ink_level_magenta
+    - sensor.printer_ink_level_yellow
+    - sensor.printer_ink_level_black

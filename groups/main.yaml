@@ -9,6 +9,7 @@ default_view:
     - group.buienradar
     - group.darksky_weather_tomorrow
     - group.personal_cal
+    - group.printer_ink_levels
     - group.radio_stations
     - group.today
     - input_boolean.vacation_mode
