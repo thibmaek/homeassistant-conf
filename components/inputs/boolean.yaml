@@ -5,4 +5,5 @@ vacation_mode:
 
 out_of_office:
   name: "Out of office"
+  initial: false
   icon: mdi:home-minus
