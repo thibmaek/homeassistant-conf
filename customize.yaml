@@ -1,7 +1,3 @@
-group.living_room:
-  order: 1
-group.bedroom:
-  order: 2
 switch.turn_on_tv:
   friendly_name: TV Power
   icon: mdi:television-classic
@@ -190,3 +186,11 @@ sensor.tradfri_wireless_dimmer:
 sensor.myip:
   friendly_name: "Public IP"
   icon: mdi:ip
+sensor.printer_ink_level_cyan:
+  friendly_name: "Ink level (Cyan)"
+sensor.printer_ink_level_magenta:
+  friendly_name: "Ink level (Magenta)"
+sensor.printer_ink_level_yellow:
+  friendly_name: "Ink level (Yellow)"
+sensor.printer_ink_level_black:
+  friendly_name: "Ink level (Keycolor)"
