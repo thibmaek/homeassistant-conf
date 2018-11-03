@@ -188,9 +188,13 @@ sensor.myip:
   icon: mdi:ip
 sensor.printer_ink_level_cyan:
   friendly_name: "Ink level (Cyan)"
+  entity_picture: /local/ink_c.png
 sensor.printer_ink_level_magenta:
   friendly_name: "Ink level (Magenta)"
+  entity_picture: /local/ink_m.png
 sensor.printer_ink_level_yellow:
   friendly_name: "Ink level (Yellow)"
+  entity_picture: /local/ink_y.png
 sensor.printer_ink_level_black:
   friendly_name: "Ink level (Keycolor)"
+  entity_picture: /local/ink_k.png
