@@ -1,4 +1,5 @@
 - platform: rest
+  icon: mdi:record-player
   resource: !secret discogs_random_record_lambda
   name: "Discogs Random Record"
   json_attributes:
