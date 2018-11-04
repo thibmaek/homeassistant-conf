@@ -198,3 +198,9 @@ sensor.printer_ink_level_yellow:
 sensor.printer_ink_level_black:
   friendly_name: "Ink level (Keycolor)"
   entity_picture: /local/ink_k.png
+plant.monstera_deliciosa:
+  friendly_name: Monstera Deliciosa
+plant.monstera_monkey_mask:
+  friendly_name: Monstera Monkey Mask
+sensor.discogs_random_record:
+  icon: mdi:record-player
