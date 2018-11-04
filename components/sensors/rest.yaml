@@ -1,5 +1,6 @@
 - platform: rest
   icon: mdi:record-player
+  scan_interval: 1800
   resource: !secret discogs_random_record_lambda
   name: "Discogs Random Record"
   json_attributes:
