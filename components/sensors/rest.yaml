@@ -5,4 +5,4 @@
   name: "Discogs Random Record"
   json_attributes:
     - basic_information
-  value_template: "{{ value_json.record.basic_information.title }} - {{ value_json.record.basic_information.title }}"
+  value_template: "{{ value_json.record.basic_information.artists[0].name }} - {{ value_json.record.basic_information.title }}"
