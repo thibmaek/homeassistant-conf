@@ -14,7 +14,7 @@
         {% else %}
           mdi:arrow-top-right-thick
         {% endif %}
-    dayOfWeek:
+    day_of_week:
       friendly_name: "Day of the week"
       entity_id: sensor.time
       icon: mdi:calendar-outline
