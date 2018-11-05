@@ -2,16 +2,16 @@
   sensors:
     waste_collection_carboard:
       friendly_name: "Cardboard collection"
-      icon: mdi:package-variant
+      icon_template: mdi:package-variant
       value_template: >-
         {{ is_state("sensor.day_of_week", "Monday") }}
     waste_collection_trash:
       friendly_name: "Trash collection"
-      icon: mdi:recycle
+      icon_template: mdi:recycle
       value_template: >-
         {{ is_state("sensor.day_of_week", "Thursday") }}
     waste_collection_pmd:
       friendly_name: "PMD collection"
-      icon: mdi:cup-water
+      icon_template: mdi:cup-water
       value_template: >-
         {{ is_state("sensor.day_of_week", "Monday") }}
