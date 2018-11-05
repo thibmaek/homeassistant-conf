@@ -5,6 +5,6 @@ today:
     - sensor.dark_sky_weather_precip_probability
     - sun.sun
     - sensor.moon
-    - sensor.season
+    - sensor.season_template
     - sensor.flights_home
     - sensor.waze_work_travel_time
