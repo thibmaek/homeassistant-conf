@@ -204,16 +204,3 @@ plant.monstera_monkey_mask:
   friendly_name: Monstera Monkey Mask
 sensor.discogs_random_record:
   icon: mdi:record-player
-sensor.season:
-  icon_template: >
-    '{% if is_state("sensor.season", "autumn") %}
-      mdi:leaf
-    {% elif is_state("sensor.season", "winter") %}
-      mdi:snowflake
-    {% elif is_state("sensor.season", "spring") %}
-      mdi:flower
-    {% elif is_state("sensor.season", "summer") %}
-      mdi:sunglasses
-    {% else %}
-      mdi:cloud
-    {% endif %}'
