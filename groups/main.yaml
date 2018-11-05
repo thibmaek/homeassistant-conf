@@ -12,6 +12,7 @@ default_view:
     - group.printer_ink_levels
     - group.radio_stations
     - group.today
+    - group.waste_collection
     - input_boolean.vacation_mode
     - media_player.spotify
     - sensor.dark_sky_weather_daily_summary

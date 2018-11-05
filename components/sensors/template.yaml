@@ -17,7 +17,7 @@
     day_of_week:
       friendly_name: "Day of the week"
       entity_id: sensor.time
-      icon: mdi:calendar-outline
+      icon_template: mdi:calendar-outline
       value_template: >
         {{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}
     # Alias implementation until https://github.com/home-assistant/home-assistant/pull/18221 is merged
