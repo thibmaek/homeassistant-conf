@@ -26,6 +26,3 @@ plex.conf
 google_calendars.yaml
 tts/
 dasher/
-
-# Development
-.vscode
