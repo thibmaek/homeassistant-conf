@@ -35,3 +35,8 @@ To replicate this behaviour, install the ConfigWatcher addon from [@vkorn/hassio
   url = https://username@personal-access-tokengithub.com/thibmaek/homeassistant-conf
   fetch = +refs/heads/*:refs/remotes/origin/*
 ```
+
+## Styleguide
+
+- Use single quotes for single words
+- Use double quotes for multiple words
