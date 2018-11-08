@@ -1,12 +1,14 @@
-# DHT22
+# DHT11
 - platform: mqtt
-  name: bedroom_temperature
-  state_topic: homeassistant/rpi-zero-w-sensors/dht/temperature
+  name: "Bedroom Temperature"
+  state_topic: homeassistant/nodemcu-bedroom/SENSOR
   unit_of_measurement: '°C'
+  value_template: '{{ value_json.Temperature.Humidity }}'
 - platform: mqtt
-  name: bedroom_humidity
-  state_topic: homeassistant/rpi-zero-w-sensors/dht/humidity
+  name: "Bedroom Humidity"
+  state_topic: homeassistant/nodemcu-bedroom/SENSOR
   unit_of_measurement: '%'
+  value_template: '{{ value_json.DHT11.Humidity }}'
 
 # HP Printer Ink levels
 - platform: mqtt
