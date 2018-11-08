@@ -3,12 +3,14 @@
   name: "Bedroom Temperature"
   state_topic: homeassistant/nodemcu-bedroom/SENSOR
   unit_of_measurement: '°C'
-  value_template: '{{ value_json.Temperature.Humidity }}'
+  value_template: '{{ value_json.DHT11.Temperature }}'
+  availability_topic: homeassistant/nodemcu-bedroom/LWT
 - platform: mqtt
   name: "Bedroom Humidity"
   state_topic: homeassistant/nodemcu-bedroom/SENSOR
   unit_of_measurement: '%'
   value_template: '{{ value_json.DHT11.Humidity }}'
+  availability_topic: homeassistant/nodemcu-bedroom/LWT
 
 # HP Printer Ink levels
 - platform: mqtt
