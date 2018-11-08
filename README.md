@@ -40,3 +40,4 @@ To replicate this behaviour, install the ConfigWatcher addon from [@vkorn/hassio
 
 - Use single quotes for single words
 - Use double quotes for multiple words
+- No quotes for MQTT topics

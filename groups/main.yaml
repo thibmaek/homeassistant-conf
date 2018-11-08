@@ -3,7 +3,7 @@ default_view:
   name: 'Maekelberghain'
   icon: mdi:home
   entities:
-    - binary_sensor.garage_motion_detected
+    - binary_sensor.garage_motion
     - camera.buienradar_radarmap
     - camera.garage_camera
     - camera.motioneye_push

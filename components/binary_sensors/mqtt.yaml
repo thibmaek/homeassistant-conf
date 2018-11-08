@@ -1,4 +1,4 @@
 - platform: mqtt
-  name: "Garage motion detected"
+  name: "Garage Motion"
   state_topic: homeassistant/binary-sensor/motion-detected
   device_class: motion
