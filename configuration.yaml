@@ -28,6 +28,7 @@ http:
   api_password: !secret http_password
 
 mqtt:
+  discovery: true
   broker: !secret mqtt_broker
   port: !secret mqtt_port
   username: !secret mqtt_user
