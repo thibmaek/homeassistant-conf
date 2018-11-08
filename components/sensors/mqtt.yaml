@@ -5,12 +5,16 @@
   unit_of_measurement: '°C'
   value_template: '{{ value_json.DHT11.Temperature }}'
   availability_topic: homeassistant/nodemcu-bedroom/LWT
+  payload_available: "Online"
+  payload_not_available: "Offline"
 - platform: mqtt
   name: "Bedroom Humidity"
   state_topic: homeassistant/nodemcu-bedroom/SENSOR
   unit_of_measurement: '%'
   value_template: '{{ value_json.DHT11.Humidity }}'
   availability_topic: homeassistant/nodemcu-bedroom/LWT
+  payload_available: "Online"
+  payload_not_available: "Offline"
 
 # HP Printer Ink levels
 - platform: mqtt
