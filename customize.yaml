@@ -204,3 +204,5 @@ plant.monstera_monkey_mask:
   friendly_name: Monstera Monkey Mask
 sensor.discogs_random_record:
   icon: mdi:record-player
+switch.flux:
+  icon: mdi:progress-clock
