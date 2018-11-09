@@ -85,7 +85,7 @@ sensor: !include_dir_merge_list components/sensors/
 switch: !include_dir_merge_list components/switches/
 
 automation: !include automations.yaml
-automation old: !include automations_old.yaml
+automation old: !include_dir_merge_list automations_old/
 group: !include_dir_merge_named groups/
 scene: !include_dir_merge_list scenes/
 zone: !include zones.yaml
