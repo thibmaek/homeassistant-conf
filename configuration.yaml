@@ -14,8 +14,6 @@ cloud: !include_dir_merge_named components/cloud
 
 logger:
   default: warn
-  # logs:
-  #   custom_components.custom_updater: debug
 
 config:
 discovery:
@@ -63,13 +61,6 @@ panel_iframe: !include_dir_merge_named components/panel_iframes/
 twilio:
   account_sid: !secret twilio_account_sid
   auth_token: !secret twilio_auth_token
-
-# Commented out for instability
-# github.com/custom-components
-# custom_updater:
-# sickrage:
-#   host: !secret sickrage_url_api
-#   api_key: !secret sickrage_api_key
 
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 camera: !include_dir_merge_list components/cameras/
