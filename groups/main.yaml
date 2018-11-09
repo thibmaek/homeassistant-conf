@@ -20,4 +20,5 @@ default_view:
     - sensor.date
     - sensor.telenet_off_peak
     - sensor.time
+    - weather.weather_brugge
     - weather.yahoo_weather

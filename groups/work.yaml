@@ -4,6 +4,7 @@ work:
   icon: mdi:briefcase
   entities:
     - group.work_
+    - weather.weather_gent
 
 work_:
   view: no
