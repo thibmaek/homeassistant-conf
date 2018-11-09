@@ -1,0 +1,7 @@
+- platform: group
+  name: "Thibault Devices"
+  services:
+    - service: html5
+    - service: ios_ipad_van_thibault
+    - service: ios_thibaults_iphone
+    - service: pushbullet
