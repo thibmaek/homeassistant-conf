@@ -6,8 +6,6 @@ default_view:
     - binary_sensor.garage_motion
     - camera.buienradar_radarmap
     - camera.garage_camera
-    - camera.motioneye_push
-    - group.buienradar
     - group.darksky_weather_tomorrow
     - group.personal_cal
     - group.printer_ink_levels
@@ -16,9 +14,5 @@ default_view:
     - group.waste_collection
     - input_boolean.vacation_mode
     - media_player.spotify
-    - sensor.dark_sky_weather_daily_summary
-    - sensor.date
     - sensor.telenet_off_peak
-    - sensor.time
     - weather.weather_brugge
-    - weather.yahoo_weather

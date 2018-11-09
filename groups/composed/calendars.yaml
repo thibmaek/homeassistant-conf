@@ -2,7 +2,8 @@ personal_cal:
   name: "Today's Calendar"
   view: no
   entities:
-    - sensor.time__date
+    - sensor.date
+    - sensor.time
     - sensor.calendar_agenda
     - sensor.calendar_events
     - sensor.calendar_facebook

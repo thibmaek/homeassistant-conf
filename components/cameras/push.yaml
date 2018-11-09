@@ -1,9 +1,0 @@
-- platform: push
-  name: motionEye Push
-  timeout: 5
-  token: !secret http_password
-
-- platform: push
-  name: "Discogs random record"
-  timeout: 5
-  token: !secret http_password
