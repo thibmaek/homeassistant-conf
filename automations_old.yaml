@@ -9,10 +9,10 @@
   condition: []
   action:
   - data:
+      title: "\ud83d\udd0b Trådfri remote low battery"
       message: "A Trådfri remote's battery level dipped below 11%"
-      title: "Trådfri remote low battery"
     service: persistent_notification.create
   - data:
+      title: "\ud83d\udd0b Trådfri remote low battery"
       message: "A Trådfri remote's battery level dipped below 11%"
-      title: "Trådfri remote low battery"
     service: notify.ios_thibaults_iphone
