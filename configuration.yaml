@@ -49,9 +49,6 @@ google:
   client_secret: !secret google_calendar_client_secret
 
 sun:
-weather:
-  - platform: yweather
-    name: 'Yahoo Weather'
 
 weblink:
   entities: !include_dir_merge_list components/weblinks/
@@ -74,6 +71,7 @@ plant: !include_dir_merge_named components/plants/
 script: !include_dir_merge_named components/scripts/
 sensor: !include_dir_merge_list components/sensors/
 switch: !include_dir_merge_list components/switches/
+weather: !include_dir_merge_list components/weather/
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations_old/
