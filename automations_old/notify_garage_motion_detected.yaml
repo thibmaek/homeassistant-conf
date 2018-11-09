@@ -1,0 +1,10 @@
+- alias: "Notify if someone is in the garage"
+  trigger:
+    - entity_id: binary_sensor.garage_motion
+      platform: state
+  condition: []
+  action:
+    - service: notify.ios_thibaults_iphone
+      data:
+        title: "\ud83d\udea8 Motion detected!"
+        message: "There was motion detected in the garage"

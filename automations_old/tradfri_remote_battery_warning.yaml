@@ -1,18 +1,18 @@
 - alias: "Alert if Trådfri remotes go below 10%"
   trigger:
-  - below: '11'
-    entity_id: sensor.tradfri_remote_control
+  - entity_id: sensor.tradfri_remote_control
     platform: numeric_state
-  - below: '11'
-    entity_id: sensor.tradfri_wireless_dimmer
+    below: '11'
+  - entity_id: sensor.tradfri_wireless_dimmer
     platform: numeric_state
+    below: '11'
   condition: []
   action:
-  - data:
+  - service: persistent_notification.create
+    data:
       title: "\ud83d\udd0b Trådfri remote low battery"
       message: "A Trådfri remote's battery level dipped below 11%"
-    service: persistent_notification.create
-  - data:
+  - service: notify.ios_thibaults_iphone
+    data:
       title: "\ud83d\udd0b Trådfri remote low battery"
       message: "A Trådfri remote's battery level dipped below 11%"
-    service: notify.ios_thibaults_iphone

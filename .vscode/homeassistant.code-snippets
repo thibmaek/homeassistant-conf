@@ -20,4 +20,20 @@
       "    {% endif %}",
     ]
   },
+  "Manual automation": {
+    "scope": "yaml",
+    "description": "Create a new manual automation",
+    "prefix": "automation",
+    "body": [
+      "- alias: \"${1:Create new persisitent notification}\"",
+      "  trigger:",
+      "    - entity_id: ${2:sensor.some_sensor}",
+      "      platform: ${3|state,numeric_state|}",
+      "  condition: [$4]",
+      "  action:",
+      "    - service: ${5:persistent_notification.create}",
+      "      data:",
+      "        title: \"${6:Created a new notification}\""
+    ]
+  }
 }
