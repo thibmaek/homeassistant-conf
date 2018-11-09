@@ -1,5 +1,6 @@
 # Clutter
 ._.*
+._*
 .DS_Store
 *.db
 *.db-*
@@ -7,7 +8,7 @@
 deps/
 __pycache__
 
-# Secrets
+# Sensitive
 *token*
 secrets.yaml
 zones.yaml
@@ -17,6 +18,7 @@ known_devices.yaml
 entity_registry.yaml
 .cloud/
 .stfolder/
+.storage
 
 # Vendor
 .ios.conf
