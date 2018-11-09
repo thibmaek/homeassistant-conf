@@ -12,7 +12,7 @@
     data:
       title: "\ud83d\udd0b Trådfri remote low battery"
       message: "A Trådfri remote's battery level dipped below 11%"
-  - service: notify.ios_thibaults_iphone
+  - service: notify.thibault_devices
     data:
       title: "\ud83d\udd0b Trådfri remote low battery"
       message: "A Trådfri remote's battery level dipped below 11%"

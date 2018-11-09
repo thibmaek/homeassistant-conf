@@ -4,7 +4,7 @@
       platform: state
   condition: []
   action:
-    - service: notify.ios_thibaults_iphone
+    - service: notify.thibault_devices
       data:
         title: "\ud83d\udea8 Motion detected!"
         message: "There was motion detected in the garage"
