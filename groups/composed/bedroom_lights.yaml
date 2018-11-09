@@ -8,3 +8,4 @@ bedroom_lights:
     - light.desk_spots
     - light.tradfri_bulb_e27_cws_opal_600lm
     - sensor.tradfri_remote_control
+    - switch.flux
