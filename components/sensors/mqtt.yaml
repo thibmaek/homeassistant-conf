@@ -69,29 +69,29 @@
   value_template: '{{ value_json.light }}'
   unit_of_measurement: 'lux'
 
-# Monstera Monkey Mask
+# Ficus Elastica
 - platform: mqtt
-  name: monstera_monkey_mask_moisture
-  state_topic: homeassistant/sensor/monsteramonkeymask/state
+  name: ficus_elastica_moisture
+  state_topic: homeassistant/sensor/ficuselastica/state
   value_template: '{{ value_json.moisture }}'
   unit_of_measurement: '%'
 - platform: mqtt
-  name: monstera_monkey_mask_battery
-  state_topic: homeassistant/sensor/monsteramonkeymask/state
+  name: ficus_elastica_battery
+  state_topic: homeassistant/sensor/ficuselastica/state
   value_template: '{{ value_json.battery }}'
   unit_of_measurement: '%'
 - platform: mqtt
-  name: monstera_monkey_mask_temperature
-  state_topic: homeassistant/sensor/monsteramonkeymask/state
+  name: ficus_elastica_temperature
+  state_topic: homeassistant/sensor/ficuselastica/state
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: '°C'
 - platform: mqtt
-  name: monstera_monkey_mask_conductivity
-  state_topic: homeassistant/sensor/monsteramonkeymask/state
+  name: ficus_elastica_conductivity
+  state_topic: homeassistant/sensor/ficuselastica/state
   value_template: '{{ value_json.conductivity }}'
   unit_of_measurement: 'µS/cm'
 - platform: mqtt
-  name: monstera_monkey_mask_brightness
-  state_topic: homeassistant/sensor/monsteramonkeymask/state
+  name: ficus_elastica_brightness
+  state_topic: homeassistant/sensor/ficuselastica/state
   value_template: '{{ value_json.light }}'
   unit_of_measurement: 'lux'

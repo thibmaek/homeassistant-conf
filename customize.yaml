@@ -200,8 +200,8 @@ sensor.printer_ink_level_black:
   entity_picture: /local/ink_k.png
 plant.monstera_deliciosa:
   friendly_name: Monstera Deliciosa
-plant.monstera_monkey_mask:
-  friendly_name: Monstera Monkey Mask
+plant.ficus_elastica:
+  friendly_name: Ficus Elastica
 sensor.discogs_random_record:
   icon: mdi:record-player
 switch.flux:
