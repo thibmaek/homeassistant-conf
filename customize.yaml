@@ -206,3 +206,15 @@ sensor.discogs_random_record:
   icon: mdi:record-player
 switch.flux:
   icon: mdi:progress-clock
+binary_sensor.panorama_host:
+  icon: mdi:raspberrypi
+binary_sensor.tresor_host:
+  icon: mdi:cctv
+binary_sensor.nextcloudpi_host:
+  icon: mdi:cloud-sync
+binary_sensor.rasplex_host:
+  icon: mdi:plex
+binary_sensor.volumio_woonkamer_host:
+  icon: mdi:speaker-wireless
+binary_sensor.ps4_host:
+  icon: mdi:playstation
