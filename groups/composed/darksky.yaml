@@ -3,8 +3,6 @@ darksky_weather_tomorrow:
   name: "Tomorrow's Weather"
   entities:
     - sensor.dark_sky_weather_cloud_coverage_1
-    - sensor.dark_sky_weather_daily_high_temperature_1
-    - sensor.dark_sky_weather_daily_low_temperature_1
     - sensor.dark_sky_weather_daily_max_precip_intensity_1
     - sensor.dark_sky_weather_precip_1
     - sensor.dark_sky_weather_precip_intensity_1
