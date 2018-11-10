@@ -1,14 +1,19 @@
 - platform: scrape
-  name: 'Worldwide FM LIVE'
-  resource: 'https://worldwidefm.net/'
-  select: '.radio-player-song-name'
+  name: "Worldwide FM LIVE"
+  resource: "https://worldwidefm.net/"
+  select: ".radio-player-song-name"
 
 - platform: scrape
-  name: 'BBC Radio 1 LIVE'
-  resource: 'https://www.bbc.co.uk/radio1'
-  select: '.on-air__episode-title'
+  name: "BBC Radio 1 LIVE"
+  resource: "https://www.bbc.co.uk/radio1"
+  select: ".on-air__episode-title"
 
 - platform: scrape
-  name: 'Stubru LIVE'
-  resource: 'https://stubru.be'
-  select: '.programma.ng-binding'
+  name: "Stubru LIVE"
+  resource: "https://stubru.be"
+  select: ".programma.ng-binding"
+
+- platform: scrape
+  name: "IMDB Watchlist"
+  resource: "https://www.imdb.com/user/ur32019767/watchlist"
+  select: ".lister-details > span"
