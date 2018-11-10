@@ -16,8 +16,6 @@
     - minutely_summary
     - hourly_summary
     - daily_summary
-    - temperature_max
-    - temperature_min
     - precip_intensity_max
   update_interval:
     minutes: 10
