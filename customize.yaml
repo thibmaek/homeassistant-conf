@@ -198,8 +198,10 @@ sensor.printer_ink_level_black:
   entity_picture: /local/ink_k.png
 plant.monstera_deliciosa:
   friendly_name: Monstera Deliciosa
+  entity_picture: /local/monstera_deliciosa.jpg
 plant.ficus_elastica:
   friendly_name: Ficus Elastica
+  entity_picture: /local/ficus_elastica.jpg
 sensor.discogs_random_record:
   icon: mdi:record-player
 switch.flux:
