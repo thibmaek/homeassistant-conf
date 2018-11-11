@@ -5,5 +5,5 @@ grafana:
 
 influxdb:
   title: 'InfluxDB'
-  icon: mdi:chart-areaspline
+  icon: mdi:orbit
   url: !secret hassio_influxdb
