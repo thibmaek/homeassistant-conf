@@ -12,3 +12,6 @@ scene.having_dinner:
 
 scene.watching_a_movie:
   icon: mdi:theater
+
+scene.goodnight:
+  icon: mdi:weather-night
