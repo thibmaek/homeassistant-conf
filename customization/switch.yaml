@@ -1,0 +1,6 @@
+switch.turn_on_tv:
+  friendly_name: "TV Power"
+  icon: mdi:television-classic
+
+switch.flux:
+  icon: mdi:progress-clock

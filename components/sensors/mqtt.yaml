@@ -1,6 +1,7 @@
 # DHT11
 - platform: mqtt
   name: "Bedroom Temperature"
+  icon: mdi:thermometer
   state_topic: homeassistant/nodemcu-bedroom/SENSOR
   unit_of_measurement: '°C'
   value_template: '{{ value_json.DHT11.Temperature }}'
@@ -9,6 +10,7 @@
   payload_not_available: "Offline"
 - platform: mqtt
   name: "Bedroom Humidity"
+  icon: mdi:water-percent
   state_topic: homeassistant/nodemcu-bedroom/SENSOR
   unit_of_measurement: '%'
   value_template: '{{ value_json.DHT11.Humidity }}'

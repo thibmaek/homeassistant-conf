@@ -1,0 +1,22 @@
+# Tradfri lights
+light.tradfri_bulb_e27_cws_opal_600lm:
+  friendly_name: "Desk Tracklight"
+  icon: mdi:track-light
+light.tradfri_bulb_e27_opal_1000lm:
+  friendly_name: "Living Room Floorlamp"
+  icon: mdi:floor-lamp
+
+light.desk_spots:
+  icon: mdi:spotlight
+
+light.server_ledstrips:
+  icon: mdi:led-strip
+
+light.bed_lights:
+  icon: mdi:lightbulb-on-outline
+
+light.desk_light:
+  icon: mdi:lamp
+
+light.bedroom_stringlights:
+  icon: mdi:lightbulb-on
