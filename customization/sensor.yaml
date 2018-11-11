@@ -17,8 +17,8 @@ sensor.monstera_deliciosa_battery:
 sensor.monstera_deliciosa_conductivity:
   friendly_name: "Monstera Deliciosa Conductivity"
   icon: mdi:leaf
-sensor.monstera_deliciosa_light_intensity:
-  friendly_name: "Monstera Deliciosa Light Intensity"
+sensor.sensor.monstera_deliciosa_brightness:
+  friendly_name: "Monstera Deliciosa Brightness"
   icon: mdi:white-balance-sunny
 sensor.monstera_deliciosa_moisture:
   friendly_name: "Monstera Deliciosa Moisture"
@@ -34,8 +34,8 @@ sensor.ficus_elastica_battery:
 sensor.ficus_elastica_conductivity:
   friendly_name: "Ficus Elastica Conductivity"
   icon: mdi:leaf
-sensor.ficus_elastica_intensity:
-  friendly_name: "Ficus Elastica Light Intensity"
+sensor.ficus_elastica_brightness:
+  friendly_name: "Ficus Elastica Brightness"
   icon: mdi:white-balance-sunny
 sensor.ficus_elastica_moisture:
   friendly_name: "Ficus Elastica Moisture"
