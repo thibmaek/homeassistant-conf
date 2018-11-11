@@ -17,7 +17,7 @@ sensor.monstera_deliciosa_battery:
 sensor.monstera_deliciosa_conductivity:
   friendly_name: "Monstera Deliciosa Conductivity"
   icon: mdi:leaf
-sensor.sensor.monstera_deliciosa_brightness:
+sensor.monstera_deliciosa_brightness:
   friendly_name: "Monstera Deliciosa Brightness"
   icon: mdi:white-balance-sunny
 sensor.monstera_deliciosa_moisture:
