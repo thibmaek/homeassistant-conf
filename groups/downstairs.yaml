@@ -5,7 +5,6 @@ living_room:
   entities:
     - group.living_room_lights
     - group.music_spotify
-    - input_select.tv_volume_level
     - light.living_room_lights
     - media_player.panasonic_viera
     - media_player.playstation_4

@@ -1,12 +1,3 @@
-tv_volume_level:
-  name: 'TV Volume Level'
-  options:
-    - 'low'
-    - 'medium'
-    - 'normal'
-    - 'high'
-  icon: 'mdi:volume-high'
-
 spotify_playlist:
   name: 'Playlist:'
   options:
