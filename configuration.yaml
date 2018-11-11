@@ -32,6 +32,17 @@ mqtt:
   username: !secret mqtt_user
   password: !secret mqtt_password
 
+influxdb:
+  host: localhost
+  database: homeassistant
+  username: !secret influxdb_user
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+  include:
+    domains:
+      - sensor
+
 downloader:
   download_dir: '/share'
 
