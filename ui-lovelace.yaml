@@ -234,19 +234,23 @@ views:
           - sensor.processor_use
           - sensor.uptime
           - updater.updater
-      - type: glance
+      - type: vertical-stack
         title: Network
         columns: 3
-        entities:
-          - entity: sensor.speedtest_ping
-            name: Ping
+        cards:
+          - type: sensor
+            entity: sensor.speedtest_ping
             icon: mdi:resistor
-          - entity: sensor.speedtest_download
-            name: Download
+            name: Ping
+          - type: sensor
+            entity: sensor.speedtest_download
             icon: mdi:download
-          - entity: sensor.speedtest_upload
-            name: Upload
+            name: Download
+          - type: sensor
+            entity: sensor.speedtest_upload
             icon: mdi:upload
+            name: Upload
+            graph: none
       - type: entities
         title: Network Hosts
         show_header_toggle: true
