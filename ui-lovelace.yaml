@@ -230,18 +230,23 @@ views:
           - sensor.disk_use_
           - sensor.memory_free
           - sensor.memory_use
+          - sensor.myip
           - sensor.processor_use
           - sensor.uptime
           - updater.updater
-      - type: entities
+      - type: glance
         title: Network
-        show_header_toggle: true
+        columns: 3
         entities:
-          - sensor.myip
-          - sensor.speedtest_download
-          - sensor.speedtest_ping
-          - sensor.speedtest_upload
-          - weblink.speedtest
+          - entity: sensor.speedtest_ping
+            name: Ping
+            icon: mdi:resistor
+          - entity: sensor.speedtest_download
+            name: Download
+            icon: mdi:download
+          - entity: sensor.speedtest_upload
+            name: Upload
+            icon: mdi:upload
       - type: entities
         title: Network Hosts
         show_header_toggle: true
