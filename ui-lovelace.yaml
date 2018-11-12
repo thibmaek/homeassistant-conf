@@ -7,7 +7,7 @@ views:
     icon: mdi:home
     cards:
       - type: map
-        default_zoom: 8
+        default_zoom: 12
         entities:
           - device_tracker.thibaults_iphone
       - type: entity-filter
