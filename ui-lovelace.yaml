@@ -92,9 +92,10 @@ views:
           - sensor.season_template
           - sensor.waze_work_travel_time
           - sun.sun
-      - type: entities
+      - type: glance
         title: Waste collection
-        show_header_toggle: true
+        columns: 3
+        show_state: false
         entities:
           - binary_sensor.waste_collection_carboard
           - binary_sensor.waste_collection_pmd
