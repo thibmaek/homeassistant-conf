@@ -206,7 +206,6 @@ views:
     cards:
       - type: horizontal-stack
         title: Network
-        columns: 3
         cards:
           - type: sensor
             entity: sensor.speedtest_ping
