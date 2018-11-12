@@ -6,6 +6,9 @@ views:
   - title: Maekelberghain
     icon: mdi:home
     cards:
+      - type: map
+        entities:
+          - device_tracker.thibaults_iphone
       - type: entity-filter
         entities:
           - device_tracker.thibaults_iphone
