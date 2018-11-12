@@ -12,9 +12,10 @@ views:
           - light.tradfri_bulb_e27_cws_opal_600lm
         state_filter:
           - "on"
-        show_empty: true
+        show_empty: false
         card:
-          title: Lights turned on
+          title: Enabled lights
+          type: glance
       - type: entities
         entities:
           - binary_sensor.garage_motion
