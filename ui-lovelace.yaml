@@ -204,6 +204,22 @@ views:
   - title: Server
     icon: mdi:raspberrypi
     cards:
+      - type: horizontal-stack
+        title: Network
+        columns: 3
+        cards:
+          - type: sensor
+            entity: sensor.speedtest_ping
+            icon: mdi:resistor
+            name: Ping
+          - type: sensor
+            entity: sensor.speedtest_download
+            icon: mdi:download
+            name: Download
+          - type: sensor
+            entity: sensor.speedtest_upload
+            icon: mdi:upload
+            name: Upload
       - type: entities
         title: Cryptocurrency
         show_header_toggle: true
@@ -234,23 +250,6 @@ views:
           - sensor.processor_use
           - sensor.uptime
           - updater.updater
-      - type: vertical-stack
-        title: Network
-        columns: 3
-        cards:
-          - type: sensor
-            entity: sensor.speedtest_ping
-            icon: mdi:resistor
-            name: Ping
-          - type: sensor
-            entity: sensor.speedtest_download
-            icon: mdi:download
-            name: Download
-          - type: sensor
-            entity: sensor.speedtest_upload
-            icon: mdi:upload
-            name: Upload
-            graph: none
       - type: entities
         title: Network Hosts
         show_header_toggle: true
