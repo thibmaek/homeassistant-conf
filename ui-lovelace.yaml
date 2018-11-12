@@ -8,6 +8,15 @@ views:
     cards:
       - type: entity-filter
         entities:
+          - device_tracker.thibaults_iphone
+        state_filter:
+          - 'home'
+        show_empty: false
+        card:
+          title: Home
+          type: glance
+      - type: entity-filter
+        entities:
           - light.tradfri_bulb_e27_opal_1000lm
           - light.tradfri_bulb_e27_cws_opal_600lm
         state_filter:
