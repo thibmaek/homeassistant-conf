@@ -1,0 +1,17 @@
+{
+  "entity-filter": {
+    "scope": "yaml",
+    "prefix": "entity-filter",
+    "description": "Entity filter",
+    "body": [
+      "- type: entity-filter",
+      "  entities:",
+      "    - ${1:light.some_light}",
+      "  state_filter:",
+      "    - ${2:'on'}",
+      "  show_empty: ${3|true,false|}",
+      "  card:",
+      "    title: ${4:My Entity Filter Card}"
+    ],
+  }
+}

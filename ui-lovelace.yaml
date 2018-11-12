@@ -6,6 +6,15 @@ views:
   - title: Maekelberghain
     icon: mdi:home
     cards:
+      - type: entity-filter
+        entities:
+          - light.tradfri_bulb_e27_opal_1000lm
+          - light.tradfri_bulb_e27_cws_opal_600lm
+        state_filter:
+          - "on"
+        show_empty: true
+        card:
+          title: Lights turned on
       - type: entities
         entities:
           - binary_sensor.garage_motion
