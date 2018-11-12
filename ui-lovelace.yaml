@@ -137,16 +137,18 @@ views:
         entities:
           - sensor.discogs
           - sensor.panorama_plex
-      - type: sensor
-        entity: sensor.bedroom_humidity
-        name: Humidity
-        height: 100
-        line_color: "#1e8cd7"
-      - type: sensor
-        entity: sensor.bedroom_temperature
-        name: Temperature
-        height: 40
-        line_color: "#1e8cd7"
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            entity: sensor.bedroom_humidity
+            name: Humidity
+            height: 100
+            line_color: "#1e8cd7"
+          - type: sensor
+            entity: sensor.bedroom_temperature
+            name: Temperature
+            height: 40
+            line_color: "#1e8cd7"
       - type: plant-status
         entity: plant.monstera_deliciosa
   - title: Server
