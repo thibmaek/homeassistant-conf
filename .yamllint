@@ -1,0 +1,7 @@
+extends: default
+
+rules:
+  comments: { require-starting-space: true }
+  document-start: disable
+  quoted-strings: { quote-type: any }
+  truthy: disable
