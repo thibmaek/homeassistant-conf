@@ -98,7 +98,7 @@ views:
         show_state: false
         entities:
           - entity: binary_sensor.waste_collection_carboard
-            name: Carboard
+            name: Cardboard
           - entity: binary_sensor.waste_collection_pmd
             name: PMD
           - entity: binary_sensor.waste_collection_trash
@@ -120,6 +120,39 @@ views:
           - sensor.waze_home_travel_time
       - type: weather-forecast
         entity: weather.weather_gent
+  - title: Beneden
+    icon: mdi:sofa
+    cards:
+      - type: entities
+        entities:
+          - light.living_room_lights
+          - scene.goodnight
+          - scene.having_dinner
+          - scene.watching_a_movie
+          - switch.turn_on_tv
+      - type: entities
+        title: Living Room Lights
+        show_header_toggle: true
+        entities:
+          - light.tradfri_bulb_e27_opal_1000lm
+          - sensor.tradfri_wireless_dimmer
+      - type: entities
+        title: Spotify
+        show_header_toggle: true
+        entities:
+          - input_select.spotify_playlist
+          - input_select.spotify_source
+          - script.spotify_music
+      - type: media-control
+        entity: media_player.panasonic_viera
+      - type: media-control
+        entity: media_player.playstation_4
+      - type: media-control
+        entity: media_player.volumio_woonkamer
+      - type: media-control
+        entity: media_player.woonkamer_chromecast
+      - type: plant-status
+        entity: plant.ficus_elastica
   - title: Slaapkamer
     icon: mdi:bed-empty
     cards:
@@ -228,36 +261,3 @@ views:
           - weblink.panorama_plex
           - weblink.sickrage
           - weblink.transmission
-  - title: Beneden
-    icon: mdi:sofa
-    cards:
-      - type: entities
-        entities:
-          - light.living_room_lights
-          - scene.goodnight
-          - scene.having_dinner
-          - scene.watching_a_movie
-          - switch.turn_on_tv
-      - type: entities
-        title: Living Room Lights
-        show_header_toggle: true
-        entities:
-          - light.tradfri_bulb_e27_opal_1000lm
-          - sensor.tradfri_wireless_dimmer
-      - type: entities
-        title: Spotify
-        show_header_toggle: true
-        entities:
-          - input_select.spotify_playlist
-          - input_select.spotify_source
-          - script.spotify_music
-      - type: media-control
-        entity: media_player.panasonic_viera
-      - type: media-control
-        entity: media_player.playstation_4
-      - type: media-control
-        entity: media_player.volumio_woonkamer
-      - type: media-control
-        entity: media_player.woonkamer_chromecast
-      - type: plant-status
-        entity: plant.ficus_elastica

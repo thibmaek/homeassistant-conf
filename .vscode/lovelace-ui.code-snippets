@@ -45,4 +45,14 @@
       "  hours_to_show: ${10:24}",
     ],
   },
+  "map": {
+    "scope": "yaml",
+    "prefix": "map",
+    "description": "Map card",
+    "body": [
+      "- type: map",
+      "  entities:",
+      "    - ${1:device_tracker.my_iphone}",
+    ],
+  },
 }
