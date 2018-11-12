@@ -2,4 +2,3 @@
   name: 'Volumio Woonkamer'
   host: !secret host_volumio_woonkamer
   port: 3000
-
