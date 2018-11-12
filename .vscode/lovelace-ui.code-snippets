@@ -2,7 +2,7 @@
   "entity-filter": {
     "scope": "yaml",
     "prefix": "entity-filter",
-    "description": "Entity filter",
+    "description": "Entity filter card",
     "body": [
       "- type: entity-filter",
       "  entities:",
@@ -13,5 +13,36 @@
       "  card:",
       "    title: ${4:My Entity Filter Card}"
     ],
-  }
+  },
+  "horizontal-stack": {
+    "scope": "yaml",
+    "prefix": "horizontal-stack",
+    "description": "Horizontally stack Lovelace cards",
+    "body": [
+      "- type: horizontal-stack",
+      "  cards:",
+      "    - type: ${1:entities}",
+      "      title: ${2:My 1st stack}",
+      "    - type: ${3:entities}",
+      "      title: ${4:My 2nd stack}",
+    ],
+  },
+  "sensor": {
+    "scope": "yaml",
+    "prefix": "sensor",
+    "description": "Sensor card",
+    "body": [
+      "- type: sensor",
+      "  entity: sensor.${1:my_sensor}",
+      "  icon: mdi:${2:gear}",
+      "  name: ${3:My Sensor}",
+      "  graph: ${4|none,line|}",
+      "  unit: ${5:%}",
+      "  height: ${6:100}",
+      "  line_width: ${7:5}",
+      "  line_width: ${8:'#1e8cd7'}",
+      "  accuracy: ${9:10}",
+      "  hours_to_show: ${10:24}",
+    ],
+  },
 }
