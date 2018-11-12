@@ -97,9 +97,12 @@ views:
         columns: 3
         show_state: false
         entities:
-          - binary_sensor.waste_collection_carboard
-          - binary_sensor.waste_collection_pmd
-          - binary_sensor.waste_collection_trash
+          - entity: binary_sensor.waste_collection_carboard
+            name: Carboard
+          - entity: binary_sensor.waste_collection_pmd
+            name: PMD
+          - entity: binary_sensor.waste_collection_trash
+            name: Trash
       - type: media-control
         entity: media_player.spotify
       - type: weather-forecast
