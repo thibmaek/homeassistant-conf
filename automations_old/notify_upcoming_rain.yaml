@@ -1,0 +1,14 @@
+- alias: "Notify if there is rain coming"
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_weather_precip_probability
+      from: 0
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.dark_sky_weather_precip_probability
+      above: 1
+  action:
+    - service: notify.thibault_devices
+      data_template:
+        title: "Rain alarm"
+        message: "Expected {{ trigger.to_state.state }} {{ trigger.to_state.attributes.unit_of_measurement }} rain in the upcoming hour"
