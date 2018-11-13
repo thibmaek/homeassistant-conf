@@ -7,7 +7,7 @@ views:
     icon: mdi:home
     cards:
       - type: map
-        default_zoom: 13
+        default_zoom: 13.5
         entities:
           - device_tracker.thibaults_iphone
       - type: entity-filter
@@ -28,7 +28,7 @@ views:
           - "on"
         show_empty: false
         card:
-          title: Enabled lights
+          title: "\ud83d\udca1 Enabled lights"
           type: glance
       - type: entities
         entities:
@@ -77,7 +77,7 @@ views:
           - sensor.printer_ink_level_yellow
           - sensor.printer_ink_level_black
       - type: entities
-        title: Radio Stations
+        title: "\ud83d\udcfb Radio Stations"
         show_header_toggle: true
         entities:
           - sensor.bbc_radio_1_live
