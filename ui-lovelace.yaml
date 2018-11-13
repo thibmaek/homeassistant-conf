@@ -7,7 +7,7 @@ views:
     icon: mdi:home
     cards:
       - type: map
-        default_zoom: 12
+        default_zoom: 13
         entities:
           - device_tracker.thibaults_iphone
       - type: entity-filter
@@ -16,8 +16,9 @@ views:
         state_filter:
           - 'home'
         show_empty: false
+        show_state: false
         card:
-          title: Home
+          title: "\ud83c\udfe1 Who's Home"
           type: glance
       - type: entity-filter
         entities:
