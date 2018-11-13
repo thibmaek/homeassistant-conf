@@ -38,6 +38,7 @@ views:
         state_filter:
           - "on"
         show_empty: false
+        show_header_toggle: true
         card:
           title: "\ud83d\udca1 Enabled lights"
           type: glance
