@@ -13,6 +13,7 @@ views:
     icon: mdi:home
     cards:
       - type: "custom:calendar-card"
+        name: "\ud83d\uddd3 Calendar"
         entities:
           - calendar.lot__thib
           - calendar.taken
