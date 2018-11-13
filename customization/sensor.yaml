@@ -123,3 +123,6 @@ sensor.current_version:
 
 sensor.uptime:
   icon: mdi:heart-pulse
+
+sensor.eth_balance:
+  icon: mdi:ethereum
