@@ -279,7 +279,14 @@ views:
         title: Weblinks
         show_header_toggle: true
         entities:
-          - weblink.home_assistant_components
+          - type: weblink
+            name: "States (deprecated)"
+            url: "/states"
+            icon: 'mdi:home-assistant'
+          - type: weblink
+            name: "Home Assistant Components"
+            url: https://home-assistant.io/components/
+            icon: 'mdi:home-assistant'
           - weblink.mijn_telenet
           - weblink.nextcloud
           - weblink.panorama_plex
