@@ -285,9 +285,16 @@ views:
             icon: 'mdi:home-assistant'
           - type: weblink
             name: "Home Assistant Components"
-            url: https://home-assistant.io/components/
+            url: "https://home-assistant.io/components/"
             icon: 'mdi:home-assistant'
-          - weblink.mijn_telenet
+          - type: weblink
+            name: 'Speedtest'
+            url: "https://beta.speedtest.net"
+            icon: 'mdi:speedometer'
+          - type: weblink
+            name: "Mijn Telenet"
+            url: "https://mijn.telenet.be/mijntelenet/homenetwork/overview.do"
+            icon: mdi:access-point-network
           - weblink.nextcloud
           - weblink.panorama_plex
           - weblink.sickrage

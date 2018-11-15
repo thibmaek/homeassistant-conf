@@ -1,4 +1,0 @@
-____states:
-  title: "States (deprecated)"
-  icon: mdi:home-assistant
-  url: "http://hassio.local:8123/states"

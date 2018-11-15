@@ -7,7 +7,6 @@ server_network:
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
-    - weblink.speedtest
 
 server_network_hosts:
   name: 'Network Hosts'
