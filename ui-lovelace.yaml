@@ -88,12 +88,12 @@ views:
           - sensor.printer_ink_level_magenta
           - sensor.printer_ink_level_yellow
           - sensor.printer_ink_level_black
-      - type: entities
+      - type: glance
         title: "\ud83d\udcfb Radio Stations"
         show_header_toggle: true
         entities:
-          - sensor.bbc_radio_1_live
-          - sensor.worldwide_fm_live
+          - entity: sensor.bbc_radio_1_live
+          - entity: sensor.worldwide_fm_live
       - type: entities
         title: Vandaag
         show_header_toggle: true
@@ -121,6 +121,7 @@ views:
         entity: media_player.spotify
       - type: weather-forecast
         entity: weather.weather_brugge
+
   - title: Work (In The Pocket)
     icon: mdi:briefcase
     cards:
@@ -167,6 +168,7 @@ views:
         entity: media_player.woonkamer_chromecast
       - type: plant-status
         entity: plant.ficus_elastica
+
   - title: Slaapkamer
     icon: mdi:bed-empty
     cards:
@@ -214,6 +216,7 @@ views:
             line_color: "#1e8cd7"
       - type: plant-status
         entity: plant.monstera_deliciosa
+
   - title: Server
     icon: mdi:raspberrypi
     cards:
