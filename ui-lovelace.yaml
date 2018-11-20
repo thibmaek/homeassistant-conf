@@ -12,6 +12,14 @@ views:
   - title: Maekelberghain
     icon: mdi:home
     cards:
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            title: 'Date'
+            entity: sensor.date
+          - type: entities
+            title: 'Time'
+            entity: sensor.time
       - type: "custom:calendar-card"
         name: 'Calendar'
         entities:
@@ -70,11 +78,8 @@ views:
           - sensor.dark_sky_weather_precip_probability_1
           - sensor.dark_sky_weather_wind_speed
       - type: entities
-        title: Today's Calendar
-        show_header_toggle: true
+        title: "Today's schedule"
         entities:
-          - sensor.date
-          - sensor.time
           - sensor.calendar_agenda
           - sensor.calendar_events
           - sensor.calendar_facebook
