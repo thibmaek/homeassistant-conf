@@ -14,12 +14,14 @@ views:
     cards:
       - type: horizontal-stack
         cards:
-          - type: entity
+          - type: entities
             title: 'Date'
-            entity: sensor.date
-          - type: entity
+            entities:
+              - sensor.date
+          - type: entities
             title: 'Time'
-            entity: sensor.time
+            entities:
+              - sensor.time
       - type: "custom:calendar-card"
         name: 'Calendar'
         entities:
