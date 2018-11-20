@@ -13,7 +13,7 @@ views:
     icon: mdi:home
     cards:
       - type: "custom:calendar-card"
-        name: "\ud83d\uddd3 Calendar"
+        name: 'Calendar'
         entities:
           - calendar.lot__thib
           - calendar.taken
@@ -29,7 +29,7 @@ views:
         show_empty: false
         show_state: false
         card:
-          title: "\ud83c\udfe1 Who's Home"
+          title: "Who's Home"
           type: glance
       - type: entity-filter
         entities:
@@ -40,7 +40,7 @@ views:
         show_empty: false
         show_header_toggle: true
         card:
-          title: "\ud83d\udca1 Enabled lights"
+          title: "Enabled lights"
           type: glance
       - type: entities
         entities:
@@ -89,7 +89,7 @@ views:
           - sensor.printer_ink_level_yellow
           - sensor.printer_ink_level_black
       - type: glance
-        title: "\ud83d\udcfb Radio Stations"
+        title: "Radio Stations"
         show_header_toggle: true
         entities:
           - entity: sensor.bbc_radio_1_live
