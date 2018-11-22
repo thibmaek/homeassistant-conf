@@ -1,0 +1,23 @@
+- alias: "Notify if the plants at work need to be watered"
+  trigger:
+    - entity_id: binary_sensor.water_work_plants
+      platform: state
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.out_of_office
+        state: 'off'
+  action:
+    - service: persistent_notification.create
+      data:
+        title: "\ud83c\udf31 \ud83d\udca7 Watering day!"
+        message: "Plants at work need to be watered"
+    - service: notify.thibault_devices
+      data:
+        title: "\ud83c\udf31 \ud83d\udca7 Watering day!"
+        message: "Plants at work need to be watered"
