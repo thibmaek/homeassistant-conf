@@ -258,6 +258,17 @@ views:
           - script.ha_reload_core
           - script.ha_reload_groups
           - script.ha_reload_scripts
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            title: "CPU usage"
+            entity: sensor.processor_use
+          - type: sensor
+            title: "MEM usage"
+            entity: sensor.memory_use
+          - type: sensor
+            title: "HDD usage"
+            entity: sensor.disk_use_
       - type: entities
         title: Server Internals
         show_header_toggle: true
@@ -265,16 +276,15 @@ views:
           - light.server_ledstrips
           - sensor.current_version
           - sensor.disk_free_
-          - sensor.disk_use_
           - sensor.memory_free
-          - sensor.memory_use
           - sensor.myip
-          - sensor.processor_use
           - sensor.uptime
           - updater.updater
-      - type: entities
+      - type: glance
         title: Network Hosts
         show_header_toggle: true
+        columns: 3
+        show_state: false
         entities:
           - binary_sensor.panorama_host
           - binary_sensor.tresor_host
