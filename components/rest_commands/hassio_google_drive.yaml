@@ -1,0 +1,3 @@
+hassio_google_drive_backup:
+  url: 'http://localhost:8055/gb/doBackup'
+  timeout: '300'

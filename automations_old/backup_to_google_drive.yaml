@@ -1,0 +1,9 @@
+# This automation will use the addon to backup Hass.io snapshots
+# to Google Drive every day at 10PM.
+- alias: "Backup snapshots to Google Drive"
+  trigger:
+    platform: time
+    at: "22:00:00"
+  condition: []
+  action:
+    - service: rest_command.hassio_google_drive_backup
