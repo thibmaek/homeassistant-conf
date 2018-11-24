@@ -9,9 +9,5 @@
         title: "\ud83d\udea8 Motion detected!"
         message: "There was motion detected in the garage"
         data:
-          push:
-            category: camera
-            thread-id: "notify_garage_motion_detected"
-          entity_id: camera.garage_camera
           attachment:
-            content-type: jpeg
+            url: !secret motioneye_garage_snapshot_ip
