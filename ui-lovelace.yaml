@@ -309,21 +309,29 @@ views:
       - type: entities
         title: Network
         entities:
-          - title: "Received bytes"
+          - name: "Received bytes"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_bytes_received
-          - title: "Sent bytes"
+          - name: "Sent bytes"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_bytes_sent
-          - title: "Received bytes (kb/sec)"
+          - name: "Received bytes (kb/sec)"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_received
-          - title: "Sent bytes (kb/sec)"
+          - name: "Sent bytes (kb/sec)"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_sent
-          - title: "Received packets"
+          - name: "Received packets"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_packets_received
-          - title: "Sent packets"
+          - name: "Sent packets"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_packets_sent
-          - title: "Received packets (pck/sec)"
+          - name: "Received packets (pck/sec)"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_received
-          - title: "Sent packets (pck/sec)"
+          - name: "Sent packets (pck/sec)"
+            secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_sent
 
   - title: Home Assistant Internals
