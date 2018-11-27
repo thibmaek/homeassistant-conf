@@ -316,3 +316,16 @@ views:
           - weblink.panorama_plex
           - weblink.sickrage
           - weblink.transmission
+
+  - title: Home Assistant Internals
+    icon: mdi:home-automation
+    cards:
+      - type: entities
+        title: 'Automations'
+        show_header_toggle: true
+        entities:
+          - automation.alert_if_tradfri_remotes_go_below_10
+          - automation.backup_snapshots_to_google_drive
+          - automation.notify_if_someone_is_in_the_garage
+          - automation.notify_if_the_plants_at_work_need_to_be_watered
+          - automation.notify_if_there_is_rain_coming
