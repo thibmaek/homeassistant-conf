@@ -242,22 +242,6 @@ views:
             entity: sensor.speedtest_upload
             icon: mdi:upload
             name: Upload
-      - type: entities
-        title: Cryptocurrency
-        show_header_toggle: true
-        entities:
-          - sensor.eth_balance
-          - sensor.exchange_rate_1_btc
-          - sensor.trade_volume
-      - type: entities
-        title: Server Actions
-        show_header_toggle: true
-        entities:
-          - script.ha_check_config
-          - script.ha_reload_automations
-          - script.ha_reload_core
-          - script.ha_reload_groups
-          - script.ha_reload_scripts
       - type: horizontal-stack
         cards:
           - type: sensor
@@ -269,6 +253,12 @@ views:
           - type: sensor
             title: "HDD usage"
             entity: sensor.disk_use_
+      - type: entities
+        title: Cryptocurrency
+        entities:
+          - sensor.eth_balance
+          - sensor.exchange_rate_1_btc
+          - sensor.trade_volume
       - type: entities
         title: Server Internals
         show_header_toggle: true
@@ -316,10 +306,38 @@ views:
           - weblink.panorama_plex
           - weblink.sickrage
           - weblink.transmission
+      - type: entities
+        title: Network
+        entities:
+          - title: "Received bytes"
+            entity: sensor.compal_broadband_networks_inc_ch6643_bytes_received
+          - title: "Sent bytes"
+            entity: sensor.compal_broadband_networks_inc_ch6643_bytes_sent
+          - title: "Received bytes (kb/sec)"
+            entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_received
+          - title: "Sent bytes (kb/sec)"
+            entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_sent
+          - title: "Received packets"
+            entity: sensor.compal_broadband_networks_inc_ch6643_packets_received
+          - title: "Sent packets"
+            entity: sensor.compal_broadband_networks_inc_ch6643_packets_sent
+          - title: "Received packets (pck/sec)"
+            entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_received
+          - title: "Sent packets (pck/sec)"
+            entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_sent
 
   - title: Home Assistant Internals
     icon: mdi:home-automation
     cards:
+      - type: entities
+        title: Server Actions
+        show_header_toggle: true
+        entities:
+          - script.ha_check_config
+          - script.ha_reload_automations
+          - script.ha_reload_core
+          - script.ha_reload_groups
+          - script.ha_reload_scripts
       - type: entities
         title: 'Automations'
         show_header_toggle: true
