@@ -321,6 +321,7 @@ views:
           - name: "Sent bytes (kb/sec)"
             secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_sent
+          - type: divider
           - name: "Received packets"
             secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_packets_received
