@@ -77,6 +77,7 @@ views:
       - type: entities
         title: "Today's schedule"
         entities:
+          - sensor.day_of_the_week
           - sensor.calendar_agenda
           - sensor.calendar_events
           - sensor.calendar_facebook
@@ -153,6 +154,8 @@ views:
         title: Living Room Lights
         show_header_toggle: true
         entities:
+          - entity: switch.tradfri_control_outlet_3
+            icon: mdi:pine-tree
           - light.tradfri_bulb_e27_opal_1000lm
           - sensor.tradfri_wireless_dimmer
       - type: entities
@@ -193,8 +196,12 @@ views:
         title: Bedroom Lights
         show_header_toggle: true
         entities:
+          - switch.bed_lights
+          - switch.stringlights
           - light.tradfri_bulb_e27_cws_opal_600lm
           - sensor.tradfri_remote_control
+          - sensor.switch_bedlights
+          - sensor.switch_stringlights
           - switch.flux
       - type: entities
         title: Media
@@ -256,7 +263,6 @@ views:
         title: Server Internals
         show_header_toggle: true
         entities:
-          - light.server_ledstrips
           - sensor.current_version
           - sensor.disk_free_
           - sensor.memory_free
@@ -315,6 +321,7 @@ views:
             secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_sent
           - type: divider
+            style:
           - name: "Received packets"
             secondary_info: last-changed
             entity: sensor.compal_broadband_networks_inc_ch6643_packets_received
@@ -349,3 +356,4 @@ views:
           - automation.notify_if_someone_is_in_the_garage
           - automation.notify_if_the_plants_at_work_need_to_be_watered
           - automation.notify_if_there_is_rain_coming
+          - group.all_automations
