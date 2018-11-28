@@ -196,8 +196,10 @@ views:
         title: Bedroom Lights
         show_header_toggle: true
         entities:
-          - switch.bed_lights
-          - switch.stringlights
+          - entity: switch.bed_lights
+            icon: mdi:lightbulb
+          - entity: switch.stringlights
+            icon: mdi:lightbulb
           - light.tradfri_bulb_e27_cws_opal_600lm
           - sensor.tradfri_remote_control
           - sensor.switch_bedlights
