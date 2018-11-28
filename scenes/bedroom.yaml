@@ -11,7 +11,10 @@
 
 - name: "Late night working"
   entities:
-    lights.bedroom_lights: off
+    lights.bedroom_lights:
+      state: off
+    switch.stringlights:
+      state: on
     light.tradfri_bulb_e27_cws_opal_600lm:
       state: on
       brightness: 70
@@ -23,6 +26,8 @@
 
 - name: "Sexy Mode"
   entities:
+    switch.bed_lights:
+      state: on
     light.tradfri_bulb_e27_cws_opal_600lm:
       state: on
       brightness: 35

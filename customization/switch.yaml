@@ -1,3 +1,9 @@
+# Tradfri switches
+switch.bed_lights:
+  icon: mdi:lightbulb
+switch.stringlights:
+  icon: mdi:lightbulb
+
 switch.turn_on_tv:
   friendly_name: "TV Power"
   icon: mdi:television-classic

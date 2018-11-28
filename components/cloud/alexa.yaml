@@ -12,12 +12,17 @@ alexa:
       - scene.working_at_my_desk
       - sensor.bedroom_humidity
       - sensor.bedroom_temperature
+      - switch.bed_lights
+      - switch.stringlights
+      - switch.tradfri_control_outlet_3
       - switch.turn_on_tv
   entity_config:
     switch.turn_on_tv:
       name: 'TV'
       display_categories: 'TV'
     light.tradfri_bulb_e27_opal_1000lm:
-      name: 'Living Room Light'
+      name: "Living Room Light"
     light.tradfri_bulb_e27_cws_opal_600lm:
-      name: 'Desk Tracklight'
+      name: "Desk Tracklight"
+    switch.tradfri_control_outlet_3:
+      name: "Christmas Tree"
