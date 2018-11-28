@@ -77,7 +77,7 @@ views:
       - type: entities
         title: "Today's schedule"
         entities:
-          - sensor.day_of_the_week
+          - sensor.day_of_week
           - sensor.calendar_agenda
           - sensor.calendar_events
           - sensor.calendar_facebook
