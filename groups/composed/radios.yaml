@@ -1,7 +1,0 @@
-music_spotify:
-  name: Spotify
-  view: no
-  entities:
-    - input_select.spotify_playlist
-    - input_select.spotify_source
-    - script.spotify_music

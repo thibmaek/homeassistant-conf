@@ -1,7 +1,0 @@
-waste_collection:
-  name: "Waste collection"
-  view: no
-  entities:
-    - binary_sensor.waste_collection_carboard
-    - binary_sensor.waste_collection_pmd
-    - binary_sensor.waste_collection_trash

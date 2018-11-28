@@ -1,8 +1,0 @@
-weblinks:
-  name: 'Weblinks'
-  view: no
-  entities:
-    - weblink.nextcloud
-    - weblink.panorama_plex
-    - weblink.sickrage
-    - weblink.transmission

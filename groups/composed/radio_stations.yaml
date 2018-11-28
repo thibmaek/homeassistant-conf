@@ -1,6 +1,0 @@
-radio_stations:
-  name: 'Radio Stations'
-  view: no
-  entities:
-    - sensor.bbc_radio_1_live
-    - sensor.worldwide_fm_live
