@@ -4,6 +4,10 @@
   language: 'nl'
   forecast:
     - 1
+    - 2
+    - 3
+    - 4
+    - 5
   monitored_conditions:
     - summary
     - precip_type
@@ -17,5 +21,20 @@
     - hourly_summary
     - daily_summary
     - precip_intensity_max
+    - icon
+    - nearest_storm_distance
+    - nearest_storm_bearing
+    - humidity
+    - temperature_high
+    - temperature_low
+    - apparent_temperature
+    - apparent_temperature_high
+    - apparent_temperature_low
+    - wind_bearing
+    - precip_accumulation
+    - uv_index
+    - daily_summary
+    - pressure
+    - visibility
   update_interval:
     minutes: 10
