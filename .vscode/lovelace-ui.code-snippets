@@ -1,7 +1,7 @@
 {
   "entity-filter": {
     "scope": "yaml",
-    "prefix": "entity-filter",
+    "prefix": "llentityfilter",
     "description": "Entity filter card",
     "body": [
       "- type: entity-filter",
@@ -16,7 +16,7 @@
   },
   "horizontal-stack": {
     "scope": "yaml",
-    "prefix": "horizontal-stack",
+    "prefix": "llhorizontalstack",
     "description": "Horizontally stack Lovelace cards",
     "body": [
       "- type: horizontal-stack",
@@ -29,7 +29,7 @@
   },
   "sensor": {
     "scope": "yaml",
-    "prefix": "sensor",
+    "prefix": "llsensor",
     "description": "Sensor card",
     "body": [
       "- type: sensor",
@@ -47,12 +47,24 @@
   },
   "map": {
     "scope": "yaml",
-    "prefix": "map",
+    "prefix": "llmap",
     "description": "Map card",
     "body": [
       "- type: map",
       "  entities:",
       "    - ${1:device_tracker.my_iphone}",
+    ],
+  },
+  "entities": {
+    "scope": "yaml",
+    "prefix": "llentities",
+    "description": "Map card",
+    "body": [
+      "- type: entities",
+      "  title: ${1:entities}",
+      "  show_header_toggle: ${2|true,false|}",
+      "  entities:",
+      "    - ${3:sun.sun}",
     ],
   },
 }
