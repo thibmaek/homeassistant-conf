@@ -3,7 +3,7 @@ resources:
     type: js
   - url: /local/custom-ui/calendar-card/calendar-card.js?v=1.0.1
     type: module
-  - url: /local/custom-ui/animated-weather-card/animated-weather-card.js?v=5
+  - url: /local/custom-ui/animated-weather-card/animated-weather-card.js?v=6
     type: js
 
 title: Home
