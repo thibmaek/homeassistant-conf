@@ -5,7 +5,7 @@ class DarkSkyWeatherCard extends HTMLElement {
       const link = document.createElement('link');
       link.type = 'text/css';
       link.rel = 'stylesheet';
-      link.href = '/local/custom_ui/animated-weather-card/animated-weather-card.css';
+      link.href = '/local/custom-ui/animated-weather-card/animated-weather-card.css';
       card.appendChild(link);
       this.content = document.createElement('div');
       this.content.className = 'card';
