@@ -39,16 +39,19 @@ views:
           title: "Who's Home"
           type: glance
       - type: entity-filter
-        entities:
-          - light.tradfri_bulb_e27_opal_1000lm
-          - light.tradfri_bulb_e27_cws_opal_600lm
-        state_filter:
-          - "on"
-        show_empty: false
-        show_header_toggle: true
         card:
           title: "Enabled lights"
           type: glance
+        show_empty: false
+        show_header_toggle: true
+        entities:
+          - light.tradfri_bulb_e27_opal_1000lm
+          - light.tradfri_bulb_e27_cws_opal_600lm
+          - light.bed_lights
+          - light.stringlights
+          - light.christmas_tree
+        state_filter:
+          - "on"
       - type: entities
         entities:
           - binary_sensor.garage_motion
