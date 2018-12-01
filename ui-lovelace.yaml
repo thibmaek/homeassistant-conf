@@ -54,6 +54,7 @@ views:
           - binary_sensor.garage_motion
           - input_boolean.vacation_mode
           - sensor.telenet_off_peak
+          - sensor.space_launches
       - type: picture-entity
         title: Buienradar Radarmap
         entity: camera.buienradar_radarmap
@@ -181,7 +182,7 @@ views:
         title: Living Room Lights
         show_header_toggle: true
         entities:
-          - entity: switch.tradfri_control_outlet_3
+          - entity: light.christmas_tree
             icon: mdi:pine-tree
           - light.tradfri_bulb_e27_opal_1000lm
           - sensor.tradfri_wireless_dimmer
@@ -223,9 +224,9 @@ views:
         title: Bedroom Lights
         show_header_toggle: true
         entities:
-          - entity: switch.bed_lights
+          - entity: light.bed_lights
             icon: mdi:lightbulb
-          - entity: switch.stringlights
+          - entity: light.stringlights
             icon: mdi:lightbulb
           - light.tradfri_bulb_e27_cws_opal_600lm
           - sensor.tradfri_remote_control

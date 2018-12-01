@@ -13,7 +13,7 @@
   entities:
     lights.bedroom_lights:
       state: off
-    switch.stringlights:
+    light.stringlights:
       state: on
     light.tradfri_bulb_e27_cws_opal_600lm:
       state: on
@@ -26,7 +26,7 @@
 
 - name: "Sexy Mode"
   entities:
-    switch.bed_lights:
+    light.bed_lights:
       state: on
     light.tradfri_bulb_e27_cws_opal_600lm:
       state: on

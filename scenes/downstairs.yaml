@@ -12,7 +12,7 @@
 
 - name: "Goodnight!"
   entities:
-    switch.tradfri_control_outlet_3:
+    light.tradfri_control_outlet_3:
       state: off
     light.tradfri_bulb_e27_opal_1000lm:
       state: off
