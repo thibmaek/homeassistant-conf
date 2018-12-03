@@ -26,3 +26,15 @@
       icon_template: mdi:flower
       value_template: >-
         {{ is_state("sensor.day_of_week", "Thursday") }}
+
+    at_work:
+      friendly_name: "At work"
+      entity_id: device_tracker.thibaults_iphone
+      entity_picture_template: >-
+        {% is_state("device_tracker.thibaults_iphone", "Werk Thib") %}
+          /local/icons/itp-logo-active.png
+        {% else %}
+          /local/icons/itp-logo-inactive.png
+        {% endif %}
+      value_template: >-
+        {{ is_state("device_tracker.thibaults_iphone", "Werk Thib") }}

@@ -163,6 +163,7 @@ views:
         title: Work (In The Pocket)
         show_header_toggle: true
         entities:
+          - binary_sensor.at_work
           - binary_sensor.workday_sensor
           - input_boolean.out_of_office
           - binary_sensor.water_work_plants
