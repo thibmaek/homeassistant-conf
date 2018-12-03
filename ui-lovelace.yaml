@@ -300,6 +300,7 @@ views:
           - sensor.current_version
           - sensor.disk_free_
           - sensor.memory_free
+          - sensor.rpi_power_status
           - sensor.myip
           - sensor.uptime
           - updater.updater
