@@ -4,4 +4,4 @@
 #   secret: !secret untappd_client_secret
 #   username: thibmaek
 
-# - platform: rpi_power
+- platform: rpi_power
