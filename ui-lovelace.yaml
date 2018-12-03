@@ -300,7 +300,8 @@ views:
           - sensor.current_version
           - sensor.disk_free_
           - sensor.memory_free
-          - sensor.rpi_power_status
+          - entity: sensor.rpi_power_status
+            icon: mdi:power-settings
           - sensor.myip
           - sensor.uptime
           - updater.updater
