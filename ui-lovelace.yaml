@@ -57,7 +57,6 @@ views:
           - binary_sensor.garage_motion
           - input_boolean.vacation_mode
           - sensor.telenet_off_peak
-          - sensor.space_launches
       - type: picture-entity
         title: Buienradar Radarmap
         entity: camera.buienradar_radarmap
@@ -156,22 +155,6 @@ views:
         entity_forecast_icon_4: sensor.dark_sky_weather_icon_4
         entity_forecast_icon_5: sensor.dark_sky_weather_icon_5
 
-  - title: Work (In The Pocket)
-    icon: mdi:briefcase
-    cards:
-      - type: entities
-        title: Work (In The Pocket)
-        show_header_toggle: true
-        entities:
-          - binary_sensor.at_work
-          - binary_sensor.workday_sensor
-          - input_boolean.out_of_office
-          - binary_sensor.water_work_plants
-          - sensor.flights_work
-          - sensor.waze_home_travel_time
-      - type: weather-forecast
-        entity: weather.weather_gent
-
   - title: Beneden
     icon: mdi:sofa
     cards:
@@ -258,6 +241,22 @@ views:
       - type: plant-status
         entity: plant.monstera_deliciosa
 
+  - title: Work (In The Pocket)
+    icon: mdi:briefcase
+    cards:
+      - type: entities
+        title: Work (In The Pocket)
+        show_header_toggle: true
+        entities:
+          - binary_sensor.at_work
+          - binary_sensor.workday_sensor
+          - input_boolean.out_of_office
+          - binary_sensor.water_work_plants
+          - sensor.flights_work
+          - sensor.waze_home_travel_time
+      - type: weather-forecast
+        entity: weather.weather_gent
+
   - title: Server
     icon: mdi:raspberrypi
     cards:
@@ -288,12 +287,6 @@ views:
             title: "HDD usage"
             entity: sensor.disk_use_
       - type: entities
-        title: Cryptocurrency
-        entities:
-          - sensor.eth_balance
-          - sensor.exchange_rate_1_btc
-          - sensor.trade_volume
-      - type: entities
         title: Server Internals
         show_header_toggle: true
         entities:
@@ -304,7 +297,6 @@ views:
             icon: mdi:power-settings
           - sensor.myip
           - sensor.uptime
-          - updater.updater
       - type: glance
         title: Network Hosts
         show_header_toggle: true
@@ -395,3 +387,17 @@ views:
           - automation.notify_if_someone_is_in_the_garage
           - automation.notify_if_the_plants_at_work_need_to_be_watered
           - automation.notify_if_there_is_rain_coming
+
+  - title: Misc.
+    cards:
+      - type: entities
+        title: 'Space'
+        entities:
+          - sensor.space_launches
+      - type: entities
+        title: 'Cryptocurrency'
+        entities:
+          - sensor.eth_balance
+          - sensor.exchange_rate_1_btc
+          - sensor.trade_volume
+
