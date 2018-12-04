@@ -1,20 +1,13 @@
 alexa:
   filter:
+    include_domains:
+      - light
+      - scene
     include_entities:
-      - light.bedroom_lights
-      - light.living_room_lights
-      - light.tradfri_bulb_e27_cws_opal_600lm
-      - light.tradfri_bulb_e27_opal_1000lm
-      - scene.having_dinner
-      - scene.late_night_working
-      - scene.sexy_mode
-      - scene.watching_a_movie
-      - scene.working_at_my_desk
       - sensor.bedroom_humidity
       - sensor.bedroom_temperature
-      - switch.bed_lights
-      - switch.stringlights
-      - switch.tradfri_control_outlet_3
+      - sensor.discogs_random_record
+      - sensor.
       - switch.turn_on_tv
   entity_config:
     switch.turn_on_tv:
@@ -24,5 +17,5 @@ alexa:
       name: "Living Room Light"
     light.tradfri_bulb_e27_cws_opal_600lm:
       name: "Desk Tracklight"
-    switch.tradfri_control_outlet_3:
-      name: "Christmas Tree"
+    sensor.bedroom_temperature:
+      display_categories: 'TEMPERATURE_SENSOR'
