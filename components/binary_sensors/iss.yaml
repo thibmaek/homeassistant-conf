@@ -1,0 +1,3 @@
+- platform: iss
+  name: "ISS (International Space Station)"
+  show_on_map: true
