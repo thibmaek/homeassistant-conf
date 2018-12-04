@@ -20,31 +20,3 @@
       icon_template: mdi:calendar-outline
       value_template: >
         {{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}
-    # Alias implementation until https://github.com/home-assistant/home-assistant/pull/18221 is merged
-    season_template:
-      friendly_name: "Season"
-      entity_id: sensor.season
-      value_template: >-
-        {% if is_state("sensor.season", "autumn") %}
-          Autumn
-        {% elif is_state("sensor.season", "winter") %}
-          Winter
-        {% elif is_state("sensor.season", "spring") %}
-          Spring
-        {% elif is_state("sensor.season", "summer") %}
-          Summer
-        {% else %}
-          Unknown season
-        {% endif %}
-      icon_template: >-
-        {% if is_state("sensor.season", "autumn") %}
-          mdi:leaf
-        {% elif is_state("sensor.season", "winter") %}
-          mdi:snowflake
-        {% elif is_state("sensor.season", "spring") %}
-          mdi:flower
-        {% elif is_state("sensor.season", "summer") %}
-          mdi:sunglasses
-        {% else %}
-          mdi:cloud
-        {% endif %}

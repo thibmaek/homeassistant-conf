@@ -111,7 +111,7 @@ views:
           - sensor.dark_sky_weather_precip_probability
           - sensor.flights_home
           - sensor.moon
-          - sensor.season_template
+          - sensor.season
           - sensor.waze_work_travel_time
           - sun.sun
       - type: glance
