@@ -1,0 +1,10 @@
+language: python
+cache: pip
+python:
+  - '3.6'
+install:
+  - 'pip3 install homeassistant'
+script:
+  - 'mv secrets.example.yaml secrets.yaml'
+  - 'hass -c . --script check_config | tee check.output'
+  - '! less check.output | grep -q "Failed config"'
