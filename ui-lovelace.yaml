@@ -367,6 +367,11 @@ views:
     icon: mdi:home-automation
     cards:
       - type: entities
+        title: Status
+        entities:
+          - entity: sensor.travis_ci_build_status
+            icon: mdi:worker
+      - type: entities
         title: Server Actions
         show_header_toggle: true
         entities:
