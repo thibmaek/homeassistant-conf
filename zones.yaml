@@ -1,0 +1,24 @@
+- name: "Werk Thib"
+  latitude: 51.067562
+  longitude: 3.732851
+  radius: 100
+  icon: mdi:code-tags
+
+- name: "Studio Lotte"
+  latitude: !secret latitude_studio_lotte
+  longitude: !secret longitude_studio_lotte
+  radius: 100
+  icon: mdi:home-modern
+
+# Stations
+- name: "Gent Dampoort"
+  latitude: 51.056036
+  longitude: 3.740706
+  radius: 100
+  icon: mdi:train
+
+- name: "Brugge Station"
+  latitude: 51.197718
+  longitude: 3.217841
+  radius: 100
+  icon: mdi:train

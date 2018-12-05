@@ -11,7 +11,6 @@ __pycache__
 # Sensitive
 *token*
 secrets.yaml
-zones.yaml
 .uuid
 html5_push_registrations.conf
 known_devices.yaml
