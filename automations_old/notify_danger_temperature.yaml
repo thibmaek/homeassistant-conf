@@ -1,0 +1,11 @@
+- alias: "Exceptionally hot temperature found"
+  trigger:
+    - entity_id: sensor.bedroom_temperature
+      platform: numeric_state
+      above: 50
+  condition: []
+  action:
+    - service: notify.thibault_devices
+      data:
+        title: "\ud83d\udd25 Possible fire in bedroom!"
+        message: "Bedroom temperature is exceptionally high! {{ trigger.to_state.state }} {{ trigger.to_state.attributes.unit_of_measurement }} reported in the bedroom."
