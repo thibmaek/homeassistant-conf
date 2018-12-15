@@ -14,9 +14,16 @@
         {% else %}
           mdi:arrow-top-right-thick
         {% endif %}
+
     day_of_week:
       friendly_name: "Day of the week"
       entity_id: sensor.time
       icon_template: mdi:calendar-outline
       value_template: >
         {{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}
+
+    living_room_temperature:
+      friendly_name: "Living Room Temperature"
+      entity_id: sensor.ficus_elastica_temperature
+      icon_template: mdi:thermometer
+      value_template: {{ states.sensor.ficus_elastica_temperature.state }}

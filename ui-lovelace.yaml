@@ -161,11 +161,12 @@ views:
     cards:
       - type: entities
         entities:
+          - sensor.living_room_temperature
           - light.living_room_lights
+          - switch.turn_on_tv
           - scene.goodnight
           - scene.having_dinner
           - scene.watching_a_movie
-          - switch.turn_on_tv
       - type: entities
         title: Living Room Lights
         show_header_toggle: true
