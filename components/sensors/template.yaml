@@ -26,4 +26,5 @@
       friendly_name: "Living Room Temperature"
       entity_id: sensor.ficus_elastica_temperature
       icon_template: mdi:thermometer
-      value_template: {{ states.sensor.ficus_elastica_temperature.state }}
+      value_template: >
+        {{ states('sensor.ficus_elastica_temperature') }}
