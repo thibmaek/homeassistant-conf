@@ -3,8 +3,6 @@ resources:
     type: js
   - url: /local/custom-ui/calendar-card/calendar-card.js?v=1.0.1
     type: module
-  - url: /local/custom-ui/animated-weather-card/animated-weather-card.js?v=6
-    type: js
 
 title: Home
 views:
@@ -130,31 +128,6 @@ views:
         entity: media_player.spotify
       - type: weather-forecast
         entity: weather.weather_brugge
-      - type: custom:animated-weather-card
-        entity_sun: sun.sun
-        entity_daily_summary: sensor.dark_sky_weather_daily_summary
-        entity_current_conditions: sensor.dark_sky_weather_icon
-        entity_humidity: sensor.dark_sky_weather_humidity
-        entity_pressure: sensor.dark_sky_weather_pressure
-        entity_temperature: sensor.dark_sky_weather_temperature
-        entity_visibility: sensor.dark_sky_weather_visibility
-        entity_wind_bearing: sensor.dark_sky_weather_wind_bearing
-        entity_wind_speed: sensor.dark_sky_weather_wind_speed
-        entity_forecast_high_temp_1: sensor.dark_sky_weather_daytime_high_temperature_1
-        entity_forecast_high_temp_2: sensor.dark_sky_weather_daytime_high_temperature_2
-        entity_forecast_high_temp_3: sensor.dark_sky_weather_daytime_high_temperature_3
-        entity_forecast_high_temp_4: sensor.dark_sky_weather_daytime_high_temperature_4
-        entity_forecast_high_temp_5: sensor.dark_sky_weather_daytime_high_temperature_5
-        entity_forecast_low_temp_1: sensor.dark_sky_weather_overnight_low_temperature_1
-        entity_forecast_low_temp_2: sensor.dark_sky_weather_overnight_low_temperature_2
-        entity_forecast_low_temp_3: sensor.dark_sky_weather_overnight_low_temperature_3
-        entity_forecast_low_temp_4: sensor.dark_sky_weather_overnight_low_temperature_4
-        entity_forecast_low_temp_5: sensor.dark_sky_weather_overnight_low_temperature_5
-        entity_forecast_icon_1: sensor.dark_sky_weather_icon_1
-        entity_forecast_icon_2: sensor.dark_sky_weather_icon_2
-        entity_forecast_icon_3: sensor.dark_sky_weather_icon_3
-        entity_forecast_icon_4: sensor.dark_sky_weather_icon_4
-        entity_forecast_icon_5: sensor.dark_sky_weather_icon_5
 
   - title: Beneden
     icon: mdi:sofa
