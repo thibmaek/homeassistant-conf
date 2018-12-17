@@ -1,10 +1,14 @@
 language: python
-cache: pip
+
 python:
   - '3.6'
+
+cache: pip
 install:
-  - 'pip3 install homeassistant'
+  - 'pip3 install homeassistant yamllint'
+
 script:
   - 'mv secrets.test.yaml secrets.yaml'
   - 'hass -c . --script check_config | tee check.output'
   - '! less check.output | grep -q "Failed config"'
+  - 'yamllint .'
