@@ -7,6 +7,9 @@ homeassistant:
   time_zone: 'Europe/Brussels'
   customize: !include_dir_merge_named customization/
 
+lovelace:
+  mode: yaml
+
 frontend:
   javascript_version: latest
   themes: !include_dir_merge_named themes/
