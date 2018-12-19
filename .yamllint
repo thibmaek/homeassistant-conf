@@ -1,7 +1,12 @@
 extends: default
 
 rules:
-  comments: { require-starting-space: true }
+  comments:
+    require-starting-space: true
+    min-spaces-from-content: 1
   document-start: disable
-  quoted-strings: { quote-type: any }
+  quoted-strings: disable
+    #level: warning
+    #quote-type: any
   truthy: disable
+  line-length: disable

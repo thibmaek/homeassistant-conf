@@ -1,9 +1,9 @@
 vacation_mode:
   name: "Vacation Mode"
   initial: off
-  icon: mdi:beach
+  icon: "mdi:beach"
 
 out_of_office:
   name: "Out of office"
   initial: false
-  icon: mdi:home-minus
+  icon: "mdi:home-minus"

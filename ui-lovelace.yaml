@@ -383,4 +383,3 @@ views:
           - sensor.eth_balance
           - sensor.exchange_rate_1_btc
           - sensor.trade_volume
-
