@@ -2,19 +2,19 @@
 - platform: mqtt
   name: "Bedroom Temperature"
   icon: mdi:thermometer
-  state_topic: homeassistant/nodemcu-bedroom/SENSOR
-  unit_of_measurement: '°C'
+  state_topic: nodemcu-bedroom/tele/SENSOR
+  unit_of_measurement: '°{{ value_json.TempUnit }}'
   value_template: '{{ value_json.DHT11.Temperature }}'
-  availability_topic: homeassistant/nodemcu-bedroom/LWT
+  availability_topic: nodemcu-bedroom/tele/LWT
   payload_available: "Online"
   payload_not_available: "Offline"
 - platform: mqtt
   name: "Bedroom Humidity"
   icon: mdi:water-percent
-  state_topic: homeassistant/nodemcu-bedroom/SENSOR
+  state_topic: nodemcu-bedroom/tele/SENSOR
   unit_of_measurement: '%'
   value_template: '{{ value_json.DHT11.Humidity }}'
-  availability_topic: homeassistant/nodemcu-bedroom/LWT
+  availability_topic: nodemcu-bedroom/tele/LWT
   payload_available: "Online"
   payload_not_available: "Offline"
 
