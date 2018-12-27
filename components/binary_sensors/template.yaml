@@ -20,6 +20,17 @@
       value_template: >-
         {{ is_state("sensor.day_of_week", "Monday") }}
 
+    telenet_off_peak:
+      friendly_name: "Telenet Off Peak"
+      value_template: >-
+        {{ now().hour >= 0 and now().hour < 12 }}
+      icon_template: >-
+        {% if now().hour >= 0 and now().hour < 12 %}
+          mdi:arrow-bottom-right-thick
+        {% else %}
+          mdi:arrow-top-right-thick
+        {% endif %}
+
     water_work_plants:
       friendly_name: "Watering day"
       entity_id: sensor.day_of_week

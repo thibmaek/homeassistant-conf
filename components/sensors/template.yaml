@@ -1,20 +1,5 @@
 - platform: template
   sensors:
-    telenet_off_peak:
-      friendly_name: 'Telenet Off Peak'
-      value_template: >-
-        {% if now().hour >= 0 and now().hour < 12 %}
-          Off Peak
-        {% else %}
-          Peak Hour
-        {% endif %}
-      icon_template: >-
-        {% if now().hour >= 0 and now().hour < 12 %}
-          mdi:arrow-bottom-right-thick
-        {% else %}
-          mdi:arrow-top-right-thick
-        {% endif %}
-
     day_of_week:
       friendly_name: "Day of the week"
       entity_id: sensor.time
