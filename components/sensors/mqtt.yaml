@@ -3,7 +3,7 @@
   name: "Bedroom Temperature"
   icon: mdi:thermometer
   state_topic: nodemcu-bedroom/tele/SENSOR
-  unit_of_measurement: '°{{ value_json.TempUnit }}'
+  unit_of_measurement: '°C'
   value_template: '{{ value_json.DHT11.Temperature }}'
   availability_topic: nodemcu-bedroom/tele/LWT
   payload_available: "Online"
