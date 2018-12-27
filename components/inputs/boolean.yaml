@@ -1,9 +1,7 @@
-vacation_mode:
-  name: "Vacation Mode"
-  initial: off
-  icon: "mdi:beach"
+travel_mode:
+  name: "Travel Mode"
+  icon: "mdi:airplane"
 
 out_of_office:
   name: "Out of office"
-  initial: false
-  icon: "mdi:home-minus"
+  icon: "mdi:beach"

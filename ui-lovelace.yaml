@@ -62,7 +62,7 @@ views:
       - type: entities
         entities:
           - binary_sensor.garage_motion
-          - input_boolean.vacation_mode
+          - input_boolean.travel_mode
           - sensor.telenet_off_peak
       - type: picture-entity
         title: Buienradar Radarmap
