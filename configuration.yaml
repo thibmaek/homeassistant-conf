@@ -37,8 +37,8 @@ mqtt:
   password: !secret mqtt_password
 
 influxdb:
-  host: localhost
-  database: homeassistant
+  host: !secret host_kitkat
+  database: home_assistant
   username: !secret influxdb_user
   password: !secret influxdb_password
   max_retries: 3
