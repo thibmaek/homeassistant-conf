@@ -45,6 +45,8 @@ influxdb:
   default_measurement: state
   include:
     domains:
+      - binary_sensor
+      - light
       - sensor
 
 downloader:
