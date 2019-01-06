@@ -20,7 +20,7 @@ _LOGGER = logging.getLogger(__name__)
 
 EXCLUDE_ITEMS = [
     "LIVE : Het Journaal 1", "Het Journaal Laat",
-    "De markt", "Het weer", "Villa Politica"
+    "De markt", "Het weer", "Villa Politica", "Terzake"
 ]
 ATTRIBUTION = "Data provided by https://www.vrt.be/vrtnws/nl/"
 
