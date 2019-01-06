@@ -22,6 +22,7 @@
 
     telenet_off_peak:
       friendly_name: "Telenet Off Peak"
+      entity_id: sensor.time__date
       value_template: >-
         {{ now().hour >= 0 and now().hour < 12 }}
       icon_template: >-
