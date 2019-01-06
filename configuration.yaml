@@ -7,6 +7,13 @@ homeassistant:
   time_zone: 'Europe/Brussels'
   customize: !include_dir_merge_named customization/
 
+custom_updater:
+  track:
+    - components
+  component_urls:
+    - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/vrtnws/custom_updater.json
+    - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/velo_antwerpen/custom_updater.json
+
 lovelace:
   mode: yaml
 

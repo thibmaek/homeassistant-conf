@@ -3,6 +3,8 @@ resources:
     type: js
   - url: /local/custom-ui/calendar-card/calendar-card.js?v=1.0.1
     type: module
+  - url: /local/tracker-card.js?v=0
+    type: js
 
 title: Home
 views:
@@ -338,6 +340,10 @@ views:
   - title: Home Assistant Internals
     icon: mdi:home-automation
     cards:
+      - type: custom:tracker-card
+        title:
+        trackers:
+          - sensor.custom_component_tracker
       - type: entities
         title: Status
         entities:
