@@ -162,7 +162,7 @@ views:
       - type: media-control
         entity: media_player.playstation_4
       - type: media-control
-        entity: media_player.volumio_woonkamer
+        entity: media_player.volumio_volumiowoonkamerlocal
       - type: media-control
         entity: media_player.woonkamer_chromecast
       - type: plant-status
