@@ -18,6 +18,8 @@ from homeassistant.util import Throttle
 
 _LOGGER = logging.getLogger(__name__)
 
+__version__ = '1.0.1'
+
 EXCLUDE_ITEMS = [
     "LIVE : Het Journaal 1", "Het Journaal Laat",
     "De markt", "Het weer", "Villa Politica", "Terzake"
