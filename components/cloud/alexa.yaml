@@ -7,6 +7,7 @@ alexa:
       - sensor.bedroom_humidity
       - sensor.bedroom_temperature
       - sensor.discogs_random_record
+      - switch.flux
       - switch.turn_on_tv
   entity_config:
     switch.turn_on_tv:
