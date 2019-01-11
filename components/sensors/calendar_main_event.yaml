@@ -35,8 +35,8 @@
 
     calendar_lotte__thib:
       friendly_name: 'Lotte & Thib'
-      entity_id: calendar.lot__thib
+      entity_id: calendar.lot_thib
       value_template: >
-        {% if is_state('calendar.lot__thib', 'on') %}
-          {{ states.calendar.lot__thib.attributes.message }}
+        {% if is_state('calendar.lot_thib', 'on') %}
+          {{ states.calendar.lot_thib.attributes.message }}
         {% endif %}

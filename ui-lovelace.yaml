@@ -35,7 +35,7 @@ views:
       - type: "custom:calendar-card"
         name: 'Calendar'
         entities:
-          - calendar.lot__thib
+          - calendar.lot_thib
           - calendar.taken
       - type: entity-filter
         entities:
@@ -99,7 +99,7 @@ views:
           - sensor.calendar_agenda
           - sensor.calendar_events
           - sensor.calendar_facebook
-          - sensor.calendar_lotte__thib
+          - sensor.calendar_lotte_thib
           - sensor.calendar_tasks
       - type: entities
         title: HP Printer ink levels
