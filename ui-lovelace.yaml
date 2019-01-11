@@ -258,13 +258,13 @@ views:
             entity: sensor.memory_use
           - type: sensor
             title: "HDD usage"
-            entity: sensor.disk_use_
+            entity: sensor.disk_use
       - type: entities
         title: Server Internals
         show_header_toggle: true
         entities:
           - sensor.current_version
-          - sensor.disk_free_
+          - sensor.disk_free
           - sensor.memory_free
           - entity: sensor.rpi_power_status
             icon: mdi:power-settings
