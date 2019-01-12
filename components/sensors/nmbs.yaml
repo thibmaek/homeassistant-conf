@@ -1,0 +1,9 @@
+- platform: nmbs
+  name: "Train Home"
+  station_from: "Gent Dampoort"
+  station_to: "Brugge"
+
+- platform: nmbs
+  name: "Train Work"
+  station_from: "Brugge"
+  station_to: "Gent Dampoort"
