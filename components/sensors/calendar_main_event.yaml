@@ -33,7 +33,7 @@
         {% endif %}
 
 
-    calendar_lotte__thib:
+    calendar.lot_thib:
       friendly_name: 'Lotte & Thib'
       entity_id: calendar.lot_thib
       value_template: >

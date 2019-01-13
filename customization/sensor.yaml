@@ -5,7 +5,7 @@ sensor.calendar_events:
   icon: mdi:calendar-question
 sensor.calendar_facebook:
   icon: mdi:facebook-box
-sensor.calendar_lotte__thib:
+sensor.calendar.lot_thib:
   icon: mdi:calendar-multiple
 sensor.calendar_tasks:
   icon: mdi:calendar-check
