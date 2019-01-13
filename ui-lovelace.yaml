@@ -11,14 +11,6 @@ views:
   - title: Maekelberghain
     icon: mdi:home
     cards:
-      - type: horizontal-stack
-        cards:
-          - type: entities
-            entities:
-              - sensor.date
-          - type: entities
-            entities:
-              - sensor.time
       - type: entities
         title: Vandaag
         show_header_toggle: true
@@ -30,6 +22,7 @@ views:
           - sensor.flights_home
           - sensor.moon
           - sensor.season
+          - sensor.train_work
           - sensor.waze_work_travel_time
           - sun.sun
       - type: "custom:calendar-card"
@@ -225,8 +218,9 @@ views:
           - binary_sensor.workday_sensor
           - input_boolean.out_of_office
           - binary_sensor.water_work_plants
-          - sensor.flights_work
+          - sensor.train_home
           - sensor.waze_home_travel_time
+          - sensor.flights_work
       - type: weather-forecast
         entity: weather.weather_gent
 
