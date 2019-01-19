@@ -14,6 +14,10 @@ views:
     icon: mdi:home
     cards:
       - type: custom:compact-custom-header
+        voice: false
+        clock: notification
+        clock_format: 12
+        clock_am_pm: true
       - type: entities
         title: Vandaag
         show_header_toggle: true
@@ -131,6 +135,10 @@ views:
     icon: mdi:sofa
     cards:
       - type: custom:compact-custom-header
+        voice: false
+        clock: notification
+        clock_format: 12
+        clock_am_pm: true
       - type: entities
         entities:
           - sensor.living_room_temperature
@@ -169,6 +177,10 @@ views:
     icon: mdi:bed-empty
     cards:
       - type: custom:compact-custom-header
+        voice: false
+        clock: notification
+        clock_format: 12
+        clock_am_pm: true
       - type: entities
         entities:
           - light.bedroom_lights
@@ -216,6 +228,10 @@ views:
     icon: mdi:briefcase
     cards:
       - type: custom:compact-custom-header
+        voice: false
+        clock: notification
+        clock_format: 12
+        clock_am_pm: true
       - type: entities
         title: Work (In The Pocket)
         show_header_toggle: true
@@ -234,6 +250,10 @@ views:
     icon: mdi:raspberrypi
     cards:
       - type: custom:compact-custom-header
+        voice: false
+        clock: notification
+        clock_format: 12
+        clock_am_pm: true
       - type: horizontal-stack
         title: Network
         cards:
@@ -342,6 +362,10 @@ views:
     icon: mdi:home-automation
     cards:
       - type: custom:compact-custom-header
+        voice: false
+        clock: notification
+        clock_format: 12
+        clock_am_pm: true
       - type: custom:tracker-card
         title:
         trackers:
@@ -376,6 +400,10 @@ views:
   - title: Misc.
     cards:
       - type: custom:compact-custom-header
+        voice: false
+        clock: notification
+        clock_format: 12
+        clock_am_pm: true
       - type: entities
         title: 'Space'
         entities:
