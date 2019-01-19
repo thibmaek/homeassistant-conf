@@ -15,7 +15,8 @@ views:
     cards:
       - type: custom:compact-custom-header
         voice: false
-        clock: notification
+        notification: true
+        clock: options
         clock_format: 12
         clock_am_pm: true
       - type: entities
@@ -136,7 +137,8 @@ views:
     cards:
       - type: custom:compact-custom-header
         voice: false
-        clock: notification
+        notification: true
+        clock: options
         clock_format: 12
         clock_am_pm: true
       - type: entities
@@ -178,7 +180,8 @@ views:
     cards:
       - type: custom:compact-custom-header
         voice: false
-        clock: notification
+        notification: true
+        clock: options
         clock_format: 12
         clock_am_pm: true
       - type: entities
@@ -229,7 +232,8 @@ views:
     cards:
       - type: custom:compact-custom-header
         voice: false
-        clock: notification
+        notification: true
+        clock: options
         clock_format: 12
         clock_am_pm: true
       - type: entities
@@ -251,7 +255,8 @@ views:
     cards:
       - type: custom:compact-custom-header
         voice: false
-        clock: notification
+        notification: true
+        clock: options
         clock_format: 12
         clock_am_pm: true
       - type: horizontal-stack
@@ -363,7 +368,8 @@ views:
     cards:
       - type: custom:compact-custom-header
         voice: false
-        clock: notification
+        notification: true
+        clock: options
         clock_format: 12
         clock_am_pm: true
       - type: custom:tracker-card
@@ -401,7 +407,8 @@ views:
     cards:
       - type: custom:compact-custom-header
         voice: false
-        clock: notification
+        notification: true
+        clock: options
         clock_format: 12
         clock_am_pm: true
       - type: entities
