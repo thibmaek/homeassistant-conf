@@ -10,6 +10,7 @@ homeassistant:
 custom_updater:
   track:
     - components
+    - cards
   component_urls:
     - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/vrtnws/custom_updater.json
     - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/velo_antwerpen/custom_updater.json

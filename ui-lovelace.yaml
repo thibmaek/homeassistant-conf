@@ -5,12 +5,15 @@ resources:
     type: module
   - url: /local/tracker-card.js?v=0
     type: js
+  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js
+    type: js
 
 title: Home
 views:
   - title: Maekelberghain
     icon: mdi:home
     cards:
+      - type: custom:compact-custom-header
       - type: entities
         title: Vandaag
         show_header_toggle: true
@@ -127,6 +130,7 @@ views:
   - title: Beneden
     icon: mdi:sofa
     cards:
+      - type: custom:compact-custom-header
       - type: entities
         entities:
           - sensor.living_room_temperature
@@ -164,6 +168,7 @@ views:
   - title: Slaapkamer
     icon: mdi:bed-empty
     cards:
+      - type: custom:compact-custom-header
       - type: entities
         entities:
           - light.bedroom_lights
@@ -210,6 +215,7 @@ views:
   - title: Work (In The Pocket)
     icon: mdi:briefcase
     cards:
+      - type: custom:compact-custom-header
       - type: entities
         title: Work (In The Pocket)
         show_header_toggle: true
@@ -227,6 +233,7 @@ views:
   - title: Server
     icon: mdi:raspberrypi
     cards:
+      - type: custom:compact-custom-header
       - type: horizontal-stack
         title: Network
         cards:
@@ -334,6 +341,7 @@ views:
   - title: Home Assistant Internals
     icon: mdi:home-automation
     cards:
+      - type: custom:compact-custom-header
       - type: custom:tracker-card
         title:
         trackers:
@@ -367,6 +375,7 @@ views:
 
   - title: Misc.
     cards:
+      - type: custom:compact-custom-header
       - type: entities
         title: 'Space'
         entities:
