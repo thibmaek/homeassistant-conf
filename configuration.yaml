@@ -14,6 +14,8 @@ custom_updater:
   component_urls:
     - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/vrtnws/custom_updater.json
     - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/velo_antwerpen/custom_updater.json
+  card_urls:
+    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
 
 lovelace:
   mode: yaml
