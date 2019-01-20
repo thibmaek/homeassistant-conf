@@ -69,13 +69,13 @@ views:
         title: Devices
         entities:
           - entity: group.all_lights
-            title: Lights
+            name: Lights
             icon: mdi:lightbulb
           - entity: group.all_switches
-            title: Switches
+            name: Switches
             icon: mdi:light-switch
           - entity: group.all_plants
-            title: Plants
+            name: Plants
             icon: mdi:flower
       - type: entities
         entities:
