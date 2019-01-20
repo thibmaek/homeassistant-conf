@@ -28,13 +28,7 @@ views:
         show_header_toggle: true
         entities:
           - sensor.vrt_nws
-          - sensor.dark_sky_weather_daily_summary
-          - sensor.dark_sky_weather_hourly_summary
-          - sensor.dark_sky_weather_apparent_temperature
-          - sensor.dark_sky_weather_precip_probability
           - sensor.flights_home
-          - sensor.moon
-          - sensor.season
           - sensor.waze_work_travel_time
           - sun.sun
       - type: entities
@@ -101,11 +95,6 @@ views:
           - input_boolean.travel_mode
           - binary_sensor.telenet_off_peak
       - type: picture-entity
-        title: Buienradar Radarmap
-        entity: camera.buienradar_radarmap
-        camera_image: camera.buienradar_radarmap
-        show_info: true
-      - type: picture-entity
         title: Garage camera
         entity: camera.garage_camera
         camera_image: camera.garage_camera
@@ -114,16 +103,6 @@ views:
         default_zoom: 13.5
         entities:
           - device_tracker.thibaults_iphone
-      - type: entities
-        title: Tomorrow's Weather
-        show_header_toggle: true
-        entities:
-          - sensor.dark_sky_weather_cloud_coverage_1
-          - sensor.dark_sky_weather_daily_max_precip_intensity_1
-          - sensor.dark_sky_weather_precip_1
-          - sensor.dark_sky_weather_precip_intensity_1
-          - sensor.dark_sky_weather_precip_probability_1
-          - sensor.dark_sky_weather_wind_speed
       - type: entities
         title: "Today's schedule"
         entities:
@@ -296,6 +275,47 @@ views:
                   name: Platform (Departing)
                 - key: sensor.train_home.platform_arriving
                   name: Platform (Arriving)
+
+  - title: Weather
+    icon: mdi:weather-fog
+    cards:
+      - type: custom:compact-custom-header
+        voice: false
+        notification: true
+        clock: options
+        clock_format: 12
+        clock_am_pm: true
+      - type: entities
+        title: Season
+        show_header_toggle: false
+        entities:
+          - sun.sun
+          - sensor.season
+          - sensor.moon
+      - type: entities
+        title: Forecasts
+        entities:
+          - sensor.dark_sky_weather_daily_summary
+          - sensor.dark_sky_weather_hourly_summary
+      - type: entities
+        title: Today
+        entities:
+          - sensor.dark_sky_weather_apparent_temperature
+          - sensor.dark_sky_weather_precip_probability
+      - type: entities
+        title: Tomorrow
+        entities:
+          - sensor.dark_sky_weather_cloud_coverage_1
+          - sensor.dark_sky_weather_daily_max_precip_intensity_1
+          - sensor.dark_sky_weather_precip_1
+          - sensor.dark_sky_weather_precip_intensity_1
+          - sensor.dark_sky_weather_precip_probability_1
+          - sensor.dark_sky_weather_wind_speed_1
+      - type: picture-entity
+        title: Buienradar Radarmap
+        entity: camera.buienradar_radarmap
+        camera_image: camera.buienradar_radarmap
+        show_info: true
 
   - title: Server
     icon: mdi:raspberrypi
