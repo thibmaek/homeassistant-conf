@@ -1,3 +1,0 @@
-- name: 'Transmission'
-  url: !secret transmission_url
-  icon: 'mdi:download'

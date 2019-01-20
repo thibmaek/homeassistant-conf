@@ -77,9 +77,6 @@ google:
 
 sun:
 
-weblink:
-  entities: !include_dir_merge_list components/weblinks/
-
 panel_iframe: !include_dir_merge_named components/panel_iframes/
 
 twilio:

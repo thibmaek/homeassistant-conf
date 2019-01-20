@@ -1,3 +1,0 @@
-- name: 'Sickrage'
-  url: !secret sickrage_url
-  icon: 'mdi:fish'

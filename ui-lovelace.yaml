@@ -350,10 +350,6 @@ views:
             name: "Mijn Telenet"
             url: "https://mijn.telenet.be/mijntelenet/homenetwork/overview.do"
             icon: mdi:access-point-network
-          - weblink.nextcloud
-          - weblink.panorama_plex
-          - weblink.sickrage
-          - weblink.transmission
       - type: entities
         title: Network
         entities:

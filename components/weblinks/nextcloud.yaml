@@ -1,3 +1,0 @@
-- name: 'Nextcloud'
-  url: !secret nextcloud_url
-  icon: 'mdi:cloud-sync'
