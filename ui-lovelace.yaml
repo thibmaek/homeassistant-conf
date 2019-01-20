@@ -35,9 +35,25 @@ views:
           - sensor.flights_home
           - sensor.moon
           - sensor.season
-          - sensor.train_work
           - sensor.waze_work_travel_time
           - sun.sun
+      - type: entities
+        title: Train
+        show_header_toggle: false
+        entities:
+          - sensor.train_work
+          - type: custom:entity-attributes-card
+            entity: sensor.train_work
+            filter:
+              include:
+                - key: sensor.train_work.departure
+                  name: Leaving
+                - key: sensor.train_work.direction
+                  name: Direction
+                - key: sensor.train_work.platform_departing
+                  name: Platform (Departing)
+                - key: sensor.train_work.platform_arriving
+                  name: Platform (Arriving)
       - type: "custom:calendar-card"
         name: 'Calendar'
         entities:
@@ -265,6 +281,7 @@ views:
         entity: weather.weather_gent
       - type: entities
         title: Train
+        show_header_toggle: false
         entities:
           - sensor.train_home
           - type: custom:entity-attributes-card
