@@ -64,6 +64,12 @@ views:
         state_filter:
           - "on"
       - type: entities
+        title: Devices
+        entities:
+          - group.all_lights
+          - group.all_switches
+          - group.all_plants
+      - type: entities
         entities:
           - binary_sensor.garage_motion
           - input_boolean.travel_mode
