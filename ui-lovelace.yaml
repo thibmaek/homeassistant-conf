@@ -87,13 +87,11 @@ views:
         entity: camera.buienradar_radarmap
         camera_image: camera.buienradar_radarmap
         show_info: true
-        tap_action: dialog
       - type: picture-entity
         title: Garage camera
         entity: camera.garage_camera
         camera_image: camera.garage_camera
         show_info: true
-        tap_action: dialog
       - type: map
         default_zoom: 13.5
         entities:
@@ -212,12 +210,6 @@ views:
           - scene.sexy_mode
           - scene.working_at_my_desk
           - sensor.discogs_random_record
-      - type: picture-entity
-        title: Bedroom camera
-        entity: camera.bedroom_camera
-        camera_image: camera.bedroom_camera
-        show_info: true
-        tap_action: dialog
       - type: entities
         title: Bedroom Lights
         show_header_toggle: true
@@ -308,7 +300,6 @@ views:
             entity: sensor.disk_use
       - type: entities
         title: Server Internals
-        show_header_toggle: true
         entities:
           - sensor.current_version
           - sensor.disk_free
@@ -319,7 +310,6 @@ views:
           - sensor.uptime
       - type: glance
         title: Network Hosts
-        show_header_toggle: true
         columns: 3
         show_state: false
         entities:
@@ -332,7 +322,6 @@ views:
           - binary_sensor.volumio_woonkamer_host
       - type: entities
         title: Weblinks
-        show_header_toggle: true
         entities:
           - type: weblink
             name: "States (deprecated)"
@@ -400,7 +389,6 @@ views:
             icon: mdi:worker
       - type: entities
         title: Server Actions
-        show_header_toggle: true
         entities:
           - script.ha_check_config
           - script.ha_reload_automations
@@ -438,7 +426,6 @@ views:
         entity: camera.iss_map
         camera_image: camera.iss_map
         show_info: true
-        tap_action: dialog
       - type: entities
         title: 'Cryptocurrency'
         entities:
