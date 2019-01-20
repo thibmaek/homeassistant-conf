@@ -66,9 +66,15 @@ views:
       - type: entities
         title: Devices
         entities:
-          - group.all_lights
-          - group.all_switches
-          - group.all_plants
+          - entity: group.all_lights
+            title: Lights
+            icon: mdi:lightbulb
+          - entity: group.all_switches
+            title: Switches
+            icon: mdi:light-switch
+          - entity: group.all_plants
+            title: Plants
+            icon: mdi:flower
       - type: entities
         entities:
           - binary_sensor.garage_motion
