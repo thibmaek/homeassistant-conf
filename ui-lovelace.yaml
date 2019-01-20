@@ -9,6 +9,8 @@ resources:
     type: js
   - url: /local/mini-media-player-bundle.js?v=0.9.8
     type: module
+  - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=1
+    type: js
 
 title: Home
 views:
@@ -257,11 +259,26 @@ views:
           - binary_sensor.workday_sensor
           - input_boolean.out_of_office
           - binary_sensor.water_work_plants
-          - sensor.train_home
           - sensor.waze_home_travel_time
           - sensor.flights_work
       - type: weather-forecast
         entity: weather.weather_gent
+      - type: entities
+        title: Train
+        entities:
+          - sensor.train_home
+          - type: custom:entity-attributes-card
+            entity: sensor.train_home
+            filter:
+              include:
+                - key: sensor.train_home.departure
+                  name: Leaving
+                - key: sensor.train_home.direction
+                  name: Direction
+                - key: sensor.train_home.platform_departing
+                  name: Platform (Departing)
+                - key: sensor.train_home.platform_arriving
+                  name: Platform (Arriving)
 
   - title: Server
     icon: mdi:raspberrypi
