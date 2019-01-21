@@ -173,13 +173,6 @@ views:
             icon: mdi:pine-tree
           - light.tradfri_bulb_e27_opal_1000lm
           - sensor.tradfri_wireless_dimmer
-      - type: entities
-        title: Spotify
-        show_header_toggle: true
-        entities:
-          - input_select.spotify_playlist
-          - input_select.spotify_source
-          - script.spotify_music
       - type: media-control
         entity: media_player.panasonic_viera
       - type: media-control

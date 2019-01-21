@@ -9,7 +9,3 @@ script.ha_reload_scripts:
   icon: mdi:script
 script.ha_check_config:
   icon: mdi:code-tags-check
-
-script.spotify_music:
-  friendly_name: "Start playing playlist"
-  icon: mdi:play
