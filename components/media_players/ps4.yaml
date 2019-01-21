@@ -1,5 +1,0 @@
-- platform: ps4
-  host: 'http://localhost:3031'
-  ps4_ip: !secret host_ps4
-  name: 'Playstation 4'
-  local_store: 'games'
