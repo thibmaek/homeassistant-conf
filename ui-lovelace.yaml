@@ -11,6 +11,8 @@ resources:
     type: module
   - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=1
     type: js
+  - url: /local/custom-lovelace/circle-sensor-card/circle-sensor-card.js?v=0
+    type: module
 
 title: Home
 views:
@@ -219,12 +221,18 @@ views:
           - sensor.panorama_plex
       - type: horizontal-stack
         cards:
-          - type: sensor
+          - type: custom:circle-sensor-card
             entity: sensor.bedroom_humidity
             name: Humidity
-          - type: sensor
+            fill: rgb(41, 69, 82, 1.00)
+            stroke_color: rgb(189, 223, 250)
+            units: '%'
+          - type: custom:circle-sensor-card
             entity: sensor.bedroom_temperature
             name: Temperature
+            fill: rgb(229, 223, 227)
+            stroke_color: rgb(236, 128, 136)
+            units: '°C'
       - type: plant-status
         entity: plant.monstera_deliciosa
 
