@@ -1,0 +1,102 @@
+- type: custom:compact-custom-header
+  voice: false
+  notification: true
+  clock: options
+  clock_format: 12
+  clock_am_pm: true
+- type: horizontal-stack
+  title: Network
+  cards:
+    - type: sensor
+      entity: sensor.speedtest_ping
+      icon: mdi:resistor
+      name: Ping
+    - type: sensor
+      entity: sensor.speedtest_download
+      icon: mdi:download
+      name: Download
+    - type: sensor
+      entity: sensor.speedtest_upload
+      icon: mdi:upload
+      name: Upload
+- type: horizontal-stack
+  cards:
+    - type: sensor
+      title: "CPU usage"
+      entity: sensor.processor_use
+    - type: sensor
+      title: "MEM usage"
+      entity: sensor.memory_use
+    - type: sensor
+      title: "HDD usage"
+      entity: sensor.disk_use
+- type: entities
+  title: Server Internals
+  entities:
+    - sensor.current_version
+    - sensor.disk_free
+    - sensor.memory_free
+    - entity: sensor.rpi_power_status
+      icon: mdi:power-settings
+    - sensor.myip
+    - sensor.uptime
+- type: glance
+  title: Network Hosts
+  columns: 3
+  show_state: false
+  entities:
+    - binary_sensor.panorama_host
+    - binary_sensor.tresor_host
+    - binary_sensor.nextcloudpi_host
+    - binary_sensor.rasplex_host
+    - binary_sensor.kitkat_host
+    - binary_sensor.ps4_host
+    - binary_sensor.volumio_woonkamer_host
+- type: entities
+  title: Weblinks
+  entities:
+    - type: weblink
+      name: "States (deprecated)"
+      url: "/states"
+      icon: 'mdi:home-assistant'
+    - type: weblink
+      name: "Home Assistant Components"
+      url: "https://home-assistant.io/components/"
+      icon: 'mdi:home-assistant'
+    - type: weblink
+      name: 'Speedtest'
+      url: "https://beta.speedtest.net"
+      icon: 'mdi:speedometer'
+    - type: weblink
+      name: "Mijn Telenet"
+      url: "https://mijn.telenet.be/mijntelenet/homenetwork/overview.do"
+      icon: mdi:access-point-network
+- type: entities
+  title: Network
+  entities:
+    - name: "Received bytes"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_bytes_received
+    - name: "Sent bytes"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_bytes_sent
+    - name: "Received bytes (kb/sec)"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_received
+    - name: "Sent bytes (kb/sec)"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_sent
+    - type: divider
+      style:
+    - name: "Received packets"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_packets_received
+    - name: "Sent packets"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_packets_sent
+    - name: "Received packets (pck/sec)"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_received
+    - name: "Sent packets (pck/sec)"
+      secondary_info: last-changed
+      entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_sent

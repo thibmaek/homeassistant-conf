@@ -1,0 +1,22 @@
+- type: custom:compact-custom-header
+  voice: false
+  notification: true
+  clock: options
+  clock_format: 12
+  clock_am_pm: true
+- type: entities
+  title: 'Space'
+  entities:
+    - sensor.space_launches
+    - binary_sensor.iss_international_space_station
+- type: picture-entity
+  title: "ISS Live map"
+  entity: camera.iss_map
+  camera_image: camera.iss_map
+  show_info: true
+- type: entities
+  title: 'Cryptocurrency'
+  entities:
+    - sensor.eth_balance
+    - sensor.exchange_rate_1_btc
+    - sensor.trade_volume

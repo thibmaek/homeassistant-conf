@@ -14,5 +14,37 @@ resources:
   - url: /local/custom-lovelace/circle-sensor-card/circle-sensor-card.js?v=1
     type: module
 
-title: Home
-views: !include_dir_merge_list lovelace/views/
+title: 'Home'
+views:
+  - title: 'Maekelberghain'
+    icon: "mdi:home"
+    cards: !include lovelace/views/home.yaml
+
+  - title: 'Beneden'
+    icon: "mdi:sofa"
+    cards: !include lovelace/views/livingroom.yaml
+
+  - title: 'Slaapkamer'
+    icon: "mdi:bed-empty"
+    cards: !include lovelace/views/bedroom.yaml
+
+  - title: "Work (In The Pocket)"
+    icon: "mdi:briefcase"
+    cards: !include lovelace/views/work.yaml
+
+  - title: 'Weather'
+    icon: "mdi:weather-fog"
+    cards: !include lovelace/views/weather.yaml
+
+  - title: 'Server'
+    icon: "mdi:raspberrypi"
+    path: 'server'
+    cards: !include lovelace/views/server.yaml
+
+  - title: "Home Assistant Internals"
+    icon: "mdi:home-automation"
+    path: 'internals'
+    cards: !include lovelace/views/ha_internals.yaml
+
+  - title: "Misc."
+    cards: !include lovelace/views/misc.yaml

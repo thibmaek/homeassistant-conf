@@ -35,5 +35,11 @@
       "      data:",
       "        title: \"${6:Created a new notification}\""
     ]
+  },
+  "Include (file)": {
+    "scope": "yaml",
+    "description": "Include a file",
+    "prefix": "incl",
+    "body": "!include ${1:file}.yaml"
   }
 }

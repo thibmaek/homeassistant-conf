@@ -1,0 +1,35 @@
+- type: custom:compact-custom-header
+  voice: false
+  notification: true
+  clock: options
+  clock_format: 12
+  clock_am_pm: true
+- type: custom:tracker-card
+  title:
+  trackers:
+    - sensor.custom_component_tracker
+- type: entities
+  title: Status
+  entities:
+    - entity: sensor.travis_ci_build_status
+      icon: mdi:worker
+- type: entities
+  title: Server Actions
+  entities:
+    - script.ha_check_config
+    - script.ha_reload_automations
+    - script.ha_reload_core
+    - script.ha_reload_groups
+    - script.ha_reload_scripts
+- type: entities
+  title: 'Automations'
+  show_header_toggle: true
+  entities:
+    - entity: group.all_automations
+      name: All Automations
+      icon: mdi:arrow-decision-auto
+    - automation.alert_if_tradfri_remotes_go_below_50
+    - automation.backup_snapshots_to_google_drive
+    - automation.notify_if_someone_is_in_the_garage
+    - automation.notify_if_the_plants_at_work_need_to_be_watered
+    - automation.notify_if_there_is_rain_coming
