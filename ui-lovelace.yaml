@@ -11,7 +11,7 @@ resources:
     type: module
   - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=1
     type: js
-  - url: /local/custom-lovelace/circle-sensor-card/circle-sensor-card.js?v=0
+  - url: /local/custom-lovelace/circle-sensor-card/circle-sensor-card.js?v=1
     type: module
 
 title: Home
