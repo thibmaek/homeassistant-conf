@@ -1,0 +1,51 @@
+- title: Slaapkamer
+  icon: mdi:bed-empty
+  cards:
+    - type: custom:compact-custom-header
+      voice: false
+      notification: true
+      clock: options
+      clock_format: 12
+      clock_am_pm: true
+    - type: entities
+      entities:
+        - light.bedroom_lights
+        - scene.late_night_working
+        - scene.sexy_mode
+        - scene.working_at_my_desk
+        - sensor.discogs_random_record
+    - type: entities
+      title: Bedroom Lights
+      show_header_toggle: true
+      entities:
+        - entity: light.bed_lights
+          icon: mdi:lightbulb
+        - entity: light.stringlights
+          icon: mdi:lightbulb
+        - light.tradfri_bulb_e27_cws_opal_600lm
+        - sensor.tradfri_remote_control
+        - sensor.switch_bedlights
+        - sensor.switch_stringlights
+        - switch.flux
+    - type: entities
+      title: Media
+      show_header_toggle: true
+      entities:
+        - sensor.discogs
+        - sensor.panorama_plex
+    - type: horizontal-stack
+      cards:
+        - type: custom:circle-sensor-card
+          entity: sensor.bedroom_humidity
+          name: Humidity
+          fill: rgb(41, 69, 82, 1.00)
+          stroke_color: rgb(189, 223, 250)
+          units: '%'
+        - type: custom:circle-sensor-card
+          entity: sensor.bedroom_temperature
+          name: Temperature
+          fill: rgb(229, 223, 227)
+          stroke_color: rgb(236, 128, 136)
+          units: '°C'
+    - type: plant-status
+      entity: plant.monstera_deliciosa
