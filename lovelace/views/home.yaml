@@ -32,25 +32,24 @@
           - key: sensor.train_work.platform_arriving
             name: Platform (Arriving)
 
-- type: horizontal-stack
-  cards:
-    - type: entities
-      title: "Today's schedule"
+- type: entities
+  title: "Today's schedule"
+  entities:
+    - sensor.calendar_agenda
+    - sensor.calendar_events
+    - sensor.calendar_facebook
+    - sensor.calendar_lot_thib
+    - sensor.calendar_tasks
+
+- type: entities
+  title: Calendar
+  show_header_toggle: false
+  entities:
+    - sensor.day_of_week
+    - type: "custom:calendar-card"
       entities:
-        - sensor.calendar_agenda
-        - sensor.calendar_events
-        - sensor.calendar_facebook
-        - sensor.calendar_lot_thib
-        - sensor.calendar_tasks
-    - type: entities
-      title: Calendar
-      show_header_toggle: false
-      entities:
-        - sensor.day_of_week
-        - type: "custom:calendar-card"
-          entities:
-            - calendar.lot_thib
-            - calendar.taken
+        - calendar.lot_thib
+        - calendar.taken
 
 - type: entity-filter
   entities:
