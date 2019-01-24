@@ -12,9 +12,9 @@
       - condition: state
         entity_id: input_boolean.out_of_office
         state: 'off'
-      - condition: state
-        entity_id: binary_sensor.at_work
-        state: 'on'
+      - condition: zone
+        entity_id: device_tracker.thibaults_iphone
+        zone: zone.werk_thib
   action:
     - service: persistent_notification.create
       data:
