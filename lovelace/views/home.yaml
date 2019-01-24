@@ -4,6 +4,7 @@
   clock: options
   clock_format: 12
   clock_am_pm: true
+
 - type: entities
   title: Vandaag
   show_header_toggle: true
@@ -12,6 +13,7 @@
     - sensor.flights_home
     - sensor.waze_work_travel_time
     - sun.sun
+
 - type: entities
   title: Train
   show_header_toggle: false
@@ -29,11 +31,27 @@
             name: Platform (Departing)
           - key: sensor.train_work.platform_arriving
             name: Platform (Arriving)
-- type: "custom:calendar-card"
-  name: 'Calendar'
-  entities:
-    - calendar.lot_thib
-    - calendar.taken
+
+- type: horizontal-stack
+  cards:
+    - type: entities
+      title: "Today's schedule"
+      entities:
+        - sensor.calendar_agenda
+        - sensor.calendar_events
+        - sensor.calendar_facebook
+        - sensor.calendar_lot_thib
+        - sensor.calendar_tasks
+    - type: entities
+      title: Calendar
+      show_header_toggle: false
+      entities:
+        - sensor.day_of_week
+        - type: "custom:calendar-card"
+          entities:
+            - calendar.lot_thib
+            - calendar.taken
+
 - type: entity-filter
   entities:
     - device_tracker.thibaults_iphone
@@ -44,6 +62,7 @@
   card:
     title: "Who's Home"
     type: glance
+
 - type: entity-filter
   card:
     title: "Enabled lights"
@@ -58,6 +77,7 @@
     - light.christmas_tree
   state_filter:
     - "on"
+
 - type: entities
   title: Devices
   entities:
@@ -70,29 +90,24 @@
     - entity: group.all_plants
       name: Plants
       icon: mdi:flower
+
 - type: entities
   entities:
     - binary_sensor.garage_motion
     - input_boolean.travel_mode
     - binary_sensor.telenet_off_peak
+
 - type: picture-entity
   title: Garage camera
   entity: camera.garage_camera
   camera_image: camera.garage_camera
   show_info: true
+
 - type: map
   default_zoom: 13.5
   entities:
     - device_tracker.thibaults_iphone
-- type: entities
-  title: "Today's schedule"
-  entities:
-    - sensor.day_of_week
-    - sensor.calendar_agenda
-    - sensor.calendar_events
-    - sensor.calendar_facebook
-    - sensor.calendar_lot_thib
-    - sensor.calendar_tasks
+
 - type: entities
   title: HP Printer ink levels
   show_header_toggle: true
@@ -101,12 +116,14 @@
     - sensor.printer_ink_level_magenta
     - sensor.printer_ink_level_yellow
     - sensor.printer_ink_level_black
+
 - type: glance
   title: "Radio Stations"
   show_header_toggle: true
   entities:
     - entity: sensor.bbc_radio_1_live
     - entity: sensor.worldwide_fm_live
+
 - type: glance
   title: Waste collection
   columns: 3
@@ -118,6 +135,7 @@
       name: PMD
     - entity: binary_sensor.waste_collection_trash
       name: Trash
+
 - type: custom:mini-media-player
   entity: media_player.spotify
   title: Spotify
@@ -126,5 +144,6 @@
   show_progress: true
   show_shuffle: true
   idle_view: true
+
 - type: weather-forecast
   entity: weather.weather_brugge
