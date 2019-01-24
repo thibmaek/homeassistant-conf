@@ -9,5 +9,7 @@
         title: "\ud83d\udea8 Motion detected!"
         message: "There was motion detected in the garage"
         data:
+          push:
+            thread-id: "automation-build-failure"
           attachment:
             url: !secret motioneye_garage_snapshot_ip
