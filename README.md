@@ -17,7 +17,6 @@ To replicate this behaviour, install the ConfigWatcher addon from [@vkorn/hassio
   "hass_host": "http://172.17.0.1:8123",
   "hass_key": "<homeassistant-key-here>",
   "notify": true,
-  "notify_entity": "pushbullet",
   "hass_watch": [
     "components",
     "configuration.yaml"
