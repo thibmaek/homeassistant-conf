@@ -41,5 +41,17 @@
     "description": "Include a file",
     "prefix": "incl",
     "body": "!include ${1:file}.yaml"
+  },
+  "Zone": {
+    "scope": "yaml",
+    "description": "Create a new zone",
+    "prefix": "zone",
+    "body": [
+      "- name: \"${1:My Zone}\"",
+      "  latitude: ${2:51.197718}",
+      "  longitude: ${3:51.197718}",
+      "  radius: ${4:100}",
+      "  icon: mdi:${5:map-marker-path}"
+    ]
   }
 }

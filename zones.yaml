@@ -22,3 +22,9 @@
   longitude: 3.217841
   radius: 100
   icon: mdi:train
+
+- name: "Gent Sint-Pieters"
+  latitude: 51.036208
+  longitude: 3.710818
+  radius: 100
+  icon: mdi:train
