@@ -2,6 +2,7 @@
   trigger:
     - entity_id: binary_sensor.garage_motion
       platform: state
+      to: 'on'
   condition: []
   action:
     - service: notify.thibault_devices
