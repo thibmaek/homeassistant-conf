@@ -22,25 +22,20 @@
 - platform: mqtt
   name: printer_ink_level_cyan
   state_topic: homeassistant/sensor/hp-printer/color-cyan
-  friendly_name: "Ink level (Cyan)"
   icon: mdi:alpha-c-box
   unit_of_measurement: '%'
 - platform: mqtt
-  name: printer_ink_level_magenta
   state_topic: homeassistant/sensor/hp-printer/color-magenta
-  friendly_name: "Ink level (Magenta)"
   icon: mdi:alpha-m-box
   unit_of_measurement: '%'
 - platform: mqtt
   name: printer_ink_level_yellow
   state_topic: homeassistant/sensor/hp-printer/color-yellow
-  friendly_name: "Ink level (Yellow)"
   icon: mdi:alpha-y-box
   unit_of_measurement: '%'
 - platform: mqtt
   name: printer_ink_level_black
   state_topic: homeassistant/sensor/hp-printer/color-black
-  friendly_name: "Ink level (Keycolor)"
   icon: mdi:alpha-k-box
   unit_of_measurement: '%'
 
