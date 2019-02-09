@@ -1,7 +1,7 @@
 - name: "Werk Thib"
   latitude: 51.067562
   longitude: 3.732851
-  radius: 100
+  radius: 200
   icon: mdi:code-tags
 
 - name: "Studio Lotte"
