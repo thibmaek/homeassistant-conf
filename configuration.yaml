@@ -75,6 +75,12 @@ twilio:
   account_sid: !secret twilio_account_sid
   auth_token: !secret twilio_auth_token
 
+transmission:
+  host: !secret host_panorama
+  username: !secret transmission_user
+  password: !secret transmission_pass
+  turtle_mode: true
+
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 camera: !include_dir_merge_list components/cameras/
 device_tracker: !include_dir_merge_list components/device_trackers/
