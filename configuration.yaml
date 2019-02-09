@@ -26,6 +26,7 @@ frontend:
 
 cloud: !include_dir_merge_named components/cloud
 
+system_health:
 logger:
   default: warn
 
