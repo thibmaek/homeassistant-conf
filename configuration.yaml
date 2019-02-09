@@ -32,10 +32,6 @@ logger:
 config:
 discovery:
 media_extractor:
-updater:
-history:
-logbook:
-recorder:
 http:
   api_password: !secret http_password
 
@@ -66,10 +62,6 @@ ios:
 map:
 
 wake_on_lan:
-
-conversation:
-tts:
-  platform: 'google'
 
 google:
   client_id: !secret google_calendar_client_id
