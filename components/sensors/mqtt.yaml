@@ -25,6 +25,7 @@
   icon: mdi:alpha-c-box
   unit_of_measurement: '%'
 - platform: mqtt
+  name: printer_ink_level_magenta
   state_topic: homeassistant/sensor/hp-printer/color-magenta
   icon: mdi:alpha-m-box
   unit_of_measurement: '%'
