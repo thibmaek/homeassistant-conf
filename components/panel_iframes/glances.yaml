@@ -1,0 +1,4 @@
+glances:
+  title: 'Glances'
+  icon: 'mdi:eye-settings'
+  url: !secret hassio_glances
