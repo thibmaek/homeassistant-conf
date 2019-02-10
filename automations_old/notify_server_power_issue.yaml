@@ -4,7 +4,7 @@
     entity_id: sensor.rpi_power_status
     above: 0
     for:
-      minutes: 1
+      minutes: 5
   condition: []
   action:
     - service: persistent_notification.create
