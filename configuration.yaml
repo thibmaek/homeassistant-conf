@@ -44,7 +44,7 @@ mqtt:
   password: !secret mqtt_password
 
 influxdb:
-  host: !secret host_kitkat
+  host: !secret host_berghain
   database: home_assistant
   username: !secret influxdb_user
   password: !secret influxdb_password

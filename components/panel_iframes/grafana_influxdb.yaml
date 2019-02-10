@@ -2,8 +2,3 @@ grafana:
   title: 'Grafana'
   icon: mdi:chart-donut-variant
   url: !secret hassio_grafana
-
-influxdb:
-  title: 'InfluxDB'
-  icon: mdi:orbit
-  url: !secret hassio_influxdb
