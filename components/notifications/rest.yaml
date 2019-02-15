@@ -33,9 +33,7 @@
 
 - platform: rest
   name: "Slack away"
-  resource: "https://slack.com/api/users.setPresence"
+  resource: "https://slack.com/api/users.setPresence?presence=away"
   method: "POST"
   headers:
-    authorization: !secret slack_api_token
-  data:
-    presence: 'away'
+    Authorization: !secret slack_api_token
