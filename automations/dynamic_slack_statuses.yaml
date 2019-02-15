@@ -104,6 +104,9 @@
       - condition: time
         after: '08:00:00'
         before: '17:50:00'
+  trigger:
+    - platform: time_pattern
+      minutes: '/1'
   action:
     - service: rest_command.slack_set_status
       data:
