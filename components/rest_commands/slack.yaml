@@ -1,0 +1,19 @@
+slack_set_status:
+  url: "https://slack.com/api/users.profile.set"
+  method: 'POST'
+  headers:
+    authorization: !secret slack_api_token
+    accept: 'application/json'
+  content_type: 'application/json; charset=utf-8'
+  payload: '{"profile":{"status_expiration": 0,"status_text": "{{ status }}","status_emoji": "{{ emoji }}"}}'
+  verify_ssl: true
+
+slack_set_presence:
+  url: "https://slack.com/api/users.setPresence"
+  method: 'POST'
+  headers:
+    authorization: !secret slack_api_token
+    accept: 'application/json'
+  content_type: 'application/json; charset=utf-8'
+  payload: ''
+  verify_ssl: true
