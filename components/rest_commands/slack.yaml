@@ -15,5 +15,5 @@ slack_set_presence:
     authorization: !secret slack_api_token
     accept: 'application/json'
   content_type: 'application/json; charset=utf-8'
-  payload: ''
+  payload: '{"presence": "{{ presence }}"}'
   verify_ssl: true
