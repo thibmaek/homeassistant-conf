@@ -20,12 +20,12 @@
         emoji: ""
     - service: rest_command.slack_set_presence
       data:
-        presence: 'active'
+        presence: 'auto'
 
 - alias: "Arrive home"
   condition:
     condition: time
-    after: '18:00:00'
+    after: '17:00:00'
   trigger:
     platform: zone
     entity_id: device_tracker.thibaults_iphone
@@ -114,4 +114,4 @@
         emoji: ":house_with_garden:"
     - service: rest_command.slack_set_presence
       data:
-        presence: 'active'
+        presence: 'auto'
