@@ -1,4 +1,0 @@
-transmission:
-  title: 'Transmission'
-  icon: 'mdi:magnet-on'
-  url: !secret transmission_url

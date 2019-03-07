@@ -1,4 +1,0 @@
-portainer:
-  title: 'Portainer'
-  icon: "mdi:docker"
-  url: !secret hassio_portainer
