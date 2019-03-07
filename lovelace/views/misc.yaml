@@ -1,9 +1,3 @@
-- type: custom:compact-custom-header
-  voice: false
-  notification: true
-  clock: options
-  clock_format: 12
-  clock_am_pm: true
 - type: entities
   title: 'Space'
   entities:

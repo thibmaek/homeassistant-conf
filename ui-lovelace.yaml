@@ -5,8 +5,6 @@ resources:
     type: module
   - url: /local/tracker-card.js?v=0
     type: js
-  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js
-    type: js
   - url: /local/mini-media-player-bundle.js?v=0.9.8
     type: module
   - url: /local/custom-lovelace/entity-attributes-card/entity-attributes-card.js?v=1
@@ -37,7 +35,7 @@ views:
     cards: !include lovelace/views/weather.yaml
 
   - title: 'Server'
-    icon: "mdi:raspberrypi"
+    icon: "mdi:server"
     path: 'server'
     cards: !include lovelace/views/server.yaml
 

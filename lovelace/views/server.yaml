@@ -1,15 +1,11 @@
-- type: custom:compact-custom-header
-  voice: false
-  notification: true
-  clock: options
-  clock_format: 12
-  clock_am_pm: true
 - type: entities
   title: Server Internals
   entities:
     - sensor.current_version
     - sensor.myip
     - sensor.uptime
+    - sensor.transmission_status
+
 - type: glance
   title: Network Hosts
   columns: 3
@@ -21,6 +17,7 @@
     - binary_sensor.rasplex_host
     - binary_sensor.kitkat_host
     - binary_sensor.volumio_woonkamer_host
+
 - type: entities
   title: Weblinks
   entities:
@@ -40,9 +37,11 @@
       name: "Mijn Telenet"
       url: "https://mijn.telenet.be/mijntelenet/homenetwork/overview.do"
       icon: mdi:access-point-network
+
 - type: entities
   title: Network
   entities:
+    - name: sensor.wifi_signal_sensor
     - name: "Received bytes"
       secondary_info: last-changed
       entity: sensor.compal_broadband_networks_inc_ch6643_bytes_received
@@ -51,10 +50,10 @@
       entity: sensor.compal_broadband_networks_inc_ch6643_bytes_sent
     - name: "Received bytes (kb/sec)"
       secondary_info: last-changed
-      entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_received
+      entity: sensor.compal_broadband_networks_inc_ch6643_kbyte_sec_received
     - name: "Sent bytes (kb/sec)"
       secondary_info: last-changed
-      entity: sensor.compal_broadband_networks_inc_ch6643_kbytesec_sent
+      entity: sensor.compal_broadband_networks_inc_ch6643_kbyte_sec_sent
     - type: divider
       style:
     - name: "Received packets"
@@ -65,7 +64,7 @@
       entity: sensor.compal_broadband_networks_inc_ch6643_packets_sent
     - name: "Received packets (pck/sec)"
       secondary_info: last-changed
-      entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_received
+      entity: sensor.compal_broadband_networks_inc_ch6643_packets_sec_received
     - name: "Sent packets (pck/sec)"
       secondary_info: last-changed
-      entity: sensor.compal_broadband_networks_inc_ch6643_packetssec_sent
+      entity: sensor.compal_broadband_networks_inc_ch6643_packets_sec_sent

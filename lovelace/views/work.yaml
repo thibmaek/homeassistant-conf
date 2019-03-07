@@ -4,6 +4,7 @@
   clock: options
   clock_format: 12
   clock_am_pm: true
+
 - type: entities
   title: Work (In The Pocket)
   show_header_toggle: true
@@ -14,8 +15,10 @@
     - binary_sensor.water_work_plants
     - sensor.waze_home_travel_time
     - sensor.flights_work
+
 - type: weather-forecast
   entity: weather.weather_gent
+
 - type: entities
   title: Train
   show_header_toggle: false
