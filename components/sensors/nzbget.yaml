@@ -1,0 +1,12 @@
+- platform: nzbget
+  host: !secret localhost
+  username: !secret nzbget_username
+  password: !secret nzbget_password
+  monitored_variables:
+    - article_cache
+    - download_paused
+    - download_rate
+    - download_size
+    - post_paused
+    - remaining_size
+    - uptime
