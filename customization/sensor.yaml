@@ -115,9 +115,6 @@ sensor.myip:
   friendly_name: "Public IP"
   icon: mdi:ip
 
-sensor.discogs_random_record:
-  icon: mdi:record-player
-
 sensor.current_version:
   icon: mdi:package-variant
 

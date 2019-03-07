@@ -10,7 +10,6 @@
     - scene.late_night_working
     - scene.sexy_mode
     - scene.working_at_my_desk
-    - sensor.discogs_random_record
 - type: entities
   title: Bedroom Lights
   show_header_toggle: true

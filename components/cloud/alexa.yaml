@@ -7,7 +7,6 @@ alexa:
       - sensor.bedroom_humidity
       - sensor.bedroom_temperature
       - sensor.discogs
-      - sensor.discogs_random_record
       - switch.flux
       - switch.turn_on_tv
   entity_config:
@@ -22,7 +21,4 @@ alexa:
       display_categories: 'TEMPERATURE_SENSOR'
     sensor.discogs:
       name: "Records"
-      display_categories: "OTHER"
-    sensor.discogs_random_record:
-      name: "Random record"
       display_categories: "OTHER"

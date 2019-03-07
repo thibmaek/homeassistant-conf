@@ -1,13 +1,4 @@
 - platform: rest
-  icon: mdi:record-player
-  scan_interval: 1800
-  resource: !secret discogs_random_record_lambda
-  name: "Discogs Random Record"
-  json_attributes:
-    - basic_information
-  value_template: "{{ value_json.record.basic_information.artists[0].name }} - {{ value_json.record.basic_information.title }}"
-
-- platform: rest
   name: "Travis CI Build Status"
   resource: https://api.travis-ci.org/repos/thibmaek/homeassistant-conf/builds
   headers:
