@@ -24,11 +24,6 @@
   scan_interval: 1800
 
 - platform: ping
-  name: "PS4 Host"
-  host: !secret host_ps4
-  scan_interval: 1800
-
-- platform: ping
   name: "Kitkat Host"
   host: !secret host_kitkat
   scan_interval: 1800
