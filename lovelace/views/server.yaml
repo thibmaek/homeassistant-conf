@@ -41,7 +41,8 @@
 - type: entities
   title: Network
   entities:
-    - name: sensor.wifi_signal_sensor
+    - name: Wifi Signal Strength
+      entity: sensor.wifi_signal_sensor
     - name: "Received bytes"
       secondary_info: last-changed
       entity: sensor.compal_broadband_networks_inc_ch6643_bytes_received
