@@ -1,41 +1,43 @@
 # Home Assistant Conf
 
-Personal configuration for [Home Assistant](https://home-assistant.io), specifically for Hass.io env.
+[![Build Status](https://travis-ci.org/thibmaek/homeassistant-conf.svg?branch=master)](https://travis-ci.org/thibmaek/homeassistant-conf)
+![Docker system](https://badgen.net/badge/Docker/Hass.io/?icon=docker)
 
-> __NEVER EVER COMMIT WITHOUT USING SECRETS IN YOUR CONFIGURATION, ALWAYS EXCLUDE SENSITIVE FILES__
+> Personal configuration for [Home Assistant](https://home-assistant.io), specifically for Hass.io env.
 
 ## Installation
 
-This configuration is auto pulled at an interval and automatically restarts Home Assistant if `configuration.yaml` or `components/*` changed.
-To replicate this behaviour, install the ConfigWatcher addon from [@vkorn/hassio-addons](https://github.com/vkorn/hassio-addons/tree/master/configwatcher) and set the following config in the addon configuration screen:
+I use this configuration together with the Git Pull add-on to automatically fetch updates from this git repo and restart if needed:
 
 ```json
 {
-  "base_dir": "/config",
-  "check_delay": 5,
-  "hassio_host": "http://172.17.0.2",
-  "hass_host": "http://172.17.0.1:8123",
-  "hass_key": "<homeassistant-key-here>",
-  "notify": true,
-  "hass_watch": [
-    "components",
-    "configuration.yaml"
+  ...
+  "git_branch": "master",
+  "git_command": "pull",
+  "git_remote": "origin",
+  "git_prune": true,
+  "repository": "https://github.com/thibmaek/homeassistant-conf.git",
+  "auto_restart": true,
+  "restart_ignore": [
+    "ui-lovelace.yaml",
+    ".gitignore",
+    "README.md",
+    "secrets.test.yaml",
+    ".yamllint",
+    ".travis.yml"
   ],
-  "addons": []
+  "repeat": {
+    "active": true,
+    "interval": 300
+  }
 }
 ```
 
-1. You need to first clone the repo by ssh'ing into Home Assistant, cd'ing to /config and cloning it there.
-2. Create a [new personal access token](https://github.com/settings/tokens)
-3. While still ssh'ed and in `/config` edit the remote url to add credentials in the file `.git/config`:
+1. You need to first clone the repo by ssh'ing into Home Assistant, cd'ing to your config dir (`/usr/share/hassio/homeassistant`) and cloning it there.
+2. Enter the details above in the Git Pull add-on and adjust if needed
+3. Start the add-on
 
-```ini
-[remote "origin"]
-  url = https://username@personal-access-tokengithub.com/thibmaek/homeassistant-conf
-  fetch = +refs/heads/*:refs/remotes/origin/*
-```
-
-## Styleguide
+## YAML Styleguide
 
 - Use single quotes for single words
 - Use double quotes for multiple words
