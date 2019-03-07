@@ -9,11 +9,6 @@
   entities:
     - sensor.space_launches
     - binary_sensor.iss_international_space_station
-- type: picture-entity
-  title: "ISS Live map"
-  entity: camera.iss_map
-  camera_image: camera.iss_map
-  show_info: true
 - type: entities
   title: 'Cryptocurrency'
   entities:
