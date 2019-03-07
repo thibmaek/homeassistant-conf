@@ -41,6 +41,9 @@
       fill: rgb(229, 223, 227)
       stroke_color: rgb(236, 128, 136)
       units: '°C'
+    - type: sensor
+      entity: sensor.bh1750_illuminance
+      name: Illumination
 
 - type: plant-status
   entity: plant.monstera_deliciosa
