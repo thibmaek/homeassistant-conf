@@ -4,6 +4,8 @@
     - scene.late_night_working
     - scene.sexy_mode
     - scene.working_at_my_desk
+    - entity: sensor.bh1750_illuminance
+      name: Illumination
 
 - type: entities
   title: Bedroom Lights
@@ -41,9 +43,6 @@
       fill: rgb(229, 223, 227)
       stroke_color: rgb(236, 128, 136)
       units: '°C'
-    - type: sensor
-      entity: sensor.bh1750_illuminance
-      name: Illumination
 
 - type: plant-status
   entity: plant.monstera_deliciosa
