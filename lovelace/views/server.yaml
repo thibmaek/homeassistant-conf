@@ -30,6 +30,10 @@
       url: "https://home-assistant.io/components/"
       icon: 'mdi:home-assistant'
     - type: weblink
+      name: "Lovelace Docs"
+      url: "https://home-assistant.io/lovelace/"
+      icon: 'mdi:home-assistant'
+    - type: weblink
       name: 'Speedtest'
       url: "https://beta.speedtest.net"
       icon: 'mdi:speedometer'

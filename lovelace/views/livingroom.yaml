@@ -25,5 +25,8 @@
 - type: media-control
   entity: media_player.woonkamer_chromecast
 
+- type: media-control
+  entity: media_player.rasplex
+
 - type: plant-status
   entity: plant.ficus_elastica
