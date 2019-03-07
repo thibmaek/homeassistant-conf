@@ -28,7 +28,6 @@
   show_header_toggle: true
   entities:
     - sensor.discogs
-    - sensor.panorama_plex
 - type: horizontal-stack
   cards:
     - type: custom:circle-sensor-card

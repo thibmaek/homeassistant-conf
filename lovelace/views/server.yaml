@@ -4,40 +4,10 @@
   clock: options
   clock_format: 12
   clock_am_pm: true
-- type: horizontal-stack
-  title: Network
-  cards:
-    - type: sensor
-      entity: sensor.speedtest_ping
-      icon: mdi:resistor
-      name: Ping
-    - type: sensor
-      entity: sensor.speedtest_download
-      icon: mdi:download
-      name: Download
-    - type: sensor
-      entity: sensor.speedtest_upload
-      icon: mdi:upload
-      name: Upload
-- type: horizontal-stack
-  cards:
-    - type: sensor
-      title: "CPU usage"
-      entity: sensor.processor_use
-    - type: sensor
-      title: "MEM usage"
-      entity: sensor.memory_use
-    - type: sensor
-      title: "HDD usage"
-      entity: sensor.disk_use
 - type: entities
   title: Server Internals
   entities:
     - sensor.current_version
-    - sensor.disk_free
-    - sensor.memory_free
-    - entity: sensor.rpi_power_status
-      icon: mdi:power-settings
     - sensor.myip
     - sensor.uptime
 - type: glance
@@ -50,7 +20,6 @@
     - binary_sensor.nextcloudpi_host
     - binary_sensor.rasplex_host
     - binary_sensor.kitkat_host
-    - binary_sensor.ps4_host
     - binary_sensor.volumio_woonkamer_host
 - type: entities
   title: Weblinks

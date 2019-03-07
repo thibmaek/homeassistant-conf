@@ -1,9 +1,0 @@
-- platform: systemmonitor
-  resources:
-    - type: 'disk_free'
-      arg: '/'
-    - type: 'disk_use'
-      arg: '/'
-    - type: 'memory_free'
-    - type: 'memory_use'
-    - type: 'processor_use'
