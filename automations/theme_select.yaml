@@ -1,0 +1,22 @@
+- alias: "Change current theme"
+  initial_state: 'on'
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.theme_switcher
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: "{{states('input_select.theme_switcher')}}"
+
+# TODO: Switch themes automatically
+
+# - alias: "Set theme on startup"
+#   initial_state: 'on'
+#   trigger:
+#     platform: homeassistant
+#     event: start
+#   action:
+#     service: frontend.set_theme
+#     data:
+#       name: default
