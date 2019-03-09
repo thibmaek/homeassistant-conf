@@ -1,11 +1,4 @@
 - type: entities
-  title: Server Internals
-  entities:
-    - sensor.current_version
-    - sensor.myip
-    - sensor.uptime
-
-- type: entities
   title: HTPC Server
   entities:
     - icon: mdi:magnet
@@ -43,18 +36,6 @@
   title: Weblinks
   entities:
     - type: weblink
-      name: "States (deprecated)"
-      url: "/states"
-      icon: 'mdi:home-assistant'
-    - type: weblink
-      name: "Home Assistant Components"
-      url: "https://home-assistant.io/components/"
-      icon: 'mdi:home-assistant'
-    - type: weblink
-      name: "Lovelace Docs"
-      url: "https://home-assistant.io/lovelace/"
-      icon: 'mdi:home-assistant'
-    - type: weblink
       name: 'Speedtest'
       url: "https://beta.speedtest.net"
       icon: 'mdi:speedometer'
@@ -66,6 +47,7 @@
 - type: entities
   title: Network
   entities:
+    - sensor.myip
     - name: Wifi Signal Strength
       entity: sensor.wifi_signal_sensor
     - name: "Received bytes"

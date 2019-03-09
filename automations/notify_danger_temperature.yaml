@@ -1,6 +1,6 @@
 - alias: "Exceptionally hot temperature found"
   trigger:
-    - entity_id: sensor.bedroom_temperature
+    - entity_id: sensor.bme280_temperature
       platform: numeric_state
       above: 50
   condition: []

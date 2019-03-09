@@ -16,11 +16,15 @@
           entity: sensor.custom_card_tracker
 
 - type: entities
-  title: Status
+  title: System
   show_header_toggle: false
   entities:
+    - sensor.current_version
+    - sensor.uptime
     - entity: sensor.travis_ci_build_status
+      name: "Build status"
       icon: mdi:worker
+    - entity: input_select.theme_switcher
 
 - type: entities
   title: Server Actions
@@ -48,3 +52,19 @@
     - entity: group.calendar
       name: Calendars
       icon: mdi:calendar-multiple
+
+- type: entities
+  title: Weblinks
+  entities:
+    - type: weblink
+      name: "States (deprecated)"
+      url: "/states"
+      icon: 'mdi:home-assistant'
+    - type: weblink
+      name: "Home Assistant Components"
+      url: "https://home-assistant.io/components/"
+      icon: 'mdi:home-assistant'
+    - type: weblink
+      name: "Lovelace Docs"
+      url: "https://home-assistant.io/lovelace/"
+      icon: 'mdi:home-assistant'

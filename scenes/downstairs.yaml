@@ -16,5 +16,5 @@
       state: off
     light.tradfri_bulb_e27_opal_1000lm:
       state: off
-    media_player.viera_et50:
+    media_player.panasonic_viera_tv:
       state: off
