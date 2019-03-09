@@ -26,7 +26,7 @@
   show_header_toggle: false
   entities:
     - media_player.thibault_maekelberghs_ipad
-    - media_plyaer.thibault_s_macbook_pro
+    - media_player.thibault_s_macbook_pro
     - sensor.discogs_random_record
     - sensor.discogs_collection
     - sensor.discogs_wantlist
