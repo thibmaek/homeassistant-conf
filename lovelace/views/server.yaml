@@ -9,23 +9,23 @@
   title: HTPC Server
   entities:
     - icon: mdi:magnet
-      entity_id: sensor.transmission_status
+      entity: sensor.transmission_status
     - icon: mdi:magnet-on
-      entity_id: switch.transmission
+      entity: switch.transmission
     - icon: mdi:newspaper
-      entity_id: sensor.nzbget_article_cache
+      entity: sensor.nzbget_article_cache
     - icon: mdi:pause
-      entity_id: sensor.nzbget_download_paused
+      entity: sensor.nzbget_download_paused
     - icon: mdi:pause
-      entity_id: sensor.nzbget_processing_paused
+      entity: sensor.nzbget_processing_paused
     - icon: mdi:view-list
-      entity_id: sensor.nzbget_queue_size
+      entity: sensor.nzbget_queue_size
     - icon: mdi:database
-      entity_id: sensor.nzbget_size
+      entity: sensor.nzbget_size
     - icon: mdi:speedometer
-      entity_id: sensor.nzbget_speed
+      entity: sensor.nzbget_speed
     - icon: mdi:progress-clock
-      entity_id: sensor.nzbget_uptime
+      entity: sensor.nzbget_uptime
 
 - type: glance
   title: Network Hosts
