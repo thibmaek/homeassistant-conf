@@ -1,0 +1,3 @@
+- platform: panasonic_viera
+  host: !secret host_panasonic_viera
+  mac: !secret panasonic_viera_mac

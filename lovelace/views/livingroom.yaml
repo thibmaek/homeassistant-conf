@@ -16,7 +16,7 @@
     - light.tradfri_bulb_e27_opal_1000lm
     - sensor.tradfri_wireless_dimmer
 
-- type: media_control
+- type: media-control
   entity: media_player.playstation_4
 
 - type: media-control
