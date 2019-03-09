@@ -23,8 +23,9 @@
 
 - type: entities
   title: Media
-  show_header_toggle: true
+  show_header_toggle: false
   entities:
+    - media_player.thibault_maekelberghs_ipad
     - sensor.discogs_random_record
     - sensor.discogs_collection
     - sensor.discogs_wantlist
@@ -32,17 +33,23 @@
 - type: horizontal-stack
   cards:
     - type: custom:circle-sensor-card
-      entity: sensor.bedroom_humidity
+      entity: sensor.bme280_humidity
       name: Humidity
       fill: rgb(41, 69, 82, 1.00)
       stroke_color: rgb(189, 223, 250)
       units: '%'
     - type: custom:circle-sensor-card
-      entity: sensor.bedroom_temperature
+      entity: sensor.bme280_temperature
       name: Temperature
       fill: rgb(229, 223, 227)
       stroke_color: rgb(236, 128, 136)
       units: '°C'
+    - type: custom:circle-sensor-card
+      entity: sensor.bme280_pressure
+      name: Pressure
+      fill: rgb(229, 223, 227)
+      stroke_color: rgb(236, 128, 136)
+      units: 'hPa'
 
 - type: plant-status
   entity: plant.monstera_deliciosa

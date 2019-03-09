@@ -1,7 +1,17 @@
-- type: custom:tracker-card
-  title:
-  trackers:
-    - sensor.custom_component_tracker
+- type: horizontal-stack
+  cards:
+    - type: custom:tracker-card
+      title:
+      trackers:
+        - sensor.custom_component_tracker
+    - type: entities
+      title:
+      show_header_toggle: false
+      entities:
+        - icon: mdi:cards-outline
+          entity_id: sensor.custom_component_tracker
+        - icon: mdi:puzzle-outline
+          entity_id: sensor.custom_card_tracker
 
 - type: entities
   title: Status

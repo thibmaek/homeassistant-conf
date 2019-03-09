@@ -20,6 +20,9 @@
   entity: media_player.panasonic_viera
 
 - type: media-control
+  entity: media_player.viera_et50
+
+- type: media-control
   entity: media_player.volumio_volumio_woonkamer_local
 
 - type: media-control
