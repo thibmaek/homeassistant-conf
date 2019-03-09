@@ -1,4 +1,4 @@
-- type: horizontal-stack
+- type: vertical-stack
   cards:
     - type: custom:tracker-card
       title:
@@ -9,18 +9,22 @@
       show_header_toggle: false
       entities:
         - icon: mdi:cards-outline
+          name: "Custom Components"
           entity: sensor.custom_component_tracker
         - icon: mdi:puzzle-outline
+          name: "Custom Cards"
           entity: sensor.custom_card_tracker
 
 - type: entities
   title: Status
+  show_header_toggle: false
   entities:
     - entity: sensor.travis_ci_build_status
       icon: mdi:worker
 
 - type: entities
   title: Server Actions
+  show_header_toggle: false
   entities:
     - script.ha_check_config
     - script.ha_reload_automations

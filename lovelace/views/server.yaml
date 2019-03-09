@@ -17,7 +17,7 @@
     - icon: mdi:pause
       entity: sensor.nzbget_download_paused
     - icon: mdi:pause
-      entity: sensor.nzbget_processing_paused
+      entity: sensor.nzbget_post_processing_paused
     - icon: mdi:view-list
       entity: sensor.nzbget_queue_size
     - icon: mdi:database
