@@ -4,11 +4,14 @@ alexa:
       - light
       - scene
     include_entities:
-      - sensor.bedroom_humidity
-      - sensor.bedroom_temperature
-      - sensor.discogs
+      - sensor.bme280_humidity
+      - sensor.bme280_temperature
+      - sensor.bme280_pressure
+      - sensor.discogs_collection
+      - sensor.discogs_random_record
       - switch.flux
       - switch.turn_on_tv
+
   entity_config:
     switch.turn_on_tv:
       name: 'TV'
@@ -17,8 +20,15 @@ alexa:
       name: "Living Room Light"
     light.tradfri_bulb_e27_cws_opal_600lm:
       name: "Desk Tracklight"
-    sensor.bedroom_temperature:
+    sensor.bme280_humidity:
       display_categories: 'TEMPERATURE_SENSOR'
-    sensor.discogs:
+    sensor.bme280_temperature:
+      display_categories: 'TEMPERATURE_SENSOR'
+    sensor.bme280_pressure:
+      display_categories: 'TEMPERATURE_SENSOR'
+    sensor.discogs_collection:
       name: "Records"
+      display_categories: "OTHER"
+    sensor.discogs_random_record:
+      name: "Random record"
       display_categories: "OTHER"
