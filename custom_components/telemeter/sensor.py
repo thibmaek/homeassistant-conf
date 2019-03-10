@@ -5,12 +5,15 @@ from datetime import timedelta
 import logging
 
 import requests
+import simplejson
 import voluptuous as vol
 
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import CONF_NAME
 from homeassistant.helpers.entity import Entity
+
+__version__ = '1.0.1'
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -134,6 +137,9 @@ class TelemeterSensor(Entity):
         except requests.exceptions.RequestException as ex:
             _LOGGER.error("Error fetching data: %s from %s failed with %s",
                           request, request.url, ex)
+        except simplejson.errors.JSONDecodeError as json_ex:
+            _LOGGER.error('Could not decode received JSON: %s', json_ex)
+            _LOGGER.error(data)
 
     def update(self):
         """Update sensor state."""
