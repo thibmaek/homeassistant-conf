@@ -24,14 +24,6 @@
           {{ states.calendar.evenementen.attributes.message }}
         {% endif %}
 
-    calendar_facebook:
-      friendly_name: 'Facebook'
-      entity_id: calendar.thibault_maekelberghs_facebook_events
-      value_template: >
-        {% if is_state('calendar.thibault_maekelberghs_facebook_events', 'on') %}
-          {{ states.calendar.thibault_maekelberghs_facebook_events.attributes.message }}
-        {% endif %}
-
 
     calendar_lot_thib:
       friendly_name: 'Lotte & Thib'
