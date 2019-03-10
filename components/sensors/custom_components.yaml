@@ -1,1 +1,4 @@
 - platform: vrtnws
+
+- platform: telemeter
+  cookie: !secret telemeter_cookie

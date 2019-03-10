@@ -12,8 +12,8 @@ custom_updater:
     - components
     - cards
   component_urls:
-    - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/vrtnws/custom_updater.json
-    - https://raw.githubusercontent.com/thibmaek/custom-components/master/sensor/velo_antwerpen/custom_updater.json
+    - https://raw.githubusercontent.com/thibmaek/custom-components/master/vrtnws/custom_updater.json
+    - https://raw.githubusercontent.com/thibmaek/custom-components/master/telemeter/custom_updater.json
   card_urls:
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
 
@@ -65,14 +65,13 @@ downloader:
 
 ios:
 map:
-
+person:
 wake_on_lan:
+sun:
 
 google:
   client_id: !secret google_calendar_client_id
   client_secret: !secret google_calendar_client_secret
-
-sun:
 
 panel_iframe: !include_dir_merge_named components/panel_iframes/
 
