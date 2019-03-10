@@ -3,8 +3,6 @@ sensor.calendar_agenda:
   icon: mdi:calendar
 sensor.calendar_events:
   icon: mdi:calendar-question
-sensor.calendar_facebook:
-  icon: mdi:facebook-box
 sensor.calendar_lot_thib:
   icon: mdi:calendar-multiple
 sensor.calendar_tasks:
@@ -107,6 +105,10 @@ sensor.tradfri_remote_control:
   icon: mdi:remote
 sensor.tradfri_wireless_dimmer:
   icon: mdi:checkbox-blank-circle
+sensor.switch_bedlights:
+  icon: mdi:light-switch
+sensor.switch_stringlights:
+  icon: mdi:light-switch
 
 sensor.myip:
   friendly_name: "Public IP"

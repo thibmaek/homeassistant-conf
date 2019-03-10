@@ -30,7 +30,6 @@
   entities:
     - sensor.calendar_agenda
     - sensor.calendar_events
-    - sensor.calendar_facebook
     - sensor.calendar_lot_thib
     - sensor.calendar_tasks
 

@@ -34,6 +34,7 @@
 
 - type: entities
   title: Weblinks
+  show_header_toggle: false
   entities:
     - type: weblink
       name: 'Speedtest'
