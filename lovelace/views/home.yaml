@@ -87,6 +87,8 @@
     - binary_sensor.garage_motion
     - input_boolean.travel_mode
     - binary_sensor.telenet_off_peak
+    - entity: sensor.telemeter
+      icon: mdi:gauge-low
 
 - type: picture-entity
   title: Garage camera
