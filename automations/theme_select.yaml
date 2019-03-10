@@ -9,14 +9,30 @@
       data_template:
         name: "{{states('input_select.theme_switcher')}}"
 
-# TODO: Switch themes automatically
+- alias: "Switch to night theme automatically"
+  trigger:
+    - platform: sun
+      event: sunset
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: "midnight"
 
-# - alias: "Set theme on startup"
-#   initial_state: 'on'
-#   trigger:
-#     platform: homeassistant
-#     event: start
-#   action:
-#     service: frontend.set_theme
-#     data:
-#       name: default
+- alias: "Switch to day theme automatically"
+  trigger:
+    - platform: sun
+      event: sunrise
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: "default"
+
+- alias: "Set theme on startup"
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: default
