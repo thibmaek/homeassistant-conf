@@ -33,24 +33,18 @@
 
 - type: horizontal-stack
   cards:
-    - type: custom:circle-sensor-card
+    - type: sensor
       entity: sensor.bme280_humidity
       name: Humidity
-      fill: rgb(41, 69, 82, 1.00)
-      stroke_color: rgb(189, 223, 250)
-      units: '%'
-    - type: custom:circle-sensor-card
+      graph: line
+    - type: sensor
       entity: sensor.bme280_temperature
       name: Temperature
-      fill: rgb(229, 223, 227)
-      stroke_color: rgb(236, 128, 136)
-      units: '°C'
-    - type: custom:circle-sensor-card
+      graph: line
+    - type: sensor
       entity: sensor.bme280_pressure
       name: Pressure
-      fill: rgb(229, 223, 227)
-      stroke_color: rgb(236, 128, 136)
-      units: 'hPa'
+      graph: line
 
 - type: plant-status
   entity: plant.monstera_deliciosa
