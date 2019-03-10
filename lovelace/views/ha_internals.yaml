@@ -35,6 +35,11 @@
     - script.ha_reload_core
     - script.ha_reload_groups
     - script.ha_reload_scripts
+    - name: "Restart Home Assistant"
+      type: call-service
+      icon: mdi:restart
+      action_name: Restart
+      service: homeassistant.restart
 
 - type: entities
   title: 'Platforms'
