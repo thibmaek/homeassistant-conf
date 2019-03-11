@@ -141,6 +141,19 @@
   show_progress: true
   show_shuffle: true
   idle_view: true
+  media_buttons:
+    - name: "r/Techno | Top weekly posts"
+      type: playlist
+      url: "spotify:user:v9iqfai0ejp8rgcb2sx9n6yis:playlist:5gex4eBgWH9nieoVuV8hDC"
+    - name: "Discoveries"
+      type: playlist
+      url: "spotify:user:thibault.maekelbergh:playlist:3wzp44GiNDwiCdHtlINgRW"
+    - name: "Diner | Feestje | Aperitief"
+      type: playlist
+      url: "spotify:user:thibault.maekelbergh:playlist:5HDQmC0jdxsu5XeVuQzvwy"
+    - name: "Hotel Costes"
+      type: playlist
+      url: "spotify:user:ltwee:playlist:5huIma0YU4iusLcT2reVEU"
 
 - type: weather-forecast
   entity: weather.weather_brugge
