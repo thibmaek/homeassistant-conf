@@ -30,6 +30,6 @@
   action:
     - service: notify.thibault_devices
       data_template:
-        title: "Sonarr: download finished"
+        title: "Sonarr: downloaded {{ trigger.json.series.title }}"
         message: >
-          {{ trigger.json.show.title }} - {{ trigger.json.show.episode }}
+           {{ trigger.json.episodes[0].seasonNumber }}x{{ trigger.json.episodes[0].episodeNumber }} {{ trigger.json.episodes[0].title }}
