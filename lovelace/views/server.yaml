@@ -1,24 +1,39 @@
-- type: entities
-  title: HTPC Server
-  entities:
-    - icon: mdi:magnet
-      entity: sensor.transmission_status
-    - icon: mdi:magnet-on
-      entity: switch.transmission
-    - icon: mdi:newspaper
-      entity: sensor.nzbget_article_cache
-    - icon: mdi:pause
-      entity: sensor.nzbget_download_paused
-    - icon: mdi:pause
-      entity: sensor.nzbget_post_processing_paused
-    - icon: mdi:view-list
-      entity: sensor.nzbget_queue_size
-    - icon: mdi:database
-      entity: sensor.nzbget_size
-    - icon: mdi:speedometer
-      entity: sensor.nzbget_speed
-    - icon: mdi:progress-clock
-      entity: sensor.nzbget_uptime
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: HTPC Server
+      entities:
+        - icon: mdi:magnet
+          entity: sensor.transmission_status
+        - icon: mdi:magnet-on
+          entity: switch.transmission
+        - icon: mdi:newspaper
+          entity: sensor.nzbget_article_cache
+        - icon: mdi:pause
+          entity: sensor.nzbget_download_paused
+        - icon: mdi:pause
+          entity: sensor.nzbget_post_processing_paused
+        - icon: mdi:view-list
+          entity: sensor.nzbget_queue_size
+        - icon: mdi:database
+          entity: sensor.nzbget_size
+        - icon: mdi:speedometer
+          entity: sensor.nzbget_speed
+        - icon: mdi:progress-clock
+          entity: sensor.nzbget_uptime
+    - type: vertical-stack
+      cards:
+        - type: glance
+          title: Sonarr
+          entities:
+            - sensor.sonarr_upcoming
+            - sensor.sonarr_series
+            - sensor.sonarr_wanted
+        - type: glance
+          title: Radarr
+          entities:
+            - sensor.radarr_upcoming
+            - sensor.radarr_movies
 
 - type: glance
   title: Network Hosts
