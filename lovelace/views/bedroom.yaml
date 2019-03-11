@@ -10,6 +10,7 @@
 - type: entities
   entities:
     - light.bedroom_lights
+    - sensor.thibault_maekelberghs_ipad_battery_level
     - entity: sensor.bh1750_illuminance
       name: Illumination
 
@@ -22,7 +23,7 @@
     - entity: light.stringlights
       icon: mdi:lightbulb
     - light.tradfri_bulb_e27_cws_opal_600lm
-    - sensor.tradfri_remote_control
+    - sensor.remote_control_bedroom_light
     - sensor.switch_bedlights
     - sensor.switch_stringlights
     - switch.flux
@@ -38,7 +39,7 @@
     - sensor.discogs_collection
     - sensor.discogs_wantlist
 
-- type: horizontal-stack
+- type: vertical-stack
   cards:
     - type: sensor
       entity: sensor.bme280_humidity

@@ -33,7 +33,6 @@
 
 - type: custom:mini-media-player
   entity: media_player.volumio_volumio_woonkamer_local
-  title: "Volumio (Woonkamer)"
   artwork: cover
   power_color: true
   show_progress: true

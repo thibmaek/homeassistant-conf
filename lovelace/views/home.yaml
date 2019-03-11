@@ -6,6 +6,8 @@
     - sensor.flights_home
     - sensor.waze_work_travel_time
     - sun.sun
+    - entity: binary_sensor.apero
+      icon: mdi:glass-cocktail
 
 - type: entities
   title: Train

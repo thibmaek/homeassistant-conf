@@ -5,8 +5,7 @@
     - light.bed_lights
     - light.stringlights
 
-- platform: "group"
+- platform: group
   name: "Living Room Lights"
   entities:
-    - light.tradfri_bulb_e27_opal_1000lm
-    - light.christmas_tree
+    - light.warm_white_tracklight
