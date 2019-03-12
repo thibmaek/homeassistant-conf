@@ -3,13 +3,21 @@
   show_name: false
   show_state: false
   entities:
-    - scene.goodnight
-    - scene.having_dinner
-    - scene.watching_a_movie
+    - entity: scene.goodnight
+      tap_action:
+        action: toggle
+    - entity: scene.having_dinner
+      tap_action:
+        action: toggle
+    - entity: scene.watching_a_movie
+      tap_action:
+        action: toggle
 
 - type: entities
   entities:
-    - sensor.living_room_temperature
+    - sensor.wifi_signal_sensor_2
+    - sensor.living_room_humidity
+    - sensor.living_room_temperature_2
     - light.living_room_lights
     - switch.turn_on_tv
     - media_player.iphone_van_ignace
@@ -22,8 +30,10 @@
     - entity: sensor.dimmer_livingroom_light
       icon: mdi:circle
 
-- type: media-control
+- type: custom:mini-media-player
   entity: media_player.panasonic_viera_tv
+  power_color: true
+  idle_view: true
 
 - type: custom:mini-media-player
   entity: media_player.playstation_4
@@ -39,11 +49,19 @@
   show_shuffle: true
   idle_view: true
 
-- type: media-control
+- type: custom:mini-media-player
   entity: media_player.woonkamer_chromecast
+  artwork: cover
+  power_color: true
+  show_progress: true
+  idle_view: true
 
-- type: media-control
+- type: custom:mini-media-player
   entity: media_player.rasplex
+  artwork: cover
+  power_color: true
+  show_progress: true
+  idle_view: true
 
 - type: plant-status
   entity: plant.ficus_elastica

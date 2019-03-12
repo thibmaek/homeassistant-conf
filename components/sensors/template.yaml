@@ -7,9 +7,10 @@
       value_template: >
         {{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}
 
-    living_room_temperature:
-      friendly_name: "Living Room Temperature"
-      entity_id: sensor.ficus_elastica_temperature
-      icon_template: mdi:thermometer
-      value_template: >
-        {{ states('sensor.ficus_elastica_temperature') }}
+    # For reference: this was used to compute temperature from a plant sensor
+    # living_room_temperature:
+    #   friendly_name: "Living Room Temperature"
+    #   entity_id: sensor.ficus_elastica_temperature
+    #   icon_template: mdi:thermometer
+    #   value_template: >
+    #     {{ states('sensor.ficus_elastica_temperature') }}

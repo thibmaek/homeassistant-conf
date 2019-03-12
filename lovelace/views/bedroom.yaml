@@ -3,9 +3,15 @@
   show_name: false
   show_state: false
   entities:
-    - scene.late_night_working
-    - scene.sexy_mode
-    - scene.working_at_my_desk
+    - entity: scene.late_night_working
+      tap_action:
+        action: toggle
+    - entity: scene.sexy_mode
+      tap_action:
+        action: toggle
+    - entity: scene.working_at_my_desk
+      tap_action:
+        action: toggle
 
 - type: entities
   entities:
