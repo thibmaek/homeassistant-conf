@@ -28,3 +28,12 @@ plex.conf
 google_calendars.yaml
 tts/
 dasher/
+
+# Esphome artifacts
+esphome/.esphome/
+esphome/**/.pioenvs/
+esphome/**/.piolibdeps/
+esphome/**/lib/
+esphome/**/src/
+esphome/**/platformio.ini
+esphome/secrets.yaml
