@@ -17,6 +17,8 @@
   entities:
     - light.bedroom_lights
     - sensor.thibault_maekelberghs_ipad_battery_level
+    - entity: binary_sensor.pir_sensor
+      name: Motion
     - entity: sensor.bh1750_illuminance
       name: Illumination
 
