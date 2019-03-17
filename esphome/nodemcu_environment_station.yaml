@@ -14,6 +14,12 @@ api:
 i2c:
   scan: True
 
+binary_sensor:
+  - platform: gpio
+    pin: D4
+    name: "PIR Sensor"
+    device_class: motion
+
 sensor:
   - platform: wifi_signal
     name: "WiFi Signal Sensor"
