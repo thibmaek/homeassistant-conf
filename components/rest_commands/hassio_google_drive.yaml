@@ -1,3 +1,11 @@
-hassio_google_drive_backup:
-  url: 'http://localhost:8055/gb/doBackup'
+hassio_google_drive_backup_snapshots:
+  url: !secret hassio_google_backup_snapshots_api
+  content_type: "application/json; charset=utf-8"
   timeout: '300'
+
+hassio_google_drive_backup_adhoc:
+  url: !secret hassio_google_backup_adhoc_api
+  method: 'POST'
+  content_type: "application/json; charset=utf-8"
+  timeout: '300'
+  payload: !secret hassio_google_backup_adhoc_payload
