@@ -17,8 +17,10 @@ text_sensor:
       name: "nodemcu_downstairs IP address"
     ssid:
       name: "nodemcu_downstairs SSID"
-    bssid:
-      name: "nodemcu_downstairs BSSID"
+    # Disabled until new esphome update fixes this bug
+    # https://github.com/esphome/issues/issues/137
+    # bssid:
+    #   name: "nodemcu_downstairs BSSID"
 
 sensor:
   - platform: wifi_signal

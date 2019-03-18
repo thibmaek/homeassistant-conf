@@ -26,8 +26,10 @@ text_sensor:
       name: "nodemcu_environment_station IP address"
     ssid:
       name: "nodemcu_environment_station SSID"
-    bssid:
-      name: "nodemcu_environment_station BSSID"
+    # Disabled until new esphome update fixes this bug
+    # https://github.com/esphome/issues/issues/137
+    # bssid:
+    #   name: "nodemcu_environment_station BSSID"
 
 sensor:
   - platform: wifi_signal
