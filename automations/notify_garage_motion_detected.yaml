@@ -11,6 +11,6 @@
         message: "There was motion detected in the garage"
         data:
           push:
-            thread-id: "automation-build-failure"
+            thread-id: "automation-motion-detected"
           attachment:
             url: !secret motioneye_garage_snapshot_ip

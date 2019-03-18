@@ -1,0 +1,17 @@
+- alias: "Notify if someone is in the bedroom while I'm away"
+  trigger:
+    - entity_id: binary_sensor.nodemcu_environment_station_pir_sensor
+      platform: state
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: person.thibault
+      state: away
+  action:
+    - service: notify.thibault_devices
+      data:
+        title: "\ud83d\udecf Motion detected!"
+        message: "Someone entered the bedroom while you're away"
+        data:
+          push:
+            thread-id: "automation-motion-detected"

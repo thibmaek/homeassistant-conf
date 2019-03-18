@@ -17,9 +17,9 @@
   entities:
     - light.bedroom_lights
     - sensor.thibault_maekelberghs_ipad_battery_level
-    - entity: binary_sensor.pir_sensor
+    - entity: binary_sensor.nodemcu_environment_station_pir_sensor
       name: Motion
-    - entity: sensor.bh1750_illuminance
+    - entity: sensor.sensor.nodemcu_environment_station_bh1750_illuminance
       name: Illumination
 
 - type: entities
@@ -50,15 +50,15 @@
 - type: vertical-stack
   cards:
     - type: sensor
-      entity: sensor.bme280_humidity
+      entity: sensor.sensor.nodemcu_environment_station_bme280_humidity
       name: Humidity
       graph: line
     - type: sensor
-      entity: sensor.bme280_temperature
+      entity: sensor.nodemcu_environment_station_bme280_temperature
       name: Temperature
       graph: line
     - type: sensor
-      entity: sensor.bme280_pressure
+      entity: sensor.sensor.nodemcu_environment_station_bme280_temperature
       name: Pressure
       graph: line
 

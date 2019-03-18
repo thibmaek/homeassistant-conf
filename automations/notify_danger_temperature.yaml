@@ -1,6 +1,6 @@
 - alias: "Exceptionally hot temperature found"
   trigger:
-    - entity_id: sensor.bme280_temperature
+    - entity_id: sensor.nodemcu_environment_station_bme280_temperature
       platform: numeric_state
       above: 50
   condition: []
@@ -9,3 +9,6 @@
       data:
         title: "\ud83d\udd25 Possible fire in bedroom!"
         message: "Bedroom temperature is exceptionally high! {{ trigger.to_state.state }} {{ trigger.to_state.attributes.unit_of_measurement }} reported in the bedroom."
+        data:
+          push:
+            badge: 1

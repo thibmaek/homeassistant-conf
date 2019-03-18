@@ -10,5 +10,8 @@
     - service: rest_command.hassio_google_drive_backup_adhoc
     - service: notify.thibault_devices
       data:
-        title: "\ud83d\ucdbe Creating a backup"
+        title: "\ud83d\udcbe Creating a backup"
         message: "Uploading latest snapshot to Google Drive"
+        data:
+          push:
+            thread-id: "backup-operation"

@@ -14,4 +14,4 @@
         message: "Expected {{ trigger.to_state.state }} {{ trigger.to_state.attributes.unit_of_measurement }} rain in the upcoming hour"
         data:
           push:
-            thread-id: "automation-build-failure"
+            thread-id: "weather-alert"
