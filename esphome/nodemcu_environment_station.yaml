@@ -16,7 +16,7 @@ i2c:
 
 binary_sensor:
   - platform: gpio
-    pin: D4
+    pin: D6
     name: "nodemcu_environment_station PIR Sensor"
     device_class: motion
 
