@@ -1,0 +1,4 @@
+esphome:
+  title: 'Esphome'
+  icon: mdi:chip
+  url: !secret hassio_logger
