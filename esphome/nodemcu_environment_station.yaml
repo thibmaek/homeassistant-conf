@@ -17,23 +17,33 @@ i2c:
 binary_sensor:
   - platform: gpio
     pin: D4
-    name: "PIR Sensor"
+    name: "nodemcu_environment_station PIR Sensor"
     device_class: motion
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "nodemcu_environment_station IP address"
+    ssid:
+      name: "nodemcu_environment_station SSID"
+    bssid:
+      name: "nodemcu_environment_station BSSID"
 
 sensor:
   - platform: wifi_signal
-    name: "WiFi Signal Sensor"
+    name: "nodemcu_environment_station WiFi Signal Sensor"
     update_interval: 60s
 
   - platform: bh1750
-    name: "BH1750 Illuminance"
+    name: "nodemcu_environment_station BH1750 Illuminance"
     update_interval: 60s
 
   - platform: bme280
     address: 0x76
     temperature:
-      name: "BME280 temperature"
+      name: "nodemcu_environment_station BME280 temperature"
     pressure:
-      name: "BME280 pressure"
+      name: "nodemcu_environment_station BME280 pressure"
     humidity:
-      name: "BME280 humidity"
+      name: "nodemcu_environment_station BME280 humidity"
+    update_interval: 60s

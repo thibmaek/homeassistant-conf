@@ -11,16 +11,25 @@ logger:
 ota:
 api:
 
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "nodemcu_downstairs IP address"
+    ssid:
+      name: "nodemcu_downstairs SSID"
+    bssid:
+      name: "nodemcu_downstairs BSSID"
+
 sensor:
   - platform: wifi_signal
-    name: "WiFi Signal Sensor Living Room"
+    name: "nodemcu_downstairs WiFi Signal Sensor"
     update_interval: 60s
 
   - platform: dht
     pin: D2
     model: DHT11
     temperature:
-      name: "Living Room Temperature"
+      name: "nodemcu_downstairs Living Room Temperature"
     humidity:
-      name: "Living Room Humidity"
+      name: "nodemcu_downstairs Living Room Humidity"
     update_interval: 60s
