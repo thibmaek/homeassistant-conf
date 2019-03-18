@@ -4,9 +4,9 @@ alexa:
       - light
       - scene
     include_entities:
-      - sensor.sensor.nodemcu_environment_station_bme280_humidity
+      - sensor.nodemcu_environment_station_bme280_humidity
       - sensor.nodemcu_environment_station_bme280_temperature
-      - sensor.sensor.nodemcu_environment_station_bme280_temperature
+      - sensor.nodemcu_environment_station_bme280_temperature
       - sensor.discogs_collection
       - sensor.discogs_random_record
       - switch.flux
@@ -20,11 +20,11 @@ alexa:
       name: "Living Room Light"
     light.tradfri_bulb_e27_cws_opal_600lm:
       name: "Desk Tracklight"
-    sensor.sensor.nodemcu_environment_station_bme280_humidity:
+    sensor.nodemcu_environment_station_bme280_humidity:
       display_categories: 'TEMPERATURE_SENSOR'
     sensor.nodemcu_environment_station_bme280_temperature:
       display_categories: 'TEMPERATURE_SENSOR'
-    sensor.sensor.nodemcu_environment_station_bme280_temperature:
+    sensor.nodemcu_environment_station_bme280_temperature:
       display_categories: 'TEMPERATURE_SENSOR'
     sensor.discogs_collection:
       name: "Records"
