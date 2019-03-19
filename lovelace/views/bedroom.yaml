@@ -73,7 +73,7 @@
       name: Temperature
       graph: line
     - type: sensor
-      entity: sensor.nodemcu_environment_station_bme280_temperature
+      entity: sensor.nodemcu_environment_station_bme280_pressure
       name: Pressure
       graph: line
 
