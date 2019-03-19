@@ -1,17 +1,32 @@
 - type: glance
   title: Scene
-  show_name: false
   show_state: false
+  show_name: true
   entities:
     - entity: scene.goodnight
       tap_action:
-        action: toggle
+        action: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.goodnight
+      hold_action:
+        action: more-info
     - entity: scene.having_dinner
       tap_action:
-        action: toggle
+        action: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.having_dinner
+      hold_action:
+        action: more-info
     - entity: scene.watching_a_movie
       tap_action:
-        action: toggle
+        action: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.watching_a_movie
+      hold_action:
+        action: more-info
 
 - type: entities
   entities:
