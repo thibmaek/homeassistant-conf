@@ -11,16 +11,14 @@ logger:
 ota:
 api:
 
-# Disabled until new esphome update fixes this bug
-# https://github.com/esphome/issues/issues/137
-# text_sensor:
-#   - platform: wifi_info
-#     ip_address:
-#       name: "nodemcu_downstairs IP address"
-#     ssid:
-#       name: "nodemcu_downstairs SSID"
-#     bssid:
-#       name: "nodemcu_downstairs BSSID"
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "nodemcu_downstairs IP address"
+    ssid:
+      name: "nodemcu_downstairs SSID"
+    bssid:
+      name: "nodemcu_downstairs BSSID"
 
 sensor:
   - platform: wifi_signal

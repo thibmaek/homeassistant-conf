@@ -20,16 +20,14 @@ binary_sensor:
     name: "nodemcu_environment_station PIR Sensor"
     device_class: motion
 
-# Disabled until new esphome update fixes this bug
-# https://github.com/esphome/issues/issues/137
-# text_sensor:
-#   - platform: wifi_info
-#     ip_address:
-#       name: "nodemcu_environment_station IP address"
-#     ssid:
-#       name: "nodemcu_environment_station SSID"
-#     bssid:
-#       name: "nodemcu_environment_station BSSID"
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "nodemcu_environment_station IP address"
+    ssid:
+      name: "nodemcu_environment_station SSID"
+    bssid:
+      name: "nodemcu_environment_station BSSID"
 
 sensor:
   - platform: wifi_signal
