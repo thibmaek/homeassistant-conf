@@ -77,7 +77,7 @@
       name: Pressure
       graph: line
 
-- type: custom:discogs
+- type: custom:discogs-card
   entity: sensor.discogs_random_record
 
 - type: plant-status
