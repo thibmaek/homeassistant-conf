@@ -63,11 +63,31 @@
   show_empty: false
   show_header_toggle: true
   entities:
-    - light.tradfri_bulb_e27_opal_1000lm
-    - light.tradfri_bulb_e27_cws_opal_600lm
-    - light.bed_lights
-    - light.stringlights
-    - light.christmas_tree
+    - entity: light.warm_white_tracklight
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+    - entity: light.tradfri_bulb_e27_cws_opal_600lm
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+    - entity: light.bed_lights
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+    - entity: light.stringlights
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+    - entity: light.christmas_tree
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
   state_filter:
     - "on"
 
