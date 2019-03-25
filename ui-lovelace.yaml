@@ -11,6 +11,8 @@ resources:
     type: js
   - url: /local/custom-lovelace/circle-sensor-card/circle-sensor-card.js?v=1
     type: module
+  - url: /local/discogs-card.js?v=1.0.0
+    type: module
 
 title: 'Home'
 views:
