@@ -16,7 +16,7 @@ custom_updater:
     - https://raw.githubusercontent.com/thibmaek/custom-components/master/telemeter/custom_updater.json
   card_urls:
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-    - https://raw.githubusercontent.com/thibmaek/custom-cards/master/discogs/discogs-card.js
+    - https://raw.githubusercontent.com/thibmaek/custom-cards/master/discogs/custom_updater.json
 
 lovelace:
   mode: yaml
