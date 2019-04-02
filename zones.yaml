@@ -7,24 +7,24 @@
 - name: "Studio Lotte"
   latitude: !secret latitude_studio_lotte
   longitude: !secret longitude_studio_lotte
-  radius: 100
+  radius: 50
   icon: mdi:home-modern
 
 # Stations
 - name: "Gent Dampoort"
   latitude: 51.056036
   longitude: 3.740706
-  radius: 100
+  radius: 300
   icon: mdi:train
 
 - name: "Brugge Station"
   latitude: 51.197718
   longitude: 3.217841
-  radius: 100
+  radius: 500
   icon: mdi:train
 
 - name: "Gent Sint-Pieters"
   latitude: 51.036208
   longitude: 3.710818
-  radius: 100
+  radius: 500
   icon: mdi:train
