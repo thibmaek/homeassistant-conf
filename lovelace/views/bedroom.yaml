@@ -36,6 +36,7 @@
       name: Motion
     - entity: sensor.nodemcu_environment_station_bh1750_illuminance
       name: Illumination
+    - sensor.wifi_signal_sensor
 
 - type: entities
   title: Bedroom Lights
