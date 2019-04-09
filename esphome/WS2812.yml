@@ -13,7 +13,14 @@ api:
 
 light:
   - platform: fastled_clockless
-    chipset: WS2812
-    pin: GPIO23
-    num_leds: 1
-    name: "FastLED WS2811 Light"
+    name: "WS2812B 5M 30 IP30"
+    chipset: WS2812B
+    pin: D4
+    rgb_order: GRB # Valid values are RGB, RBG, GRB, GBR, BRG and BGR. Defaults to RGB. GRB
+    num_leds: 150
+    effects:
+      - addressable_rainbow:
+      - addressable_color_wipe:
+      - addressable_scan:
+      - addressable_twinkle:
+      - addressable_fireworks:
