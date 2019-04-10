@@ -50,7 +50,9 @@
     - sensor.remote_control_bedroom_light
     - sensor.switch_bedlights
     - sensor.switch_stringlights
-    - switch.flux
+
+- type: entity-button
+  entity: switch.flux
 
 - type: entities
   title: Media
