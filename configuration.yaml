@@ -45,6 +45,14 @@ mqtt:
 history:
 recorder:
   db_url: !secret maria_db_url
+  exclude:
+    domains:
+      - calendar
+    entities:
+      - sensor.calendar_agenda
+      - sensor.calendar_events
+      - sensor.calendar_lot_thib
+      - sensor.calendar_tasks
 
 influxdb:
   host: !secret localhost
