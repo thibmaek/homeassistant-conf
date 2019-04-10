@@ -34,8 +34,10 @@
     - sensor.nodemcu_downstairs_living_room_humidity
     - sensor.nodemcu_downstairs_living_room_temperature
     - light.living_room_lights
-    - switch.turn_on_tv
     - media_player.iphone_van_ignace
+
+- type: entity-button
+  entity: switch.turn_on_tv
 
 - type: entities
   title: Living Room Lights
