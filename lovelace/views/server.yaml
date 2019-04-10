@@ -3,10 +3,6 @@
     - type: entities
       title: HTPC Server
       entities:
-        - icon: mdi:magnet
-          entity: sensor.transmission_status
-        - icon: mdi:magnet-on
-          entity: switch.transmission
         - icon: mdi:newspaper
           entity: sensor.nzbget_article_cache
         - icon: mdi:pause
