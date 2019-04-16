@@ -11,6 +11,9 @@ logger:
 ota:
 api:
 
+i2c:
+  scan: True
+
 text_sensor:
   - platform: wifi_info
     ip_address:
@@ -25,11 +28,12 @@ sensor:
     name: "nodemcu_downstairs WiFi Signal Sensor"
     update_interval: 60s
 
-  - platform: dht
-    pin: D2
-    model: DHT11
+  - platform: bme280
+    address: 0x76
     temperature:
-      name: "nodemcu_downstairs Living Room Temperature"
+      name: "nodemcu_downstairs BME280 temperature"
+    pressure:
+      name: "nodemcu_downstairs BME280 pressure"
     humidity:
-      name: "nodemcu_downstairs Living Room Humidity"
+      name: "nodemcu_downstairs BME280 humidity"
     update_interval: 60s
