@@ -27,6 +27,7 @@
           entity_id: scene.working_at_my_desk
       hold_action:
         action: more-info
+    - entity: switch.flux
 
 - type: entities
   entities:
@@ -50,9 +51,6 @@
     - sensor.remote_control_bedroom_light
     - sensor.switch_bedlights
     - sensor.switch_stringlights
-
-- type: entity-button
-  entity: switch.flux
 
 - type: entities
   title: Media

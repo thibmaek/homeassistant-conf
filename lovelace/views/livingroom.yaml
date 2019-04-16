@@ -31,10 +31,22 @@
 - type: entities
   entities:
     - sensor.wifi_signal_sensor_2
-    - sensor.nodemcu_downstairs_living_room_humidity
-    - sensor.nodemcu_downstairs_living_room_temperature
     - light.living_room_lights
-    - media_player.iphone_van_ignace
+
+- type: vertical-stack
+  cards:
+    - type: sensor
+      entity: sensor.nodemcu_downstairs_bme280_humidity
+      name: Humidity
+      graph: line
+    - type: sensor
+      entity: sensor.nodemcu_downstairs_bme280_temperature
+      name: Temperature
+      graph: line
+    - type: sensor
+      entity: sensor.nodemcu_downstairs_bme280_pressure
+      name: Pressure
+      graph: line
 
 - type: entity-button
   entity: switch.turn_on_tv
