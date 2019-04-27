@@ -35,3 +35,8 @@
         - 255
         - 0
         - 0
+
+- name: "Bedtime"
+  entities:
+    light.bedroom_lights:
+      state: off
