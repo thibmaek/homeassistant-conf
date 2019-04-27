@@ -3,10 +3,16 @@
     - entity_id: binary_sensor.nodemcu_environment_station_pir_sensor
       platform: state
       to: 'on'
+
   condition:
-    - condition: state
-      entity_id: person.thibault
-      state: away
+    - platform: template
+      value_template: >
+        {% if is_state('person.thibault', 'home') %}
+          false
+        {% else %}
+          true
+        {% endif %}
+
   action:
     - service: notify.thibault_devices
       data:
