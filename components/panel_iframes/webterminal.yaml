@@ -1,4 +1,0 @@
-web_terminal:
-  title: 'Web Terminal'
-  icon: 'mdi:console-line'
-  url: !secret hassio_webterminal

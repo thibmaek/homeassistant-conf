@@ -1,4 +1,0 @@
-log_viewer:
-  title: 'Log Viewer'
-  icon: "mdi:playlist-edit"
-  url: !secret hassio_logger
