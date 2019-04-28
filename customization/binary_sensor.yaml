@@ -11,3 +11,9 @@ binary_sensor.volumio_woonkamer_host:
   icon: mdi:speaker-wireless
 binary_sensor.ps4_host:
   icon: mdi:playstation
+
+# Binary: motion sensors
+binary_sensor.garden_motion:
+  icon: mdi:tree
+binary_sensor.garage_motion:
+  icon: mdi:garage

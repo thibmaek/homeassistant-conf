@@ -106,6 +106,7 @@
 
 - type: entities
   entities:
+    - binary_sensor.garden_motion
     - binary_sensor.garage_motion
     - input_boolean.travel_mode
     - binary_sensor.telenet_off_peak
