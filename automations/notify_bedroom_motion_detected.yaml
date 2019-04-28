@@ -5,7 +5,7 @@
       to: 'on'
 
   condition:
-    - platform: template
+    - condition: template
       value_template: >
         {% if is_state('person.thibault', 'home') %}
           false
