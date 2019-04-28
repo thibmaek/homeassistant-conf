@@ -15,3 +15,6 @@ scene.watching_a_movie:
 
 scene.goodnight:
   icon: mdi:weather-night
+
+scene.bedtime:
+  icon: mdi:sleep
