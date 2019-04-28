@@ -1,0 +1,11 @@
+{
+  "domain": "vrtnws",
+  "name": "VRT NWS",
+  "documentation": "https://github.com/thibmaek/custom-components/tree/master/vrtnws",
+  "dependencies": [],
+  "codeowners": ["@thibmaek"],
+  "requirements": [
+    "xmltodict==0.11.0",
+    "requests_xml==0.2.3"
+  ]
+}

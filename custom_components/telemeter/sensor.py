@@ -5,15 +5,15 @@ from datetime import timedelta
 import logging
 
 import requests
-import simplejson
 import voluptuous as vol
+import simplejson
 
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import CONF_NAME
 from homeassistant.helpers.entity import Entity
 
-__version__ = '1.0.1'
+__version__ = '2.0.0'
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -24,10 +24,12 @@ SCAN_INTERVAL = timedelta(minutes=10)
 DEFAULT_NAME = 'Telemeter'
 
 CONF_COOKIE = 'cookie'
+CONF_INCLUDE_OFF_PEAK = 'include_offpeak'
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_COOKIE): cv.string,
     vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
+    vol.Optional(CONF_INCLUDE_OFF_PEAK, default=False): cv.boolean,
 })
 
 
@@ -54,7 +56,8 @@ def get_telemeter_usage(response, headers):
         usage_offpeak = int(usage_data['totalusage']['offpeak'])
 
         return {
-            'usage': ((usage_offpeak / 1E6) + (usage_peak / 1E6)),
+            'usage_peak': (usage_peak / 1E6),
+            'usage_offpeak': (usage_offpeak / 1E6),
             'limit': [limit, limit_unit],
             'last_updated': response['internetusage'][0]['lastupdated'],
             'subscription_type': usage_data['producttype'],
@@ -71,16 +74,18 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the Telemeter sensor."""
     name = config.get(CONF_NAME)
     cookie = config[CONF_COOKIE]
+    include_offpeak = config.get(CONF_INCLUDE_OFF_PEAK)
 
-    add_entities([TelemeterSensor(name, cookie)], True)
+    add_entities([TelemeterSensor(name, cookie, include_offpeak)], True)
 
 
 class TelemeterSensor(Entity):
     """Create the Telemeter sensor."""
 
-    def __init__(self, name, cookie):
+    def __init__(self, name, cookie, include_offpeak):
         self._name = name
         self._cookie = cookie
+        self._include_offpeak = include_offpeak
         self._state = None
         self._attrs = {}
 
@@ -100,13 +105,18 @@ class TelemeterSensor(Entity):
         if self._state is None or self._attrs is None:
             return None
 
-        return {
+        attributes = {
             'max_usage': self._attrs['limit'][0],
             'last_updated': self._attrs['last_updated'],
             'used_percentage': self.percentage_used,
             'subscription_type': self._attrs['subscription_type'],
             'alert_threshold': self._attrs['alert_threshold']
         }
+
+        if not self._include_offpeak:
+            attributes['offpeak_usage'] = self._attrs['usage_offpeak']
+
+        return attributes
 
     @property
     def unit_of_measurement(self):
@@ -148,6 +158,12 @@ class TelemeterSensor(Entity):
 
             _LOGGER.debug(response)
             self._attrs = response
-            self._state = response['usage']
+
+            if self._include_offpeak:
+                self._state = (
+                    response['usage_peak'] + response['usage_offpeak'])
+            else:
+                self._state = response['usage_peak']
+
         except KeyError as ex:
             _LOGGER.error('Could not retrieve usage data: %s', ex)

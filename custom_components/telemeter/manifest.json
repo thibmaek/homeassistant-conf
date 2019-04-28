@@ -1,0 +1,8 @@
+{
+  "domain": "telemeter",
+  "name": "Telemeter",
+  "documentation": "https://github.com/thibmaek/custom-components/tree/master/telemeter",
+  "dependencies": [],
+  "codeowners": ["@thibmaek"],
+  "requirements": []
+}
