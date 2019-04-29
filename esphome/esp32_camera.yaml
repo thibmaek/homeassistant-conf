@@ -11,6 +11,11 @@ logger:
 api:
 ota:
 
+switch:
+  - platform: restart
+    name: "ESP32 Camera Restart"
+    id: restart
+
 esp32_camera:
   external_clock:
     pin: GPIO0
@@ -25,3 +30,13 @@ esp32_camera:
   power_down_pin: GPIO32
 
   name: ESP32 AI Thinker
+
+time:
+  - platform: sntp
+    on_time:
+      - seconds: 0
+        minutes: 30
+        hours: 7
+        days_of_week: '*'
+        then:
+          - switch.toggle: restart
