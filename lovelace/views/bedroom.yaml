@@ -71,6 +71,12 @@
     - sensor.discogs_collection
     - sensor.discogs_wantlist
 
+- type: picture-entity
+  title: Bedroom camera
+  entity: camera.esp32_ai_thinker
+  camera_view: live
+  show_info: true
+
 - type: vertical-stack
   cards:
     - type: sensor
