@@ -18,6 +18,10 @@
       data:
         title: "\ud83d\udecf Motion detected!"
         message: "Someone entered the bedroom while you're away"
+        attachment:
+          content-type: jpeg
         data:
           push:
             thread-id: "automation-motion-detected"
+            category: camera
+          entity_id: camera.esp32_ai_thinker
