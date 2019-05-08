@@ -41,6 +41,7 @@
   entities:
     - light.bedroom_lights
     - sensor.thibault_maekelberghs_ipad_battery_level
+    - automation.notify_if_someone_is_in_the_bedroom_while_i_m_away
     - entity: binary_sensor.nodemcu_environment_station_pir_sensor
       name: Motion
     - entity: sensor.nodemcu_environment_station_bh1750_illuminance
