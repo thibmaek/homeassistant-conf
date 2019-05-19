@@ -13,6 +13,8 @@ resources:
     type: module
   - url: /local/discogs-card.js?v=1.0.0
     type: module
+  - url: /customcards/github/nervetattoo/banner-card.js?track=true
+    type: module
 
 title: 'Home'
 views:
