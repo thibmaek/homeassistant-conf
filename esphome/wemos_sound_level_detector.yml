@@ -11,10 +11,19 @@ logger:
 ota:
 api:
 
-sensor:
-  - platform: adc
-    pin: A0
+# BELOW WILL READ OUT THE ANALOG SIGNAL
+# sensor:
+  # - platform: adc
+  #   pin: A0
+  #   name: "Sound level"
+  #   update_interval: 1s
+  #   filters:
+  #     - multiply: 3.3
+
+# DEBOUNCED FOR 1S BECAUSE THE TRIGGER PERIOD IS VERY SHORT
+binary_sensor:
+  - platform: gpio
+    pin: D2
     name: "Sound level"
-    update_interval: 2s
     filters:
-      - multiply: 3.3
+      - delayed_off: 1s
