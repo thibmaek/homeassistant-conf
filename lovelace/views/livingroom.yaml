@@ -48,8 +48,30 @@
       name: Pressure
       graph: line
 
-- type: entity-button
-  entity: switch.turn_on_tv
+- type: vertical-stack
+  cards:
+    - type: entity-button
+      entity: switch.turn_on_tv
+    - type: horizontal_stack
+      cards:
+        - type: entity-button
+          entity: media_player.panasonic_viera_tv
+          icon: mdi:volume-minus
+          name: Volume Down
+          tap_action:
+            action: call-service
+            service: media_player.volume_down
+            service_data:
+              entity_id: media_player.panasonic_viera_tv
+        - type: entity-button
+          entity: media_player.panasonic_viera_tv
+          icon: mdi:volume-plus
+          name: Volume Up
+          tap_action:
+            action: call-service
+            service: media_player.volume_up
+            service_data:
+              entity_id: media_player.panasonic_viera_tv
 
 - type: entities
   title: Living Room Lights
