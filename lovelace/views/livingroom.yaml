@@ -52,7 +52,7 @@
   cards:
     - type: entity-button
       entity: switch.turn_on_tv
-    - type: horizontal_stack
+    - type: horizontal-stack
       cards:
         - type: entity-button
           entity: media_player.panasonic_viera_tv
