@@ -1,10 +1,4 @@
 homeassistant:
-  name: !secret home_name
-  latitude: !secret latitude_home
-  longitude: !secret longitude_home
-  elevation: 0
-  unit_system: 'metric'
-  time_zone: 'Europe/Brussels'
   customize: !include_dir_merge_named customization/
 
 custom_updater:
