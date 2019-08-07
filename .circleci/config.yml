@@ -30,7 +30,10 @@ jobs:
     steps:
       - checkout
       - run:
-          command: sudo pip install homeassistant
+          command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
+            sudo pip install homeassistant
       - run:
           command: |
             mv secrets.test.yaml secrets.yaml
