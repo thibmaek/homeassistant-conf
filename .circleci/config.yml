@@ -41,9 +41,5 @@ workflows:
   version: 2
   test:
     jobs:
-      - lint:
-          requires:
-            - checkout
-      - homeassistant:
-          requires:
-            - checkout
+      - lint
+      - homeassistant
