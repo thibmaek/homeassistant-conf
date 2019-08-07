@@ -1,13 +1,13 @@
 version: 2.1
 
 executors:
-  python3.7.4:
+  python_3:
     docker:
       - image: circleci/python:3.7.4
 
 jobs:
   lint:
-    executor: python3.7.4
+    executor: python_3
     steps:
       - checkout
       - run: sudo chown -R circleci:circleci /usr/local/bin
@@ -26,7 +26,7 @@ jobs:
             yamllint .
 
   homeassistant:
-    executor: python3.7.4
+    executor: python_3
     steps:
       - checkout
       - run:
