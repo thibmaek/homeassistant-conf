@@ -1,117 +1,117 @@
-- alias: "Arrive at work during the week"
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.out_of_office
-        state: 'off'
-  trigger:
-    platform: zone
-    entity_id: device_tracker.thibaults_iphone
-    zone: zone.werk_thib
-    event: enter
-  action:
-    - service: rest_command.slack_set_status
-      data:
-        status: ""
-        emoji: ""
-    - service: rest_command.slack_set_presence
-      data:
-        presence: 'auto'
+# - alias: "Arrive at work during the week"
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: binary_sensor.workday_sensor
+#         state: 'on'
+#       - condition: state
+#         entity_id: input_boolean.out_of_office
+#         state: 'off'
+#   trigger:
+#     platform: zone
+#     entity_id: device_tracker.thibaults_iphone
+#     zone: zone.werk_thib
+#     event: enter
+#   action:
+#     - service: rest_command.slack_set_status
+#       data:
+#         status: ""
+#         emoji: ""
+#     - service: rest_command.slack_set_presence
+#       data:
+#         presence: 'auto'
 
-- alias: "Arrive home"
-  condition:
-    condition: time
-    after: '17:00:00'
-  trigger:
-    platform: zone
-    entity_id: device_tracker.thibaults_iphone
-    zone: zone.home
-    event: enter
-  action:
-    - service: rest_command.slack_set_status
-      data:
-        status: "At home, do not message me please."
-        emoji: ":no_entry_sign:"
-    - service: rest_command.slack_set_presence
-      data:
-        presence: 'away'
+# - alias: "Arrive home"
+#   condition:
+#     condition: time
+#     after: '17:00:00'
+#   trigger:
+#     platform: zone
+#     entity_id: device_tracker.thibaults_iphone
+#     zone: zone.home
+#     event: enter
+#   action:
+#     - service: rest_command.slack_set_status
+#       data:
+#         status: "At home, do not message me please."
+#         emoji: ":no_entry_sign:"
+#     - service: rest_command.slack_set_presence
+#       data:
+#         presence: 'away'
 
-- alias: "Arrive at GDP during the week"
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.out_of_office
-        state: 'off'
-  trigger:
-    platform: zone
-    entity_id: device_tracker.thibaults_iphone
-    zone: zone.gent_dampoort
-    event: enter
-  action:
-    - service: rest_command.slack_set_status
-      data:
-        status: "Commuting (on a train)"
-        emoji: ":train2:"
-    - service: rest_command.slack_set_presence
-      data:
-        presence: 'away'
+# - alias: "Arrive at GDP during the week"
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: binary_sensor.workday_sensor
+#         state: 'on'
+#       - condition: state
+#         entity_id: input_boolean.out_of_office
+#         state: 'off'
+#   trigger:
+#     platform: zone
+#     entity_id: device_tracker.thibaults_iphone
+#     zone: zone.gent_dampoort
+#     event: enter
+#   action:
+#     - service: rest_command.slack_set_status
+#       data:
+#         status: "Commuting (on a train)"
+#         emoji: ":train2:"
+#     - service: rest_command.slack_set_presence
+#       data:
+#         presence: 'away'
 
-- alias: "Arrive at Brugge during the week"
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.out_of_office
-        state: 'off'
-  trigger:
-    platform: zone
-    entity_id: device_tracker.thibaults_iphone
-    zone: zone.brugge_station
-    event: enter
-  action:
-    - service: rest_command.slack_set_status
-      data:
-        status: "Commuting (on a train)"
-        emoji: ":train2:"
-    - service: rest_command.slack_set_presence
-      data:
-        presence: 'away'
+# - alias: "Arrive at Brugge during the week"
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: binary_sensor.workday_sensor
+#         state: 'on'
+#       - condition: state
+#         entity_id: input_boolean.out_of_office
+#         state: 'off'
+#   trigger:
+#     platform: zone
+#     entity_id: device_tracker.thibaults_iphone
+#     zone: zone.brugge_station
+#     event: enter
+#   action:
+#     - service: rest_command.slack_set_status
+#       data:
+#         status: "Commuting (on a train)"
+#         emoji: ":train2:"
+#     - service: rest_command.slack_set_presence
+#       data:
+#         presence: 'away'
 
-- alias: "Working remotely"
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.out_of_office
-        state: 'off'
-      - condition: zone
-        entity_id: device_tracker.thibaults_iphone
-        zone: zone.home
-      - condition: time
-        after: '08:00:00'
-        before: '17:50:00'
-  trigger:
-    - platform: time_pattern
-      minutes: '/1'
-  action:
-    - service: rest_command.slack_set_status
-      data:
-        status: "Working from home/remotely"
-        emoji: ":house_with_garden:"
-    - service: rest_command.slack_set_presence
-      data:
-        presence: 'auto'
+# - alias: "Working remotely"
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: binary_sensor.workday_sensor
+#         state: 'on'
+#       - condition: state
+#         entity_id: input_boolean.out_of_office
+#         state: 'off'
+#       - condition: zone
+#         entity_id: device_tracker.thibaults_iphone
+#         zone: zone.home
+#       - condition: time
+#         after: '08:00:00'
+#         before: '17:50:00'
+#   trigger:
+#     - platform: time_pattern
+#       minutes: '/1'
+#   action:
+#     - service: rest_command.slack_set_status
+#       data:
+#         status: "Working from home/remotely"
+#         emoji: ":house_with_garden:"
+#     - service: rest_command.slack_set_presence
+#       data:
+#         presence: 'auto'

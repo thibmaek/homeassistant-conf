@@ -99,4 +99,3 @@ automation: !include automations.yaml
 automation old: !include_dir_merge_list automations/
 group: !include_dir_merge_named groups/
 scene: !include_dir_merge_list scenes/
-zone: !include zones.yaml
