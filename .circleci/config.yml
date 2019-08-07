@@ -9,6 +9,7 @@ jobs:
   lint:
     executor: python_3
     steps:
+      - checkout
       - run: sudo chown -R circleci:circleci /usr/local/bin
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.7.4/site-packages
       - restore_cache:
@@ -27,6 +28,7 @@ jobs:
   homeassistant:
     executor: python_3
     steps:
+      - checkout
       - run:
           command: sudo pip install homeassistant
       - run:
@@ -36,9 +38,9 @@ jobs:
             '! less check.output | grep -q "Failed config"'
 
 workflows:
+  version: 2
   test:
     jobs:
-      - checkout
       - lint:
           requires:
             - checkout
