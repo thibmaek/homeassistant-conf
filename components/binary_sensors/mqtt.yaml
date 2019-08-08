@@ -1,9 +1,0 @@
-- platform: mqtt
-  name: "Garage Motion"
-  state_topic: homeassistant/binary-sensor/motion-detected/garage-cam
-  device_class: motion
-
-- platform: mqtt
-  name: "Garden Motion"
-  state_topic: homeassistant/binary-sensor/motion-detected/tuinhuis-cam
-  device_class: motion
