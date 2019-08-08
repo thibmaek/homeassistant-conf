@@ -17,7 +17,7 @@ light:
     chipset: WS2812B
     pin: D4
     rgb_order: GRB # Valid values are RGB, RBG, GRB, GBR, BRG and BGR. Defaults to RGB. GRB
-    num_leds: 80
+    num_leds: 160
     effects:
       - addressable_rainbow:
       - addressable_color_wipe:
