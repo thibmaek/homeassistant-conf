@@ -1,9 +1,3 @@
 - platform: opensky
-  name: 'Flights (Home)'
+  name: 'Vliegtuigen'
   radius: 5
-
-- platform: opensky
-  name: 'Flights (Work)'
-  radius: 5
-  latitude: 51.067562
-  longitude: 3.732851

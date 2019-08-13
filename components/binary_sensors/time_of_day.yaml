@@ -3,16 +3,6 @@
   after: '07:30'
   before: '19:35'
 
-- platform: tod
-  name: "Office hours"
-  after: '09:15'
-  before: '17:51'
-
-- platform: tod
-  name: 'Apero'
-  after: "17:00"
-  before: "20:30"
-
 #### DAY CYCLES ########################################################################
 # Morning: 7AM -> 12PM
 - platform: tod

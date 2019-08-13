@@ -1,3 +1,0 @@
-- platform: generic
-  name: "Buienradar Radarmap"
-  still_image_url: "https://api.buienradar.nl/image/1.0/RadarMapBE/"

@@ -19,8 +19,6 @@ frontend:
   javascript_version: latest
   themes: !include_dir_merge_named themes/
 
-cloud: !include_dir_merge_named components/cloud
-
 system_health:
 logger:
   default: warn
@@ -81,11 +79,8 @@ twilio:
   auth_token: !secret twilio_auth_token
 
 binary_sensor: !include_dir_merge_list components/binary_sensors/
-camera: !include_dir_merge_list components/cameras/
-device_tracker: !include_dir_merge_list components/device_trackers/
 input_boolean: !include components/inputs/boolean.yaml
 input_select: !include components/inputs/select.yaml
-light: !include_dir_merge_list components/lights/
 media_player: !include_dir_merge_list components/media_players/
 notify: !include_dir_merge_list components/notifications/
 plant: !include_dir_merge_named components/plants/
@@ -97,5 +92,3 @@ weather: !include_dir_merge_list components/weather/
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations/
-group: !include_dir_merge_named groups/
-scene: !include_dir_merge_list scenes/

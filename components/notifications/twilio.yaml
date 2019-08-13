@@ -1,3 +1,0 @@
-- platform: twilio_sms
-  name: 'Twilio'
-  from_number: !secret twilio_from_number

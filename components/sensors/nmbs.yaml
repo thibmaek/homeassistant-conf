@@ -1,9 +1,14 @@
 - platform: nmbs
-  name: "Train Home"
+  name: "Trein naar Brugge"
   station_from: "Gent Dampoort"
   station_to: "Brugge"
 
 - platform: nmbs
-  name: "Train Work"
-  station_from: "Brugge"
+  name: "Trein Lotte naar werk"
+  station_from: "Gent Dampoort"
+  station_to: "Antwerpen Centraal"
+
+- platform: nmbs
+  name: "Trein Lotte naar huis"
+  station_from: "Antwerpen Centraal"
   station_to: "Gent Dampoort"

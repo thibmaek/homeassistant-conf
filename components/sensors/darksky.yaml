@@ -1,5 +1,5 @@
 - platform: darksky
-  name: 'Dark Sky weather'
+  name: "Dark Sky weather"
   api_key: !secret dark_sky_api_key
   language: 'nl'
   forecast:

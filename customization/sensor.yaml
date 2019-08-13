@@ -80,38 +80,7 @@ sensor.dark_sky_weather_wind_speed:
 sensor.dark_sky_weather_wind_speed_1:
   friendly_name: "Wind speed (Tomorrow)"
 
-# Printer ink levels
-sensor.printer_ink_level_cyan:
-  friendly_name: "Ink level (Cyan)"
-  entity_picture: /local/ink_c.png
-sensor.printer_ink_level_magenta:
-  friendly_name: "Ink level (Magenta)"
-  entity_picture: /local/ink_m.png
-sensor.printer_ink_level_yellow:
-  friendly_name: "Ink level (Yellow)"
-  entity_picture: /local/ink_y.png
-sensor.printer_ink_level_black:
-  friendly_name: "Ink level (Keycolor)"
-  entity_picture: /local/ink_k.png
-
-# Radio stations
-sensor.worldwide_fm_live:
-  icon: mdi:radio
-sensor.bbc_radio_1_live:
-  icon: mdi:radio
-
-# Tradfri remotes
-sensor.tradfri_remote_control:
-  icon: mdi:remote
-sensor.tradfri_wireless_dimmer:
-  icon: mdi:checkbox-blank-circle
-sensor.switch_bedlights:
-  icon: mdi:light-switch
-sensor.switch_stringlights:
-  icon: mdi:light-switch
-
 sensor.myip:
-  friendly_name: "Public IP"
   icon: mdi:ip
 
 sensor.current_version:

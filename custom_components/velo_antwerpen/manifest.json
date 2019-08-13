@@ -1,8 +1,0 @@
-{
-  "domain": "velo_antwerpen",
-  "name": "Velo Antwerpen",
-  "documentation": "https://github.com/thibmaek/custom-components/tree/master/velo_antwerpen",
-  "dependencies": [],
-  "codeowners": ["@thibmaek"],
-  "requirements": []
-}

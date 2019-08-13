@@ -1,6 +1,4 @@
 - platform: rest
-  name: "Travis CI Build Status"
-  resource: https://api.travis-ci.org/repos/thibmaek/homeassistant-conf/builds
-  headers:
-    Accept: application/vnd.travis-ci.2+json
-  value_template: "{{ value_json.builds[0].state }}"
+  name: "Circle CI Build Status"
+  resource: https://circleci.com/api/v1.1/project/github/thibmaek/homeassistant-conf?limit=1
+  value_template: "{{ value_json[0].status }}"

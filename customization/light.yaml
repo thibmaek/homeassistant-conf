@@ -1,7 +1,0 @@
-# Tradfri lights
-light.tradfri_bulb_e27_cws_opal_600lm:
-  friendly_name: "Desk Tracklight"
-  icon: mdi:track-light
-light.tradfri_bulb_e27_opal_1000lm:
-  friendly_name: "Living Room Floorlamp"
-  icon: mdi:floor-lamp

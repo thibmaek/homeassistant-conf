@@ -1,9 +1,3 @@
 - platform: darksky
-  name: "Weather Brugge"
-  api_key: !secret dark_sky_api_key
-
-- platform: darksky
-  name: "Weather Gent"
-  latitude: !secret latitude_work
-  longitude: !secret longitude_work
+  name: "Weather"
   api_key: !secret dark_sky_api_key

@@ -1,9 +1,0 @@
-- platform: scrape
-  name: "Worldwide FM LIVE"
-  resource: "https://worldwidefm.net/"
-  select: ".radio-player-song-name"
-
-- platform: scrape
-  name: "BBC Radio 1 LIVE"
-  resource: "https://www.bbc.co.uk/radio1"
-  select: ".on-air__episode-title"
