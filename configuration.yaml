@@ -12,9 +12,6 @@ custom_updater:
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
     - https://raw.githubusercontent.com/thibmaek/custom-cards/master/discogs/custom_updater.json
 
-lovelace:
-  mode: yaml
-
 frontend:
   javascript_version: latest
   themes: !include_dir_merge_named themes/
