@@ -1,0 +1,49 @@
+esphome:
+  name: nodemcu_env_station
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+logger:
+ota:
+api:
+
+i2c:
+  scan: True
+
+binary_sensor:
+  - platform: gpio
+    pin: D6
+    name: "NodeMCU Environment Station PIR Sensor"
+    device_class: motion
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "NodeMCU Environment Station IP address"
+    ssid:
+      name: "NodeMCU Environment Station SSID"
+    bssid:
+      name: "NodeMCU Environment Station BSSID"
+
+sensor:
+  - platform: wifi_signal
+    name: "NodeMCU Environment Station WiFi Signal Sensor"
+    update_interval: 60s
+
+  - platform: bh1750
+    name: "NodeMCU Environment Station BH1750 Illuminance"
+    update_interval: 60s
+
+  - platform: bme280
+    address: 0x76
+    temperature:
+      name: "NodeMCU Environment Station BME280 Temperature"
+    pressure:
+      name: "NodeMCU Environment Station BME280 Pressure"
+    humidity:
+      name: "NodeMCU Environment Station BME280 Humidity"
+    update_interval: 60s
