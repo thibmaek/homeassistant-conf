@@ -37,7 +37,7 @@ jobs:
       - run:
           command: |
             mv secrets.test.yaml secrets.yaml
-            hass -c . --script check_config | tee check.output
+            sudo hass -c . --script check_config | tee check.output
             '! less check.output | grep -q "Failed config"'
 
 workflows:
