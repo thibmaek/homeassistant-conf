@@ -1,12 +1,14 @@
 extends: default
 
+ignore: |
+  custom_components/
+
 rules:
+  comments-indentation: disable
   comments:
     require-starting-space: true
     min-spaces-from-content: 1
   document-start: disable
   quoted-strings: disable
-    #level: warning
-    #quote-type: any
   truthy: disable
   line-length: disable
