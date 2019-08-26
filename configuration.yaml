@@ -1,17 +1,6 @@
 homeassistant:
   customize: !include_dir_merge_named customization/
 
-custom_updater:
-  track:
-    - components
-    - cards
-  component_urls:
-    - https://raw.githubusercontent.com/thibmaek/custom-components/master/vrtnws/custom_updater.json
-    - https://raw.githubusercontent.com/thibmaek/custom-components/master/telemeter/custom_updater.json
-  card_urls:
-    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-    - https://raw.githubusercontent.com/thibmaek/custom-cards/master/discogs/custom_updater.json
-
 frontend:
   javascript_version: latest
   themes: !include_dir_merge_named themes/
