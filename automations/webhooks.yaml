@@ -11,35 +11,3 @@
       data_template:
         message: >
           {{ trigger.json }} - {{ trigger.data }}
-
-- alias: "Radarr: download finished"
-  trigger:
-    - platform: webhook
-      webhook_id: radarr-download-finished
-  action:
-    - service: persistent_notification.create
-      data_template:
-        title: "Radarr: download finished"
-        message: >
-          {{ trigger.json.remoteMovie.title }} - {{ trigger.json.remoteMovie.year }}
-    - service: notify.thibault_devices
-      data_template:
-        title: "Radarr: download finished"
-        message: >
-          {{ trigger.json.remoteMovie.title }} - {{ trigger.json.remoteMovie.year }}
-
-- alias: "Sonarr: download finished"
-  trigger:
-    - platform: webhook
-      webhook_id: sonarr-download-finished
-  action:
-    - service: persistent_notification.create
-      data_template:
-        title: "Radarr: download finished"
-        message: >
-          {{ trigger.json.remoteMovie.title }} - {{ trigger.json.remoteMovie.year }}
-    - service: notify.thibault_devices
-      data_template:
-        title: "Sonarr: downloaded {{ trigger.json.series.title }}"
-        message: >
-           {{ trigger.json.episodes[0].seasonNumber }}x{{ trigger.json.episodes[0].episodeNumber }} {{ trigger.json.episodes[0].title }}

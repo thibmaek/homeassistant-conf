@@ -1,8 +1,0 @@
-- platform: radarr
-  host: !secret localhost
-  api_key: !secret radarr_api_key
-  monitored_conditions:
-    - movies
-    - upcoming
-    - status
-  days: 3

@@ -1,8 +1,0 @@
-- platform: sonarr
-  host: !secret localhost
-  api_key: !secret sonarr_api_key
-  monitored_conditions:
-    - series
-    - upcoming
-    - wanted
-  days: 3
