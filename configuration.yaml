@@ -8,7 +8,6 @@ frontend:
 hacs:
   token: !secret hacs_github_token
   sidepanel_title: HACS
-  sidepanel_icon: "mdi:puzzle"
 
 system_health:
 logger:
