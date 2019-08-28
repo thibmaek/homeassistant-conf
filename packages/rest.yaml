@@ -1,0 +1,5 @@
+sensor:
+  - platform: rest
+    name: "Ivago Waste Collection"
+    resource: !secret ivago_cloud_fn
+    # value_template: "{{ value_json.nextCollectionDate }}"
