@@ -38,11 +38,9 @@ jobs:
       stage: latest
     steps:
       - checkout
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
       - run:
           command: |
-            pip install homeassistant
+            python3 -m pip install homeassistant
             hass --version
             mv secrets.test.yaml secrets.yaml
       - run:
