@@ -12,5 +12,5 @@ secrets=($(grep -r '!secret' . --exclude-dir=.vscode --exclude-dir=esphome --exc
 
 for secret in "${secrets[@]}"; do
   echo "Found secret: $secret"
-  echo "$secret: \"any value\"" >> secrets.test.yaml
+  echo "$secret: \"http://url.com\"" >> secrets.test.yaml
 done
