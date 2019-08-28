@@ -4,6 +4,13 @@ executors:
   python_3:
     docker:
       - image: circleci/python:3.7.4
+  homeassistant:
+    parameters:
+      stage:
+        type: string
+        default: "latest"
+    docker:
+      - image: homeassistant/home-assistant:<< parameters.stage >>
 
 jobs:
   lint:
@@ -26,19 +33,24 @@ jobs:
             yamllint .
 
   homeassistant:
-    executor: python_3
+    executor:
+      name: homeassistant
+      stage: latest
     steps:
       - checkout
+      # - run:
+      #     command: |
+      #       sudo chown -R circleci:circleci /usr/local/bin
+      #       sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
       - run:
           command: |
-            sudo chown -R circleci:circleci /usr/local/bin
-            sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
-            sudo pip install homeassistant
-      - run:
-          command: |
+            ls -l
+            python -m homeassistant --version
             mv secrets.test.yaml secrets.yaml
-            sudo hass -c . --script check_config | tee check.output
-            '! less check.output | grep -q "Failed config"'
+      - run:
+          command: |
+            python -m homeassistant --config . --script check_config --info all
+
 
 workflows:
   version: 2
