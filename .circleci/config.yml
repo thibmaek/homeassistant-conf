@@ -38,18 +38,13 @@ jobs:
       stage: latest
     steps:
       - checkout
-      # - run:
-      #     command: |
-      #       sudo chown -R circleci:circleci /usr/local/bin
-      #       sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
       - run:
           command: |
-            ls -l
-            python -m homeassistant --version
+            hass --version
             mv secrets.test.yaml secrets.yaml
       - run:
           command: |
-            python -m homeassistant --config . --script check_config --info all
+            hass --config . --script check_config --info all
 
 
 workflows:
