@@ -1,0 +1,37 @@
+homeassistant:
+  customize:
+    sensor.ivago_next_collection:
+      icon: "mdi:dump-truck"
+    sensor.ivago_rest:
+      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-REST.jpg"
+    sensor.ivago_pmd:
+      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-PMD.jpg"
+    sensor.ivago_papier:
+      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-PAPIER.jpg"
+    sensor.ivago_glas:
+      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-GLAS.jpg"
+
+binary_sensor:
+  - platform:
+    name: "Ivago Rest"
+    resource: !secret ivago_cloud_fn_url
+    value_template: "{{ value_json.rest }}"
+  - platform:
+    name: "Ivago PMD"
+    resource: !secret ivago_cloud_fn_url
+    value_template: "{{ value_json.pmd }}"
+  - platform:
+    name: "Ivago Papier"
+    resource: !secret ivago_cloud_fn_url
+    value_template: "{{ value_json.gft }}"
+  - platform:
+    name: "Ivago Glas"
+    resource: !secret ivago_cloud_fn_url
+    value_template: "{{ value_json.glas }}"
+
+sensor:
+  - platform: rest
+    name: "Ivago Next Collection"
+    resource: !secret ivago_cloud_fn_url
+    value_template: "{{ value_json.nextCollectionDate }}"
+

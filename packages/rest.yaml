@@ -1,6 +1,0 @@
-sensor:
-  - platform: rest
-    name: "Ivago Next Collection"
-    icon: "mdi:dump-truck"
-    resource: !secret ivago_cloud_fn_url
-    value_template: "{{ value_json.nextCollectionDate }}"
