@@ -44,8 +44,10 @@ jobs:
             hass --version
             mv secrets.test.yaml secrets.yaml
       - run:
-          command: |
-            hass --config . --script check_config --info all
+          name: "Remove HACS integrations"
+          command: rm packages/hacs.yaml
+      - run:
+          command: hass --config . --script check_config --info all
 
 
 workflows:
