@@ -1,0 +1,6 @@
+sensor:
+  - platform: plex_recently_added
+    token: !secret plex_token
+    host: !secret localhost
+    port: 32400
+  - platform: vrtnws

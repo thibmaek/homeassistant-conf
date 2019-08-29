@@ -1,9 +1,0 @@
-- platform: vrtnws
-
-# - platform: telemeter
-#   cookie: !secret telemeter_cookie
-
-- platform: plex_recently_added
-  token: !secret plex_token
-  host: !secret localhost
-  port: 32400
