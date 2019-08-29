@@ -19,13 +19,6 @@ config:
 discovery:
 media_extractor:
 
-# mqtt:
-#   discovery: true
-#   broker: !secret localhost
-#   port: !secret mqtt_port
-#   username: !secret mqtt_user
-#   password: !secret mqtt_password
-
 history:
 recorder:
   db_url: !secret maria_db_url
