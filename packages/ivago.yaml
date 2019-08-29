@@ -12,19 +12,19 @@ homeassistant:
       entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-GLAS.jpg"
 
 binary_sensor:
-  - platform:
+  - platform: rest
     name: "Ivago Rest"
     resource: !secret ivago_cloud_fn_url
     value_template: "{{ value_json.rest }}"
-  - platform:
+  - platform: rest
     name: "Ivago PMD"
     resource: !secret ivago_cloud_fn_url
     value_template: "{{ value_json.pmd }}"
-  - platform:
+  - platform: rest
     name: "Ivago Papier"
     resource: !secret ivago_cloud_fn_url
     value_template: "{{ value_json.gft }}"
-  - platform:
+  - platform: rest
     name: "Ivago Glas"
     resource: !secret ivago_cloud_fn_url
     value_template: "{{ value_json.glas }}"
