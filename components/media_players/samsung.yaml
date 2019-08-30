@@ -1,0 +1,4 @@
+- platform: samsungtv
+  host: !secret samsung_ru7100_host
+  port: 8001
+  mac: !secret samsung_ru7100_mac
