@@ -1,0 +1,27 @@
+wake_up:
+  alias: "Wake Up"
+  sequence:
+    - event: LOGBOOK_ENTRY
+      event_data:
+        name: Thib
+        message: is waking up
+        entity_id: device_tracker.thibaults_iphone
+        domain: light
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.kitchen
+        source: "VRT Studio Brussel"
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.kitchen
+        volume_level: 0.20
+
+leave_house:
+  alias: "Leaving the house"
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: group.all_lights
+    - service: media_player.media_stop
+      data:
+        entity_id: media_player.kitchen
