@@ -33,5 +33,6 @@ sensor:
   - platform: rest
     name: "Ivago Next Collection"
     resource: !secret ivago_cloud_fn_url
-    value_template: "{{ value_json.nextCollectionDate }}"
+    value_template: "{{ value_json.nextCollectionDate.distance }}"
+
 
