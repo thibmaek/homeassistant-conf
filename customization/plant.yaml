@@ -1,7 +1,7 @@
 plant.monstera_deliciosa:
   friendly_name: "Monstera Deliciosa"
-  entity_picture: /local/monstera_deliciosa.jpg
+  entity_picture: /local/monstera_bureau.jpg
 
 plant.ficus_elastica:
   friendly_name: "Ficus Elastica"
-  entity_picture: /local/ficus_elastica.jpg
+  entity_picture: /local/ficus_living.jpg
