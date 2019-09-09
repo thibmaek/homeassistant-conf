@@ -14,7 +14,7 @@ ota:
 switch:
   - platform: restart
     name: "ESP32 Camera Restart"
-    id: restart
+    id: restart_camera
 
 esp32_camera:
   external_clock:
@@ -39,4 +39,4 @@ time:
         hours: 7
         days_of_week: '*'
         then:
-          - switch.toggle: restart
+          - switch.toggle: restart_camera
