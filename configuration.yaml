@@ -1,5 +1,6 @@
 homeassistant:
   packages: !include_dir_named packages/
+  customize: !include customize.yaml
 
 frontend:
   javascript_version: latest
