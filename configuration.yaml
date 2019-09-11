@@ -1,5 +1,4 @@
 homeassistant:
-  customize: !include_dir_merge_named customization/
   packages: !include_dir_named packages/
 
 frontend:
@@ -68,7 +67,6 @@ input_boolean: !include components/inputs/boolean.yaml
 input_select: !include components/inputs/select.yaml
 media_player: !include_dir_merge_list components/media_players/
 notify: !include_dir_merge_list components/notifications/
-plant: !include_dir_merge_named components/plants/
 rest_command: !include_dir_merge_named components/rest_commands/
 scene: !include_dir_merge_list components/scenes/
 script: !include_dir_merge_named components/scripts/

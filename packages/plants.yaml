@@ -1,0 +1,118 @@
+homeassistant:
+  customize:
+    plant.monstera_deliciosa:
+      friendly_name: "Monstera Deliciosa"
+      entity_picture: /local/monstera_bureau.jpg
+    plant.ficus_elastica:
+      friendly_name: "Ficus Elastica"
+      entity_picture: /local/ficus_living.jpg
+    sensor.monstera_deliciosa_battery:
+      friendly_name: "Monstera Deliciosa Battery"
+      icon: mdi:battery-charging
+    sensor.monstera_deliciosa_conductivity:
+      friendly_name: "Monstera Deliciosa Conductivity"
+      icon: mdi:leaf
+    sensor.monstera_deliciosa_brightness:
+      friendly_name: "Monstera Deliciosa Brightness"
+      icon: mdi:white-balance-sunny
+    sensor.monstera_deliciosa_moisture:
+      friendly_name: "Monstera Deliciosa Moisture"
+      icon: mdi:water-percent
+    sensor.monstera_deliciosa_temperature:
+      friendly_name: "Monstera Deliciosa Temperature"
+      icon: mdi:thermometer
+    sensor.ficus_elastica_battery:
+      friendly_name: "Ficus Elastica Battery"
+      icon: mdi:battery-charging
+    sensor.ficus_elastica_conductivity:
+      friendly_name: "Ficus Elastica Conductivity"
+      icon: mdi:leaf
+    sensor.ficus_elastica_brightness:
+      friendly_name: "Ficus Elastica Brightness"
+      icon: mdi:white-balance-sunny
+    sensor.ficus_elastica_moisture:
+      friendly_name: "Ficus Elastica Moisture"
+      icon: mdi:water-percent
+    sensor.ficus_elastica_temperature:
+      friendly_name: "Ficus Elastica Temperature"
+      icon: mdi:thermometer
+
+sensor:
+  - platform: mqtt
+    name: monstera_deliciosa_moisture
+    state_topic: homeassistant/sensor/monstera/state
+    value_template: '{{ value_json.moisture }}'
+    unit_of_measurement: '%'
+  - platform: mqtt
+    name: monstera_deliciosa_battery
+    state_topic: homeassistant/sensor/monstera/state
+    value_template: '{{ value_json.battery }}'
+    unit_of_measurement: '%'
+  - platform: mqtt
+    name: monstera_deliciosa_temperature
+    state_topic: homeassistant/sensor/monstera/state
+    value_template: '{{ value_json.temperature }}'
+    unit_of_measurement: '°C'
+  - platform: mqtt
+    name: monstera_deliciosa_conductivity
+    state_topic: homeassistant/sensor/monstera/state
+    value_template: '{{ value_json.conductivity }}'
+    unit_of_measurement: 'µS/cm'
+  - platform: mqtt
+    name: monstera_deliciosa_brightness
+    state_topic: homeassistant/sensor/monstera/state
+    value_template: '{{ value_json.light }}'
+    unit_of_measurement: 'lux'
+
+  - platform: mqtt
+    name: ficus_elastica_moisture
+    state_topic: homeassistant/sensor/ficus/state
+    value_template: '{{ value_json.moisture }}'
+    unit_of_measurement: '%'
+  - platform: mqtt
+    name: ficus_elastica_battery
+    state_topic: homeassistant/sensor/ficus/state
+    value_template: '{{ value_json.battery }}'
+    unit_of_measurement: '%'
+  - platform: mqtt
+    name: ficus_elastica_temperature
+    state_topic: homeassistant/sensor/ficus/state
+    value_template: '{{ value_json.temperature }}'
+    unit_of_measurement: '°C'
+  - platform: mqtt
+    name: ficus_elastica_conductivity
+    state_topic: homeassistant/sensor/ficus/state
+    value_template: '{{ value_json.conductivity }}'
+    unit_of_measurement: 'µS/cm'
+  - platform: mqtt
+    name: ficus_elastica_brightness
+    state_topic: homeassistant/sensor/ficus/state
+    value_template: '{{ value_json.light }}'
+    unit_of_measurement: 'lux'
+
+
+plant:
+  ficus_elastica:
+    sensors:
+      battery: sensor.ficus_elastica_battery
+      brightness: sensor.ficus_elastica_brightness
+      conductivity: sensor.ficus_elastica_conductivity
+      moisture: sensor.ficus_elastica_moisture
+      temperature: sensor.ficus_elastica_temperature
+    min_moisture: 14
+    max_moisture: 30
+    min_battery: 17
+    min_conductivity: 50
+    min_temperature: 18
+  monstera_deliciosa:
+    sensors:
+      battery: sensor.monstera_deliciosa_battery
+      brightness: sensor.monstera_deliciosa_brightness
+      conductivity: sensor.monstera_deliciosa_conductivity
+      moisture: sensor.monstera_deliciosa_moisture
+      temperature: sensor.monstera_deliciosa_temperature
+    min_moisture: 14
+    max_moisture: 35
+    min_battery: 17
+    min_conductivity: 50
+    min_temperature: 18
