@@ -11,6 +11,20 @@ logger:
 ota:
 api:
 
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "WS8212 IP"
+    ssid:
+      name: "WS8212 SSID"
+    bssid:
+      name: "WS8212 BSSID"
+
+sensor:
+  - platform: wifi_signal
+    name: "WS8212 Signal"
+    update_interval: 60s
+
 light:
   - platform: fastled_clockless
     name: "WS2812B 5M 30 IP30"
