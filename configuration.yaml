@@ -43,6 +43,7 @@ influxdb:
       - binary_sensor
       - light
       - sensor
+      - person
 
 downloader:
   download_dir: '/share'
