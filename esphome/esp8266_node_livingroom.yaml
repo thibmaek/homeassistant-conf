@@ -1,5 +1,5 @@
 esphome:
-  name: esp8266_node_bedroom
+  name: esp8266_node_livingroom
   platform: ESP8266
   board: d1_mini
 
@@ -17,23 +17,23 @@ i2c:
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: "ESP8266 Node Bedroom IP"
+      name: "ESP8266 Node Living Room IP"
     ssid:
-      name: "ESP8266 Node Bedroom SSID"
+      name: "ESP8266 Node Living Room SSID"
     bssid:
-      name: "ESP8266 Node Bedroom BSSID"
+      name: "ESP8266 Node Living Room BSSID"
 
 sensor:
   - platform: wifi_signal
-    name: "ESP8266 Node Bedroom Signal"
+    name: "ESP8266 Node Living Room Signal"
     update_interval: 60s
 
   - platform: bme280
     address: 0x76
     temperature:
-      name: "Bedroom Temperature"
+      name: "Living Room Temperature"
     pressure:
-      name: "Bedroom Pressure"
+      name: "Living Room Pressure"
     humidity:
-      name: "Bedroom Humidity"
+      name: "Living Room Humidity"
     update_interval: 60s
