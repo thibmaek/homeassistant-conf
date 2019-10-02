@@ -71,6 +71,10 @@ tuya:
   password: !secret tuya_password
   country_code: '32'
 
+plex:
+  host: !secret localhost
+  token: !secret plex_token
+
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 input_boolean: !include components/inputs/boolean.yaml
 input_select: !include components/inputs/select.yaml
