@@ -1,4 +1,10 @@
 midnight:
+  background-image: 'center / cover no-repeat url("/local/backgrounds/night_gradient.jpg") fixed'
+  # Background colors
+  # primary-background-color: '#2c3e50'
+  # secondary-background-color: '#2c3e50'
+  divider-color: 'rgba(0, 0, 0, .12)'
+
   # Main colors
   primary-color: '#2980b9'
   accent-color: '#f1c40f'
@@ -16,11 +22,6 @@ midnight:
   sidebar-icon-color: 'var(--primary-text-color)'
   sidebar-selected-icon-color: 'var(--accent-color)'
   sidebar-selected-background-color: 'rgba(255, 255, 255, .1)'
-
-  # Background colors
-  primary-background-color: '#2c3e50'
-  secondary-background-color: '#2c3e50'
-  divider-color: 'rgba(0, 0, 0, .12)'
 
   # Table rows
   table-row-background-color: '#2c3e50'

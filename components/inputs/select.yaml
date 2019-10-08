@@ -11,5 +11,6 @@ theme_switcher:
     - oled
     - pmx_mono_night
     - slate
+    - season_autumn
   initial: default
   icon: mdi:palette
