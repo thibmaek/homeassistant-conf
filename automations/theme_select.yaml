@@ -25,7 +25,12 @@
   action:
     - service: frontend.set_theme
       data_template:
-        name: "default"
+        name: >-
+          {% is_state("sensor.season", "autumn") %}
+            season_autumn
+          {% else %}
+            default
+          {% endif %}
 
 - alias: "Set theme on startup"
   initial_state: 'on'
