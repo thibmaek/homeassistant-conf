@@ -25,7 +25,7 @@
   action:
     - service: frontend.set_theme
       data_template:
-        name: >-
+        name: >
           {% is_state("sensor.season", "autumn") %}
             season_autumn
           {% else %}
