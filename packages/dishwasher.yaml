@@ -4,8 +4,12 @@ automation:
       - platform: state
         entity_id: input_select.dishwasher_program
     action:
+      - service: timer.finish
+        data:
+          entity_id: all
       - service: input_boolean.turn_on
-        entity_id: input_boolean.dishwasher_active
+        data:
+          entity_id: input_boolean.dishwasher_active
       - service: notify.thibault_devices
         data_template:
           title: "Dishwasher turned on"
@@ -48,8 +52,12 @@ automation:
         event_data:
           entity_id: dishwasher_program_quick
     action:
+      - service: timer,finish
+        data:
+          entity_id: all
       - service: input_boolean.turn_off
-        entity_id: input_boolean.dishwasher_active
+        data:
+          entity_id: input_boolean.dishwasher_active
       - service: notify.thibault_devices
         data_template:
           title: "Dishwasher finished!"
