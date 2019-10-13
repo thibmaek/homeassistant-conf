@@ -1,0 +1,89 @@
+automation:
+  - alias: "When changing the dishwasher program..."
+    trigger:
+      - platform: state
+        entity_id: input_select.dishwasher_program
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.dishwasher_active
+      - service: notify.thibault_devices
+        data_template:
+          title: "Dishwasher turned on"
+          message: "Running program: ({{ trigger.to_state.state }})"
+          data:
+            push:
+              thread-id: "dishwasher"
+      - service: timer.start
+        data_template:
+          entity_id: >
+            {% if is_state("input_select.dishwasher_program", "eco") %}
+              timer.dishwasher_program_eco
+            {% elif is_state("input_select.dishwasher_program", "auto") %}
+              timer.dishwasher_program_auto
+            {% elif is_state("input_select.dishwasher_program", "intense") %}
+              timer.dishwasher_program_intense
+            {% elif is_state("input_select.dishwasher_program", "quick") %}
+              timer.dishwasher_program_quick
+            {% elif is_state("input_select.dishwasher_program", "off") %}
+              timer.dishwasher_program_standby
+            {% else %}
+              timer.dishwasher_program_standby
+            {% endif %}
+  - alias: "When dishwasher program is complete..."
+    trigger:
+      - platform: event
+        event_type: "timer.finished"
+        event_data:
+          entity_id: dishwasher_program_eco
+      - platform: event
+        event_type: "timer.finished"
+        event_data:
+          entity_id: dishwasher_program_auto
+      - platform: event
+        event_type: "timer.finished"
+        event_data:
+          entity_id: dishwasher_program_intense
+      - platform: event
+        event_type: "timer.finished"
+        event_data:
+          entity_id: dishwasher_program_quick
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.dishwasher_active
+      - service: notify.thibault_devices
+        data_template:
+          title: "Dishwasher finished!"
+          message: "Program: ({{ trigger.to_state.state }}) has finished running"
+          data:
+            push:
+              thread-id: "dishwasher"
+
+
+timer:
+  dishwasher_program_eco:
+    duration: "03:40:00"
+  dishwasher_program_auto:
+    duration: "02:58:00"
+  dishwasher_program_intense:
+    duration: "03:23:00"
+  dishwasher_program_quick:
+    duration: "00:30:00"
+  dishwasher_program_standby:
+    duration: "00:00:00"
+
+input_boolean:
+  dishwasher_power:
+    name: "Dishwasher active"
+    initial: off
+    icon: mdi:dishwasher
+
+input_select:
+  dishwasher_program:
+    options:
+      - eco
+      - auto
+      - intense
+      - quick
+      - standby
+    initial: standby
+    icon: mdi:alarm-multiple
