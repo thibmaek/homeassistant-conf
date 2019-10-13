@@ -7,7 +7,7 @@ homeassistant:
     sensor.nzbget_post_processing_paused:
       icon: mdi:pause-octagon
     sensor.nzbget_queue_size:
-      icon: mdi:library-plus
+      icon: mdi:plus-box-multiple
     sensor.nzbget.size:
       icon: mdi:folder-zip
     sensor.nzbget_speed:
