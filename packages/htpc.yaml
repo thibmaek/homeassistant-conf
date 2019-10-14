@@ -15,21 +15,12 @@ homeassistant:
     sensor.nzbget_uptime:
       icon: mdi:update
 
-sensor:
-  # NZBGet
-  - platform: nzbget
-    host: !secret localhost
-    username: !secret nzbget_username
-    password: !secret nzbget_password
-    monitored_variables:
-      - article_cache
-      - download_paused
-      - download_rate
-      - download_size
-      - post_paused
-      - remaining_size
-      - uptime
+nzbget:
+  host: !secret localhost
+  username: !secret nzbget_username
+  password: !secret nzbget_password
 
+sensor:
   # Radarr
   - platform: radarr_upcoming_media
     api_key: !secret radarr_api_key
