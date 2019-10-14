@@ -52,7 +52,7 @@ automation:
         event_data:
           entity_id: dishwasher_program_quick
     action:
-      - service: timer,finish
+      - service: timer.finish
         data:
           entity_id: all
       - service: input_boolean.turn_off
