@@ -15,7 +15,31 @@ binary_sensor:
   - platform: status
     name: "LSC Smart Connect Status"
 
+output:
+  - platform: esp8266_pwm
+    id: led
+    pin:
+      number: GPIO4
+      inverted: true
+
+light:
+  - platform: monochromatic
+    id: status_led
+    name: "LSC Smart Connect Light"
+    output: led
+
 switch:
   - platform: gpio
-    name: "LSC Smart Connect Relay"
+    id: relay
     pin: GPIO12
+  - platform: template
+    name: "LSC Smart Connect Relay"
+    optimistic: true
+    id: relay_and_light
+    turn_on_action:
+      - switch.turn_on: relay
+      - light.turn_on: status_led
+    turn_off_action:
+      - switch.turn_off: relay
+      - light.turn_off: status_led
+
