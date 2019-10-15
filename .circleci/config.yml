@@ -11,6 +11,9 @@ executors:
         default: "latest"
     docker:
       - image: homeassistant/home-assistant:<< parameters.stage >>
+  esphome:
+    docker:
+      - image: esphome/esphome
 
 jobs:
   lint:
@@ -31,6 +34,18 @@ jobs:
       - run:
           command: |
             yamllint .
+
+  esphome:
+    executor: esphome
+    steps:
+      - checkout
+      - run: cd esphome
+      - run:
+          name: Validate ESPHome configs
+          command: |
+            for cfg in ./*.yaml;
+              do esphome ${cfg} compile
+            done
 
   homeassistant:
     executor:
@@ -55,4 +70,5 @@ workflows:
   test:
     jobs:
       - lint
+      - esphome
       - homeassistant
