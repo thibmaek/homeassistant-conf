@@ -43,8 +43,9 @@ jobs:
       - run:
           name: Validate ESPHome configs
           command: |
-            for cfg in ./*.yaml;
-              do esphome ${cfg} compile
+            for cfg in ./*.yaml; do
+              echo "Validating config: ${cfg}"
+              esphome ${cfg} compile
             done
 
   homeassistant:
