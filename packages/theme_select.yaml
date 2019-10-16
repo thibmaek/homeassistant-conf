@@ -1,0 +1,71 @@
+input_select:
+  theme_switcher:
+    options:
+      - default
+      - midnight
+      - dark_blue
+      - dark_orange
+      - dark_red
+      - gable_green
+      - light_orange
+      - night_theme
+      - oled
+      - pmx_mono_night
+      - slate
+      - season_autumn
+      - season_winter
+      - season_spring
+      - season_summer
+    initial: default
+    icon: mdi:palette
+
+automation:
+  - alias: "When HA starts, decide which theme to set"
+    initial_state: 'on'
+    trigger:
+      platform: homeassistant
+      event: start
+    action:
+      service: automation.trigger
+      data:
+        name: automation.switch_to_day_theme_automatically
+
+  - alias: "When theme switcher changes state..."
+    initial_state: 'on'
+    hide_entity: true
+    trigger:
+      - platform: state
+        entity_id: input_select.theme_switcher
+    action:
+      - service: frontend.set_theme
+        data_template:
+          name: "{{states('input_select.theme_switcher')}}"
+
+  - alias: "Switch to night theme automatically"
+    trigger:
+      - platform: sun
+        event: sunset
+    action:
+      - service: frontend.set_theme
+        data_template:
+          name: midnight
+
+  - alias: "Switch to day theme automatically"
+    trigger:
+      - platform: sun
+        event: sunrise
+    action:
+      - service: frontend.set_theme
+        data_template:
+          name: >
+            {% if is_state("sensor.season", "autumn") %}
+              season_autumn
+            {% elif is_state("sensor.season", "winter") %}
+              season_winter
+            {% elif is_state("sensor.season", "spring") %}
+              season_spring
+            {% elif is_state("sensor.season", "summer") %}
+              season_summer
+            {% else %}
+              default
+            {% endif %}
