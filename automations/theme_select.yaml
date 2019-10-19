@@ -1,4 +1,4 @@
-- alias: "Change current theme"
+- alias: "When theme switcher changes state..."
   initial_state: 'on'
   hide_entity: true
   trigger:
@@ -16,7 +16,7 @@
   action:
     - service: frontend.set_theme
       data_template:
-        name: "midnight"
+        name: midnight
 
 - alias: "Switch to day theme automatically"
   trigger:
@@ -28,16 +28,22 @@
         name: >
           {% if is_state("sensor.season", "autumn") %}
             season_autumn
+          {% elif is_state("sensor.season", "winter") %}
+            season_winter
+          {% elif is_state("sensor.season", "spring") %}
+            season_spring
+          {% elif is_state("sensor.season", "summer") %}
+            season_summer
           {% else %}
             default
           {% endif %}
 
-- alias: "Set theme on startup"
+- alias: "When HA starts, decide which theme to set"
   initial_state: 'on'
   trigger:
     platform: homeassistant
     event: start
   action:
-    service: frontend.set_theme
+    service: automation.trigger
     data:
-      name: default
+      name: automation.switch_to_day_theme_automatically

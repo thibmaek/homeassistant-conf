@@ -12,5 +12,8 @@ theme_switcher:
     - pmx_mono_night
     - slate
     - season_autumn
+    - season_winter
+    - season_spring
+    - season_summer
   initial: default
   icon: mdi:palette
