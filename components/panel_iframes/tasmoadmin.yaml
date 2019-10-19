@@ -1,0 +1,4 @@
+tasmoadmin:
+  title: 'TasmoAdmin'
+  icon: mdi:resistor-nodes
+  url: !secret hassio_tasmoadmin_url
