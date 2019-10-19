@@ -1,4 +1,4 @@
-season_autumn:
+season_summer:
   background-image: 'center / cover no-repeat url("/local/backgrounds/season_summer.jpg") fixed'
 
 # Main colors that can be changed
