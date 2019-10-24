@@ -9,9 +9,9 @@ jobs:
   yamllint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout
-      - name: Run YAMLLint
+      - name: Getting your configuration from GitHub
+        uses: actions/checkout@v1
+      - name: Running YAMLlint
         uses: "docker://pipelinecomponents/yamllint:latest"
         with:
-          args: yamllint . 
+          args: yamllint .
