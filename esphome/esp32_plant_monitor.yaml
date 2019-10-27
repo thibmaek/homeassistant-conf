@@ -1,14 +1,50 @@
 esphome:
   name: esp32_plant_monitor
   platform: ESP32
-  board: nodemcu-32s
+  board: esp32dev
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
 
 logger:
-# ota:
-# api:
+ota:
+api:
 
 esp32_ble_tracker:
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "ESP32 Plant Monitor IP"
+    ssid:
+      name: "ESP32 Plant Monitor SSID"
+    bssid:
+      name: "ESP32 Plant Monitor BSSID"
+
+
+sensor:
+  - platform: xiaomi_miflora
+    mac_address: 'C4:7C:8D:65:CA:76'
+    temperature:
+      name: "Monstera Deliciosa Temperature"
+    moisture:
+      name: "Monstera Deliciosa Moisture"
+    illuminance:
+      name: "Monstera Deliciosa Illuminance"
+    conductivity:
+      name: "Monstera Deliciosa Soil Conductivity"
+    battery_level:
+      name: "Monstera Deliciosa Battery Level"
+  - platform: xiaomi_miflora
+    mac_address: 'C4:7C:8D:66:56:FC'
+    temperature:
+      name: "Ficus Elastica Temperature"
+    moisture:
+      name: "Ficus Elastica Moisture"
+    illuminance:
+      name: "Ficus Elastica Illuminance"
+    conductivity:
+      name: "Ficus Elastica Soil Conductivity"
+    battery_level:
+      name: "Ficus Elastica Battery Level"
