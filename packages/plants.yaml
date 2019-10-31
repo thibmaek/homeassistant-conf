@@ -11,8 +11,8 @@ homeassistant:
 plant:
   ficus_elastica:
     sensors:
-      battery: sensor.ficus_elastica_battery
-      brightness: sensor.ficus_elastica_brightness
+      battery: sensor.ficus_elastica_battery_level
+      brightness: sensor.ficus_elastica_illuminance
       conductivity: sensor.ficus_elastica_conductivity
       moisture: sensor.ficus_elastica_moisture
       temperature: sensor.ficus_elastica_temperature
@@ -23,8 +23,8 @@ plant:
     min_temperature: 18
   monstera_deliciosa:
     sensors:
-      battery: sensor.monstera_deliciosa_battery
-      brightness: sensor.monstera_deliciosa_brightness
+      battery: sensor.monstera_deliciosa_battery_level
+      brightness: sensor.monstera_deliciosa_illuminance
       conductivity: sensor.monstera_deliciosa_conductivity
       moisture: sensor.monstera_deliciosa_moisture
       temperature: sensor.monstera_deliciosa_temperature
