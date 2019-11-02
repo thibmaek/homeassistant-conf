@@ -2,14 +2,18 @@ homeassistant:
   customize:
     sensor.ivago_next_collection:
       icon: "mdi:dump-truck"
-    sensor.ivago_rest:
-      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-REST.jpg"
-    sensor.ivago_pmd:
-      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-PMD.jpg"
-    sensor.ivago_papier:
-      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-PAPIER.jpg"
-    sensor.ivago_glas:
-      entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-GLAS.jpg"
+    binary_sensor.ivago_rest:
+      icon: mdi:recycle
+      # entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-REST.jpg"
+    binary_sensor.ivago_pmd:
+      icon: mdi:bottle-soda-classic
+      # entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-PMD.jpg"
+    binary_sensor.ivago_papier:
+      icon: mdi:package-variant
+      # entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-PAPIER.jpg"
+    binary_sensor.ivago_glas:
+      icon: mdi:bottle-soda-outline
+      # entity_picture: "https://ivago.be/sites/all/themes/ivago/images/fractions/HAH-GLAS.jpg"
 
 binary_sensor:
   - platform: rest
