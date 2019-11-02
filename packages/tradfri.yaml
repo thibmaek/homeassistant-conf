@@ -1,0 +1,19 @@
+homeassistant:
+  customize:
+    light.kastlampje:
+      icon: "mdi:floor-lamp-dual"
+    light.ledspots_platenkast:
+      icon: "mdi:circle-double"
+    light.kofferlamp:
+      icon: "mdi:lamp"
+
+light:
+  - platform: switch
+    name: Kastlampje
+    entity_id: switch.kastlampje
+  - platform: switch
+    name: Ledspots platenkast
+    entity_id: switch.ledspots_platenkast
+  - platform: switch
+    name: Kofferlamp
+    entity_id: switch.kofferlamp
