@@ -6,6 +6,8 @@ homeassistant:
       icon: "mdi:circle-double"
     light.kofferlamp:
       icon: "mdi:lamp"
+    light.betonlamp:
+      icon: "mdi:lamp"
 
 light:
   - platform: switch
@@ -17,3 +19,6 @@ light:
   - platform: switch
     name: Kofferlamp
     entity_id: switch.kofferlamp
+  - platform: switch
+    name: Betonlamp
+    entity_id: switch.betonlamp

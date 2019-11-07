@@ -1,12 +1,12 @@
 - platform: samsungtv
+  port: 8002
   host: !secret samsung_ru7100_host
-  port: 8001
   mac: !secret samsung_ru7100_mac
 
 - platform: samsungtv_custom
+  protocol: ws
+  port: 8002
   host: !secret samsung_ru7100_host
-  port: 8001
   mac: !secret samsung_ru7100_mac
   sourcelist: '{"Telenet TV": "KEY_HDMI1", "Playstation 4": "KEY_HDMI2", "Chromecast": "KEY_HDMI3"}'
   applist: "YouTube, Plex, Spotify"
-  protocol: ctl
