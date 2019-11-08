@@ -15,3 +15,6 @@ jobs:
         uses: "docker://pipelinecomponents/yamllint:latest"
         with:
           args: yamllint .
+      # TODO: Validate ESPHome configs
+      # TODO: Validate Home Assistant build: @latest
+      # TODO: Validate Home Assistant build: @next
