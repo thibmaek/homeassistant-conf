@@ -28,6 +28,8 @@ plex.conf
 google_calendars.yaml
 tts/
 dasher/
+node_modules
+package-lock.json
 
 # Esphome artifacts
 esphome/.esphome/

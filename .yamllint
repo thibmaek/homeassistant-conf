@@ -2,6 +2,7 @@ extends: default
 
 ignore: |
   custom_components/
+  node_modules
 
 rules:
   comments-indentation: disable

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "lint:yaml": "yamllint .",
+    "lint": "npm run lint:yaml"
+  },
+  "devDependencies": {
+    "husky": "^3.0.9"
+  }
+}
