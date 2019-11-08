@@ -3,6 +3,8 @@ homeassistant:
   customize: !include customize.yaml
 
 cloud:
+tts:
+  - platform: google_translate
 
 frontend:
   javascript_version: latest
