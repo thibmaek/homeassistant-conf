@@ -9,12 +9,27 @@ jobs:
   yamllint:
     runs-on: ubuntu-latest
     steps:
-      - name: Getting your configuration from GitHub
+      - name: Checking out repository
         uses: actions/checkout@v1
       - name: Running YAMLlint
         uses: "docker://pipelinecomponents/yamllint:latest"
         with:
           args: yamllint .
+
+  home_assistant:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out repository
+        uses: actions/checkout@master
+      - name: Create secrets.yaml
+        run: mv secrets.test.yaml secrets.yaml
+      - name: "Validate with homeassistant/home-assistant:latest"
+        uses: "docker://homeassistant/home-assistant:latest"
+        with:
+          args: python -m homeassistant --config . --script check_config --info all
+      - name: "Validate with homeassistant/home-assistant:dev"
+        uses: "docker://homeassistant/home-assistant:dev"
+        continue-on-error: true
+        with:
+          args: python -m homeassistant --config . --script check_config --info all
       # TODO: Validate ESPHome configs
-      # TODO: Validate Home Assistant build: @latest
-      # TODO: Validate Home Assistant build: @next
