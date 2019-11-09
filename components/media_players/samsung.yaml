@@ -1,8 +1,3 @@
-- platform: samsungtv
-  port: 8002
-  host: !secret samsung_ru7100_host
-  mac: !secret samsung_ru7100_mac
-
 - platform: samsungtv_custom
   protocol: ws
   port: 8002
