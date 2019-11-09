@@ -16,20 +16,35 @@ jobs:
         with:
           args: yamllint .
 
-  home_assistant:
+  esphome:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out repository
         uses: actions/checkout@master
-      - name: Create secrets.yaml
-        run: mv secrets.test.yaml secrets.yaml
-      - name: "Validate with homeassistant/home-assistant:latest"
-        uses: "docker://homeassistant/home-assistant:latest"
+      - name: Setup test env
+        run: |
+          cd esphome
+          echo "wifi_ssid: wifi" > secrets.yaml
+          echo "wifi_password: pass" >> secrets.yaml
+      - name: Validate ESPHome configs
+        uses: "docker://esphome/esphome:latest"
         with:
-          args: python -m homeassistant --config . --script check_config --info all
-      - name: "Validate with homeassistant/home-assistant:dev"
-        uses: "docker://homeassistant/home-assistant:dev"
-        continue-on-error: true
-        with:
-          args: python -m homeassistant --config . --script check_config --info all
-      # TODO: Validate ESPHome configs
+          args: ./test.sh
+
+  # home_assistant:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checking out repository
+  #       uses: actions/checkout@master
+  #     - name: Create secrets.yaml
+  #       run: mv secrets.test.yaml secrets.yaml
+  #     - name: "Validate with homeassistant/home-assistant:latest"
+  #       uses: "docker://homeassistant/home-assistant:latest"
+  #       with:
+  #         args: python -m homeassistant --config . --script check_config --info all
+  #     - name: "Validate with homeassistant/home-assistant:dev"
+  #       uses: "docker://homeassistant/home-assistant:dev"
+  #       continue-on-error: true
+  #       with:
+  #         args: python -m homeassistant --config . --script check_config --info all
+
