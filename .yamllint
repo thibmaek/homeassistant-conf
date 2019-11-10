@@ -3,6 +3,7 @@ extends: default
 ignore: |
   custom_components/
   node_modules
+  esphome/**/*.pio*
 
 rules:
   comments-indentation: disable

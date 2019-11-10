@@ -52,4 +52,3 @@ jobs:
   #       continue-on-error: true
   #       with:
   #         args: python -m homeassistant --config . --script check_config --info all
-
