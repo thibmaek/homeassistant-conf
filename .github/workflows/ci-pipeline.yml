@@ -26,10 +26,15 @@ jobs:
           cd esphome
           echo "wifi_ssid: wifi" > secrets.yaml
           echo "wifi_password: pass" >> secrets.yaml
+          cat secrets.yaml
+      - name: Collect ESPHome configs to validate
+        run: |
+          shopt -s globstar nullglob
+          ESPHOME_CONFIGS=( **/*.yaml )
       - name: Validate ESPHome configs
         uses: "docker://esphome/esphome:latest"
         with:
-          args: ./test.sh
+          args: esphome "${ESPHOME_CONFIGS[*]//secrets.yaml/}" compile
 
   # home_assistant:
   #   runs-on: ubuntu-latest
