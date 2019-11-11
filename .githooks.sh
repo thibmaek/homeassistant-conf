@@ -9,13 +9,13 @@ function pre_push() {
   stagedFiles=$(git diff --name-only --cached)
   isValidFile=false
 
-  if "$stagedFiles" | grep "components/" ; then
+  if echo "$stagedFiles" | grep "components/" ; then
     isValidFile=true
-  elif "$stagedFiles" | grep "custom_components/"; then
+  elif echo "$stagedFiles" | grep "custom_components/"; then
     isValidFile=true
-  elif "$stagedFiles" | grep "packages/"; then
+  elif echo "$stagedFiles" | grep "packages/"; then
     isValidFile=true
-  elif "$stagedFiles" | grep "configuration.yaml"; then
+  elif echo "$stagedFiles" | grep "configuration.yaml"; then
     isValidFile=true
   fi
 
