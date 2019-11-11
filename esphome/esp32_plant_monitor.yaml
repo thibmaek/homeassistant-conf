@@ -24,7 +24,7 @@ text_sensor:
 
 
 sensor:
-  - platform: xiaomi_miflora
+  - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:65:CA:76'
     temperature:
       name: "Monstera Deliciosa Temperature"
@@ -36,7 +36,7 @@ sensor:
       name: "Monstera Deliciosa Soil Conductivity"
     battery_level:
       name: "Monstera Deliciosa Battery Level"
-  - platform: xiaomi_miflora
+  - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:66:56:FC'
     temperature:
       name: "Ficus Elastica Temperature"
