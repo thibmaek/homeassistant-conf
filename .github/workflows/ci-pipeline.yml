@@ -18,23 +18,30 @@ jobs:
 
   esphome:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python_version: [ '3.x' ]
     steps:
       - name: Checking out repository
         uses: actions/checkout@master
-      - name: Setup test env
+      - name: "Setup Python: ${{ matrix.python_version }}"
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python_version }}
+          architecture: x64
+      - name: "Install ESPHome (via pip)"
+        run: pip3 install esphome
+      - name: Setup testing
         run: |
-          cd esphome
+          cd esphome/
           echo "wifi_ssid: wifi" > secrets.yaml
           echo "wifi_password: pass" >> secrets.yaml
           cat secrets.yaml
-      - name: Collect ESPHome configs to validate
+      - name: Compile (validate) ESPHome configs
         run: |
           shopt -s globstar nullglob
           ESPHOME_CONFIGS=( **/*.yaml )
-      - name: Validate ESPHome configs
-        uses: "docker://esphome/esphome:latest"
-        with:
-          args: ${ESPHOME_CONFIGS[*]//secrets.yaml/} compile
+          esphome ${ESPHOME_CONFIGS[*]//secrets.yaml/} compile
 
   # home_assistant:
   #   runs-on: ubuntu-latest
