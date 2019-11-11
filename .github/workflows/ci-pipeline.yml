@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python_version: [ '3.x' ]
+        python_version: ['3.x']
     steps:
       - name: Checking out repository
         uses: actions/checkout@master

@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-commit": "npm run lint",
-    "pre-push": "./generate_secrets.sh && git add secrets.test.yaml && git commit --amend --no-edit"
+    "pre-commit": "./.githooks.sh pre_commit",
+    "pre-push": "./.githooks.sh pre_push"
   }
 }
