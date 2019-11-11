@@ -33,12 +33,14 @@ jobs:
         run: pip3 install esphome
       - name: Setup testing
         run: |
-          cd esphome/
+          cd esphome
           echo "wifi_ssid: wifi" > secrets.yaml
           echo "wifi_password: pass" >> secrets.yaml
           cat secrets.yaml
+          pwd
       - name: Compile (validate) ESPHome configs
         run: |
+          cd esphome
           shopt -s globstar nullglob
           ESPHOME_CONFIGS=( **/*.yaml )
           esphome ${ESPHOME_CONFIGS[*]//secrets.yaml/} compile
