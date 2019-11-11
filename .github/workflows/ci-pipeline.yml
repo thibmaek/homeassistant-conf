@@ -34,10 +34,9 @@ jobs:
       - name: Setup testing
         run: |
           cd esphome
-          echo "wifi_ssid: wifi" > secrets.yaml
-          echo "wifi_password: pass" >> secrets.yaml
+          echo "wifi_ssid: home_wifi" > secrets.yaml
+          echo "wifi_password: my_8_characters_long_key" >> secrets.yaml
           cat secrets.yaml
-          pwd
       - name: Compile (validate) ESPHome configs
         run: |
           cd esphome
