@@ -1,4 +1,0 @@
-- platform: rest
-  name: "Circle CI Build Status"
-  resource: https://circleci.com/api/v1.1/project/github/thibmaek/homeassistant-conf?limit=1
-  value_template: "{{ value_json[0].status }}"
