@@ -26,6 +26,7 @@ media_extractor:
 history:
 recorder:
   db_url: !secret maria_db_url
+  purge_keep_days: 5
   exclude:
     domains:
       - calendar
@@ -70,6 +71,11 @@ tuya:
   username: !secret tuya_username
   password: !secret tuya_password
   country_code: '32'
+
+homekit:
+  filter:
+    include_entities:
+      - light.lsc_smart_connect_bedroom_light
 
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 input_boolean: !include components/inputs/boolean.yaml
