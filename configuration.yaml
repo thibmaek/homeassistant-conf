@@ -54,6 +54,7 @@ downloader:
   download_dir: '/share'
 
 ios:
+mobile_app:
 map:
 person:
 wake_on_lan:
