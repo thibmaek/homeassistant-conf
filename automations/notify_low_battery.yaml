@@ -1,0 +1,24 @@
+- alias: Low Battery Notification
+
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.switch_bureau
+      below: 20
+    - platform: numeric_state
+      entity_id: sensor.switch_dj_booth
+      below: 20
+    - platform: numeric_state
+      entity_id: sensor.switch_slaapkamer
+      below: 20
+    - platform: numeric_state
+      entity_id: sensor.switch_leeshoekje
+      below: 20
+    - platform: numeric_state
+      entity_id: sensor.controller_keuken
+      below: 20
+
+  action:
+    service: notify.thibault_devices
+    data_template:
+      title: "Low Battery Alert"
+      message: "Device '{{ trigger.to_state.name }}' has LOW battery: {{ trigger.to_state.state }}%."
