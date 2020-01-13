@@ -16,6 +16,28 @@ wake_up:
         entity_id: media_player.kitchen
         volume_level: 0.20
 
+going_to_bed:
+  alias: Going to bed
+  sequence:
+    - event: LOGBOOK_ENTRY
+      event_data:
+        name: Thib
+        message: is waking up
+        entity_id: device_tracker.thibaults_iphone
+        domain: light
+    - service: media_player.turn_off
+      data:
+        entity_id: media_player.samsung_tv_remote
+    - service: light.turn_off
+      data:
+        entity_id: group.all_lights
+    - service: switch.turn_off
+      data:
+        entity_id: group.all_switches
+    - service: switch.turn_on
+      data:
+        entity_id: switch.lsc_smart_connect_bedroom_relay
+
 leave_house:
   alias: "Leaving the house"
   sequence:
