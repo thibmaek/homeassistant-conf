@@ -30,10 +30,10 @@ going_to_bed:
         entity_id: media_player.samsung_tv_remote
     - service: light.turn_off
       data:
-        entity_id: group.all_lights
+        entity_id: all
     - service: switch.turn_off
       data:
-        entity_id: group.all_switches
+        entity_id: all
     - service: switch.turn_on
       data:
         entity_id: switch.lsc_smart_connect_bedroom_relay
@@ -43,7 +43,7 @@ leave_house:
   sequence:
     - service: light.turn_off
       data:
-        entity_id: group.all_lights
+        entity_id: all
     - service: media_player.media_stop
       data:
         entity_id: media_player.kitchen

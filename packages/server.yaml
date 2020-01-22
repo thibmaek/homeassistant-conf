@@ -1,7 +1,5 @@
 homeassistant:
   customize:
-    script.ha_reload_groups:
-      icon: mdi:account-group
     script.ha_reload_core:
       icon: mdi:reload
     script.ha_reload_automations:
@@ -14,11 +12,6 @@ homeassistant:
       icon: mdi:restart
 
 script:
-  ha_reload_groups:
-    alias: "Quick reload groups"
-    sequence:
-      - service: group.reload
-
   ha_reload_core:
     alias: "Quick reload core"
     sequence:
