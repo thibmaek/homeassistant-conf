@@ -1,19 +1,33 @@
+substitutions:
+  device_name: "lsc_smart_connect_switch"
+  friendly_name: "LSC Smart Connect Switch"
+
 esphome:
-  name: lsc_smart_connect_switch
+  name: "${device_name}"
   platform: ESP8266
   board: esp01_1m
 
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
-api:
-logger:
-ota:
+<<: !include common.yaml
 
 binary_sensor:
   - platform: status
-    name: "LSC Smart Connect Status"
+    name: "${friendly_name} — Status"
+  - platform: gpio
+    name: "${friendly_name}"
+    pin:
+      number: GPIO14
+      mode: INPUT_PULLUP
+      inverted: true
+    internal: true
+    on_press:
+      - switch.toggle: relay_and_light
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
 
 output:
   - platform: esp8266_pwm
@@ -25,7 +39,7 @@ output:
 light:
   - platform: monochromatic
     id: status_led
-    name: "LSC Smart Connect Light"
+    name: "${friendly_name}"
     output: led
 
 switch:
@@ -33,7 +47,7 @@ switch:
     id: relay
     pin: GPIO12
   - platform: template
-    name: "LSC Smart Connect Relay"
+    name: "${friendly_name}"
     optimistic: true
     id: relay_and_light
     turn_on_action:
