@@ -1,5 +1,10 @@
 {
   "files.associations": {
     "*.yaml": "home-assistant"
-  }
+  },
+  "gitSemanticCommit.types": [
+    "(esphome)",
+    "(lovelace)",
+    "(dev)"
+],
 }
