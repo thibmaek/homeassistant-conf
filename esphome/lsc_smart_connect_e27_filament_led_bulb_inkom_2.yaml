@@ -1,0 +1,38 @@
+substitutions:
+  device_name: "lsc_smart_connect_e27_filament_led_inkom_2"
+  friendly_name: "LSC Smart Connect E27 Filament LED Inkom 2"
+
+<<: !include common.yaml
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp01_1m
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
+
+light:
+  - platform: cwww
+    name: "${friendly_name}"
+    cold_white: output_cold_white
+    warm_white: output_warm_white
+    cold_white_color_temperature: "3500 K"
+    warm_white_color_temperature: "2000 K"
+    restore_mode: ALWAYS_ON
+
+output:
+  - platform: esp8266_pwm
+    id: output_cold_white
+    pin: 14
+  - platform: esp8266_pwm
+    id: output_warm_white
+    pin: 12
