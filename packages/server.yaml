@@ -3,7 +3,7 @@ homeassistant:
     script.ha_reload_core:
       icon: mdi:reload
     script.ha_reload_automations:
-      icon: mdi:playlist-play
+      icon: mdi:robot
     script.ha_reload_scripts:
       icon: mdi:script-text
     script.ha_check_config:

@@ -69,6 +69,8 @@ homekit:
     include_entities:
       - switch.lsc_smart_connect_bedroom_relay
       - light.lsc_smart_connect_e27_filament_led
+    include_domains:
+      - scene
 
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 input_boolean: !include components/inputs/boolean.yaml
