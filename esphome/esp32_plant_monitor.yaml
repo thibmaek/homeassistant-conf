@@ -1,50 +1,52 @@
+substitutions:
+  device_name: "esp32_plant_monitor"
+  friendly_name: "ESP32 Plant Monitor"
+  plant_one: "Monstera Deliciosa (Inkom)"
+  plant_two: "Ficus Elastica (Living)"
+
+<<: !include common.yaml
+
 esphome:
-  name: esp32_plant_monitor
+  name: "${device_name}"
   platform: ESP32
   board: esp32dev
 
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
-logger:
-ota:
-api:
-
 esp32_ble_tracker:
 
-text_sensor:
-  - platform: wifi_info
-    ip_address:
-      name: "ESP32 Plant Monitor IP"
-    ssid:
-      name: "ESP32 Plant Monitor SSID"
-    bssid:
-      name: "ESP32 Plant Monitor BSSID"
-
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
 
 sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
+
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:65:CA:76'
     temperature:
-      name: "Monstera Deliciosa Temperature"
+      name: "${plant_one} — Temperature"
     moisture:
-      name: "Monstera Deliciosa Moisture"
+      name: "${plant_one} — Moisture"
     illuminance:
-      name: "Monstera Deliciosa Illuminance"
+      name: "${plant_one} — Illuminance"
     conductivity:
-      name: "Monstera Deliciosa Soil Conductivity"
+      name: "${plant_one} — Soil Conductivity"
     battery_level:
-      name: "Monstera Deliciosa Battery Level"
+      name: "${plant_one} — Battery Level"
+
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:66:56:FC'
     temperature:
-      name: "Ficus Elastica Temperature"
+      name: "${plant_two} Temperature"
     moisture:
-      name: "Ficus Elastica Moisture"
+      name: "${plant_two} Moisture"
     illuminance:
-      name: "Ficus Elastica Illuminance"
+      name: "${plant_two} Illuminance"
     conductivity:
-      name: "Ficus Elastica Soil Conductivity"
+      name: "${plant_two} Soil Conductivity"
     battery_level:
-      name: "Ficus Elastica Battery Level"
+      name: "${plant_two} Battery Level"
