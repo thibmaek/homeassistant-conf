@@ -1,10 +1,11 @@
 {
   "files.associations": {
-    "*.yaml": "home-assistant"
+    "*.yaml": "home-assistant",
+    "*.yml": "home-assistant",
   },
   "gitSemanticCommit.types": [
-    "(esphome)",
-    "(lovelace)",
-    "(dev)"
+    "(⚡️ esphome)",
+    "(🃏 lovelace)",
+    "(🏡 core)"
 ],
 }

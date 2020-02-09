@@ -76,7 +76,6 @@ input_select: !include components/inputs/select.yaml
 media_player: !include_dir_merge_list components/media_players/
 notify: !include_dir_merge_list components/notifications/
 rest_command: !include_dir_merge_named components/rest_commands/
-scene: !include_dir_merge_list components/scenes/
 script: !include_dir_merge_named components/scripts/
 sensor: !include_dir_merge_list components/sensors/
 switch: !include_dir_merge_list components/switches/
@@ -84,3 +83,5 @@ weather: !include_dir_merge_list components/weather/
 
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations/
+
+scene: !include scenes.yaml
