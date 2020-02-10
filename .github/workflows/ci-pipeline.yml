@@ -34,15 +34,11 @@ jobs:
       - name: Setup testing
         run: |
           cd esphome
-          echo "wifi_ssid: home_wifi" > secrets.yaml
-          echo "wifi_password: my_8_characters_long_key" >> secrets.yaml
-          cat secrets.yaml
+          ./test_esphome.sh setup_mock_env
       - name: Compile (validate) ESPHome configs
         run: |
           cd esphome
-          shopt -s globstar nullglob
-          ESPHOME_CONFIGS=( **/*.yaml )
-          esphome ${ESPHOME_CONFIGS[*]//secrets.yaml/} compile
+          ./test_esphome.sh run_all
 
   # home_assistant:
   #   runs-on: ubuntu-latest
