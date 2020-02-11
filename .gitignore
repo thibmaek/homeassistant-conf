@@ -19,6 +19,7 @@ entity_registry.yaml
 .cloud/
 .stfolder/
 .storage
+.homekit.state
 
 # Vendor
 .ios.conf
@@ -39,3 +40,6 @@ esphome/**/lib/
 esphome/**/src/
 esphome/**/platformio.ini
 esphome/secrets.yaml
+
+# HA Generated / Specific
+.HA_VERSION
