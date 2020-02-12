@@ -1,22 +1,32 @@
+substitutions:
+  device_name: esp32_camera
+  friendly_name: "ESP32 Camera"
+
 esphome:
-  name: esp32_camera
+  name: "${device_name}"
   platform: ESP32
   board: esp-wrover-kit
 
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+<<: !include common.yaml
 
-logger:
-api:
-ota:
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
 
 switch:
   - platform: restart
-    name: "ESP32 Camera Restart"
+    name: "${friendly_name} Restart"
     id: restart_camera
 
 esp32_camera:
+  name: "${friendly_name}"
   external_clock:
     pin: GPIO0
     frequency: 20MHz
@@ -28,8 +38,6 @@ esp32_camera:
   href_pin: GPIO23
   pixel_clock_pin: GPIO22
   power_down_pin: GPIO32
-
-  name: ESP32 AI Thinker
 
 time:
   - platform: sntp

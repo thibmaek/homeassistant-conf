@@ -1,33 +1,28 @@
+substitutions:
+  device_name: esp8266_ws8212b_dj_booth_led_strip
+  friendly_name: "ESP8266 WS8212B DJ Booth Led Strip"
+
 esphome:
-  name: nodemcu_ws2812
+  name: "${device_name}"
   platform: ESP8266
   board: nodemcuv2
 
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+<<: !include common.yaml
 
-logger:
-ota:
-api:
-
-text_sensor:
-  - platform: wifi_info
-    ip_address:
-      name: "WS8212 IP"
-    ssid:
-      name: "WS8212 SSID"
-    bssid:
-      name: "WS8212 BSSID"
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
 
 sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
   - platform: wifi_signal
-    name: "WS8212 Signal"
+    name: "${friendly_name} — Signal"
     update_interval: 60s
 
 light:
   - platform: fastled_clockless
-    name: "WS2812B 5M 30 IP30"
+    name: "${friendly_name}"
     chipset: WS2812B
     pin: D4
     rgb_order: GRB # Valid values are RGB, RBG, GRB, GBR, BRG and BGR. Defaults to RGB. GRB
