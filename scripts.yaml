@@ -5,7 +5,7 @@ wake_up:
       event_data:
         name: Thib
         message: is waking up
-        entity_id: device_tracker.thibaults_iphone
+        entity_id: person.thibault
         domain: light
     - service: media_player.select_source
       data:
@@ -17,26 +17,20 @@ wake_up:
         volume_level: 0.20
 
 going_to_bed:
-  alias: Going to bed
+  alias: "Going to bed"
   sequence:
     - event: LOGBOOK_ENTRY
       event_data:
         name: Thib
-        message: is waking up
-        entity_id: device_tracker.thibaults_iphone
+        message: going to bed
+        entity_id: person.thibault
         domain: light
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.samsung_tv_remote
     - service: light.turn_off
       data:
         entity_id: all
-    - service: switch.turn_off
+    - service: scene.turn_on
       data:
-        entity_id: all
-    - service: switch.turn_on
-      data:
-        entity_id: switch.lsc_smart_connect_bedroom_relay
+        entity_id: scene.cosy_bedroom
 
 leave_house:
   alias: "Leaving the house"
