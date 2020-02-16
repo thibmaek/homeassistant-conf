@@ -1,0 +1,58 @@
+substitutions:
+  device_name: lsc_smart_connect_switch_bedroom
+  friendly_name: "LSC Smart Connect Switch Bedroom"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp01_1m
+
+<<: !include common.yaml
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+  - platform: gpio
+    name: "${friendly_name}"
+    pin:
+      number: GPIO14
+      mode: INPUT_PULLUP
+      inverted: true
+    internal: true
+    on_press:
+      - switch.toggle: relay_and_light
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
+
+output:
+  - platform: esp8266_pwm
+    id: led
+    pin:
+      number: GPIO4
+      inverted: true
+
+light:
+  - platform: monochromatic
+    id: status_led
+    name: "${friendly_name} — Status LED"
+    output: led
+
+switch:
+  - platform: gpio
+    id: relay
+    pin: GPIO12
+  - platform: template
+    name: "${friendly_name}"
+    optimistic: true
+    id: relay_and_light
+    turn_on_action:
+      - switch.turn_on: relay
+      - light.turn_on: status_led
+    turn_off_action:
+      - switch.turn_off: relay
+      - light.turn_off: status_led
