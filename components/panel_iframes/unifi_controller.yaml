@@ -1,0 +1,4 @@
+unifi_controller:
+  title: "Unifi Controller"
+  icon: mdi:wan
+  url: !secret unifi_controller_url
