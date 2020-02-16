@@ -69,8 +69,15 @@ homekit:
     include_entities:
       - switch.lsc_smart_connect_bedroom_relay
       - light.lsc_smart_connect_e27_filament_led
+      - sensor.bedroom_temperature
+      - sensor.living_room_temperature
+      - sensor.upstairs_temperature
     include_domains:
       - scene
+
+spotify:
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
 
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 input_boolean: !include components/inputs/boolean.yaml
