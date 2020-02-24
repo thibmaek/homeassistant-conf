@@ -92,8 +92,5 @@ switch: !include_dir_merge_list components/switches/
 weather: !include_dir_merge_list components/weather/
 
 automation: !include automations.yaml
-automation old: !include_dir_merge_list automations/
-
 scene: !include scenes.yaml
-
 script: !include scripts.yaml
