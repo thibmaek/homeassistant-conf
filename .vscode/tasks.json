@@ -7,6 +7,11 @@
       "label": "Lint YAML",
       "type": "shell",
       "command": "yamllint ."
+    },
+    {
+      "label": "Compile ESPHome",
+      "type": "shell",
+      "command": "esphome *.yaml compile"
     }
   ]
 }

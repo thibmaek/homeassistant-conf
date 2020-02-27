@@ -20,38 +20,10 @@
       "    {% endif %}",
     ]
   },
-  "Manual automation": {
-    "scope": "yaml",
-    "description": "Create a new manual automation",
-    "prefix": "automation",
-    "body": [
-      "- alias: \"${1:Create new persisitent notification}\"",
-      "  trigger:",
-      "    - entity_id: ${2:sensor.some_sensor}",
-      "      platform: ${3|state,numeric_state|}",
-      "  condition: [$4]",
-      "  action:",
-      "    - service: ${5:persistent_notification.create}",
-      "      data:",
-      "        title: \"${6:Created a new notification}\""
-    ]
-  },
   "Include (file)": {
     "scope": "yaml",
     "description": "Include a file",
     "prefix": "incl",
     "body": "!include ${1:file}.yaml"
-  },
-  "Zone": {
-    "scope": "yaml",
-    "description": "Create a new zone",
-    "prefix": "zone",
-    "body": [
-      "- name: \"${1:My Zone}\"",
-      "  latitude: ${2:51.197718}",
-      "  longitude: ${3:51.197718}",
-      "  radius: ${4:100}",
-      "  icon: mdi:${5:map-marker-path}"
-    ]
   }
 }
