@@ -6,6 +6,7 @@
   "gitSemanticCommit.types": [
     "(⚡️ esphome)",
     "(🃏 lovelace)",
-    "(🏡 core)"
+    "(🏡 core)",
+    "(🔧 tooling)"
 ],
 }
