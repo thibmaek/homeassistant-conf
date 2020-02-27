@@ -15,6 +15,11 @@ function run_all() {
       continue
     fi
 
+    if grep -q "_archive" "$config"; then
+      echo "Archived config. Continuing..."
+      continue
+    fi
+
     echo "🛠  Compiling ESPHome configuration: $config"
     if ! esphome "$config" compile; then
       exit 1
