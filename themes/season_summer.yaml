@@ -1,7 +1,6 @@
 season_summer:
-  background-image: 'center / cover no-repeat url("/local/backgrounds/season_summer.jpg") fixed'
 
-# Main colors that can be changed
+  # Main colors that can be changed
   primary-color: "#bd947e"
   disabled-text-color: "#545454"
   divider-color: "rgba(255, 255, 255, 0.12)"
@@ -15,7 +14,7 @@ season_summer:
   secondary-background-color: "#2b2b2b"
   secondary-text-color: "#04a7bc"
 
-# Colors based on variables, see above
+  # Colors based on variables, see above
   label-badge-background-color: "var(--secondary-background-color)"
   label-badge-text-color: "var(--text-primary-color)"
   paper-card-header-color: "#var(--paper-item-icon-color)"
