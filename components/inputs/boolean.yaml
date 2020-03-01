@@ -1,7 +1,3 @@
 travel_mode:
   name: "Travel Mode"
-  icon: "mdi:airplane"
-
-out_of_office:
-  name: "Out of office"
-  icon: "mdi:beach"
+  icon: "mdi:wallet-travel"

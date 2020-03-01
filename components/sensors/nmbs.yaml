@@ -6,9 +6,9 @@
 - platform: nmbs
   name: "Trein Lotte naar werk"
   station_from: "Gent Dampoort"
-  station_to: "Antwerpen Centraal"
+  station_to: "Antwerpen Berchem"
 
 - platform: nmbs
   name: "Trein Lotte naar huis"
-  station_from: "Antwerpen Centraal"
+  station_from: "Antwerpen Berchem"
   station_to: "Gent Dampoort"
