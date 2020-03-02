@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+info() {
+  printf "\033[34m%s\033[0m\n" "$1"
+  printf "\n"
+}
+
+
 function setup_mock_env() {
   echo "wifi_ssid: home_wifi" > secrets.yaml
   echo "wifi_password: my_8_characters_long_key" >> secrets.yaml
@@ -15,8 +21,8 @@ function run_all() {
       continue
     fi
 
-    if grep -q "_archive" "$config"; then
-      echo "Archived config. Continuing..."
+    if echo "$config" | grep -q "_archive"; then
+      info "Archived config $config. Skipping..."
       continue
     fi
 
