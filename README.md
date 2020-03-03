@@ -1,13 +1,22 @@
 # Home Assistant Conf
 
-[![Build Status](https://travis-ci.org/thibmaek/homeassistant-conf.svg?branch=master)](https://travis-ci.org/thibmaek/homeassistant-conf)
-![Docker system](https://badgen.net/badge/Docker/Hass.io/?icon=docker)
+[![Actions Status](https://github.com/thibmaek/homeassistant-conf/workflows/CI%20Pipeline/badge.svg)](https://github.com/thibmaek/homeassistant-conf/actions)
+![Docker system](https://badgen.net/badge/Docker/home-assistant/?icon=docker)
 
-> Personal configuration for [Home Assistant](https://home-assistant.io), specifically for Hass.io env.
+> Personal configuration for [Home Assistant](https://home-assistant.io)
 
-## Installation
+![Screenshot of the overview in my HA instance](https://github.com/thibmaek/homeassistant-conf/blob/master/.github/assets/overview_screenshot.png)
 
-I use this configuration together with the Git Pull add-on to automatically fetch updates from this git repo and restart if needed:
+## Architecture
+
+Check out [this diagram](https://whimsical.com/8gZ6KJPKUYjKcYVXVnyxJq) for an overview of how my homelab / HA instance is structured.
+
+## Usage
+
+<details>
+  <summary>
+    I use this configuration together with the Git Pull add-on to automatically fetch updates from this git repo and restart if needed:
+  </summary>
 
 ```json
 {
@@ -37,8 +46,10 @@ I use this configuration together with the Git Pull add-on to automatically fetc
 2. Enter the details above in the Git Pull add-on and adjust if needed
 3. Start the add-on
 
-## YAML Styleguide
+</details>
 
-- Use single quotes for single words
-- Use double quotes for multiple words
-- No quotes for MQTT topics
+## Tools
+
+* Makefile to as simple task-runner
+* [icefox/git-hooks](https://github.com/icefox/git-hooks) for git hooks
+* [Github Actions](https://github.com/thibmaek/homeassistant-conf/actions) as CI pipeline

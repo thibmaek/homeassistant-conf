@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -e
+
+function generate_secret() {
+  local stagedFiles
+  stagedFiles=$(git diff-index --cached --name-only HEAD)
+  isValidFile=false
+
+  if echo "$stagedFiles" | grep "components/"; then
+    isValidFile=true
+  elif echo "$stagedFiles" | grep "custom_components/"; then
+    isValidFile=true
+  elif echo "$stagedFiles" | grep "packages/"; then
+    isValidFile=true
+  elif echo "$stagedFiles" | grep "configuration.yaml"; then
+    isValidFile=true
+  fi
+
+  if "$isValidFile" = true; then
+    ./generate_secrets.sh &&
+      git add secrets.test.yaml &&
+      git commit --amend --no-edit --no-verify
+  fi
+}
+
+case "${1}" in
+--about)
+  echo "Generates Home Assistant secrets stub before push."
+  ;;
+*)
+  generate_secrets
+  ;;
+esac

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+case "${1}" in
+--about)
+  echo "Lints the given files"
+  ;;
+*)
+  make lint_yaml
+  ;;
+esac
+

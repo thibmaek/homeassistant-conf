@@ -1,6 +1,0 @@
-{
-  "hooks": {
-    "pre-commit": "./.githooks.sh pre_commit",
-    "pre-push": "./.githooks.sh pre_push"
-  }
-}
