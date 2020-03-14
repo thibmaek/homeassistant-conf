@@ -3,11 +3,8 @@
   api_key: !secret dark_sky_api_key
   language: 'nl'
   forecast:
+    - 0
     - 1
-    - 2
-    - 3
-    - 4
-    - 5
   monitored_conditions:
     - summary
     - precip_type
