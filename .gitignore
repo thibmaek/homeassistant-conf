@@ -43,3 +43,4 @@ esphome/secrets.yaml
 
 # HA Generated / Specific
 .HA_VERSION
+.ps4-games.json

@@ -4,9 +4,10 @@
     "*.yml": "home-assistant",
   },
   "gitSemanticCommit.types": [
-    "(⚡️ esphome)",
-    "(🃏 lovelace)",
-    "(🏡 core)",
-    "(🔧 tooling)"
+    "🏡 (core)",
+    "🃏 (lovelace)",
+    "🔧 (tooling)",
+    "⚡️ (esphome)",
+    "📦 (HACS)"
 ],
 }
