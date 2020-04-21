@@ -82,6 +82,7 @@ light: !include_dir_merge_list components/lights/
 media_player: !include_dir_merge_list components/media_players/
 notify: !include_dir_merge_list components/notifications/
 panel_iframe: !include_dir_merge_named components/panel_iframes
+rest_command: !include_dir_merge_named components/rest_commands
 sensor: !include_dir_merge_list components/sensors/
 weather: !include_dir_merge_list components/weather/
 
