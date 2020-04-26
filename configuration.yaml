@@ -76,6 +76,11 @@ spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
 
+octoprint:
+  host: !secret rpi_node_fuse
+  api_key: !secret octoprint_api_key
+  port: 5000
+
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 input_boolean: !include components/inputs/boolean.yaml
 light: !include_dir_merge_list components/lights/
