@@ -1,0 +1,5 @@
+- platform: mqtt
+  name: Outdoor lights
+  command_topic: !secret homewizard_mqtt_topic_outdoor_lights
+  payload_on: 'on'
+  payload_off: 'off'

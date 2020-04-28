@@ -6,7 +6,7 @@ substitutions:
 esphome:
   name: "${device_name}"
   platform: ESP8266
-  board: d1_mini
+  board: nodemcuv2
 
 <<: !include common.yaml
 
