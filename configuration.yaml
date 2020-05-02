@@ -80,6 +80,8 @@ octoprint:
   host: !secret rpi_node_fuse
   api_key: !secret octoprint_api_key
   port: 5000
+  number_of_tools: 1
+  bed: true
 
 binary_sensor: !include_dir_merge_list components/binary_sensors/
 input_boolean: !include components/inputs/boolean.yaml
