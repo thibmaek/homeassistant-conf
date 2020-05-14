@@ -1,3 +1,7 @@
 travel_mode:
   name: "Travel Mode"
   icon: "mdi:wallet-travel"
+
+meeting_mode:
+  name: "Meeting Mode"
+  icon: mdi:message-video
