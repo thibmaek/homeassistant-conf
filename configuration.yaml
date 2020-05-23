@@ -1,29 +1,40 @@
+# region: Default config
 homeassistant:
   packages: !include_dir_named packages/
   customize: !include customize.yaml
 
 cloud:
-tts:
-  - platform: google_translate
 
 frontend:
-  javascript_version: latest
   themes: !include_dir_merge_named themes/
 
-hacs:
-  token: !secret hacs_github_token
-  sidepanel_title: HACS
-  sidepanel_icon: "mdi:package"
-
 system_health:
+updater:
 logger:
   default: warn
 
 config:
 discovery:
-media_extractor:
+ssdp:
+zeroconf:
+ios:
+mobile_app:
+map:
+person:
+wake_on_lan:
+sun:
 
+automation: !include automations.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
+# endregion
+
+# region: History
 history:
+logbook:
+  exclude:
+    domains:
+      - calendar
 recorder:
   db_url: !secret maria_db_url
   purge_keep_days: 5
@@ -49,13 +60,17 @@ influxdb:
       - light
       - sensor
       - person
+# endregion
 
-ios:
-mobile_app:
-map:
-person:
-wake_on_lan:
-sun:
+# region: 3rd party
+tts:
+  - platform: google_translate
+
+hacs:
+  token: !secret hacs_github_token
+  sidepanel_title: HACS
+  sidepanel_icon: "mdi:package"
+  country: BE
 
 google:
   client_id: !secret google_calendar_client_id
@@ -82,18 +97,17 @@ octoprint:
   port: 5000
   number_of_tools: 1
   bed: true
+# endregion
 
-binary_sensor: !include_dir_merge_list components/binary_sensors/
-input_boolean: !include components/inputs/boolean.yaml
-light: !include_dir_merge_list components/lights/
-media_player: !include_dir_merge_list components/media_players/
-notify: !include_dir_merge_list components/notifications/
-panel_iframe: !include_dir_merge_named components/panel_iframes
-rest_command: !include_dir_merge_named components/rest_commands
-sensor: !include_dir_merge_list components/sensors/
-switch: !include_dir_merge_list components/switches/
-weather: !include_dir_merge_list components/weather/
-
-automation: !include automations.yaml
-scene: !include scenes.yaml
-script: !include scripts.yaml
+# region: integrations
+binary_sensor: !include_dir_merge_list integrations/binary_sensors/
+input_boolean: !include integrations/inputs/boolean.yaml
+light: !include_dir_merge_list integrations/lights/
+media_player: !include_dir_merge_list integrations/media_players/
+notify: !include_dir_merge_list integrations/notifications/
+panel_iframe: !include_dir_merge_named integrations/panel_iframes
+rest_command: !include_dir_merge_named integrations/rest_commands
+sensor: !include_dir_merge_list integrations/sensors/
+switch: !include_dir_merge_list integrations/switches/
+weather: !include_dir_merge_list integrations/weather/
+# endregion
