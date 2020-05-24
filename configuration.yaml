@@ -76,17 +76,6 @@ google:
   client_id: !secret google_calendar_client_id
   client_secret: !secret google_calendar_client_secret
 
-homekit:
-  filter:
-    include_entities:
-      - switch.lsc_smart_connect_bedroom_relay
-      - light.lsc_smart_connect_e27_filament_led
-      - sensor.bedroom_temperature
-      - sensor.living_room_temperature
-      - sensor.upstairs_temperature
-    include_domains:
-      - scene
-
 spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
