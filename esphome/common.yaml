@@ -7,3 +7,8 @@ api:
 logger:
 
 ota:
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} — IP"
