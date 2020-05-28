@@ -1,5 +1,6 @@
 - platform: generic
   name: Sonoff Cam
+  still_image_url: !secret sonoff_snapshot_url
   stream_source: !secret sonoff_rtsp_url
 
 - platform: generic
