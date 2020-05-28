@@ -1,6 +1,6 @@
-- platform: samsungtv_tizen
-  name: "Samsung RU7100 (7 Series)"
-  device_id: !secret samsung_ru7100_smartthings_device_id
-  api_key: !secret samsung_smartthings_api_key
-  host: !secret samsung_ru7100_host
-  port: 8002
+# - platform: samsungtv_tizen
+#   name: "Samsung RU7100 (7 Series)"
+#   device_id: !secret samsung_ru7100_smartthings_device_id
+#   api_key: !secret samsung_smartthings_api_key
+#   host: !secret samsung_ru7100_host
+#   port: 8002
