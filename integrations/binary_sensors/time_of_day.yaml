@@ -1,12 +1,6 @@
-- platform: tod
-  name: "Working day hours"
-  after: '07:30'
-  before: '19:35'
-
-#### DAY CYCLES ########################################################################
 # Morning: 7AM -> 12PM
 - platform: tod
-  name: 'Morning'
+  name: Morning
   after: "07:00"
   before: "12:00"
 
