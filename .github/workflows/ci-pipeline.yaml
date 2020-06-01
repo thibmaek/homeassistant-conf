@@ -43,15 +43,17 @@ jobs:
   home_assistant:
     runs-on: ubuntu-latest
     steps:
-      - name: Checking out repository
+      - name: "Checking out repository"
         uses: actions/checkout@master
-      - name: Create secrets.yaml
+      - name: "Create secrets.yaml"
         run: |
           ./generate_secrets.sh
           mv secrets.test.yaml secrets.yaml
       - name: "Stub Home Assistant files"
         run: |
           touch {customize,automations,scenes,scripts}.yaml
+      - name: "Remove HACS integrations"
+        run: rm integrations/**/hacs_*.yaml
       - name: "Validate with homeassistant/home-assistant:latest"
         uses: "docker://homeassistant/home-assistant:latest"
         with:
