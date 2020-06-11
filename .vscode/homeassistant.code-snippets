@@ -2,28 +2,13 @@
   "Secret": {
     "scope": "yaml",
     "description": "Add a secret defined in secrets.yaml",
-    "prefix": "sec",
-    "body": "!secret $1"
-  },
-  "Template sensor": {
-    "scope": "yaml",
-    "description": "Create a new template sensor",
-    "prefix": "templatesensor",
-    "body": [
-      "${1:sensor_name}:",
-      "  friendly_name: ${2:\"Sensor name\"}",
-      "  entity_id: ${3:sensor.sensor_to_observe}",
-      "  icon_template: mdi:$4",
-      "  value_template: >-",
-      "    {% if is_state(\"${3:sensor.sensor_to_observe}\", \"some state value\") %}",
-      "      $5",
-      "    {% endif %}",
-    ]
+    "prefix": ["secret"],
+    "body": "!secret ${secret_id}"
   },
   "Include (file)": {
     "scope": "yaml",
     "description": "Include a file",
-    "prefix": "incl",
+    "prefix": ["incl", "include"],
     "body": "!include ${1:file}.yaml"
   }
 }
