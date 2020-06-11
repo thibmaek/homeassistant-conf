@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
-if [ -f secrets.test.yaml ]; then
+if [ -f secrets.yaml ]; then
   echo "Clearing previous secrets test file..."
-  rm -rf secrets.test.yaml
+  echo "" > secrets.yaml
 fi
 
 # Mapfile is prefered but adds an extra space
 # mapfile -t secrets < <(grep -r '!secret' . --exclude-dir=.vscode --exclude=generate_secrets.sh | sed -ne 's/^.*!secret//p' | sort | uniq)
+
+# shellcheck disable=SC2207
 secrets=($(grep -r '!secret' . --exclude-dir=.vscode --exclude-dir=esphome --exclude=generate_secrets.sh | sed -ne 's/^.*!secret//p' | sort | uniq))
 
 function getValue() {
@@ -34,5 +36,5 @@ function getValue() {
 
 for secret in "${secrets[@]}"; do
   echo "Found secret: $secret"
-  echo "$secret: \"$(getValue "$secret")\"" >> secrets.test.yaml
+  echo "$secret: \"$(getValue "$secret")\"" >> secrets.yaml
 done

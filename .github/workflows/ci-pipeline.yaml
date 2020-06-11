@@ -46,9 +46,7 @@ jobs:
       - name: "Checking out repository"
         uses: actions/checkout@master
       - name: "Create secrets.yaml"
-        run: |
-          ./generate_secrets.sh
-          mv secrets.test.yaml secrets.yaml
+        run: ./generate_secrets.sh
       - name: "Stub Home Assistant files"
         run: |
           touch {customize,automations,scenes,scripts}.yaml
@@ -66,9 +64,7 @@ jobs:
       - name: "Checking out repository"
         uses: actions/checkout@master
       - name: "Create secrets.yaml"
-        run: |
-          ./generate_secrets.sh
-          mv secrets.test.yaml secrets.yaml
+        run: ./generate_secrets.sh
       - name: "Stub Home Assistant files"
         run: |
           touch {customize,automations,scenes,scripts}.yaml

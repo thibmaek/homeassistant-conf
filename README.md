@@ -31,7 +31,6 @@ Check out [this diagram](https://whimsical.com/8gZ6KJPKUYjKcYVXVnyxJq) for an ov
     "ui-lovelace.yaml",
     ".gitignore",
     "README.md",
-    "secrets.test.yaml",
     ".yamllint",
     ".travis.yml"
   ],
