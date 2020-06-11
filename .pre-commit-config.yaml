@@ -3,7 +3,6 @@ repos:
     rev: v2.3.0
     hooks:
       - id: trailing-whitespace
-      - id: check-yaml
   - repo: local
     hooks:
       - id: disallow-yml
