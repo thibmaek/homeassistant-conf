@@ -47,20 +47,6 @@ recorder:
       - sensor.calendar_events
       - sensor.calendar_lot_thib
       - sensor.calendar_tasks
-
-influxdb:
-  host: !secret localhost
-  database: home_assistant
-  username: !secret influxdb_user
-  password: !secret influxdb_password
-  max_retries: 3
-  default_measurement: state
-  include:
-    domains:
-      - binary_sensor
-      - light
-      - sensor
-      - person
 # endregion
 
 # region: 3rd party
