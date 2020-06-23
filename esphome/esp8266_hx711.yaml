@@ -1,0 +1,64 @@
+substitutions:
+  device_name: esp8266_hx711
+  friendly_name: "ESP8266 HX711"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: d1_mini
+
+<<: !include common.yaml
+
+# text_sensor:
+#   - platform: template
+#     name: ${upper_devicename} uptime
+#     lambda: |-
+#       uint32_t dur = id(uptime_s).state;
+#       int dys = 0;
+#       int hrs = 0;
+#       int mnts = 0;
+#       if (dur > 86399) {
+#         dys = trunc(dur / 86400);
+#         dur = dur - (dys * 86400);
+#       }
+#       if (dur > 3599) {
+#         hrs = trunc(dur / 3600);
+#         dur = dur - (hrs * 3600);
+#       }
+#       if (dur > 59) {
+#         mnts = trunc(dur / 60);
+#         dur = dur - (mnts * 60);
+#       }
+#       char buffer[17];
+#       sprintf(buffer, "%ud %02uh %02um %02us", dys, hrs, mnts, dur);
+#       return {buffer};
+#     icon: mdi:clock-start
+#     update_interval: 30s
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+
+sensor:
+  # - platform: uptime
+  #   id: uptime_s
+  #   update_interval: 30s
+  # - platform: wifi_signal
+  #   name: ${upper_devicename} WiFi Signal
+  #   update_interval: 60s
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
+  - platform: hx711
+    name: "Weight"
+    dout_pin: D1
+    clk_pin: D2
+    gain: 128
+    update_interval: 30s
+    # filters:
+    #   - calibrate_linear:
+    #       - 7711  -> 0
+    #       - -156518  -> 79.5
+    # unit_of_measurement: kg

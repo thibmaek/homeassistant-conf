@@ -14,18 +14,12 @@ jobs:
       - uses: actions/checkout@v1
       - name: Superlint
         uses: docker://github/super-linter:v2.1.0
-
-  yamllint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checking out repository
-        uses: actions/checkout@v1
-      - name: Running YAMLlint
-        uses: docker://pipelinecomponents/yamllint:latest
-        with:
-          args: yamllint .
+        env:
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_JAVASCRIPT_ES: false
 
   esphome:
+    name: Compile ESPHome
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -50,6 +44,7 @@ jobs:
           ./test_esphome.sh run_all
 
   home_assistant:
+    name: Validate HA config
     runs-on: ubuntu-latest
     steps:
       - name: "Checking out repository"
@@ -67,6 +62,7 @@ jobs:
           args: python -m homeassistant --config . --script check_config --info all
 
   home_assistant_beta:
+    name: Validate HA config (Beta)
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:

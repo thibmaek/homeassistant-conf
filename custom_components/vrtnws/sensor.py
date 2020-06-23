@@ -1,3 +1,5 @@
+# pylint: skip-file
+
 """
 Get the latest headline and breaking news from VRT NWS.
 
