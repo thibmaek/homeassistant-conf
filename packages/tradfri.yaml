@@ -3,7 +3,7 @@ homeassistant:
     light.kastlampje:
       icon: "mdi:floor-lamp-dual"
     light.ledspots_platenkast:
-      icon: "mdi:circle-double"
+      icon: "mdi:wall-sconce-flat"
     light.kofferlamp:
       icon: "mdi:lamp"
     light.betonlamp:
