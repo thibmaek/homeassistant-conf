@@ -6,13 +6,22 @@ on:
       - master
 
 jobs:
+  linting:
+    name: Linting
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v1
+      - name: Superlint
+        uses: docker://github/super-linter:v2.1.0
+
   yamllint:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out repository
         uses: actions/checkout@v1
       - name: Running YAMLlint
-        uses: "docker://pipelinecomponents/yamllint:latest"
+        uses: docker://pipelinecomponents/yamllint:latest
         with:
           args: yamllint .
 
