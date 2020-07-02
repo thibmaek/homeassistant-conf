@@ -1,0 +1,5 @@
+- platform: waze_travel_time
+  name: Muide Brugge
+  origin: zone.home
+  destination: zone.mama_papa
+  region: EU
