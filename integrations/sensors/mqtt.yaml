@@ -1,6 +1,6 @@
 - platform: mqtt
   name: "Retropie Current Game"
   state_topic: "retropie/current_game"
-  value_template: "{{ value_json.state }}"
+  value_template: "{{ value_json.state.game }}"
   json_attributes_topic: "retropie/current_game"
   json_attributes_template: "{{ value_json.state | tojson }}"
