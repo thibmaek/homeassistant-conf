@@ -1,0 +1,5 @@
+- platform: mqtt
+  name: "Retropie Playing State"
+  state_topic: "retropie/playing_state"
+  payload_on: "PLAYING"
+  payload_off: "IDLE"
