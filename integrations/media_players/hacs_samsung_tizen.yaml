@@ -8,7 +8,7 @@
     - Telenet: ST_HDMI1
     - Playstation: ST_HDMI2
     - RetroPie: ST_HDMI3
-  application_list:
+  app_list:
     - Plex: '3201512006963'
     - YouTube: '111299001912'
     - Netflix: '11101200001'
