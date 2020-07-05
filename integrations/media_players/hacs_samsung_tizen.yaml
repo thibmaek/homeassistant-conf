@@ -4,3 +4,11 @@
   api_key: !secret samsung_smartthings_api_key
   host: !secret samsung_ru7100_host
   port: 8002
+  source_list:
+    - Telenet: ST_HDMI1
+    - Playstation: ST_HDMI2
+    - RetroPie: ST_HDMI3
+  application_list:
+    - Plex: '3201512006963'
+    - YouTube: '111299001912'
+    - Netflix: '11101200001'
