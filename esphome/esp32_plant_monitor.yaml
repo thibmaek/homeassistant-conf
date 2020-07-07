@@ -2,7 +2,7 @@ substitutions:
   device_name: "esp32_plant_monitor"
   friendly_name: "ESP32 Plant Monitor"
   plant_one: "Monstera Deliciosa (Inkom)"
-  plant_two: "Ficus Elastica (Living)"
+  plant_two: "Calathea (Living)"
 
 <<: !include common.yaml
 

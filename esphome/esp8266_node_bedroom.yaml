@@ -3,12 +3,13 @@ substitutions:
   friendly_name: "ESP8226 Node Bedroom"
   room: Bedroom
 
-<<: !include common.yaml
 
 esphome:
   name: "${device_name}"
   platform: ESP8266
-  board: d1_mini
+  board: nodemcuv2
+
+<<: !include common.yaml
 
 i2c:
   scan: True
