@@ -1,0 +1,7 @@
+volumio_replace_play:
+  url: "http://{{ host }}/api/v1/replaceAndPlay"
+  method: 'POST'
+  headers:
+    accept: 'application/json'
+  content_type: 'application/json; charset=utf-8'
+  payload: '{ "service": "{{ service }}", "type": "{{ type }}", "title": "{{ title }}", "uri": "{{ uri }}" }'
