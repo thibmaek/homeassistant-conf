@@ -28,6 +28,8 @@ sensor:
     address: 0x76
     temperature:
       name: "${room} Temperature"
+      filters:
+        - offset: -3.0
     pressure:
       name: "${room} Pressure"
     humidity:
