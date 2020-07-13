@@ -74,7 +74,6 @@ input_boolean: !include integrations/inputs/boolean.yaml
 light: !include_dir_merge_list integrations/lights/
 media_player: !include_dir_merge_list integrations/media_players/
 notify: !include_dir_merge_list integrations/notifications/
-panel_iframe: !include_dir_merge_named integrations/panel_iframes
 rest_command: !include_dir_merge_named integrations/rest_commands
 sensor: !include_dir_merge_list integrations/sensors/
 switch: !include_dir_merge_list integrations/switches/
