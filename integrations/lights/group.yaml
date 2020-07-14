@@ -3,10 +3,3 @@
   entities:
     - light.lsc_smart_connect_e27_filament_led_inkom
     - light.lsc_smart_connect_e27_filament_led_inkom_2
-
-- platform: group
-  name: "WLED DJ Booth"
-  entities:
-    - light.wled
-    - light.wled_1
-    - light.wled_2
