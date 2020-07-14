@@ -1,6 +1,6 @@
 substitutions:
-  device_name: lsc_smart_connect_switch_bedroom
-  friendly_name: "LSC Smart Connect Switch Bedroom"
+  device_name: lsc_smart_connect_switch_leeshoekje
+  friendly_name: "LSC Smart Connect Switch Leeshoekje"
 
 esphome:
   name: "${device_name}"
@@ -39,7 +39,6 @@ output:
 light:
   - platform: monochromatic
     id: status_led
-    name: "${friendly_name} — Status LED"
     output: led
 
 switch:

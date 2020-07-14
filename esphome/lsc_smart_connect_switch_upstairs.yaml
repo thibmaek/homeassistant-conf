@@ -39,7 +39,6 @@ output:
 light:
   - platform: monochromatic
     id: status_led
-    name: "${friendly_name} — Status LED"
     output: led
 
 switch:
