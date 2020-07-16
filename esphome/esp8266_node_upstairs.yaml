@@ -6,7 +6,7 @@ substitutions:
 esphome:
   name: "${device_name}"
   platform: ESP8266
-  board: nodemcuv2
+  board: d1_mini
 
 <<: !include common.yaml
 
@@ -16,19 +16,31 @@ i2c:
 binary_sensor:
   - platform: status
     name: "${friendly_name} — Status"
-  - platform: gpio
+
+light:
+  - platform: rgb
+    name: "${friendly_name} — Top LED"
+    id: rgb_led
+    red: output_red
+    green: output_green
+    blue: output_blue
+
+output:
+  - platform: esp8266_pwm
+    id: output_red
+    pin: D5
+  - platform: esp8266_pwm
+    id: output_green
     pin: D6
-    name: "${room} Motion"
-    device_class: motion
+  - platform: esp8266_pwm
+    id: output_blue
+    pin: D7
 
 sensor:
   - platform: uptime
     name: "${friendly_name} — Uptime"
   - platform: wifi_signal
     name: "${friendly_name} — Signal"
-    update_interval: 60s
-  - platform: bh1750
-    name: "${room} Illuminance"
     update_interval: 60s
   - platform: bme280
     address: 0x76
