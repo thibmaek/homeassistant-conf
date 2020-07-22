@@ -78,3 +78,17 @@
       attribute_templates:
         is_hot: >
           {{ (states('sensor.living_room_temperature') | int) > (state_attr('weather.weather', 'temperature') | int + 5) }}
+
+    room_summary_kitchen:
+      friendly_name: Kitchen summary
+      entity_id:
+        - media_player.kitchen
+        - weather.weather
+      value_template: >-
+        {% if is_state('media_player.kitchen', 'playing') %}
+          {% set sonos_now_playing = state_attr('media_player.kitchen', 'media_artist') + ' - ' + state_attr('media_player.kitchen', 'media_title') %}
+        {% else %}
+          {% set sonos_now_playing = 'Nothing playing' %}
+        {% endif %}
+
+        {{ sonos_now_playing }}
