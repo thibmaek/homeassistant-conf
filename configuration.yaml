@@ -66,10 +66,14 @@ octoprint:
   port: 5000
   number_of_tools: 1
   bed: true
+
+stream:
+ffmpeg:
 # endregion
 
 # region: integrations
 binary_sensor: !include_dir_merge_list integrations/binary_sensors/
+camera: !include_dir_merge_list integrations/cameras/
 input_boolean: !include integrations/inputs/boolean.yaml
 light: !include_dir_merge_list integrations/lights/
 media_player: !include_dir_merge_list integrations/media_players/

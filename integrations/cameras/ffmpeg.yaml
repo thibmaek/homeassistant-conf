@@ -1,0 +1,3 @@
+- platform: ffmpeg
+  input: !secret sonoff_rtsp_url
+  name: Sonoff GK-200MP2-B
