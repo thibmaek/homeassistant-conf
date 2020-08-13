@@ -1,0 +1,7 @@
+{
+  "Include (spread)": {
+    "description": "Spreads a partial config via include",
+    "prefix": "inc",
+    "body": ["<<: !include ${1:file.yaml}"],
+  },
+}
