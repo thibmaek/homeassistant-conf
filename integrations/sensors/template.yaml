@@ -79,6 +79,20 @@
         is_hot: >
           {{ (states('sensor.living_room_temperature') | int) > (state_attr('weather.weather', 'temperature') | int + 5) }}
 
+    room_summary_studio:
+      friendly_name: Studio summary
+      entity_id:
+        - sensor.upstairs_temperature
+        - sensor.discogs_random_record
+        - weather.weather
+      value_template: >-
+        {% set temperature = states('sensor.upstairs_temperature') + state_attr('sensor.upstairs_temperature', 'unit_of_measurement') %}
+
+        {{ temperature }} / {{ states('sensor.discogs_random_record') }}
+      attribute_templates:
+        is_hot: >
+          {{ (states('sensor.upstairs_temperature') | int) > (state_attr('weather.weather', 'temperature') | int + 5) }}
+
     room_summary_kitchen:
       friendly_name: Kitchen summary
       entity_id:
