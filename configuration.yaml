@@ -18,7 +18,6 @@ config:
 discovery:
 ssdp:
 zeroconf:
-ios:
 mobile_app:
 person:
 wake_on_lan:
