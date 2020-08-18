@@ -1,3 +1,0 @@
-- platform: darksky
-  name: "Weather"
-  api_key: !secret dark_sky_api_key
