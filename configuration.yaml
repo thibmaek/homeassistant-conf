@@ -59,13 +59,6 @@ spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
 
-octoprint:
-  host: !secret rpi_node_fuse
-  api_key: !secret octoprint_api_key
-  port: 5000
-  number_of_tools: 1
-  bed: true
-
 stream:
 ffmpeg:
 # endregion
