@@ -40,3 +40,13 @@
       entity_id: sensor.supervisor_updates
       value_template: >
         {{ states('sensor.supervisor_updates') | int > 0 }}
+
+- platform: template
+  sensors:
+    no_one_home:
+      friendly_name: "No one home"
+      value_template: >
+        {{
+          not is_state("person.thibault", "home")
+          and not is_state("person.lotte", "home")
+        }}
