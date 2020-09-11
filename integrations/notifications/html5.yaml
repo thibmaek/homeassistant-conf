@@ -1,7 +1,0 @@
-- platform: html5
-  name: 'HTML5'
-  vapid_pub_key: !secret gcp_gcm_pub_key
-  vapid_prv_key: !secret gcp_gcm_private_key
-  vapid_email: !secret gcp_email
-  gcm_api_key: !secret gcm_api_key
-  gcm_sender_id: !secret gcm_sender_id
