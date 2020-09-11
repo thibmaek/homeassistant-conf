@@ -7,6 +7,6 @@
 
 - platform: group
   name: "Lotte Devices"
-  service:
+  services:
     - service: mobile_app_ipad_van_lotte
     - service: mobile_app_iphone_van_lotte
