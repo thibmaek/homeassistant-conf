@@ -61,6 +61,7 @@ spotify:
 
 stream:
 ffmpeg:
+zigbee2mqtt_networkmap:
 # endregion
 
 # region: integrations
