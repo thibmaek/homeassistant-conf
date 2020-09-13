@@ -1,29 +1,34 @@
-# Morning: 7AM -> 12PM
 - platform: tod
   name: Morning
-  after: "07:00"
+  after: "08:00"
   before: "12:00"
 
-# Late Morning: 9.30AM -> 12PM
-- platform: tod
-  name: "Late Morning"
-  after: "09:30"
-  before: "12:00"
-
-# Noon: 12PM -> 6PM
 - platform: tod
   name: 'Noon'
   after: "12:00"
   before: "18:00"
 
-# Evening: Sunset -> 10PM
 - platform: tod
   name: "Evening"
-  after: sunset
+  after: "18:00"
   before: "22:00"
 
-# Night: 10PM -> 7AM
 - platform: tod
   name: 'Night'
   after: "22:00"
-  before: "07:00"
+  before: "08:00"
+
+# region: Working Day
+- platform: tod
+  name: "Office Hours (Morning)"
+  after: "10:00"
+  before: "12:00"
+- platform: tod
+  name: "Lunch Break"
+  after: "12:00"
+  before: "13:00"
+- platform: tod
+  name: "Office Hours (Afternoon)"
+  after: "13:00"
+  before: "18:00"
+# endregion
