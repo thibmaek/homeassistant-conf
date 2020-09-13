@@ -4,7 +4,7 @@
     - service: mobile_app_thibault_maekelberghs_ipad
     - service: mobile_app_thibaults_iphone
     - service: mobile_app_thibaults_macbook_pro_itp
-    - service: notify.mobile_app_thibaults_macbook_pro
+    - service: mobile_app_thibaults_macbook_pro
 
 - platform: group
   name: "Lotte Devices"
