@@ -1,0 +1,11 @@
+- platform: switch
+  name: Betonlamp
+  entity_id: switch.betonlamp
+
+- platform: switch
+  name: Lampje Togo
+  entity_id: switch.lsc_smart_connect_switch_leeshoekje
+
+- platform: switch
+  name: Lampje zitzak
+  entity_id: switch.lsc_smart_connect_switch_upstairs
