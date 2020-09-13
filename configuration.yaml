@@ -1,6 +1,5 @@
 # region: Default config
 homeassistant:
-  packages: !include_dir_named packages/
   customize: !include customize.yaml
 
 cloud:
@@ -61,7 +60,13 @@ spotify:
 
 stream:
 ffmpeg:
+
 zigbee2mqtt_networkmap:
+
+nzbget:
+  host: !secret localhost
+  username: !secret nzbget_username
+  password: !secret nzbget_password
 # endregion
 
 # region: integrations

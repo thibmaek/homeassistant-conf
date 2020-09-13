@@ -1,25 +1,5 @@
 - platform: template
   sensors:
-    octoprint_preheating:
-      friendly_name: "Octoprint Preheating"
-      entity_id:
-        - binary_sensor.octoprint_printing
-        - sensor.octoprint_current_state
-        - sensor.octoprint_target_tool0_temp
-        - sensor.octoprint_target_bed_temp
-        - sensor.octoprint_actual_tool0_temp
-        - sensor.octoprint_actual_bed_temp
-      device_class: heat
-      value_template: >-
-        {{
-          is_state('sensor.octoprint_current_state', 'Operational')
-          and is_state('binary_sensor.octoprint_printing', 'off')
-          and states('sensor.octoprint_actual_tool0_temp')|int >= states('sensor.octoprint_target_tool0_temp')|int
-          and states('octoprint_actual_bed_temp')|int >= states('octoprint_target_bed_temp')|int
-        }}
-
-- platform: template
-  sensors:
     updater_supervisor:
       unique_id: updater_supervisor
       friendly_name: "Updater (Supervisor)"
