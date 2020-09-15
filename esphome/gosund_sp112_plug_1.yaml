@@ -1,0 +1,82 @@
+substitutions:
+  device_name: gosund_sp112_plug_1
+  friendly_name: "Gosund SP112 (Plug 1)"
+
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: nodemcuv2
+
+<<: !include common/base.yaml
+<<: !include common/info_sensors.yaml
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+  - platform: gpio
+    name: "${friendly_name} — Button"
+    pin:
+      number: GPIO3
+      inverted: true
+    on_press:
+      - switch.toggle: relay
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
+  - platform: hlw8012
+    sel_pin:
+      number: GPIO12
+      inverted: true
+    cf_pin: GPIO04
+    cf1_pin: GPIO05
+    change_mode_every: 3
+    update_interval: 3s
+    # Current sensor
+    current:
+      name: "${friendly_name} — Current"
+      unit_of_measurement: A
+      accuracy_decimals: 3
+    # Voltage sensor
+    voltage:
+      name: "${friendly_name} — Voltage"
+      unit_of_measurement: V
+      accuracy_decimals: 1
+    # Power sensor
+    power:
+      id: power
+      name: "${friendly_name} — Power"
+      unit_of_measurement: W
+      accuracy_decimals: 0
+
+switch:
+  - platform: gpio
+    id: relay
+    name: "${friendly_name} — Switch"
+    pin: GPIO14
+    on_turn_on:
+      - light.turn_on: led
+    on_turn_off:
+      - light.turn_off: led
+
+output:
+  - platform: esp8266_pwm
+    id: state_led
+    pin:
+      number: GPIO1
+      inverted: true
+
+light:
+  - platform: monochromatic
+    output: state_led
+    id: led
+
+# Uses the red LED as a status indicator
+status_led:
+  pin:
+    number: GPIO13
+    inverted: true

@@ -9,10 +9,9 @@ esphome:
   platform: ESP8266
   board: nodemcuv2
 
-<<: !include common.yaml
-
-i2c:
-  scan: True
+<<: !include common/base.yaml
+<<: !include common/info_sensors.yaml
+<<: !include common/i2c.yaml
 
 binary_sensor:
   - platform: status

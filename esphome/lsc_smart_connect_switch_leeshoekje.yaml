@@ -7,7 +7,7 @@ esphome:
   platform: ESP8266
   board: esp01_1m
 
-<<: !include common.yaml
+<<: !include common/base.yaml
 
 binary_sensor:
   - platform: status

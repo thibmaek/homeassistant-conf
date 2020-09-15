@@ -4,7 +4,8 @@ substitutions:
   plant_one: "Monstera Deliciosa (Inkom)"
   plant_two: "Calathea (Living)"
 
-<<: !include common.yaml
+<<: !include common/base.yaml
+<<: !include common/info_sensors.yaml
 
 esphome:
   name: "${device_name}"
@@ -15,7 +16,7 @@ esp32_ble_tracker:
 
 binary_sensor:
   - platform: status
-    name: "${friendly_name} — Status"
+    name: "2nd status"
 
 sensor:
   - platform: uptime

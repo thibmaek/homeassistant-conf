@@ -7,7 +7,7 @@ esphome:
   platform: ESP8266
   board: d1_mini
 
-<<: !include common.yaml
+<<: !include common/base.yaml
 
 # text_sensor:
 #   - platform: template

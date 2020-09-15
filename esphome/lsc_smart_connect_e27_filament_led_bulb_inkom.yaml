@@ -2,7 +2,7 @@ substitutions:
   device_name: "lsc_smart_connect_e27_filament_led_inkom"
   friendly_name: "LSC Smart Connect E27 Filament LED Inkom"
 
-<<: !include common.yaml
+<<: !include common/base.yaml
 
 esphome:
   name: "${device_name}"
