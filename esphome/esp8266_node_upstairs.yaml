@@ -17,6 +17,34 @@ binary_sensor:
   - platform: status
     name: "${friendly_name} — Status"
 
+time:
+  - platform: homeassistant
+    id: esptime
+
+font:
+  - file: 'assets/fonts/arial.ttf'
+    id: arial
+    size: 20
+  - file: 'assets/fonts/arial.ttf'
+    id: arial_sm
+    size: 14
+
+display:
+  - platform: ssd1306_i2c
+    model: "SH1106 128x32"
+    address: 0x3C
+    rotation: 180°
+    lambda: |-
+      it.strftime(2, 32, id(arial), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
+
+      if (id(temperature).has_state()) {
+        it.printf(127, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
+      }
+
+      if (id(humidity).has_state()) {
+        it.printf(127, 28, id(arial_sm), TextAlign::BASELINE_RIGHT, "%.1f", id(humidity).state);
+      }
+
 light:
   - platform: rgb
     name: "${friendly_name} — Top LED"
@@ -46,10 +74,12 @@ sensor:
     address: 0x76
     temperature:
       name: "${room} Temperature"
+      id: temperature
       filters:
         - offset: -3.0
     pressure:
       name: "${room} Pressure"
     humidity:
       name: "${room} Humidity"
+      id: humidity
     update_interval: 60s
