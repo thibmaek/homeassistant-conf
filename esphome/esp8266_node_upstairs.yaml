@@ -12,6 +12,16 @@ esphome:
 <<: !include common/i2c.yaml
 <<: !include common/info_sensors.yaml
 
+api:
+  services:
+    - service: set_oled_brightness
+      variables:
+        brightness: float
+      then:
+        - lambda: |-
+            id(oled_display).set_brightness(brightness);
+            id(oled_display).fill(COLOR_ON);
+
 binary_sensor:
   - platform: status
     name: "${friendly_name} — Status"
@@ -19,6 +29,33 @@ binary_sensor:
 time:
   - platform: homeassistant
     id: esptime
+    on_time:
+      - hours: 9
+        minutes: 30
+        then:
+          - switch.turn_on: oled_display_backlight
+      - hours: 21
+        minutes: 30
+        then:
+          - switch.turn_off: oled_display_backlight
+
+switch:
+  - platform: template
+    name: "${friendly_name} — Display Backlight"
+    id: oled_display_backlight
+    icon: mdi:brightness-6
+    assumed_state: true
+    optimistic: true
+    turn_on_action:
+      then:
+        - lambda: |-
+            id(oled_display).set_brightness(1);
+            id(oled_display).fill(COLOR_ON);
+    turn_off_action:
+      then:
+        - lambda: |-
+            id(oled_display).set_brightness(0);
+            id(oled_display).fill(COLOR_OFF);
 
 font:
   - file: 'assets/fonts/arial.ttf'
@@ -30,8 +67,10 @@ font:
 
 display:
   - platform: ssd1306_i2c
+    id: oled_display
     model: "SH1106 128x32"
     address: 0x3C
+    brightness: 60%
     rotation: 180°
     lambda: |-
       it.strftime(2, 32, id(arial), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
@@ -46,7 +85,6 @@ display:
 
 light:
   - platform: rgb
-    name: "${friendly_name} — Top LED"
     id: rgb_led
     red: output_red
     green: output_green
@@ -76,6 +114,21 @@ sensor:
       id: temperature
       filters:
         - offset: -3.0
+      on_value_range:
+        - above: 29.0
+          then:
+            - light.turn_on:
+                id: rgb_led
+                red: 1.0
+                green: 0
+                blue: 0
+        - below: 28.9
+          then:
+            - light.turn_on:
+                id: rgb_led
+                red: 0
+                green: 1.0
+                blue: 0
     pressure:
       name: "${room} Pressure"
     humidity:
