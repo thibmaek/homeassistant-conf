@@ -80,7 +80,7 @@ display:
       }
 
       if (id(humidity).has_state()) {
-        it.printf(127, 28, id(arial_sm), TextAlign::BASELINE_RIGHT, "%.1f", id(humidity).state);
+        it.printf(127, 28, id(arial_sm), TextAlign::BASELINE_RIGHT, "%.1f%%", id(humidity).state);
       }
 
 light:
