@@ -21,6 +21,8 @@ mobile_app:
 person:
 wake_on_lan:
 sun:
+media_source:
+image:
 
 automation: !include automations.yaml
 scene: !include scenes.yaml
