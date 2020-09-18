@@ -32,7 +32,7 @@ time:
     id: esptime
     on_time:
       - hours: 9
-        minutes: 30
+        minutes: 0
         then:
           - switch.turn_on: oled_display_backlight
       - hours: 21
@@ -50,7 +50,7 @@ switch:
     turn_on_action:
       then:
         - lambda: |-
-            id(oled_display).set_brightness(1);
+            id(oled_display).set_brightness(0.6);
             id(oled_display).fill(COLOR_ON);
     turn_off_action:
       then:
