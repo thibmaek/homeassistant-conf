@@ -64,11 +64,6 @@ stream:
 ffmpeg:
 
 zigbee2mqtt_networkmap:
-
-nzbget:
-  host: !secret localhost
-  username: !secret nzbget_username
-  password: !secret nzbget_password
 # endregion
 
 # region: integrations
