@@ -1,6 +1,9 @@
 # region: Default config
 homeassistant:
   customize: !include customize.yaml
+  media_dirs:
+    local: /media
+    motioneye_recordings: /mnt/mergerfs/media/videos/camera/motioneye
 
 cloud:
 
@@ -22,8 +25,6 @@ person:
 wake_on_lan:
 sun:
 media_source:
-media_dirs:
-  motioneye_recordings: /mnt/mergerfs/media/videos/camera/motioneye
 image:
 
 automation: !include automations.yaml
