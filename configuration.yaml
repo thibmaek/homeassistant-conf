@@ -1,9 +1,6 @@
 # region: Default config
 homeassistant:
   customize: !include customize.yaml
-  media_dirs:
-    local: /media
-    motioneye_recordings: /mnt/mergerfs/media/videos/camera/motioneye
 
 cloud:
 
