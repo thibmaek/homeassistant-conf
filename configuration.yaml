@@ -22,6 +22,8 @@ person:
 wake_on_lan:
 sun:
 media_source:
+media_dirs:
+  motioneye_recordings: /mnt/mergerfs/media/videos/camera/motioneye
 image:
 
 automation: !include automations.yaml
