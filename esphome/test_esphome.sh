@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
+set -e
 
 info() {
   printf "\033[34m%s\033[0m\n" "$1"
   printf "\n"
 }
-
 
 function setup_mock_env() {
   echo "wifi_ssid: home_wifi" > secrets.yaml
@@ -12,17 +12,18 @@ function setup_mock_env() {
   cat secrets.yaml
 }
 
-function run_all() {
+function compile_all() {
   shopt -s globstar nullglob
 
   ESPHOME_CONFIGS=( **/*.yaml )
   for config in "${ESPHOME_CONFIGS[@]}"; do
-    if [ "$config" == "common.yaml" ] || [ "$config" == "secrets.yaml" ]; then
+    if echo "$config" | grep -q "_archive/"; then
+      info "Skipping archived config ($config)"
       continue
     fi
 
-    if echo "$config" | grep -q "_archive"; then
-      info "Archived config $config. Skipping..."
+    if echo "$config" | grep -q "common/"; then
+      info "Skipping shared config ($config)"
       continue
     fi
 
@@ -33,4 +34,4 @@ function run_all() {
   done
 }
 
-"${@:-run_all}"
+"${@:-compile_all}"

@@ -2,14 +2,25 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Lint YAML",
+      "label": "Lint",
       "type": "shell",
-      "command": "yamllint ."
+      "command": "make lint",
+      "group": "build"
     },
     {
-      "label": "Compile ESPHome",
+      "label": "ESPHome: Compile all",
       "type": "shell",
-      "command": "esphome *.yaml compile"
+      "command": "make -C ./esphome build",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": "$gcc"
     }
   ]
 }

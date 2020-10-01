@@ -4,6 +4,7 @@ ignore: |
   custom_components/
   node_modules
   esphome/**/*.pio*
+  esphome/test.yaml
 
 rules:
   comments-indentation: disable

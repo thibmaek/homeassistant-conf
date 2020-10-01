@@ -33,15 +33,11 @@ jobs:
           python-version: ${{ matrix.python_version }}
           architecture: x64
       - name: "Install ESPHome (via pip)"
-        run: pip3 install esphome
-      - name: Setup testing
+        run: make install
+      - name: "Compile all configs"
         run: |
           cd esphome
-          ./test_esphome.sh setup_mock_env
-      - name: Compile (validate) ESPHome configs
-        run: |
-          cd esphome
-          ./test_esphome.sh run_all
+          make test
 
   home_assistant:
     name: Validate HA config

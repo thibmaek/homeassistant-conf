@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Clean workspace",
+      "type": "shell",
+      "command": "make clean",
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+      }
+    },
+    {
+      "label": "Compile all",
+      "type": "shell",
+      "command": "make build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": "$gcc"
+    }
+  ]
+}
