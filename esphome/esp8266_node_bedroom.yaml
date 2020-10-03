@@ -61,7 +61,7 @@ switch:
 font:
   - file: 'assets/fonts/arial.ttf'
     id: arial
-    size: 20
+    size: 28
   - file: 'assets/fonts/arial.ttf'
     id: arial_sm
     size: 14

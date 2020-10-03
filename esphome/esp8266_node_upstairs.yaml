@@ -29,15 +29,6 @@ binary_sensor:
 time:
   - platform: homeassistant
     id: esptime
-    on_time:
-      - hours: 9
-        minutes: 0
-        then:
-          - switch.turn_on: oled_display_backlight
-      - hours: 21
-        minutes: 30
-        then:
-          - switch.turn_off: oled_display_backlight
 
 switch:
   - platform: template
@@ -60,7 +51,7 @@ switch:
 font:
   - file: 'assets/fonts/arial.ttf'
     id: arial
-    size: 20
+    size: 28
   - file: 'assets/fonts/arial.ttf'
     id: arial_sm
     size: 14
