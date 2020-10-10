@@ -9,3 +9,11 @@
 - platform: switch
   name: Lampje zitzak
   entity_id: switch.lsc_smart_connect_switch_upstairs
+
+- platform: switch
+  name: Badkamer Lampje Thib
+  entity_id: switch.shelly_25_badkamer_channel_1
+
+- platform: switch
+  name: Badkamer Lampje Lotte
+  entity_id: switch.shelly_25_badkamer_channel_2
