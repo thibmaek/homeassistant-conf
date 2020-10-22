@@ -2,7 +2,6 @@
   sensors:
     day_of_week:
       friendly_name: "Day of the week"
-      entity_id: sensor.time
       icon_template: mdi:calendar-outline
       value_template: >
         {{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}
@@ -27,6 +26,19 @@
       unit_of_measurement: 'on'
       value_template: >
         {{ states['light'] | selectattr('state', 'eq', 'on') | list | count }}
+
+- platform: template
+  sensors:
+    spotify_input_uri:
+      friendly_name: "Spotify Input URI"
+      value_template: >-
+        {% if is_state('input_select.spotify_playlists', '\U0001F3E1 Muide') %}
+          spotify:playlist:0ULsscMIrT1m5AgLRdFbin
+        {% elif is_state('input_select.spotify_playlists', 'Palo Cortado') %}
+          spotify:playlist:36xr7VBOS2MR0ZAvTWcdmU
+        {% elif is_state('input_select.spotify_playlists', 'Diner') %}
+          spotify:playlist:7wxx9SFMvFnMdVj0RthRcl
+        {% endif %}
 
 - platform: template
   sensors:
