@@ -4,3 +4,14 @@ spotify_playlists:
     - "🏡 Muide"
     - Palo Cortado
     - Diner
+
+webradio_channel:
+  icon: mdi:radio
+  options:
+    - Stu Bru
+    - Klara
+    - Klara Continuo
+    - Radio 1
+    - Worldwide FM
+    - NTS
+    - BBC Radio 1
