@@ -1,5 +1,6 @@
 - platform: mqtt
   name: "Zigbee2MQTT Main join"
+  id: zigbee2mqtt_main_join
   state_topic: "zigbee2mqtt/bridge/config/permit_join"
   command_topic: "zigbee2mqtt/bridge/config/permit_join"
   payload_on: "true"
