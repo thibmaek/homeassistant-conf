@@ -72,6 +72,7 @@ camera: !include_dir_merge_list integrations/cameras/
 input_boolean: !include integrations/inputs/boolean.yaml
 input_datetime: !include integrations/inputs/datetime.yaml
 input_select: !include integrations/inputs/select.yaml
+input_text: !include integrations/inputs/text.yaml
 light: !include_dir_merge_list integrations/lights/
 media_player: !include_dir_merge_list integrations/media_players/
 notify: !include_dir_merge_list integrations/notifications/
