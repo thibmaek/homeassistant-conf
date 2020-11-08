@@ -1,0 +1,8 @@
+- platform: rest
+  name: Random Cocktail
+  icon: mdi:glass-tulip
+  resource_template: 172.17.0.1:3003/random
+  scan_interval: 3600
+  value_template: "{{ value_json.name }}"
+  json_attributes:
+    - description
