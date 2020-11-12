@@ -1,4 +1,6 @@
 # region: Default config
+default_config:
+
 homeassistant:
   customize: !include customize.yaml
 
