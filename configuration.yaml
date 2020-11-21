@@ -35,6 +35,11 @@ script: !include scripts.yaml
 history:
 logbook:
   exclude:
+    entities:
+      - sensor.time
+      - sensor.time_date
+    entity_globs:
+      - sensor.*_uptime
     domains:
       - calendar
 recorder:
