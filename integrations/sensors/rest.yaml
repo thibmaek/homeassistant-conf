@@ -5,3 +5,4 @@
   value_template: "{{ value_json.name }}"
   json_attributes:
     - description
+    - ingredients
