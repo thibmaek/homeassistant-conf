@@ -1,5 +1,0 @@
-- platform: delijn
-  api_key: !secret de_lijn_api_key
-  next_departure:
-    - stop_id: 200426
-    - stop_id: 201987
