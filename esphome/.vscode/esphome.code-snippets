@@ -4,4 +4,28 @@
     "prefix": "inc",
     "body": ["<<: !include ${1:file.yaml}"],
   },
+  "ESP8266": {
+    "description": "Config for an ESP8266 based MCU",
+    "prefix": ["esp8266", "esp"],
+    "body": [
+      "substitutions:",
+      "  device_name: $1",
+      "  friendly_name: $2",
+      "",
+      "esphome:",
+      "  name: \"\\${device_name}\"",
+      "  platform: ESP8266",
+      "  board: ${3|d1_mini,nodemcuv2|}",
+      "",
+      "binary_sensor:",
+      "  - platform: status",
+      "    name: \"\\${friendly_name} — Status\"",
+      "",
+      "sensor:",
+      "  - platform: uptime",
+      "    name: \"\\${friendly_name} — Uptime\"",
+      "  - platform: wifi_signal",
+      "    name: \"\\${friendly_name} — Signal\"",
+    ],
+  }
 }
