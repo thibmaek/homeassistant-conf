@@ -1,22 +1,18 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.3.0
+    rev: v3.4.0
     hooks:
       - id: trailing-whitespace
-  - repo: local
+  - repo: https://github.com/thibmaek/pre-commit
+    rev: 'v1.0.0'
     hooks:
       - id: disallow-yml
-        name: Disallow .yml
-        entry: .githooks/disallow-yml
-        language: script
-        files: .yml$
+      - id: shellcheck
+
+  - repo: local
+    hooks:
       - id: yamllint
         name: Lint YAML
         entry: yamllint
         language: system
         files: .yaml$
-      - id: shellcheck
-        name: Shellcheck
-        entry: shellcheck
-        language: system
-        files: .sh$
