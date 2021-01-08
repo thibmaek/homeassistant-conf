@@ -1,7 +1,7 @@
 substitutions:
-  device_name: esp8266_node_bathroom
-  friendly_name: "ESP8266 Node Bathroom"
-  room: Bathroom
+  device_name: esp8266_node_kitchen
+  friendly_name: "ESP8266 Node Kitchen"
+  room: Kitchen
 
 esphome:
   name: "${device_name}"
@@ -37,3 +37,6 @@ sensor:
     humidity:
       name: "${room} Humidity"
     update_interval: 60s
+  - platform: bh1750
+    address: 0x23
+    name: "${room} Illuminance"
