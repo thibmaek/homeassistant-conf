@@ -1,0 +1,48 @@
+substitutions:
+  device_name: esp8226_buzzer
+  friendly_name: ESP8266 Buzzer
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: d1_mini
+
+<<: !include common/base.yaml
+<<: !include common/info_sensors.yaml
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+
+output:
+  - platform: esp8266_pwm
+    pin: D1
+    id: 'buzzer'
+
+api:
+  services:
+    - service: buzz
+      then:
+        - output.esp8266_pwm.set_frequency:
+            id: buzzer
+            frequency: 800Hz
+        - output.set_level:
+            id: buzzer
+            level: 50%
+        - delay: 120ms
+        - output.turn_off: buzzer
+        - delay: 200ms
+        - output.esp8266_pwm.set_frequency:
+            id: buzzer
+            frequency: 1000Hz
+        - output.set_level:
+            id: buzzer
+            level: 50%
+        - delay: 120ms
+        - output.turn_off: buzzer
