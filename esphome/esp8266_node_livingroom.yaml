@@ -12,6 +12,64 @@ esphome:
 <<: !include common/i2c.yaml
 <<: !include common/info_sensors.yaml
 
+api:
+  services:
+    - service: set_oled_brightness
+      variables:
+        brightness: float
+      then:
+        - lambda: |-
+            id(oled_display).set_brightness(brightness);
+            id(oled_display).fill(COLOR_ON);
+
+time:
+  - platform: homeassistant
+    id: esptime
+
+switch:
+  - platform: template
+    name: "${friendly_name} — Display Backlight"
+    id: oled_display_backlight
+    icon: mdi:brightness-6
+    assumed_state: true
+    optimistic: true
+    turn_on_action:
+      then:
+        - lambda: |-
+            id(oled_display).set_brightness(0.6);
+            id(oled_display).fill(COLOR_ON);
+    turn_off_action:
+      then:
+        - lambda: |-
+            id(oled_display).set_brightness(0);
+            id(oled_display).fill(COLOR_OFF);
+
+font:
+  - file: 'assets/fonts/arial.ttf'
+    id: arial
+    size: 28
+  - file: 'assets/fonts/arial.ttf'
+    id: arial_sm
+    size: 14
+
+display:
+  - platform: ssd1306_i2c
+    id: oled_display
+    model: "SH1106 128x32"
+    address: 0x3C
+    brightness: 60%
+    rotation: 180°
+    lambda: |-
+      it.strftime(2, 32, id(arial), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
+
+      if (id(temperature).has_state()) {
+        it.printf(127, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
+      }
+
+      if (id(humidity).has_state()) {
+        it.printf(127, 28, id(arial_sm), TextAlign::BASELINE_RIGHT, "%.1f%%", id(humidity).state);
+      }
+
 binary_sensor:
   - platform: status
     name: "${friendly_name} — Status"
@@ -25,11 +83,13 @@ sensor:
   - platform: bme280
     address: 0x76
     temperature:
+      id: temperature
       name: "${room} Temperature"
       filters:
         - offset: -3.0
     pressure:
       name: "${room} Pressure"
     humidity:
+      id: humidity
       name: "${room} Humidity"
     update_interval: 60s
