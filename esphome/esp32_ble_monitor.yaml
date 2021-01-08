@@ -1,8 +1,8 @@
 substitutions:
-  device_name: "esp32_plant_monitor"
-  friendly_name: "ESP32 Plant Monitor"
-  plant_one: "Monstera Deliciosa (Inkom)"
-  plant_two: "Calathea (Living)"
+  device_name: "esp32_ble_monitor"
+  friendly_name: "ESP32 BLE Monitor"
+  plant_one: "Fridge 1"
+  plant_two: "Fridge 2"
 
 <<: !include common/base.yaml
 <<: !include common/info_sensors.yaml
@@ -16,7 +16,7 @@ esp32_ble_tracker:
 
 binary_sensor:
   - platform: status
-    name: "2nd status"
+    name: "${friendly_name} — Status"
 
 sensor:
   - platform: uptime
