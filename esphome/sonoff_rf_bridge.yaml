@@ -1,0 +1,85 @@
+substitutions:
+  device_name: sonoff_rf_bridge
+  friendly_name: "Sonoff RF Bridge"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp8285
+
+logger:
+  baud_rate: 0
+
+<<: !include common/base.yaml
+<<: !include common/info_sensors.yaml
+
+uart:
+  tx_pin: GPIO01
+  rx_pin: GPIO03
+  baud_rate: 19200
+
+api:
+  services:
+    - service: send_code
+      variables:
+        sync: int
+        low: int
+        high: int
+        code: int
+      then:
+        - rf_bridge.send_code:
+            sync: !lambda 'return sync;'
+            low: !lambda 'return low;'
+            high: !lambda 'return high;'
+            code: !lambda 'return code;'
+    - service: learn
+      then:
+        - rf_bridge.learn
+
+rf_bridge:
+  on_code_received:
+    then:
+      - light.toggle: wifi_led
+      - light.toggle: wifi_led
+      - homeassistant.event:
+          event: esphome.rf_code_received
+          data:
+            sync: !lambda 'char buffer [10];return itoa(data.sync,buffer,16);'
+            low: !lambda 'char buffer [10];return itoa(data.low,buffer,16);'
+            high: !lambda 'char buffer [10];return itoa(data.high,buffer,16);'
+            code: !lambda 'char buffer [10];return itoa(data.code,buffer,16);'
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+    on_state:
+      then:
+        - light.turn_on: wifi_led
+  - platform: gpio
+    name: "${friendly_name} — Pair Button"
+    pin: GPIO00
+
+light:
+  - platform: binary
+    id: wifi_led
+    name: "${friendly_name} — Wifi LED"
+    internal: True
+    output: output_wifi_led
+
+output:
+  - platform: gpio
+    id: output_wifi_led
+    pin:
+      number: GPIO13
+      inverted: True
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+    update_interval: 60s
+
+switch:
+  - platform: restart
+    name: "${friendly_name} — Restart"
