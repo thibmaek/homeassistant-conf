@@ -12,8 +12,7 @@ build:
 	./test_esphome.sh compile_all
 
 install:
-	pip install --upgrade esphome
-
+	pip install --upgrade -r requirements.txt
 test:
 	./test_esphome.sh setup_mock_env && \
 		./test_esphome.sh compile_all
