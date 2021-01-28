@@ -2,4 +2,16 @@ energie_id_set_heating_usage:
   url: !secret energie_id_usage_webhook
   method: 'post'
   content_type: 'application/json'
-  payload: '{"remoteId": "ha-webhook-heating", "remoteName": "Aardgas (Home Assistant)", "metric": "naturalGasImport", "unit": "", "readingType": "counter", data: [[{{ now().isoformat() }}, {{ usage }}]]}'
+  payload: '{"remoteId": "ha-webhook-heating", "remoteName": "Aardgas (Home Assistant)", "metric": "naturalGasImport", "unit": "m³", "readingType": "counter", "data": [["{{ now().isoformat() }}", {{ usage }}]]}'
+
+energie_id_set_electricity_usage:
+  url: !secret energie_id_usage_webhook
+  method: 'post'
+  content_type: 'application/json'
+  payload: '{"remoteId": "ha-webhook-electricity", "remoteName": "Elektriciteit (Home Assistant)", "metric": "electricityImport", "unit": "kWh", "readingType": "counter", "data": [["{{ now().isoformat() }}", {{ usage }}]]}'
+
+energie_id_set_water_usage:
+  url: !secret energie_id_usage_webhook
+  method: 'post'
+  content_type: 'application/json'
+  payload: '{"remoteId": "ha-webhook-water", "remoteName": "Water (Home Assistant)", "metric": "drinkingWaterImport", "unit": "m³", "readingType": "counter", "data": [["{{ now().isoformat() }}", {{ usage }}]]}'
