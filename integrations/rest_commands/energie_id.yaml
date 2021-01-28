@@ -1,0 +1,5 @@
+energie_id_set_heating_usage:
+  url: !secret energie_id_usage_webhook
+  method: 'post'
+  content_type: 'application/json'
+  payload: '{"remoteId": "ha-webhook-heating", "remoteName": "Aardgas (Home Assistant)", "metric": "naturalGasImport", "unit": "", "readingType": "counter", data: [[{{ now().isoformat() }}, {{ usage }}]]}'
