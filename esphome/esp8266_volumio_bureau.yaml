@@ -8,9 +8,8 @@ esphome:
   board: d1_mini
 
 <<: !include common/base.yaml
-
-i2c:
-  scan: true
+<<: !include common/mqtt.yaml
+<<: !include common/i2c.yaml
 
 binary_sensor:
   - platform: status
@@ -21,7 +20,7 @@ display:
     dimensions: 16x2
     address: 0x27
     lambda: |-
-      it.printf(0, 0, "%s", "Volumio");
+      it.printf(0, 0, "%s", id(volumio_current_track).state.c_str());
 
 sensor:
   - platform: uptime
@@ -36,3 +35,7 @@ text_sensor:
   - platform: version
     icon: mdi:package-variant
     name: "${friendly_name} — Version"
+  - platform: mqtt_subscribe
+    name: "Current track"
+    id: volumio_current_track
+    topic: volumio-mqtt-proxy/volumio-hifi/status/currentTrack
