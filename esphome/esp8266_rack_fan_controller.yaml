@@ -1,0 +1,45 @@
+substitutions:
+  device_name: esp8266_rack_fan_controller
+  friendly_name: Rack Fan Controller
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: d1_mini
+
+<<: !include common/base.yaml
+<<: !include common/mqtt.yaml
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+  - platform: mqtt_subscribe
+    topic: esphome/sensor/nuc_cpu_temp
+    id: nuc_cpu_temp
+    on_value_range:
+      - above: 68.0
+        then:
+          - fan.turn_on:
+              id: server_rack_fan
+              speed: HIGH
+      - below: 60.0
+        then:
+          - fan.turn_off:
+              id: server_rack_fan
+
+output:
+  - platform: esp8266_pwm
+    id: mosfet
+    pin: D2
+
+fan:
+  - platform: speed
+    output: mosfet
+    id: server_rack_fan
+    name: "Server Rack Fan"
