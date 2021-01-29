@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+shopt -s globstar nullglob
 
 info() {
   printf "\033[34m%s\033[0m\n" "$1"
@@ -7,15 +8,12 @@ info() {
 }
 
 function setup_mock_env() {
-  echo "wifi_ssid: home_wifi" > common/secrets.yaml
-  echo "wifi_password: my_8_characters_long_key" >> common/secrets.yaml
-  cat common/secrets.yaml
+  mv secrets.mock.yaml "$(dirname "$0")/../common/secrets.yaml"
 }
 
 function compile_all() {
-  shopt -s globstar nullglob
-
   ESPHOME_CONFIGS=( **/*.yaml )
+
   for config in "${ESPHOME_CONFIGS[@]}"; do
     if echo "$config" | grep -q "_archive/"; then
       info "Skipping archived config ($config)"
