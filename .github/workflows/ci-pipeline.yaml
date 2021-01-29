@@ -33,7 +33,9 @@ jobs:
           python-version: ${{ matrix.python_version }}
           architecture: x64
       - name: "Install ESPHome (via pip)"
-        run: make install
+        run: |
+          cd esphome
+          make install
       - name: "Compile all configs"
         run: |
           cd esphome
