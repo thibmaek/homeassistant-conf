@@ -7,9 +7,9 @@ info() {
 }
 
 function setup_mock_env() {
-  echo "wifi_ssid: home_wifi" > secrets.yaml
-  echo "wifi_password: my_8_characters_long_key" >> secrets.yaml
-  cat secrets.yaml
+  echo "wifi_ssid: home_wifi" > common/secrets.yaml
+  echo "wifi_password: my_8_characters_long_key" >> common/secrets.yaml
+  cat common/secrets.yaml
 }
 
 function compile_all() {
