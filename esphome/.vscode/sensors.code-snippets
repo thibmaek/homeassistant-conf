@@ -1,0 +1,36 @@
+{
+  "ADC": {
+    "description": "The Analog To Digital (adc) Sensor allows you to use the built-in ADC in your device to measure a voltage on certain pins. On the ESP8266 only pin A0 (GPIO17) supports this. On the ESP32 pins GPIO32 through GPIO39 can be used.",
+    "prefix": "adc",
+    "body": [
+      "- platform: adc",
+      "  pin: ${A0}",
+      "  name: ${name}",
+      "  filters:",
+      "    - multiply: 3.3",
+    ],
+  },
+  "MCP3008 (Sensor)": {
+    "description": "The Microchip Technology Inc. MCP3008 devices are successive approximation 10-bit Analogto-Digital (A/D) converters with on-board sample and hold circuitry. Each pin will respond with a 0-1023 result depending on the voltage it is reading",
+    "prefix": "mcp3008",
+    "body": [
+      "- platform: mcp3008",
+      "  number: ${0}",
+      "  id: ${id}"
+    ],
+  },
+  "BME280": {
+    "description": "The BME280 Temperature+Pressure+Humidity Sensor is a simple temperature, humidity, and pressure sensor with communication over I2C. With some simple math it is possible to either determine the height of the sensor, or the current pressure at sea level. This guide can be applied to any sensor measuring temperature and pressure at the same time, like the BMP280 Temperature+Pressure Sensor, or BME680 Temperature+Pressure+Humidity+Gas Sensor.",
+    "prefix": "bme280",
+    "body": [
+      "- platform: bme280",
+      "  address: ${0x76}",
+      "  temperature:",
+      "    id: ${temperature}",
+      "  pressure:",
+      "    id: ${pressure}",
+      "  humidity:",
+      "    id: ${humidity}",
+    ],
+  },
+}

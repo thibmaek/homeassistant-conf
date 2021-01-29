@@ -27,5 +27,43 @@
       "  - platform: wifi_signal",
       "    name: \"\\${friendly_name} — Signal\"",
     ],
-  }
+  },
+  "I2C": {
+    "description": "I2C Component",
+    "prefix": "i2c",
+    "body": [
+      "i2c:",
+      "  sda: ${GPIO4}",
+      "  scl: ${GPIO5}",
+      "  scan: True",
+    ],
+  },
+  "SPI": {
+    "description": "SPI Component",
+    "prefix": "spi",
+    "body": [
+      "spi:",
+      "  clk_pin: ${D5}",
+      "  miso_pin: ${D6}",
+      "  mosi_pin: ${D7}",
+    ],
+  },
+  "MCP3008 (Component)": {
+    "description": "The Microchip Technology Inc. MCP3008 devices are successive approximation 10-bit Analogto-Digital (A/D) converters with on-board sample and hold circuitry. Each pin will respond with a 0-1023 result depending on the voltage it is reading",
+    "prefix": "mcp3008",
+    "body": [
+      "mcp3008:",
+      "  cs_pin: ${D8}",
+    ],
+  },
+  "Font": {
+    "description": "Font file component",
+    "prefix": "font",
+    "body": [
+      "font:",
+      "  - file: 'assets/fonts/${arial}.ttf'",
+      "    id: ${arial}",
+      "    size: ${28}"
+    ],
+  },
 }
