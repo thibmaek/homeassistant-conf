@@ -1,0 +1,31 @@
+substitutions:
+  device_name: esp8266_led_dimmer
+  friendly_name: ESP8266 LED Dimmer
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: d1_mini
+
+<<: !include common/base.yaml
+<<: !include common/info_sensors.yaml
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+
+output:
+  - platform: esp8266_pwm
+    pin: GPIO12
+    id: mosfet_pwm
+
+light:
+  - platform: monochromatic
+    output: mosfet_pwm
+    name: "LED Strips"
