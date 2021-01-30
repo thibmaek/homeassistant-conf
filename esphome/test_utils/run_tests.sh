@@ -8,7 +8,7 @@ info() {
 }
 
 function setup_mock_env() {
-  mv secrets.mock.yaml "$(dirname "$0")/../common/secrets.yaml"
+  mv "$(dirname "$0")/./secrets.mock.yaml" "$(dirname "$0")/../common/secrets.yaml"
 }
 
 function compile_all() {
