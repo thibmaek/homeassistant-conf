@@ -6,3 +6,7 @@
   json_attributes:
     - description
     - ingredients
+
+- platform: rest
+  name: Wireguard Status
+  resource: "http://a0d7b954-wireguard"
