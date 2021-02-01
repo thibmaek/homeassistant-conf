@@ -1,9 +1,27 @@
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
-api:
+esphome:
+  name: "${device_name}"
+  build_path: "./build/${device_name}"
 
 logger:
 
-ota:
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} — Status"
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} — Uptime"
+  - platform: wifi_signal
+    name: "${friendly_name} — Signal"
+
+switch:
+  - platform: restart
+    name: "${friendly_name} — Restart"
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} — IP"
+  - platform: version
+    icon: mdi:package-variant
+    name: "${friendly_name} — Version"
