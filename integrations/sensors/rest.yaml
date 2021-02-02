@@ -11,12 +11,25 @@
   name: "StuBru On Air"
   resource: "http://172.17.0.1:5000/stubru"
   value_template: "{{ value_json.title }}"
-  scan_interval: 1800
+  scan_interval: 900
   json_attributes:
     - description
     - startTime
     - endTime
     - image
+
+- platform: rest
+  name: "Traffic (VRT)"
+  resource: "http://172.17.0.1:5000/traffic"
+  value_template: "{{ value_json.teaser.trafficJamLength }}"
+  scan_interval: 300
+  json_attributes_path: "$.[0].teaser"
+  json_attributes:
+    - accidents
+    - congestions
+    - incidents
+    - roadWorks
+    - speedTraps
 
 - platform: rest
   name: "Wireguard Status"
