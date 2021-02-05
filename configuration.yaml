@@ -17,6 +17,7 @@ logger:
 
 config:
 discovery:
+dhcp:
 ssdp:
 zeroconf:
 mobile_app:
