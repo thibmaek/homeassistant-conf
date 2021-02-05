@@ -10,3 +10,5 @@
 /secrets.yaml
 **/partitions.csv
 test.yaml
+
+build/
