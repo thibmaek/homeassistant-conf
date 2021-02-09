@@ -4,6 +4,16 @@
     "prefix": "inc",
     "body": ["<<: !include ${1:file.yaml}"],
   },
+  "Packages": {
+    "description": "Packages",
+    "prefix": "packages",
+    "body": [
+      "packages:",
+      "  base_config: !include common/base.yaml",
+      "  wifi: !include common/wifi.yaml",
+      "  integrated: !include common/integrated.yaml",
+    ]
+  },
   "ESP8266": {
     "description": "Config for an ESP8266 based MCU",
     "prefix": ["esp8266", "esp"],

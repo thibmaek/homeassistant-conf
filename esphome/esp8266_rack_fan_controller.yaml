@@ -7,18 +7,14 @@ esphome:
   platform: ESP8266
   board: d1_mini
 
-<<: !include common/base.yaml
+packages:
+  base_config: !include common/base.yaml
+  wifi: !include common/wifi.yaml
+  integrated: !include common/integrated.yaml
+
 <<: !include common/mqtt.yaml
 
-binary_sensor:
-  - platform: status
-    name: "${friendly_name} — Status"
-
 sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
   - platform: mqtt_subscribe
     topic: esphome/sensor/nuc_cpu_temp
     id: nuc_cpu_temp
@@ -36,7 +32,7 @@ sensor:
 output:
   - platform: esp8266_pwm
     id: mosfet
-    pin: D2
+    pin: D8
 
 fan:
   - platform: speed
