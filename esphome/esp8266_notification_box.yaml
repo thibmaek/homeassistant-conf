@@ -1,0 +1,81 @@
+substitutions:
+  device_name: esp8266_notification_box
+  friendly_name: "Notification Box"
+
+packages:
+  base_config: !include common/base.yaml
+  wifi: !include common/wifi.yaml
+  integrated: !include common/integrated.yaml
+
+esphome:
+  platform: ESP8266
+  board: d1_mini
+
+binary_sensor:
+  - platform: gpio
+    id: button_brown
+    pin: D6
+    filters:
+      - delayed_on: 20ms
+    on_press:
+      - light.turn_off: leds
+      - light.turn_on:
+          id: leds
+          brightness: 80%
+          red: 100%
+          green: 85%
+          blue: 43%
+      - delay: 1s
+      - light.turn_off: leds
+  - platform: gpio
+    id: button_yellow
+    pin: D7
+    filters:
+      - delayed_on: 20ms
+    on_press:
+      - light.turn_off: leds
+      - light.turn_on:
+          id: leds
+          brightness: 80%
+          red: 87%
+          green: 100%
+          blue: 75%
+      - delay: 1s
+      - light.turn_off: leds
+  - platform: gpio
+    id: button_orange
+    pin: D8
+    filters:
+      - delayed_on: 20ms
+    on_press:
+      - light.turn_off: leds
+      - light.turn_on:
+          id: leds
+          brightness: 80%
+          red: 100%
+          green: 64%
+          blue: 28%
+      - delay: 1s
+      - light.turn_off: leds
+
+light:
+  - platform: fastled_clockless
+    id: leds
+    pin: D4
+    chipset: WS2812B
+    num_leds: 4
+    rgb_order: GRB
+    effects:
+      - automation:
+          name: Breathe
+          sequence:
+            - delay: 1s
+            - light.dim_relative:
+                id: leds
+                relative_brightness: 50%
+                transition_length: 4s
+            - delay: 1s
+            - light.dim_relative:
+                id: leds
+                relative_brightness: -50%
+                transition_length: 4s
