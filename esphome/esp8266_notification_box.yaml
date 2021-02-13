@@ -1,6 +1,7 @@
 substitutions:
-  device_name: esp8266_notification_box
-  friendly_name: "Notification Box"
+  device_name: esp8266_notification_box_lotte
+  friendly_name: "Notification Box Lotte"
+  twin: "notification_box_thib"
 
 packages:
   base_config: !include common/base.yaml
@@ -10,6 +11,47 @@ packages:
 esphome:
   platform: ESP8266
   board: d1_mini
+
+switch:
+  - platform: template
+    name: "${friendly_name} - Red"
+    turn_on_action:
+      - light.turn_off: leds
+      - light.turn_on:
+          id: leds
+          brightness: 80%
+          red: 100%
+          green: 85%
+          blue: 43%
+          effect: "Breathe"
+      - delay: 10s
+      - light.turn_off: leds
+  - platform: template
+    name: "${friendly_name} - Green"
+    turn_on_action:
+      - light.turn_off: leds
+      - light.turn_on:
+          id: leds
+          brightness: 80%
+          red: 87%
+          green: 100%
+          blue: 75%
+          effect: "Breathe"
+      - delay: 10s
+      - light.turn_off: leds
+  - platform: template
+    name: "${friendly_name} - Orange"
+    turn_on_action:
+      - light.turn_off: leds
+      - light.turn_on:
+          id: leds
+          brightness: 80%
+          red: 100%
+          green: 64%
+          blue: 28%
+          effect: "Breathe"
+      - delay: 10s
+      - light.turn_off: leds
 
 binary_sensor:
   - platform: gpio
@@ -25,6 +67,10 @@ binary_sensor:
           red: 100%
           green: 85%
           blue: 43%
+      - homeassistant.service:
+          service: switch.turn_on
+          data:
+            entity_id: "switch.${twin}_red"
       - delay: 1s
       - light.turn_off: leds
   - platform: gpio
@@ -40,6 +86,10 @@ binary_sensor:
           red: 87%
           green: 100%
           blue: 75%
+      - homeassistant.service:
+          service: switch.turn_on
+          data:
+            entity_id: "switch.${twin}_green"
       - delay: 1s
       - light.turn_off: leds
   - platform: gpio
@@ -55,6 +105,10 @@ binary_sensor:
           red: 100%
           green: 64%
           blue: 28%
+      - homeassistant.service:
+          service: switch.turn_on
+          data:
+            entity_id: "switch.${twin}_orange"
       - delay: 1s
       - light.turn_off: leds
 
