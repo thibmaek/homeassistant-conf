@@ -1,0 +1,35 @@
+substitutions:
+  device_name: esp32_seedling_monitor
+  friendly_name: ESP32 Seedling Monitor
+
+esphome:
+  name: "${device_name}"
+  platform: ESP32
+  board: esp32dev
+
+packages:
+  base_config: !include common/base.yaml
+  wifi: !include common/wifi.yaml
+  integrated: !include common/integrated.yaml
+
+binary_sensor:
+  - platform: gpio
+    name: "Dry Soil"
+    pin: GPIO2
+
+output:
+  - platform: gpio
+    name: "Soil Sensor Power"
+    id: soil_sensor_power
+    pin: GPIO33
+    inverted: true
+
+sensor:
+  - platform: dht
+    pin: GPIO23
+    temperature:
+      name: "Temperature"
+    humidity:
+      name: "Humidity"
+    update_interval: 60s
+    model: DHT11
