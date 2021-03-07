@@ -2,18 +2,17 @@ substitutions:
   device_name: esp8266_volumio_bureau
   friendly_name: "Volumio Bureau"
 
+packages:
+  base_config: !include common/base.yaml
+  wifi: !include common/wifi.yaml
+  integrated: !include common/integrated.yaml
+
 esphome:
-  name: "${device_name}"
   platform: ESP8266
   board: d1_mini
 
-<<: !include common/base.yaml
 <<: !include common/mqtt.yaml
 <<: !include common/i2c.yaml
-
-binary_sensor:
-  - platform: status
-    name: "${friendly_name} — Status"
 
 display:
   - platform: lcd_pcf8574
@@ -22,20 +21,8 @@ display:
     lambda: |-
       it.printf(0, 0, "%s", id(volumio_current_track).state.c_str());
 
-sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
-
 text_sensor:
-  - platform: wifi_info
-    ip_address:
-      name: "${friendly_name} — IP"
-  - platform: version
-    icon: mdi:package-variant
-    name: "${friendly_name} — Version"
   - platform: mqtt_subscribe
     name: "Current track"
     id: volumio_current_track
-    topic: volumio-mqtt-proxy/volumio-hifi/status/currentTrack
+    topic: go-volumio-mqtt/volumio-bureau/track
