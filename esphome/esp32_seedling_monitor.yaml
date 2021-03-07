@@ -12,24 +12,31 @@ packages:
   wifi: !include common/wifi.yaml
   integrated: !include common/integrated.yaml
 
+interval:
+  - interval: 60min
+    then:
+      - switch.toggle: soil_sensor_power
+
 binary_sensor:
   - platform: gpio
-    name: "Dry Soil"
-    pin: GPIO2
+    name: "${friendly_name} — Dry Soil"
+    device_class: moisture
+    pin: GPIO13
 
-output:
+switch:
   - platform: gpio
-    name: "Soil Sensor Power"
     id: soil_sensor_power
-    pin: GPIO33
-    inverted: true
+    name: "${friendly_name} — Soil Sensor Power"
+    pin:
+      number: GPIO33
+      inverted: false
 
 sensor:
   - platform: dht
+    model: DHT11
     pin: GPIO23
     temperature:
-      name: "Temperature"
+      name: "${friendly_name} — Temperature"
     humidity:
-      name: "Humidity"
+      name: "${friendly_name} — Humidity"
     update_interval: 60s
-    model: DHT11
