@@ -1,0 +1,12 @@
+- platform: afvalbeheer
+  wastecollector: RecycleApp
+  resources:
+    - restafval
+    - papier
+    - pmd
+  postcode: 9000
+  streetnumber: 194
+  streetname: !secret streetname_home
+  dateonly: 1
+  builtinicons: 1
+  disableicons: 1
