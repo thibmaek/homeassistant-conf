@@ -4,28 +4,18 @@ substitutions:
   plant_one: "Fridge 1"
   plant_two: "Fridge 2"
 
-<<: !include common/base.yaml
-<<: !include common/info_sensors.yaml
+packages:
+  base_config: !include common/base.yaml
+  wifi: !include common/wifi.yaml
+  integrated: !include common/integrated.yaml
 
 esphome:
-  name: "${device_name}"
   platform: ESP32
   board: esp32dev
 
 esp32_ble_tracker:
 
-binary_sensor:
-  - platform: status
-    name: "${friendly_name} — Status"
-
 sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
-    update_interval: 60s
-
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:65:CA:76'
     temperature:
@@ -42,12 +32,12 @@ sensor:
   - platform: xiaomi_hhccjcy01
     mac_address: 'C4:7C:8D:66:56:FC'
     temperature:
-      name: "${plant_two} Temperature"
+      name: "${plant_two} — Temperature"
     moisture:
-      name: "${plant_two} Moisture"
+      name: "${plant_two} — Moisture"
     illuminance:
-      name: "${plant_two} Illuminance"
+      name: "${plant_two} — Illuminance"
     conductivity:
-      name: "${plant_two} Soil Conductivity"
+      name: "${plant_two} — Soil Conductivity"
     battery_level:
-      name: "${plant_two} Battery Level"
+      name: "${plant_two} — Battery Level"
