@@ -58,58 +58,20 @@
           http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p
         {% endif %}
 
-
 - platform: template
   sensors:
-    room_summary_bedroom:
-      friendly_name: Bedroom summary
-      value_template: >-
-        {% set temperature = states('sensor.bedroom_temperature') + state_attr('sensor.bedroom_temperature', 'unit_of_measurement') %}
-
-        {{ temperature }} / {{ state_attr('media_player.volumio_volumio_bedroom_local', 'media_title') if is_state('media_player.volumio_volumio_bedroom_local', 'paused') }}
-      attribute_templates:
-        is_hot: >
-          {{ (states('sensor.bedroom_temperature') | int) > (state_attr('weather.weather', 'temperature') | int + 5) }}
-
-    room_summary_living:
-      friendly_name: Living summary
-      value_template: >-
-        {% set temperature = states('sensor.living_room_temperature') + state_attr('sensor.living_room_temperature', 'unit_of_measurement') %}
-
-        {% if is_state('media_player.samsung_ru7100_7_series', 'on') %}
-          {% if is_state_attr('media_player.samsung_ru7100_7_series', 'source', 'Playstation') %}
-            {% set tv_source = state_attr('media_player.playstation_4', 'media_title') %}
-          {% elif is_state_attr('media_player.samsung_ru7100_7_series', 'source', 'Plex') %}
-            {% set tv_source = state_attr('media_player.plex_plex_for_samsung_tv_ue50ru7100wxxn', 'media_title') %}
-          {% elif is_state_attr('media_player.samsung_ru7100_7_series', 'source', 'Telenet') %}
-            {% set tv_source = 'Telenet' %}
-          {% endif %}
-        {% else %}
-          {% set tv_source = 'TV off'%}
-        {% endif %}
-
-        {{ temperature }} / {{ tv_source }}
-      attribute_templates:
-        is_hot: >
-          {{ (states('sensor.living_room_temperature') | int) > (state_attr('weather.weather', 'temperature') | int + 5) }}
-
-    room_summary_studio:
-      friendly_name: Studio summary
-      value_template: >-
-        {% set temperature = states('sensor.upstairs_temperature') + state_attr('sensor.upstairs_temperature', 'unit_of_measurement') %}
-
-        {{ temperature }} / {{ states('sensor.discogs_random_record') }}
-      attribute_templates:
-        is_hot: >
-          {{ (states('sensor.upstairs_temperature') | int) > (state_attr('weather.weather', 'temperature') | int + 5) }}
-
-    room_summary_kitchen:
-      friendly_name: Kitchen summary
-      value_template: >-
-        {% if is_state('media_player.kitchen', 'playing') %}
-          {% set sonos_now_playing = state_attr('media_player.kitchen', 'media_artist') + ' - ' + state_attr('media_player.kitchen', 'media_title') %}
-        {% else %}
-          {% set sonos_now_playing = 'Nothing playing' %}
-        {% endif %}
-
-        {{ sonos_now_playing }}
+    ambee_pollen_weed:
+      icon_template: "mdi:nature"
+      friendly_name: "Weed pollen"
+      value_template: >
+        {{ state_attr('sensor.ambee_pollen', 'weed_pollen') }}
+    ambee_pollen_tree:
+      icon_template: "mdi:tree-outline"
+      friendly_name: "Tree pollen"
+      value_template: >
+        {{ state_attr('sensor.ambee_pollen', 'tree_pollen') }}
+    ambee_pollen_grass:
+      icon_template: "mdi:grass"
+      friendly_name: "Grass pollen"
+      value_template: >
+        {{ state_attr('sensor.ambee_pollen', 'grass_pollen') }}

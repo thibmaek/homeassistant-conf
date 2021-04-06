@@ -34,3 +34,16 @@
 - platform: rest
   name: "Wireguard Status"
   resource: "http://a0d7b954-wireguard"
+
+- platform: rest
+  name: "Pollen"
+  resource: https://api.ambeedata.com/latest/pollen/by-place?place=Ghent,Belgium
+  scan_interval: 3600
+  headers:
+    content-type: "application/json"
+    x-api-key: !secret ambee_api_key
+  json_attributes_path: "$.data.['Risk']"
+  json_attributes:
+    - tree_pollen
+    - grass_pollen
+    - weed_pollen
