@@ -36,7 +36,7 @@
   resource: "http://a0d7b954-wireguard"
 
 - platform: rest
-  name: "Pollen"
+  name: "Ambee Pollen"
   resource: https://api.ambeedata.com/latest/pollen/by-place?place=Ghent,Belgium
   scan_interval: 3600
   headers:
