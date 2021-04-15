@@ -54,7 +54,7 @@ font:
     size: 32
   - file: 'assets/fonts/arial.ttf'
     id: arial_sm
-    size: 10
+    size: 12
 
 display:
   - platform: ssd1306_i2c
@@ -67,7 +67,11 @@ display:
       it.strftime(2, 32, id(arial), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
 
       if (id(temperature).has_state()) {
-        it.printf(127, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
+        it.printf(it.get_width() - 2, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
+      }
+
+      if (id(octoprint_print_progress).has_state()) {
+        it.printf(it.get_width() - 2, 20, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f%%", id(octoprint_print_progress).state);
       }
 
 light:
@@ -89,11 +93,10 @@ output:
     pin: D7
 
 sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
-    update_interval: 60s
+  - platform: homeassistant
+    id: octoprint_print_progress
+    entity_id: sensor.octoprint_print_progress
+    internal: true
   - platform: bme280
     address: 0x76
     temperature:
