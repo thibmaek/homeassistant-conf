@@ -3,14 +3,18 @@ substitutions:
   friendly_name: "ESP8266 Node Upstairs"
   room: Upstairs
 
+packages:
+  base_config: !include common/base.yaml
+  wifi: !include common/wifi.yaml
+  integrated: !include common/integrated.yaml
+  i2c: !include common/i2c.yaml
+
 esphome:
-  name: "${device_name}"
   platform: ESP8266
   board: d1_mini
-
-<<: !include common/base.yaml
-<<: !include common/i2c.yaml
-<<: !include common/info_sensors.yaml
+  on_boot:
+    then:
+      - light.turn_off: rgb_led
 
 api:
   services:
@@ -21,10 +25,6 @@ api:
         - lambda: |-
             id(oled_display).set_brightness(brightness);
             id(oled_display).fill(COLOR_ON);
-
-binary_sensor:
-  - platform: status
-    name: "${friendly_name} — Status"
 
 time:
   - platform: homeassistant
@@ -51,10 +51,10 @@ switch:
 font:
   - file: 'assets/fonts/arial.ttf'
     id: arial
-    size: 28
+    size: 32
   - file: 'assets/fonts/arial.ttf'
     id: arial_sm
-    size: 14
+    size: 10
 
 display:
   - platform: ssd1306_i2c
@@ -68,10 +68,6 @@ display:
 
       if (id(temperature).has_state()) {
         it.printf(127, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
-      }
-
-      if (id(humidity).has_state()) {
-        it.printf(127, 28, id(arial_sm), TextAlign::BASELINE_RIGHT, "%.1f%%", id(humidity).state);
       }
 
 light:
@@ -115,11 +111,7 @@ sensor:
                 blue: 0
         - below: 28.9
           then:
-            - light.turn_on:
-                id: rgb_led
-                red: 0
-                green: 1.0
-                blue: 0
+            - light.turn_off: rgb_led
     pressure:
       name: "${room} Pressure"
     humidity:
