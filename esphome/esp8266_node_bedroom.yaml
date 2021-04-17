@@ -4,14 +4,15 @@ substitutions:
   room: Bedroom
 
 
+packages:
+  base_config: !include common/base.yaml
+  wifi: !include common/wifi.yaml
+  integrated: !include common/integrated.yaml
+  i2c: !include common/i2c.yaml
+
 esphome:
-  name: "${device_name}"
   platform: ESP8266
   board: nodemcuv2
-
-<<: !include common/base.yaml
-<<: !include common/info_sensors.yaml
-<<: !include common/i2c.yaml
 
 api:
   services:
@@ -22,10 +23,6 @@ api:
         - lambda: |-
             id(oled_display).set_brightness(brightness);
             id(oled_display).fill(COLOR_ON);
-
-binary_sensor:
-  - platform: status
-    name: "${friendly_name} — Status"
 
 time:
   - platform: homeassistant
@@ -59,12 +56,12 @@ switch:
             id(oled_display).fill(COLOR_OFF);
 
 font:
-  - file: 'assets/fonts/arial.ttf'
-    id: arial
-    size: 28
-  - file: 'assets/fonts/arial.ttf'
-    id: arial_sm
-    size: 14
+  # - file: 'assets/fonts/arial.ttf'
+  #   id: arial
+  #   size: 40
+  - file: "assets/fonts/din_alt.ttf"
+    id: din
+    size: 46
 
 display:
   - platform: ssd1306_i2c
@@ -74,22 +71,9 @@ display:
     brightness: 60%
     rotation: 180°
     lambda: |-
-      it.strftime(2, 64, id(arial), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
-
-      if (id(temperature).has_state()) {
-        it.printf(127, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
-      }
-
-      if (id(humidity).has_state()) {
-        it.printf(127, 28, id(arial_sm), TextAlign::BASELINE_RIGHT, "%.1f%%", id(humidity).state);
-      }
+      it.strftime(64, 32, id(din), TextAlign::CENTER, "%H:%M", id(esptime).now());
 
 sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
-    update_interval: 60s
   - platform: bme280
     address: 0x76
     temperature:
