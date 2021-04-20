@@ -1,0 +1,7 @@
+- platform: populartimes
+  name: 'Delhaize Dok Noord'
+  address: 'Proxy Sint-Amandsberg, Waterstraat 2,9040 Gent, Belgium'
+
+- platform: populartimes
+  name: 'Delhaize Oostakker'
+  address: 'AD Delhaize Dok Noord, Dok-Noord 7, 9000 Gent, Belgium'
