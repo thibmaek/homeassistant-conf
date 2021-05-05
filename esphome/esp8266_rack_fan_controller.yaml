@@ -19,12 +19,12 @@ sensor:
     topic: esphome/sensor/nuc_cpu_temp
     id: nuc_cpu_temp
     on_value_range:
-      - above: 68.0
+      - above: 72.0
         then:
           - fan.turn_on:
               id: server_rack_fan
               speed: HIGH
-      - below: 60.0
+      - below: 68.0
         then:
           - fan.turn_off:
               id: server_rack_fan
