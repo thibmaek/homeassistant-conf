@@ -6,3 +6,4 @@
 - platform: generic
   name: "rpi-node-kompass"
   stream_source: !secret rpi_node_kompass_rtsp_url
+  still_image_url: "https://sonofcam.com"
