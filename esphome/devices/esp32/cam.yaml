@@ -1,0 +1,38 @@
+substitutions:
+  device_name: esp32_camera
+  friendly_name: "ESP32 Camera"
+
+esphome:
+  platform: ESP32
+  board: esp32cam
+
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
+
+esp32_camera:
+  name: "${friendly_name} — Camera"
+  resolution: 640x480
+  jpeg_quality: 10
+  external_clock:
+    pin: GPIO0
+    frequency: 20MHz
+  i2c_pins:
+    sda: GPIO26
+    scl: GPIO27
+  data_pins: [GPIO5, GPIO18, GPIO19, GPIO21, GPIO36, GPIO39, GPIO34, GPIO35]
+  vsync_pin: GPIO25
+  href_pin: GPIO23
+  pixel_clock_pin: GPIO22
+  power_down_pin: GPIO32
+
+time:
+  - platform: sntp
+    on_time:
+      - seconds: 0
+        minutes: 30
+        hours: 7
+        days_of_week: '*'
+        then:
+          - switch.toggle: restart_camera

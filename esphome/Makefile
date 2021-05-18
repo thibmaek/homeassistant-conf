@@ -7,6 +7,7 @@ clean:
 		-not \( -path ./.vscode \) \
 		-not \( -path ./assets \) \
 		-not \( -path ./common \) \
+		-not \( -path ./devices \) \
 		-not \( -path ./test_utils \) \
 		-print | xargs /bin/rm -rf
 

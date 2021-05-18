@@ -12,19 +12,9 @@ function setup_mock_env() {
 }
 
 function compile_all() {
-  ESPHOME_CONFIGS=( **/*.yaml )
+  ESPHOME_CONFIGS=( devices/**/*.yaml )
 
   for config in "${ESPHOME_CONFIGS[@]}"; do
-    if echo "$config" | grep -q "_archive/"; then
-      info "Skipping archived config ($config)"
-      continue
-    fi
-
-    if echo "$config" | grep -q "common/"; then
-      info "Skipping shared config ($config)"
-      continue
-    fi
-
     echo "🛠  Compiling ESPHome configuration: $config"
     if ! esphome "$config" compile; then
       exit 1
