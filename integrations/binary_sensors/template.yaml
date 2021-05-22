@@ -1,31 +1,5 @@
 - platform: template
   sensors:
-    updater_supervisor:
-      unique_id: updater_supervisor
-      friendly_name: "Updater (Supervisor)"
-      device_class: problem
-      icon_template: mdi:home-assistant
-      value_template: >
-        {{ state_attr('sensor.supervisor_updates', 'current_version') != state_attr('sensor.supervisor_updates', 'newest_version') }}
-      availability_template: >
-        {{ (states('sensor.supervisor_updates') | int(-1)) > -1 }}
-    updater_hacs:
-      unique_id: updater_hacs
-      friendly_name: "Updater (HACS)"
-      device_class: problem
-      icon_template: mdi:store
-      value_template: >
-        {{ states('sensor.hacs') | int > 0 }}
-    updater_addons:
-      unique_id: updater_addons
-      friendly_name: "Updater (Addons)"
-      device_class: problem
-      icon_template: mdi:puzzle
-      value_template: >
-        {{ states('sensor.supervisor_updates') | int > 0 }}
-
-- platform: template
-  sensors:
     no_one_home:
       friendly_name: "No one home"
       value_template: >
@@ -33,3 +7,19 @@
           not is_state("person.thibault", "home")
           and not is_state("person.lotte", "home")
         }}
+
+# Dark rooms
+- platform: template
+  sensors:
+    bedroom_dark:
+      friendly_name: "Bedroom dark"
+      value_template: >
+        {{ states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 }}
+    living_dark:
+      friendly_name: "Living dark"
+      value_template: >
+        {{ states('sensor. !env_var ') | int < 70 }}
+    kitchen_dark:
+      friendly_name: "Kitchen dark"
+      value_template: >
+        {{ states('sensor.kitchen_illuminance') | int < 70 }}
