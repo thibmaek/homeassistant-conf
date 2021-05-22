@@ -12,3 +12,6 @@
 test.yaml
 
 build/
+
+devices/**/.gitignore
+devices/**/build
