@@ -2,6 +2,12 @@
   sensors:
     no_one_home:
       friendly_name: "No one home"
+      icon_template: >
+        {% if not is_state("person.thibault", "home") and not is_state("person.lotte", "home") %}
+          mdi:account-multiple-remove
+        {% else %}
+          mdi:account-multiple-check
+        {% endif %}
       value_template: >
         {{
           not is_state("person.thibault", "home")
@@ -13,13 +19,31 @@
   sensors:
     bedroom_dark:
       friendly_name: "Bedroom dark"
+      icon_template: >
+        {% if states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 %}
+          mdi:brightness-7
+        {% else %}
+          mdi:brightness-2
+        {% endif %}
       value_template: >
         {{ states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 }}
     living_dark:
       friendly_name: "Living dark"
+      icon_template: >
+        {% if states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 %}
+          mdi:brightness-7
+        {% else %}
+          mdi:brightness-2
+        {% endif %}
       value_template: >
         {{ states('sensor. !env_var ') | int < 70 }}
     kitchen_dark:
       friendly_name: "Kitchen dark"
+      icon_template: >
+        {% if states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 %}
+          mdi:brightness-7
+        {% else %}
+          mdi:brightness-2
+        {% endif %}
       value_template: >
         {{ states('sensor.kitchen_illuminance') | int < 70 }}
