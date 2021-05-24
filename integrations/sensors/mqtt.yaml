@@ -6,19 +6,27 @@
   json_attributes_template: "{{ value_json.state | tojson }}"
 
 - platform: mqtt
-  name: Zigbee2MQTT Version
+  name: "Plex Transcodes"
+  icon: mdi:plex
+  state_topic: "tautulli/notifications/plex/transcode"
+  value_template: "{{ value_json.subject }}"
+  json_attributes_topic: "tautulli/notifications/plex/transcode"
+  json_attributes_template: "{{ value_json.body | tojson }}"
+
+- platform: mqtt
+  name: "Zigbee2MQTT Version"
   state_topic: "zigbee2mqtt/bridge/config"
   value_template: "{{ value_json.version }}"
   icon: mdi:zigbee
 
 - platform: mqtt
-  name: Zigbee2MQTT Coordinator Version
+  name: "Zigbee2MQTT Coordinator Version"
   state_topic: "zigbee2mqtt/bridge/config"
   value_template: "{{ value_json.coordinator }}"
   icon: mdi:chip
 
 - platform: mqtt
-  name: Zigbee2MQTT Networkmap
+  name: "Zigbee2MQTT Networkmap"
   icon: mdi:lan-pending
   state_topic: "zigbee2mqtt/bridge/networkmap/raw"
   value_template: >-
