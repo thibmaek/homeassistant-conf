@@ -26,37 +26,11 @@
       unit_of_measurement: 'on'
       value_template: >
         {{ states['light'] | selectattr('state', 'eq', 'on') | list | count }}
-
-- platform: template
-  sensors:
-    spotify_input_uri:
-      friendly_name: "Spotify List URI"
-      value_template: >-
-        {% if is_state('input_select.spotify_playlists', '\U0001F3E1 Muide') %}
-          spotify:playlist:0ULsscMIrT1m5AgLRdFbin
-        {% elif is_state('input_select.spotify_playlists', 'Palo Cortado') %}
-          spotify:playlist:36xr7VBOS2MR0ZAvTWcdmU
-        {% elif is_state('input_select.spotify_playlists', 'Diner') %}
-          spotify:playlist:7wxx9SFMvFnMdVj0RthRcl
-        {% endif %}
-    webradio_uri:
-      friendly_name: "Webradio List URI"
-      value_template: >-
-        {% if is_state('input_select.webradio_channel', 'Stu Bru') %}
-          http://icecast.vrtcdn.be/stubru-high.mp3
-        {% elif is_state('input_select.webradio_channel', 'Klara') %}
-          http://icecast.vrtcdn.be/klara-high.mp3
-        {% elif is_state('input_select.webradio_channel', 'Klara Continuo') %}
-          http://icecast.vrtcdn.be/klaracontinuo-high.mp3
-        {% elif is_state('input_select.webradio_channel', 'Radio 1') %}
-          http://icecast.vrtcdn.be/radio1-high.mp3
-        {% elif is_state('input_select.webradio_channel', 'Worldwide FM') %}
-          https://worldwidefm.out.airtime.pro/worldwidefm_b
-        {% elif is_state('input_select.webradio_channel', 'NTS') %}
-          https://stream-relay-geo.ntslive.net/stream
-        {% elif is_state('input_select.webradio_channel', 'BBC Radio 1') %}
-          http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p
-        {% endif %}
+    media_players_playing:
+      friendly_name: "Media playing"
+      unit_of_measurement: 'playing'
+      value_template: >
+        {{ states['media_player'] | selectattr('state', 'eq', 'on') | list | count }}
 
 - platform: template
   sensors:
