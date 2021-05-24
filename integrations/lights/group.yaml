@@ -5,7 +5,14 @@
     - light.lsc_smart_connect_e27_filament_led_inkom_2
 
 - platform: group
-  name: Badkamer Lampjes
+  name: "Badkamer Lampjes"
   entities:
     - light.badkamer_lampje_thib
     - light.badkamer_lampje_lotte
+
+- platform: group
+  name: "Bureaulampen"
+  entities:
+    - light.spotlight
+    - light.wled_monitor_stand
+    - light.wled_weather_lamp
