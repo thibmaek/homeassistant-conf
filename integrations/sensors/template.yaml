@@ -30,7 +30,7 @@
       friendly_name: "Media playing"
       unit_of_measurement: 'playing'
       value_template: >
-        {{ states['media_player'] | selectattr('state', 'eq', 'on') | list | count }}
+        {{ states['media_player'] | selectattr('state', 'eq', 'playing') | list | count }}
 
 - platform: template
   sensors:
