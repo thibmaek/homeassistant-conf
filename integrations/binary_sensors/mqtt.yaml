@@ -3,3 +3,10 @@
   state_topic: "retropie/playing_state"
   payload_on: "PLAYING"
   payload_off: "IDLE"
+
+- platform: mqtt
+  name: "Zigbee2MQTT Bridge"
+  state_topic: "zigbee2mqtt/bridge/state"
+  payload_on: "online"
+  payload_off: "offline"
+  device_class: connectivity

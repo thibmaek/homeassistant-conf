@@ -6,11 +6,6 @@
   json_attributes_template: "{{ value_json.state | tojson }}"
 
 - platform: mqtt
-  name: Zigbee2MQTT Bridge state
-  state_topic: "zigbee2mqtt/bridge/state"
-  icon: mdi:router-wireless
-
-- platform: mqtt
   name: Zigbee2MQTT Version
   state_topic: "zigbee2mqtt/bridge/config"
   value_template: "{{ value_json.version }}"
