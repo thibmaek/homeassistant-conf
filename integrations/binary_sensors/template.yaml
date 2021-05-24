@@ -21,29 +21,29 @@
       friendly_name: "Bedroom dark"
       icon_template: >
         {% if states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 %}
-          mdi:brightness-7
-        {% else %}
           mdi:brightness-2
+        {% else %}
+          mdi:brightness-7
         {% endif %}
       value_template: >
         {{ states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 }}
     living_dark:
       friendly_name: "Living dark"
       icon_template: >
-        {% if states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 %}
-          mdi:brightness-7
-        {% else %}
+        {% if states('light_intensity_living_illuminance_lux') | int < 70 %}
           mdi:brightness-2
+        {% else %}
+          mdi:brightness-7
         {% endif %}
       value_template: >
-        {{ states('sensor. !env_var ') | int < 70 }}
+        {{ states('sensor.light_intensity_living_illuminance_lux') | int < 70 }}
     kitchen_dark:
       friendly_name: "Kitchen dark"
       icon_template: >
-        {% if states('sensor.light_intensity_bedroom_illuminance_lux') | int < 70 %}
-          mdi:brightness-7
-        {% else %}
+        {% if states('sensor.kitchen_illuminance') | int < 70 %}
           mdi:brightness-2
+        {% else %}
+          mdi:brightness-7
         {% endif %}
       value_template: >
         {{ states('sensor.kitchen_illuminance') | int < 70 }}
