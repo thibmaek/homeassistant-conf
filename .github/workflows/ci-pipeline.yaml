@@ -7,28 +7,29 @@ on:
 
 jobs:
   linting:
-    name: Linting
+    name: "Linting"
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@master
       - name: Superlint
-        uses: docker://github/super-linter:v2.1.0
+        uses: github/super-linter@master
         env:
           VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_JAVASCRIPT_ES: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   esphome:
-    name: Compile ESPHome
+    name: "Compile ESPHome"
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python_version: ['3.x']
     steps:
-      - name: Checking out repository
+      - name: "Checking out repository"
         uses: actions/checkout@master
       - name: "Setup Python: ${{ matrix.python_version }}"
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@master
         with:
           python-version: ${{ matrix.python_version }}
           architecture: x64
