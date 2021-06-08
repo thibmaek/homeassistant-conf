@@ -139,6 +139,18 @@ binary_sensor:
       number: GPIO12
       mode: INPUT_PULLUP
       inverted: true
+    on_click:
+      min_length: 1000ms
+      max_length: 2000ms
+      then:
+        - sensor.template.publish:
+            id: mode
+            state: !lambda |-
+              auto call = id(color_led).turn_on();
+              call.set_transition_length(1000);
+              call.set_rgb(1.0, 1.0, 1.0);
+              call.perform();
+              return 0;
     on_press:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
@@ -146,10 +158,33 @@ binary_sensor:
       - sensor.template.publish:
           id: mode
           state: !lambda |-
-            if (id(mode).state < 4) {
-              return id(mode).state += 1;
+            auto call = id(color_led).turn_on();
+            call.set_transition_length(1000);
+            if (id(mode).state == 0) {
+              call.set_rgb(1.0, 1.0, 0.0);
+              call.perform();
+              return 1;
             }
-            return 0;
+            if (id(mode).state == 1) {
+              call.set_rgb(1.0, 0.0, 1.0);
+              call.perform();
+              return 2;
+            }
+            if (id(mode).state == 2) {
+              call.set_rgb(0.0, 1.0, 1.0);
+              call.perform();
+              return 3;
+            }
+            if (id(mode).state == 3) {
+              call.set_rgb(0.5, 1.0, 0.8);
+              call.perform();
+              return 4;
+            }
+            if (id(mode).state == 4) {
+              call.set_rgb(1.0, 1.0, 1.0);
+              call.perform();
+              return 0;
+            }
 
   - platform: gpio
     name: "${friendly_name} — Button 10"
@@ -199,12 +234,12 @@ light:
   - platform: fastled_clockless
     id: color_led
     name: "${friendly_name} — Color LED"
+    internal: true
     pin: GPIO19
     chipset: WS2811
     num_leds: 1
     rgb_order: GRB
     effects:
-      - pulse:
       - automation:
           name: "Breathe"
           sequence:
@@ -223,6 +258,7 @@ sensor:
   - platform: template
     name: "${friendly_name} - Mode"
     id: mode
+    icon: mdi:select-all
 
   - platform: adc
     name: "${friendly_name} - Potentiometer"
