@@ -52,7 +52,7 @@ influxdb:
   ssl: false
   token: !secret influxdb_token
   organization: thibmaek
-  bucket: home-assistant
+  bucket: homeassistant
   tags_attributes:
     - friendly_name
   include:
