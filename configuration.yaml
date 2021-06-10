@@ -46,11 +46,15 @@ recorder:
       - calendar
 
 influxdb:
-  api_version: 1
+  api_version: 2
   host: !secret localhost
-  username: !secret influxdb_user
-  password: !secret influxdb_password
-  database: homeassistant
+  port: 8084
+  ssl: false
+  token: !secret influxdb_token
+  organization: thibmaek
+  bucket: home-assistant
+  tags_attributes:
+    - friendly_name
   include:
     entity_globs:
       - sensor.*_temperature
