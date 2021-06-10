@@ -9,22 +9,11 @@ cloud:
 frontend:
   themes: !include_dir_merge_named themes/
 
-system_health:
-updater:
 logger:
   default: warn
 
-config:
 discovery:
-dhcp:
-ssdp:
-zeroconf:
-mobile_app:
-person:
 wake_on_lan:
-sun:
-media_source:
-image:
 
 automation: !include automations.yaml
 scene: !include scenes.yaml
@@ -32,7 +21,6 @@ script: !include scripts.yaml
 # endregion
 
 # region: History
-history:
 logbook:
   exclude:
     entities:
@@ -42,6 +30,7 @@ logbook:
       - sensor.*_uptime
     domains:
       - calendar
+
 recorder:
   db_url: !secret maria_db_url
   auto_purge: true
@@ -55,6 +44,7 @@ recorder:
       - sensor.octoprint_*
     domains:
       - calendar
+
 influxdb:
   api_version: 1
   host: !secret localhost
@@ -87,7 +77,6 @@ spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
 
-stream:
 ffmpeg:
 # endregion
 
