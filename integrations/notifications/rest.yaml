@@ -1,0 +1,8 @@
+- platform: rest
+  name: Gotify
+  resource: !secret gotify_host
+  method: POST
+  headers:
+    X-Gotify-Key: !secret gotify_token
+  title_param_name: title
+  message_param_name: message
