@@ -16,6 +16,7 @@ sensor:
 
 switch:
   - platform: restart
+    id: base_restart
     name: "${friendly_name} — Restart"
 
 text_sensor:

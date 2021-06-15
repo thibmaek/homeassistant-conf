@@ -35,6 +35,60 @@ ota:
 
 binary_sensor:
   - platform: gpio
+    name: "${friendly_name} — Rotary Encoder Button"
+    internal: true
+    pin:
+      number: GPIO21
+      mode: INPUT_PULLUP
+      inverted: true
+    on_click:
+      min_length: 1000ms
+      max_length: 2000ms
+      then:
+        - sensor.template.publish:
+            id: mode
+            state: !lambda |-
+              auto call = id(color_led).turn_on();
+              call.set_transition_length(1000);
+              call.set_rgb(1.0, 1.0, 1.0);
+              call.perform();
+              return 0;
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "rotary_encoder"
+      - sensor.template.publish:
+          id: mode
+          state: !lambda |-
+            auto call = id(color_led).turn_on();
+            call.set_transition_length(1000);
+            if (id(mode).state == 0) {
+              call.set_rgb(1.0, 1.0, 0.0);
+              call.perform();
+              return 1;
+            }
+            if (id(mode).state == 1) {
+              call.set_rgb(1.0, 0.0, 1.0);
+              call.perform();
+              return 2;
+            }
+            if (id(mode).state == 2) {
+              call.set_rgb(0.0, 1.0, 1.0);
+              call.perform();
+              return 3;
+            }
+            if (id(mode).state == 3) {
+              call.set_rgb(0.5, 1.0, 0.8);
+              call.perform();
+              return 4;
+            }
+            if (id(mode).state == 4) {
+              call.set_rgb(1.0, 1.0, 1.0);
+              call.perform();
+              return 0;
+            }
+
+  - platform: gpio
     name: "${friendly_name} — Top Button"
     pin:
       number: GPIO13
@@ -139,52 +193,10 @@ binary_sensor:
       number: GPIO12
       mode: INPUT_PULLUP
       inverted: true
-    on_click:
-      min_length: 1000ms
-      max_length: 2000ms
-      then:
-        - sensor.template.publish:
-            id: mode
-            state: !lambda |-
-              auto call = id(color_led).turn_on();
-              call.set_transition_length(1000);
-              call.set_rgb(1.0, 1.0, 1.0);
-              call.perform();
-              return 0;
     on_press:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "9"
-      - sensor.template.publish:
-          id: mode
-          state: !lambda |-
-            auto call = id(color_led).turn_on();
-            call.set_transition_length(1000);
-            if (id(mode).state == 0) {
-              call.set_rgb(1.0, 1.0, 0.0);
-              call.perform();
-              return 1;
-            }
-            if (id(mode).state == 1) {
-              call.set_rgb(1.0, 0.0, 1.0);
-              call.perform();
-              return 2;
-            }
-            if (id(mode).state == 2) {
-              call.set_rgb(0.0, 1.0, 1.0);
-              call.perform();
-              return 3;
-            }
-            if (id(mode).state == 3) {
-              call.set_rgb(0.5, 1.0, 0.8);
-              call.perform();
-              return 4;
-            }
-            if (id(mode).state == 4) {
-              call.set_rgb(1.0, 1.0, 1.0);
-              call.perform();
-              return 0;
-            }
 
   - platform: gpio
     name: "${friendly_name} — Button 10"
@@ -271,7 +283,6 @@ sensor:
     name: "${friendly_name} — Rotary Encoder"
     pin_a: GPIO23
     pin_b: GPIO22
-    pin_reset: GPIO21
     on_clockwise:
       - mqtt.publish:
           topic: "esphome/${device_name}/rotary_encoder/cw"
