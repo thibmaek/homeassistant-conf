@@ -31,7 +31,7 @@
       unit_of_measurement: 'playing'
       value_template: >
         {{ states['media_player'] | selectattr('state', 'eq', 'playing') | list | count }}
-    warmest_room:
+    highest_indoor_temperature:
       friendly_name: "Highest indoor temperature"
       unit_of_measurement: '°C'
       value_template: >

@@ -10,4 +10,4 @@
   name: "Lotte Devices"
   services:
     - service: mobile_app_ipad_van_lotte
-    - service: mobile_app_iphone_van_lotte
+    - service: mobile_app_lottes_iphone
