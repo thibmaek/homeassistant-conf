@@ -41,21 +41,3 @@
           states('sensor.kitchen_temperature'),
           states('sensor.living_room_temperature'),
         ] | max}}
-
-- platform: template
-  sensors:
-    ambee_pollen_weed:
-      icon_template: "mdi:nature"
-      friendly_name: "Weed pollen"
-      value_template: >
-        {{ state_attr('sensor.ambee_pollen', 'weed_pollen') }}
-    ambee_pollen_tree:
-      icon_template: "mdi:tree-outline"
-      friendly_name: "Tree pollen"
-      value_template: >
-        {{ state_attr('sensor.ambee_pollen', 'tree_pollen') }}
-    ambee_pollen_grass:
-      icon_template: "mdi:grass"
-      friendly_name: "Grass pollen"
-      value_template: >
-        {{ state_attr('sensor.ambee_pollen', 'grass_pollen') }}
