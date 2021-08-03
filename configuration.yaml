@@ -81,7 +81,7 @@ spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
 
-samsung_tv:
+samsungtv:
   - host: !secret samsung_ru7100_host
     name: "Samsung RU7100"
     turn_on_action:
