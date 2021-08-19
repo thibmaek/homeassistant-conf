@@ -1,0 +1,34 @@
+substitutions:
+  device_name: esp8266_upstairs_air_quality
+  friendly_name: Upstairs Air Quality
+
+esphome:
+  platform: ESP8266
+  board: d1_mini
+
+packages:
+  base: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
+
+uart:
+  rx_pin: D2
+  baud_rate: 9600
+
+binary_sensor:
+  # Ref: https://blissair.com/what-is-pm-2-5.htm
+  - platform: template
+    name: "${friendly_name} Safety"
+    device_class: safety
+    lambda: |-
+      if (id(pm2_5_sensor).state < 55) {
+        return false;
+      } else {
+        return true;
+      }
+
+sensor:
+  - platform: pm1006
+    pm_2_5:
+      name: "${friendly_name}"
+      id: pm2_5_sensor
