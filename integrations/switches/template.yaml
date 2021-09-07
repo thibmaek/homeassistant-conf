@@ -1,0 +1,17 @@
+- platform: template
+  switches:
+    samsung_ru7100_turn_on:
+      friendly_name: "Samsung RU7100 (7 Series) Power"
+      icon_template: mdi:power
+      value_template: >
+        {{ is_state('media_player.samsung_ru7100_7_series', 'on') }}
+      availability_template: >
+        {{ is_state('media_player.samsung_ru7100_7_series', 'available') }}
+      turn_on:
+        service: wake_on_lan.send_magic_packet
+        data:
+          mac: !secret samsung_ru7100_mac
+      turn_off:
+        service: media_player.turn_off
+        data:
+          entity_id: media_player.samsung_ru7100_7_series
