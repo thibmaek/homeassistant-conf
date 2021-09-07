@@ -4,10 +4,10 @@ substitutions:
   room: Upstairs
 
 packages:
-  base_config: !include common/base.yaml
-  wifi: !include common/wifi.yaml
-  integrated: !include common/integrated.yaml
-  i2c: !include common/i2c.yaml
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
+  i2c: !include ../../common/i2c.yaml
 
 esphome:
   platform: ESP8266
@@ -49,10 +49,10 @@ switch:
             id(oled_display).fill(COLOR_OFF);
 
 font:
-  - file: 'assets/fonts/arial.ttf'
-    id: arial
-    size: 32
-  - file: 'assets/fonts/arial.ttf'
+  - file: '../../assets/fonts/din_alt.ttf'
+    id: din
+    size: 26
+  - file: '../../assets/fonts/arial.ttf'
     id: arial_sm
     size: 12
 
@@ -64,7 +64,13 @@ display:
     brightness: 60%
     rotation: 180°
     lambda: |-
-      it.strftime(2, 32, id(arial), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
+      auto time = id(esptime).now();
+      if (time.is_valid()) {
+        it.strftime(2, 33, id(din), TextAlign::BASELINE_LEFT, "%H:%M", time);
+        it.strftime(2, 0, id(arial_sm), TextAlign::TOP_LEFT, "%a %d %b", time);
+      } else {
+        it.print(2, 32, id(din), TextAlign::BASELINE_LEFT, "...");
+      }
 
       if (id(temperature).has_state()) {
         it.printf(it.get_width() - 2, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
