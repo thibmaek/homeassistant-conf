@@ -26,13 +26,3 @@ esp32_camera:
   href_pin: GPIO23
   pixel_clock_pin: GPIO22
   power_down_pin: GPIO32
-
-time:
-  - platform: sntp
-    on_time:
-      - seconds: 0
-        minutes: 30
-        hours: 7
-        days_of_week: '*'
-        then:
-          - switch.toggle: restart_camera
