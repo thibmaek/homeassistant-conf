@@ -85,6 +85,7 @@ ffmpeg:
 # endregion
 
 # region: integrations
+alarm_control_panel: !include_dir_merge_list integrations/alarm_control_panel/
 binary_sensor: !include_dir_merge_list integrations/binary_sensors/
 light: !include_dir_merge_list integrations/lights/
 media_player: !include_dir_merge_list integrations/media_players/
