@@ -15,4 +15,3 @@
   entities:
     - light.spotlight
     - light.wled_monitor_stand
-    - light.wled_weather_lamp

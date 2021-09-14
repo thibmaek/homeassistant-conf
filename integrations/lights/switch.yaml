@@ -12,7 +12,7 @@
 
 - platform: switch
   name: "Lampje Togo"
-  entity_id: switch.tradfri_outlet_togo_switch
+  entity_id: switch.tradfri_outlet_togo
 
 - platform: switch
   name: "Badkamer Lampje Thib"

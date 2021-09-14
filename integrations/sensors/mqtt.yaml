@@ -25,10 +25,3 @@
   value_template: "{{ value_json.coordinator }}"
   icon: mdi:chip
 
-- platform: mqtt
-  name: "Zigbee2MQTT Networkmap"
-  icon: mdi:lan-pending
-  state_topic: "zigbee2mqtt/bridge/networkmap/raw"
-  value_template: >-
-    {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
-  json_attributes_topic: "zigbee2mqtt/bridge/networkmap/raw"

@@ -1,10 +1,11 @@
 - platform: rest
   name: "Random Cocktail"
-  resource: "http://172.17.0.1:3003/random"
+  resource: "https://julep-api-hazltuqnpq-ew.a.run.app/random"
   scan_interval: 3600
   value_template: "{{ value_json.name }}"
   json_attributes:
-    - description
+    - summary
+    - history
     - ingredients
 
 - platform: rest
@@ -30,7 +31,3 @@
     - incidents
     - roadWorks
     - speedTraps
-
-- platform: rest
-  name: "Wireguard Status"
-  resource: "http://a0d7b954-wireguard"
