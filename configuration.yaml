@@ -77,10 +77,6 @@ google:
   client_id: !secret google_calendar_client_id
   client_secret: !secret google_calendar_client_secret
 
-spotify:
-  client_id: !secret spotify_id
-  client_secret: !secret spotify_secret
-
 ffmpeg:
 # endregion
 
