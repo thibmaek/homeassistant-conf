@@ -4,7 +4,7 @@
 
 - platform: switch
   name: "Lampje Stellingkast"
-  entity_id: switch.silvercrest_plug
+  entity_id: switch.lampje_stellingkast
 
 - platform: switch
   name: "Kastlampje"
