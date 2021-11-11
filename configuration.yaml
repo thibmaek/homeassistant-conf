@@ -53,6 +53,14 @@ google:
   client_secret: !secret google_calendar_client_secret
 
 ffmpeg:
+
+utility_meter:
+  electricity:
+    source: input_number.electricity_usage
+  heating:
+    source: input_number.heating_usage
+  water:
+    source: input_number.water_usage
 # endregion
 
 # region: integrations
