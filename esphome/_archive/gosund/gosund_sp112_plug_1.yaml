@@ -8,12 +8,12 @@ esphome:
   platform: ESP8266
   board: nodemcuv2
 
-<<: !include common/base.yaml
-<<: !include common/info_sensors.yaml
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
 
 binary_sensor:
-  - platform: status
-    name: "${friendly_name} — Status"
   - platform: gpio
     name: "${friendly_name} — Button"
     pin:
@@ -23,11 +23,6 @@ binary_sensor:
       - switch.toggle: relay
 
 sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
-    update_interval: 60s
   - platform: hlw8012
     sel_pin:
       number: GPIO12

@@ -1,11 +1,11 @@
 substitutions:
   device_name: esp8226_buzzer
-  friendly_name: ESP8266 Buzzer
+  friendly_name: "ESP8266 Buzzer"
 
 packages:
-  base_config: !include common/base.yaml
-  wifi: !include common/wifi.yaml
-  integrated: !include common/integrated.yaml
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
 
 esphome:
   platform: ESP8266

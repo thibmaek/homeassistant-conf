@@ -1,0 +1,18 @@
+substitutions:
+  device_name: esp8266_pir_studio
+  friendly_name: "ESP8266 PIR Studio"
+
+esphome:
+  platform: ESP8266
+  board: d1_mini
+
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
+
+binary_sensor:
+  - platform: gpio
+    name: "${friendly_name} — Motion"
+    pin: D4
+    device_class: motion

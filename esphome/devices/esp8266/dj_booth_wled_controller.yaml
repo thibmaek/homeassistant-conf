@@ -1,12 +1,11 @@
 substitutions:
-  device_name: esp8266_notification_box_lotte
-  friendly_name: "Notification Box Lotte"
-  twin: "notification_box_thib"
+  device_name: esp8266-dj-booth-wled-controller
+  friendly_name: "DJ Booth WLED Controller"
 
 packages:
-  base_config: !include common/base.yaml
-  wifi: !include common/wifi.yaml
-  integrated: !include common/integrated.yaml
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
 
 esphome:
   platform: ESP8266
@@ -14,7 +13,7 @@ esphome:
 
 switch:
   - platform: template
-    name: "${friendly_name} - Red"
+    name: "${friendly_name} - Effect 1"
     turn_on_action:
       - light.turn_off: leds
       - light.turn_on:
@@ -27,7 +26,7 @@ switch:
       - delay: 10s
       - light.turn_off: leds
   - platform: template
-    name: "${friendly_name} - Green"
+    name: "${friendly_name} - Effect 2"
     turn_on_action:
       - light.turn_off: leds
       - light.turn_on:
@@ -40,7 +39,7 @@ switch:
       - delay: 10s
       - light.turn_off: leds
   - platform: template
-    name: "${friendly_name} - Orange"
+    name: "${friendly_name} - Effect 3"
     turn_on_action:
       - light.turn_off: leds
       - light.turn_on:
@@ -67,10 +66,6 @@ binary_sensor:
           red: 100%
           green: 85%
           blue: 43%
-      - homeassistant.service:
-          service: switch.turn_on
-          data:
-            entity_id: "switch.${twin}_red"
       - delay: 1s
       - light.turn_off: leds
   - platform: gpio
@@ -86,10 +81,6 @@ binary_sensor:
           red: 87%
           green: 100%
           blue: 75%
-      - homeassistant.service:
-          service: switch.turn_on
-          data:
-            entity_id: "switch.${twin}_green"
       - delay: 1s
       - light.turn_off: leds
   - platform: gpio
@@ -105,10 +96,6 @@ binary_sensor:
           red: 100%
           green: 64%
           blue: 28%
-      - homeassistant.service:
-          service: switch.turn_on
-          data:
-            entity_id: "switch.${twin}_orange"
       - delay: 1s
       - light.turn_off: leds
 

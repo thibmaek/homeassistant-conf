@@ -1,5 +1,5 @@
 substitutions:
-  device_name: esp32_camera
+  device_name: esp32-camera
   friendly_name: "ESP32 Camera"
 
 esphome:

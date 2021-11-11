@@ -11,7 +11,7 @@ clean:
 		-not \( -path ./test_utils \) \
 		-print | xargs /bin/rm -rf
 
-install:
+dependencies:
 	pip install --upgrade -r requirements.txt
 
 test:

@@ -1,18 +1,17 @@
 substitutions:
-  device_name: esp8266_node_bedroom
-  friendly_name: "ESP8226 Node Bedroom"
-  room: Bedroom
-
-
-packages:
-  base_config: !include common/base.yaml
-  wifi: !include common/wifi.yaml
-  integrated: !include common/integrated.yaml
-  i2c: !include common/i2c.yaml
+  device_name: esp8266-node-livingroom
+  friendly_name: "ESP8266 Node Living Room"
+  room: "Living Room"
 
 esphome:
   platform: ESP8266
   board: nodemcuv2
+
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
+  i2c: !include ../../common/i2c.yaml
 
 api:
   services:
@@ -27,15 +26,6 @@ api:
 time:
   - platform: homeassistant
     id: esptime
-    on_time:
-      - hours: 9
-        minutes: 0
-        then:
-          - switch.turn_on: oled_display_backlight
-      - hours: 21
-        minutes: 30
-        then:
-          - switch.turn_off: oled_display_backlight
 
 switch:
   - platform: template
@@ -56,34 +46,42 @@ switch:
             id(oled_display).fill(COLOR_OFF);
 
 font:
-  # - file: 'assets/fonts/arial.ttf'
-  #   id: arial
-  #   size: 40
-  - file: "assets/fonts/din_alt.ttf"
-    id: din
-    size: 46
+  - file: '../../assets/fonts/arial.ttf'
+    id: arial
+    size: 28
+  - file: '../../assets/fonts/arial.ttf'
+    id: arial_sm
+    size: 14
 
 display:
   - platform: ssd1306_i2c
     id: oled_display
-    model: "SH1106 128x64"
+    model: "SH1106 128x32"
     address: 0x3C
-    brightness: 60%
+    contrast: 60%
     rotation: 180°
     lambda: |-
-      it.strftime(64, 32, id(din), TextAlign::CENTER, "%H:%M", id(esptime).now());
+      it.strftime(2, 32, id(arial), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
+
+      if (id(temperature).has_state()) {
+        it.printf(127, 0, id(arial_sm), TextAlign::TOP_RIGHT, "%.1f°", id(temperature).state);
+      }
+
+      if (id(humidity).has_state()) {
+        it.printf(127, 28, id(arial_sm), TextAlign::BASELINE_RIGHT, "%.1f%%", id(humidity).state);
+      }
 
 sensor:
   - platform: bme280
     address: 0x76
     temperature:
-      name: "${room} Temperature"
       id: temperature
+      name: "${room} Temperature"
       filters:
         - offset: -3.0
     pressure:
       name: "${room} Pressure"
     humidity:
-      name: "${room} Humidity"
       id: humidity
+      name: "${room} Humidity"
     update_interval: 60s

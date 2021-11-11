@@ -1,5 +1,5 @@
 substitutions:
-  device_name: lsc_smart_connect_switch_bureau
+  device_name: lsc-smart-connect-switch-bureau
   friendly_name: "LSC Smart Connect Switch Bureau Monitor"
 
 esphome:

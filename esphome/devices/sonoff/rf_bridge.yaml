@@ -1,17 +1,18 @@
 substitutions:
-  device_name: sonoff_rf_bridge
+  device_name: sonoff-rf-bridge
   friendly_name: "Sonoff RF Bridge"
 
 esphome:
-  name: "${device_name}"
   platform: ESP8266
   board: esp8285
 
 logger:
   baud_rate: 0
 
-<<: !include common/base.yaml
-<<: !include common/info_sensors.yaml
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
 
 uart:
   tx_pin: GPIO01
@@ -72,14 +73,3 @@ output:
     pin:
       number: GPIO13
       inverted: True
-
-sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
-    update_interval: 60s
-
-switch:
-  - platform: restart
-    name: "${friendly_name} — Restart"

@@ -4,14 +4,14 @@ substitutions:
   plant_one: "Fridge 1"
   plant_two: "Fridge 2"
 
-packages:
-  base_config: !include common/base.yaml
-  wifi: !include common/wifi.yaml
-  integrated: !include common/integrated.yaml
-
 esphome:
   platform: ESP32
   board: esp32dev
+
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
 
 esp32_ble_tracker:
 

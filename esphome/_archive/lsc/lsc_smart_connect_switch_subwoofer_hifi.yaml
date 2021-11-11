@@ -1,17 +1,17 @@
 substitutions:
-  device_name: "lsc_smart_connect_switch_upstairs"
-  friendly_name: "LSC Smart Connect Switch Upstairs"
+  device_name: lsc-smart-connect-switch-subwoofer-hifi
+  friendly_name: "LSC Smart Connect Switch Subwoofer Hifi"
 
 esphome:
-  name: "${device_name}"
   platform: ESP8266
   board: esp01_1m
 
-<<: !include common/base.yaml
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
 
 binary_sensor:
-  - platform: status
-    name: "${friendly_name} — Status"
   - platform: gpio
     name: "${friendly_name}"
     pin:
@@ -21,13 +21,6 @@ binary_sensor:
     internal: true
     on_press:
       - switch.toggle: relay_and_light
-
-sensor:
-  - platform: uptime
-    name: "${friendly_name} — Uptime"
-  - platform: wifi_signal
-    name: "${friendly_name} — Signal"
-    update_interval: 60s
 
 output:
   - platform: esp8266_pwm
