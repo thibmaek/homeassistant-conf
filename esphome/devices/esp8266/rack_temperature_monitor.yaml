@@ -1,0 +1,82 @@
+substitutions:
+  device_name: esp8266-rack-temperature-monitor
+  friendly_name: "Rack Temperature Monitor"
+
+esphome:
+  platform: ESP8266
+  board: d1_mini
+
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  integrated: !include ../../common/integrated.yaml
+  i2c: !include ../../common/i2c.yaml
+  mqtt: !include ../../common/mqtt.yaml
+
+time:
+  - platform: homeassistant
+    id: esptime
+
+font:
+  - file: '../../assets/fonts/din_alt.ttf'
+    id: din
+    size: 18
+  - file: '../../assets/fonts/din_alt.ttf'
+    id: din_sm
+    size: 12
+  - file: '../../assets/fonts/din_alt.ttf'
+    id: din_xs
+    size: 10
+
+switch:
+  - platform: template
+    name: "${friendly_name} — OLED Display"
+    id: oled_display_power
+    icon: mdi:monitor
+    assumed_state: true
+    optimistic: true
+    turn_on_action:
+      then:
+        - lambda: |-
+            id(oled_display).turn_on();
+    turn_off_action:
+      then:
+        - lambda: |-
+            id(oled_display).turn_off();
+
+display:
+  - platform: ssd1306_i2c
+    id: oled_display
+    model: "SH1106 128x32"
+    address: 0x3C
+    contrast: 60%
+    lambda: |-
+      // TABLE HEADER
+      it.print(5, 0, id(din_xs), TextAlign::TOP_LEFT, "ENV");
+      it.print(it.get_width() / 2, 6, id(din_xs), TextAlign::CENTER, "CPU");
+      it.print(it.get_width() - 5, 0, id(din_xs), TextAlign::TOP_RIGHT, "TIME");
+      it.line(0, 13, it.get_width(), 13);
+
+      if (id(temperature).has_state()) {
+        it.printf(2, it.get_height() + 3, id(din), TextAlign::BOTTOM_LEFT, "%.1f", id(temperature).state);
+      } else {
+        it.print(2, it.get_height() + 3, id(din), TextAlign::BOTTOM_LEFT, "NA");
+      }
+
+      if (id(nuc_cpu_temp).has_state()) {
+        it.printf(it.get_width() / 2, it.get_height() / 2 + 8, id(din), TextAlign::CENTER, "%.1f", id(nuc_cpu_temp).state);
+      } else {
+        it.print(it.get_width() / 2, it.get_height() / 2 + 8, id(din), TextAlign::CENTER, "NA");
+      }
+
+      it.strftime(it.get_width() - 2, it.get_height(), id(din_sm), TextAlign::BOTTOM_RIGHT, "%H:%M", id(esptime).now());
+
+sensor:
+  - platform: bme280
+    address: 0x76
+    temperature:
+      id: temperature
+      name: "Server Rack Temperature"
+  - platform: mqtt_subscribe
+    topic: esphome/sensor/nuc_cpu_temp
+    id: nuc_cpu_temp
