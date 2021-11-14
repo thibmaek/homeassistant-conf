@@ -18,6 +18,8 @@ switch:
   - platform: restart
     id: base_restart
     name: "${friendly_name} — Restart"
+  - platform: shutdown
+    name: "${friendly_name} — Shutdown"
 
 text_sensor:
   - platform: wifi_info
