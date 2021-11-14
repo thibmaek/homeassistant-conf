@@ -23,7 +23,7 @@ api:
         contrast: float
       then:
         - lambda: |-
-            id(oled_display).set_contrast(brightness);
+            id(oled_display).set_contrast(contrast);
             id(oled_display).fill(COLOR_ON);
 
 time:
