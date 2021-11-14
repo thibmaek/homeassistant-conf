@@ -15,12 +15,12 @@ packages:
 
 api:
   services:
-    - service: set_oled_brightness
+    - service: set_oled_contrast
       variables:
-        brightness: float
+        contrast: float
       then:
         - lambda: |-
-            id(oled_display).set_brightness(brightness);
+            id(oled_display).set_contrast(contrast);
             id(oled_display).fill(COLOR_ON);
 
 time:
@@ -30,29 +30,27 @@ time:
       - hours: 9
         minutes: 0
         then:
-          - switch.turn_on: oled_display_backlight
+          - switch.turn_on: oled_display_power
       - hours: 21
         minutes: 30
         then:
-          - switch.turn_off: oled_display_backlight
+          - switch.turn_off: oled_display_power
 
 switch:
   - platform: template
-    name: "${friendly_name} — Display Backlight"
-    id: oled_display_backlight
-    icon: mdi:brightness-6
+    name: "${friendly_name} — OLED Display"
+    id: oled_display_power
+    icon: mdi:monitor
     assumed_state: true
     optimistic: true
     turn_on_action:
       then:
         - lambda: |-
-            id(oled_display).set_brightness(0.6);
-            id(oled_display).fill(COLOR_ON);
+            id(oled_display).turn_on();
     turn_off_action:
       then:
         - lambda: |-
-            id(oled_display).set_brightness(0);
-            id(oled_display).fill(COLOR_OFF);
+            id(oled_display).turn_off();
 
 font:
   - file: "../../assets/fonts/din_alt.ttf"
