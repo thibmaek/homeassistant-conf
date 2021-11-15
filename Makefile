@@ -1,5 +1,5 @@
-install:
-	pip install --upgrade pre-commit yamllint
+dependencies:
+	pip install --upgrade pre-commit yamllint pip
 	pre-commit install
 
 lint:

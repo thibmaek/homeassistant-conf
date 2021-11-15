@@ -36,7 +36,7 @@ jobs:
       - name: "Install ESPHome (via pip)"
         run: |
           cd esphome
-          make install
+          make dependencies
       - name: "Compile all configs"
         run: |
           cd esphome
