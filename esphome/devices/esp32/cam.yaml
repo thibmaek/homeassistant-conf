@@ -11,6 +11,12 @@ packages:
   wifi: !include ../../common/wifi.yaml
   integrated: !include ../../common/integrated.yaml
 
+esp32_camera_web_server:
+  - port: 8080
+    mode: stream
+  - port: 8081
+    mode: snapshot
+
 esp32_camera:
   name: "${friendly_name} — Camera"
   resolution: 640x480
