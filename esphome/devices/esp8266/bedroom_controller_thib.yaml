@@ -67,9 +67,10 @@ binary_sensor:
 light:
   - platform: fastled_clockless
     id: leds
+    name: "${friendly_name}"
     pin: D4
     chipset: WS2812B
-    num_leds: 4
+    num_leds: 8
     rgb_order: GRB
     effects:
       - automation:
