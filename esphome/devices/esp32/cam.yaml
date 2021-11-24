@@ -31,6 +31,6 @@ esp32_camera:
   vsync_pin: GPIO25
   href_pin: GPIO23
   vertical_flip: false
-  horizontal_flip: false
+  horizontal_mirror: false
   pixel_clock_pin: GPIO22
   power_down_pin: GPIO32
