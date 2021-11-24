@@ -12,6 +12,7 @@ packages:
   wifi: !include ../../common/wifi.yaml
   integrated: !include ../../common/integrated.yaml
   i2c: !include ../../common/i2c.yaml
+  metrics: !include ../../common/metrics.yaml
 
 api:
   services:

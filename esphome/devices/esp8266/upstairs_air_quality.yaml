@@ -10,6 +10,7 @@ packages:
   base: !include ../../common/base.yaml
   wifi: !include ../../common/wifi.yaml
   integrated: !include ../../common/integrated.yaml
+  metrics: !include ../../common/metrics.yaml
 
 uart:
   rx_pin: D2

@@ -1,6 +1,6 @@
 substitutions:
-  device_name: esp8266-living-air-quality
-  friendly_name: "Living Air Quality"
+  device_name: esp8266-kitchen-air-quality
+  friendly_name: "Kitchen Air Quality"
 
 esphome:
   platform: ESP8266
@@ -10,6 +10,7 @@ packages:
   base: !include ../../common/base.yaml
   wifi: !include ../../common/wifi.yaml
   integrated: !include ../../common/integrated.yaml
+  metrics: !include ../../common/metrics.yaml
 
 uart:
   rx_pin: D2
