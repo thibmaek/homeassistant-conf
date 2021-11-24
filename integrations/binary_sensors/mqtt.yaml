@@ -10,3 +10,11 @@
   payload_on: "online"
   payload_off: "offline"
   device_class: connectivity
+
+- platform: mqtt
+  name: "Bureau Room Presence"
+  state_topic: "espresense/rooms/bureau/status"
+  json_attributes_topic: "espresense/rooms/bureau/telemetry"
+  payload_on: online
+  payload_off: offline
+  device_class: connectivity

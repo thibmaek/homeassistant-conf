@@ -24,3 +24,10 @@
   name: "Fully Kiosk Event"
   icon: mdi:math-log
   value_template: "{{value_json.event}}"
+
+- platform: mqtt_room
+  device_id: "apple:1005:9-7"
+  name: "Thib iPhone Room Presence"
+  state_topic: "espresense/rooms"
+  timeout: 60
+  away_timeout: 120
