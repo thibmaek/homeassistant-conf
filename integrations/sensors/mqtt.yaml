@@ -14,14 +14,13 @@
   json_attributes_template: "{{ value_json.body | tojson }}"
 
 - platform: mqtt
-  name: "Zigbee2MQTT Version"
-  state_topic: "zigbee2mqtt/bridge/config"
-  value_template: "{{ value_json.version }}"
-  icon: mdi:zigbee
-
-- platform: mqtt
   name: "Zigbee2MQTT Coordinator Version"
   state_topic: "zigbee2mqtt/bridge/config"
   value_template: "{{ value_json.coordinator }}"
   icon: mdi:chip
 
+- platform: mqtt
+  state_topic: "fully/event/#"
+  name: "Fully Kiosk Event"
+  icon: mdi:math-log
+  value_template: "{{value_json.event}}"
