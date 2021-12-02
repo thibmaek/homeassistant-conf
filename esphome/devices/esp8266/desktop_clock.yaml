@@ -1,0 +1,32 @@
+packages:
+  wifi: !include ../../common/wifi.yaml
+  i2c: !include ../../common/i2c.yaml
+
+esphome:
+  platform: ESP8266
+  board: d1_mini
+  name: esp8266-desktop-clock
+  build_path: ./build/esp8266-desktop-clock
+
+logger:
+
+time:
+  - platform: sntp
+    id: esptime
+
+font:
+  - file: '../../assets/fonts/din_alt.ttf'
+    id: din
+    size: 26
+
+display:
+  - platform: ssd1306_i2c
+    id: oled_display
+    model: "SH1106 128x32"
+    address: 0x3C
+    contrast: 100%
+    lambda: |-
+      auto time = id(esptime).now();
+      if (time.is_valid()) {
+        it.strftime(it.get_width() / 2 - 2, it.get_height() / 2 - 2, id(din), TextAlign::CENTER, "%H:%M:%S", id(esptime).now());
+      }
