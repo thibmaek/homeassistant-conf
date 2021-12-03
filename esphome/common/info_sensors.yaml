@@ -1,9 +1,0 @@
-text_sensor:
-  - platform: wifi_info
-    icon: mdi:ip
-    ip_address:
-      name: "${friendly_name} — IP"
-
-  - platform: version
-    icon: mdi:package-variant
-    name: "${friendly_name} — Version"
