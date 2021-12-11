@@ -35,7 +35,6 @@
           or is_state("binary_sensor.studio_motion_occupancy", "on")
         }}
 
-
 # Dark rooms
 - platform: template
   sensors:
@@ -69,3 +68,27 @@
         {% endif %}
       value_template: >
         {{ states('sensor.kitchen_illuminance') | int < 70 }}
+
+# Fully Kiosk
+- platform: template
+  sensors:
+    fully_screen_state:
+      friendly_name: "Fully Kiosk Screen State"
+      value_template: >-
+        {% if is_state('sensor.fully_kiosk_event', 'screenOn') %}
+          true
+        {% elif is_state('sensor.fully_kiosk_event', 'screenOff') %}
+          false
+        {% endif %}
+      icon_template: >
+        {% if is_state('sensor.fully_kiosk_event', 'screenOn') %}
+          mdi:card-outline
+        {% elif is_state('sensor.fully_kiosk_event', 'screenOff') %}
+          mdi:card-off-outline
+        {% endif %}
+      device_class: power
+    fully_motion:
+      friendly_name: "Fully Kiosk Motion"
+      value_template: >
+        {{ is_state('sensor.fully_kiosk_event', 'onMotion') }}
+      device_class: motion

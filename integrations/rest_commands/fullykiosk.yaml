@@ -1,0 +1,15 @@
+fully_kiosk_screen_on:
+  url: !secret fully_kiosk_screen_on_rest_url
+  method: 'POST'
+
+fully_kiosk_screen_off:
+  url: !secret fully_kiosk_screen_off_rest_url
+  method: 'POST'
+
+fully_kiosk_restart:
+  url: !secret fully_kiosk_restart_rest_url
+  method: 'POST'
+
+fully_kiosk_exit:
+  url: !secret fully_kiosk_exit_rest_url
+  method: 'POST'
