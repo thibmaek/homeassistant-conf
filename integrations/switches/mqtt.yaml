@@ -4,3 +4,13 @@
   command_topic: "zigbee2mqtt/bridge/config/permit_join"
   payload_on: "true"
   payload_off: "false"
+
+- platform: mqtt
+  name: "RPi Kiosk Display Power"
+  unique_id: rpi_node_kiosk_screen
+  command_topic: "rpi-node-kiosk/status/system/screen"
+  payload_on: "on"
+  payload_off: "off"
+  state_topic: "rpi-node-kiosk/status/system/screen"
+  state_on: "1"
+  state_off: "0"
