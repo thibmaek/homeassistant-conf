@@ -8,7 +8,7 @@
 - platform: mqtt
   name: "RPi Kiosk Display Power"
   unique_id: rpi_node_kiosk_screen
-  command_topic: "rpi-node-kiosk/status/system/screen"
+  command_topic: "rpi-node-kiosk/system/screen"
   payload_on: "on"
   payload_off: "off"
   state_topic: "rpi-node-kiosk/status/system/screen"
