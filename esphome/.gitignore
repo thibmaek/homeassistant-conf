@@ -15,3 +15,5 @@ build/
 
 devices/**/.gitignore
 devices/**/build
+
+devices/**/test.yaml
