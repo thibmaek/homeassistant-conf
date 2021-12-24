@@ -1,0 +1,205 @@
+substitutions:
+  device_name: esp32-macropad
+  friendly_name: "ESP32 Macropad"
+
+packages:
+  base_config: !include ../../common/base.yaml
+  wifi: !include ../../common/wifi.yaml
+  i2c: !include ../../common/i2c.yaml
+  mqtt: !include ../../common/mqtt.yaml
+  integrated: !include ../../common/integrated.yaml
+  metrics: !include ../../common/metrics.yaml
+
+esphome:
+  platform: ESP32
+  board: nodemcu-32s
+
+api:
+  services:
+    - service: set_last_action
+      variables:
+        action: string
+      then:
+        - lambda: |-
+            id(last_action).publish_state(action);
+
+script:
+  - id: reset_mode
+    then:
+      - select.set:
+          id: mode_select
+          option: "Lights"
+  - id: next_mode
+    then:
+      - select.set:
+          id: mode_select
+          option: !lambda |-
+            if (id(mode_select).state == "Lights") {
+              return "Media";
+            }
+            if (id(mode_select).state == "Media") {
+              return "Lights";
+            }
+
+select:
+  - platform: template
+    entity_category: config
+    id: mode_select
+    name: "Mode"
+    optimistic: true
+    initial_option: "Lights"
+    options:
+      - "Lights"
+      - "Media"
+
+binary_sensor:
+  - platform: gpio
+    name: "${friendly_name} — Mode Button"
+    internal: true
+    pin:
+      number: GPIO23
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - script.execute: next_mode
+
+  - platform: gpio
+    name: "${friendly_name} — Button 1"
+    internal: true
+    pin:
+      number: GPIO19
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "1"
+  - platform: gpio
+    name: "${friendly_name} — Button 2"
+    internal: true
+    pin:
+      number: GPIO18
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "2"
+  - platform: gpio
+    name: "${friendly_name} — Button 3"
+    internal: true
+    pin:
+      number: GPIO5
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "3"
+  - platform: gpio
+    name: "${friendly_name} — Button 4"
+    internal: true
+    pin:
+      number: GPIO17
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "4"
+  - platform: gpio
+    name: "${friendly_name} — Button 5"
+    internal: true
+    pin:
+      number: GPIO16
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "5"
+  - platform: gpio
+    name: "${friendly_name} — Button 6"
+    internal: true
+    pin:
+      number: GPIO12
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "6"
+  - platform: gpio
+    name: "${friendly_name} — Button 7"
+    internal: true
+    pin:
+      number: GPIO14
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "7"
+  - platform: gpio
+    name: "${friendly_name} — Button 8"
+    internal: true
+    pin:
+      number: GPIO27
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "8"
+  - platform: gpio
+    name: "${friendly_name} — Button 9"
+    internal: true
+    pin:
+      number: GPIO15
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "9"
+  - platform: gpio
+    name: "${friendly_name} — Button 10"
+    internal: true
+    pin:
+      number: GPIO4
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - mqtt.publish:
+          topic: "esphome/${device_name}/button"
+          payload: "10"
+
+text_sensor:
+  - platform: template
+    id: last_action
+    name: "${friendly_name} — Last action"
+    entity_category: diagnostic
+    icon: mdi:application-cog-outline
+
+font:
+  - file: '../../assets/fonts/din_alt.ttf'
+    id: din_sm
+    size: 11
+  - file: '../../assets/fonts/din_alt.ttf'
+    id: din
+    size: 16
+
+display:
+  - platform: ssd1306_i2c
+    id: oled_display
+    model: "SH1106 128x32"
+    address: 0x3C
+    contrast: 100%
+    lambda: |-
+      if (id(mode_select).has_state()) {
+        it.printf(1, 2, id(din_sm), TextAlign::TOP_LEFT, "Mode: %s", id(mode_select).state.c_str());
+        it.line(0, 15, it.get_width(), 15);
+        it.printf(2, it.get_height(), id(din), TextAlign::BOTTOM_LEFT, "%s", id(last_action).state.c_str());
+      } else {
+        it.print(it.get_width() / 2, it.get_height() / 2, id(din), TextAlign::CENTER, "...");
+      }
