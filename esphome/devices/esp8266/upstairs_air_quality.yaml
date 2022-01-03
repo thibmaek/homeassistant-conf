@@ -16,13 +16,21 @@ uart:
   rx_pin: D2
   baud_rate: 9600
 
+globals:
+  - id: warn_threshold
+    type: int
+    initial_value: '35'
+  - id: danger_treshold
+    type: int
+    initial_value: '55'
+
 binary_sensor:
   # Ref: https://blissair.com/what-is-pm-2-5.htm
   - platform: template
     name: "${friendly_name} Safety"
     device_class: safety
     lambda: |-
-      if (id(pm2_5_sensor).state < 55) {
+      if (id(pm2_5_sensor).state < id(danger_treshold)) {
         return false;
       } else {
         return true;
@@ -33,3 +41,16 @@ sensor:
     pm_2_5:
       name: "${friendly_name}"
       id: pm2_5_sensor
+
+text_sensor:
+  - platform: template
+    name: "${friendly_name} — State"
+    icon: mdi:air-filter
+    lambda: |-
+      if (id(pm2_5_sensor).state < id(warn_threshold)) {
+        return {"safe"};
+      } else if(id(pm2_5_sensor).state < id(danger_treshold)) {
+        return {"risky"};
+      } else {
+        return {"dangerous"};
+      }
