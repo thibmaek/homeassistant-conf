@@ -22,6 +22,18 @@ api:
       then:
         - lambda: |-
             id(last_action).publish_state(action);
+        - display.page.show: action_page
+        - delay: 10s
+        - display.page.show: time_page
+    - service: show_prev_page
+      then:
+        - display.page.show_previous: oled_display
+    - service: show_next_page
+      then:
+        - display.page.show_next: oled_display
+    - service: show_initial_page
+      then:
+        - display.page.show: time_page
 
 script:
   - id: reset_mode
@@ -40,6 +52,11 @@ script:
             if (id(mode_select).state == "Media") {
               return "Lights";
             }
+            return "";
+
+time:
+  - platform: homeassistant
+    id: esptime
 
 select:
   - platform: template
@@ -60,6 +77,11 @@ binary_sensor:
       number: GPIO23
       mode: INPUT_PULLUP
       inverted: true
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - script.execute: reset_mode
     on_press:
       - script.execute: next_mode
 
@@ -74,6 +96,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "1"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "1"
   - platform: gpio
     name: "${friendly_name} — Button 2"
     internal: true
@@ -85,6 +114,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "2"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "2"
   - platform: gpio
     name: "${friendly_name} — Button 3"
     internal: true
@@ -96,6 +132,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "3"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "3"
   - platform: gpio
     name: "${friendly_name} — Button 4"
     internal: true
@@ -107,6 +150,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "4"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "4"
   - platform: gpio
     name: "${friendly_name} — Button 5"
     internal: true
@@ -118,6 +168,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "5"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "5"
   - platform: gpio
     name: "${friendly_name} — Button 6"
     internal: true
@@ -129,6 +186,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "6"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "6"
   - platform: gpio
     name: "${friendly_name} — Button 7"
     internal: true
@@ -140,6 +204,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "7"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "7"
   - platform: gpio
     name: "${friendly_name} — Button 8"
     internal: true
@@ -151,6 +222,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "8"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "8"
   - platform: gpio
     name: "${friendly_name} — Button 9"
     internal: true
@@ -162,6 +240,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "9"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "9"
   - platform: gpio
     name: "${friendly_name} — Button 10"
     internal: true
@@ -173,6 +258,13 @@ binary_sensor:
       - mqtt.publish:
           topic: "esphome/${device_name}/button"
           payload: "10"
+    on_click:
+      min_length: 1s
+      max_length: 2s
+      then:
+        - mqtt.publish:
+            topic: "esphome/${device_name}/button_hold"
+            payload: "10"
 
 text_sensor:
   - platform: template
@@ -188,6 +280,12 @@ font:
   - file: '../../assets/fonts/din_alt.ttf'
     id: din
     size: 16
+  - file: '../../assets/fonts/mdi.ttf'
+    id: mdi
+    size: 12
+    glyphs:
+      - "\U000F0335" # mdi-lightbulb
+      - "\U000F0386" # mdi-music-circle
 
 display:
   - platform: ssd1306_i2c
@@ -195,11 +293,35 @@ display:
     model: "SH1106 128x32"
     address: 0x3C
     contrast: 100%
-    lambda: |-
-      if (id(mode_select).has_state()) {
-        it.printf(1, 2, id(din_sm), TextAlign::TOP_LEFT, "Mode: %s", id(mode_select).state.c_str());
-        it.line(0, 15, it.get_width(), 15);
-        it.printf(2, it.get_height(), id(din), TextAlign::BOTTOM_LEFT, "%s", id(last_action).state.c_str());
-      } else {
-        it.print(it.get_width() / 2, it.get_height() / 2, id(din), TextAlign::CENTER, "...");
-      }
+    pages:
+      - id: time_page
+        lambda: |-
+          it.line(0, 15, it.get_width(), 15);
+          auto time = id(esptime).now();
+          if (time.is_valid()) {
+            it.strftime(2, it.get_height(), id(din), TextAlign::BOTTOM_LEFT, "%H:%M", time);
+          }
+
+          if (id(mode_select).has_state()) {
+            it.printf(1, 2, id(din_sm), TextAlign::TOP_LEFT, "Mode: %s", id(mode_select).state.c_str());
+            if (id(mode_select).state == "Lights") {
+              it.printf(it.get_width() - 4, 2, id(mdi), TextAlign::TOP_RIGHT, "\U000F0335");
+            } else if (id(mode_select).state == "Media") {
+              it.printf(it.get_width() - 4, 2, id(mdi), TextAlign::TOP_RIGHT, "\U000F0386");
+            }
+          }
+      - id: action_page
+        lambda: |-
+          it.line(0, 15, it.get_width(), 15);
+
+          if (id(mode_select).has_state()) {
+            it.printf(1, 2, id(din_sm), TextAlign::TOP_LEFT, "Mode: %s", id(mode_select).state.c_str());
+            it.printf(2, it.get_height(), id(din), TextAlign::BOTTOM_LEFT, "%s", id(last_action).state.c_str());
+            if (id(mode_select).state == "Lights") {
+              it.printf(it.get_width() - 4, 2, id(mdi), TextAlign::TOP_RIGHT, "\U000F0335");
+            } else if (id(mode_select).state == "Media") {
+              it.printf(it.get_width() - 4, 2, id(mdi), TextAlign::TOP_RIGHT, "\U000F0386");
+            }
+          } else {
+            it.print(it.get_width() / 2, it.get_height() / 2, id(din), TextAlign::CENTER, "...");
+          }
