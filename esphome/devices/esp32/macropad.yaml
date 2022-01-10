@@ -280,6 +280,7 @@ font:
   - file: '../../assets/fonts/din_alt.ttf'
     id: din
     size: 16
+  # https://pictogrammers.github.io/@mdi/font/5.3.45/
   - file: '../../assets/fonts/mdi.ttf'
     id: mdi
     size: 12
