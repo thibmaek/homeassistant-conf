@@ -16,7 +16,7 @@ function compile_all() {
 
   for config in "${ESPHOME_CONFIGS[@]}"; do
     echo "🛠  Compiling ESPHome configuration: $config"
-    if ! esphome "$config" compile; then
+    if ! esphome compile "$config"; then
       exit 1
     fi
   done

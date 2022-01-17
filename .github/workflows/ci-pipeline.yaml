@@ -34,13 +34,11 @@ jobs:
           python-version: ${{ matrix.python_version }}
           architecture: x64
       - name: "Install ESPHome (via pip)"
-        run: |
-          cd esphome
-          make dependencies
+        run: make dependencies
+        working-directory: ./esphome
       - name: "Compile all configs"
-        run: |
-          cd esphome
-          make test
+        run: make test
+        working-directory: ./esphome
 
   home_assistant:
     name: 'Validate HA config'
