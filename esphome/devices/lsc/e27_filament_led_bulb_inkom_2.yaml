@@ -1,5 +1,5 @@
 substitutions:
-  device_name: lsc-smart-connect-e27-filament-led-inkom-2
+  device_name: lsc-e27-bulb-inkom-2
   friendly_name: "LSC Smart Connect E27 Filament LED Inkom 2"
 
 esphome:

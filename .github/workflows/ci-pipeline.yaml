@@ -17,6 +17,7 @@ jobs:
         env:
           VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_JSCPD: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   esphome:
