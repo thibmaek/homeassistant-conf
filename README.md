@@ -1,11 +1,9 @@
 # Home Assistant Conf
 
-[![Actions Status](https://github.com/thibmaek/homeassistant-conf/workflows/CI%20Pipeline/badge.svg)](https://github.com/thibmaek/homeassistant-conf/actions)
+[![Actions Status](https://github.com/thibmaek/homeassistant-conf/workflows/CI%20Pipeline/badge.svg)](https://github.com/thibmaek/homeassistant-conf/actions/workflows/ci-pipeline.yaml)
 ![Docker system](https://badgen.net/badge/Docker/home-assistant/?icon=docker)
 
 > Personal configuration for [Home Assistant](https://home-assistant.io)
-
-![Screenshot of the overview in my HA instance](https://github.com/thibmaek/homeassistant-conf/blob/master/.github/assets/overview_screenshot.png)
 
 ## Architecture
 
@@ -50,5 +48,5 @@ Check out [this diagram](https://whimsical.com/8gZ6KJPKUYjKcYVXVnyxJq) for an ov
 ## Tools
 
 * Makefile to as simple task-runner
-* [icefox/git-hooks](https://github.com/icefox/git-hooks) for git hooks
+* [pre-commit](https://pre-commit.io) for git hooks
 * [Github Actions](https://github.com/thibmaek/homeassistant-conf/actions) as CI pipeline
