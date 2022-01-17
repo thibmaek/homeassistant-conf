@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Superlint
-        uses: github/super-linter@master
+        uses: github/super-linter@main
         env:
           VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_JAVASCRIPT_ES: false
@@ -58,7 +58,7 @@ jobs:
       - name: 'Validate HA config'
         uses: frenck/action-home-assistant@main
         with:
-          secrets: secrets.yaml
+          secrets: ci_secrets.yaml
           version: stable
 
   home_assistant_beta:
@@ -78,5 +78,5 @@ jobs:
       - name: 'Validate HA config'
         uses: frenck/action-home-assistant@v1
         with:
-          secrets: secrets.yaml
+          secrets: ci_secrets.yaml
           version: beta

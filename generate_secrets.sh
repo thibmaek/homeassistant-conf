@@ -36,5 +36,5 @@ function getValue() {
 
 for secret in "${secrets[@]}"; do
   echo "Found secret: $secret"
-  echo "$secret: \"$(getValue "$secret")\"" >> secrets.yaml
+  echo "$secret: \"$(getValue "$secret")\"" >> ci_secrets.yaml
 done
