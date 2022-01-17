@@ -1,6 +1,6 @@
 - platform: rest
   name: Gotify
-  resource: !secret gotify_host
+  resource: !secret gotify_url
   method: POST
   headers:
     X-Gotify-Key: !secret gotify_token
