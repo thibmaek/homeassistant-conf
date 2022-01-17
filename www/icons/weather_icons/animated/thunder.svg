@@ -14,9 +14,9 @@
             <feComponentTransfer>
                 <feFuncA type="linear" slope="0.05"/>
             </feComponentTransfer>
-            <feMerge> 
+            <feMerge>
                 <feMergeNode/>
-                <feMergeNode in="SourceGraphic"/> 
+                <feMergeNode in="SourceGraphic"/>
             </feMerge>
         </filter>
         <style type="text/css"><![CDATA[
