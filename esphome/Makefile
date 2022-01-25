@@ -1,3 +1,12 @@
+.DEFAULT_GOAL := build
+
+.PHONY: build
+build: clean
+	for config in devices/**/*.yaml; do \
+		echo "🛠  Compiling ESPHome configuration: $$config"; \
+		esphome compile $$config; \
+	done
+
 clean:
 	rm -rf build/
 	find . -maxdepth 1 -type d \
