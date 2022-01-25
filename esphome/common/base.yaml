@@ -9,6 +9,14 @@ binary_sensor:
     name: "${friendly_name} — Status"
     entity_category: diagnostic
 
+button:
+  - platform: safe_mode
+    name: "${friendly_name} — Safe Mode"
+    entity_category: config
+  - platform: shutdown
+    name: "${friendly_name} — Shutdown"
+    entity_category: config
+
 sensor:
   - platform: uptime
     name: "${friendly_name} — Uptime"
@@ -21,9 +29,6 @@ switch:
   - platform: restart
     id: base_restart
     name: "${friendly_name} — Restart"
-    entity_category: config
-  - platform: shutdown
-    name: "${friendly_name} — Shutdown"
     entity_category: config
 
 text_sensor:
