@@ -26,7 +26,7 @@
   value_template: "{{value_json.event}}"
 
 - platform: mqtt_room
-  device_id: "apple:1005:9-7"
+  device_id: "apple:iphone14-2"
   name: "Thib iPhone Room Presence"
   state_topic: "espresense/rooms"
   timeout: 60
