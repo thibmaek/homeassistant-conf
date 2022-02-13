@@ -31,3 +31,10 @@
   state_topic: "espresense/rooms"
   timeout: 60
   away_timeout: 120
+
+- platform: mqtt_room
+  device_id: "apple:watch1-2"
+  name: "Thib Apple Watch Room Presence"
+  state_topic: "espresense/rooms"
+  timeout: 60
+  away_timeout: 120
