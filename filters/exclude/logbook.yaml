@@ -3,7 +3,7 @@ entities:
   - sensor.time_date
 
 entity_globs:
-  - sensor.*_uptime
+  - sensor.*uptime*
 
 domains:
   - calendar

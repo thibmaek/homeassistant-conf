@@ -4,6 +4,9 @@ entities:
 
 entity_globs:
   - sensor.octoprint_*
+  - sensor.pi_hole_*
+  - sensor.*uptime*
+  - sensor.*random*
 
 domains:
   - calendar
