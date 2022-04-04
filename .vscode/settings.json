@@ -1,6 +1,8 @@
 {
   "files.associations": {
-    "*.yaml": "home-assistant",
-    "*.yml": "home-assistant"
+    "**/*.yaml": "home-assistant",
+    "**/*.yml": "home-assistant",
+    ".pre-commit-config.yaml": "yaml",
+    ".github/workflows/*.yaml": "yaml",
   }
 }

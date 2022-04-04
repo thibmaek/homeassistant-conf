@@ -1,5 +1,5 @@
 dependencies:
-	pip install --upgrade pre-commit yamllint pip
+	pip install -r requirements.txt
 	pre-commit install
 
 lint:

@@ -2,16 +2,19 @@ extends: default
 
 ignore: |
   custom_components/
-  node_modules
   esphome/**/*.pio*
   esphome/test.yaml
+  node_modules
 
 rules:
-  comments-indentation: disable
+  braces:
+    min-spaces-inside: 1
+    max-spaces-inside: 1
   comments:
-    require-starting-space: true
     min-spaces-from-content: 1
+    require-starting-space: true
+  comments-indentation: disable
   document-start: disable
+  line-length: disable
   quoted-strings: disable
   truthy: disable
-  line-length: disable
