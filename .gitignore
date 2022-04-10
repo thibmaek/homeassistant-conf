@@ -26,7 +26,6 @@ entity_registry.yaml
 .tradfri_psk.conf
 feedreader.pickle
 plex.conf
-google_calendars.yaml
 tts/
 dasher/
 node_modules
