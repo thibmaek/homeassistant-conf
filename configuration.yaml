@@ -31,24 +31,15 @@ recorder:
   purge_keep_days: 5
   commit_interval: 60
   exclude: !include filters/exclude/recorder.yaml
-
-influxdb:
-  api_version: 2
-  host: !secret localhost
-  port: 8084
-  ssl: false
-  token: !secret influxdb_token
-  organization: thibmaek
-  bucket: homeassistant
-  tags_attributes:
-    - friendly_name
-  include: !include filters/include/influxdb.yaml
-  exclude: !include filters/exclude/influxdb.yaml
 # endregion
 
 # region: 3rd party
 tts:
   - platform: google_translate
+
+google:
+  client_id: !secret google_calendar_client_id
+  client_secret: !secret google_calendar_client_secret
 
 ffmpeg:
 
