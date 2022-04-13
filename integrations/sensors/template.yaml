@@ -31,13 +31,3 @@
       unit_of_measurement: 'playing'
       value_template: >
         {{ states['media_player'] | selectattr('state', 'eq', 'playing') | list | count }}
-    highest_indoor_temperature:
-      friendly_name: "Highest indoor temperature"
-      unit_of_measurement: '°C'
-      value_template: >
-        {{[
-          states('sensor.upstairs_temperature'),
-          states('sensor.bedroom_temperature'),
-          states('sensor.kitchen_temperature'),
-          states('sensor.living_room_temperature'),
-        ] | max}}
