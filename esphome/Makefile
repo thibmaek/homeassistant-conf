@@ -9,16 +9,10 @@ build: clean
 
 clean:
 	rm -rf build/
-	find . -maxdepth 1 -type d \
-		-not \( -path . \) \
-		-not \( -path .. \) \
-		-not \( -path ./_archive \) \
-		-not \( -path ./.vscode \) \
-		-not \( -path ./assets \) \
-		-not \( -path ./common \) \
-		-not \( -path ./devices \) \
-		-not \( -path ./test_utils \) \
-		-print | xargs /bin/rm -rf
+	rm -rf devices/esp32/build
+	rm -rf devices/esp8266/build
+	rm -rf devices/lsc/build
+	rm -rf devices/sonoff/build
 
 dependencies:
 	pip install --upgrade -r requirements.txt
